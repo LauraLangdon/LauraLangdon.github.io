@@ -112,7 +112,9 @@
 						</header>
 						
 								<section>
-									<form method="post" action="https://formspree.io/f/laura@lauralangdon.io">
+									<!--<form 
+									action="https://formspree.io/f/laura@lauralangdon.io"
+									method="post" >
 										<div class="row gtr-50">
 											<div class="col-6 col-12-small">
 												<input name="name" placeholder="Name" type="text" />
@@ -126,8 +128,29 @@
 											<div class="col-12">
 												<a href="#" class="form-button-submit button icon solid fa-envelope">Send Message</a>
 											</div>
-										</div>
-									</form>
+										</div> -->
+										<form
+										action="https://formspree.io/f/xknkqeqn"
+										method="POST"
+										>
+
+										<label>
+											Your name:
+											<input name="name" placeholder="Name" type="text" />
+										</label>
+										<label>
+											Your email:
+											<input type="email" name="_replyto">
+										</label>
+										<label>
+											Your message:
+											<textarea name="message"></textarea>
+										</label>
+
+										<!-- your other form fields go here -->
+
+										<button type="submit">Send</button>
+										</form>
 								</section>
 			
 					</div>
