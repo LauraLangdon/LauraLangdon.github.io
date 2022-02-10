@@ -1498,7 +1498,8 @@ input, select, textarea {
 
 		.image img {
 			display: block;
-			width: 100%;
+			max-width: 100%;
+			max-height: 400px;
 		}
 
 		.image.fit {
@@ -1508,7 +1509,7 @@ input, select, textarea {
 
 		.image.featured {
 			display: block;
-			width: 100%;
+			width: auto;
 			margin: 0 0 3.5em 0;
 		}
 
@@ -1912,7 +1913,7 @@ input, select, textarea {
 	}
 
 		#header > .container {
-			padding: 14em 0 7em 0;
+			padding: 1em 0 1.5em 0;
 			border-bottom: solid 2px #e5e5e5;
 			box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5;
 		}
@@ -1924,6 +1925,7 @@ input, select, textarea {
 			text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
 			font-size: 3em;
 			letter-spacing: 10px;
+			padding: 1em 0 0.5em 0;
 		}
 
 			#header h1 a {
@@ -1944,10 +1946,11 @@ input, select, textarea {
 
 	#nav {
 		position: absolute;
-		top: 3em;
+		top: 0px;
 		left: 0;
 		width: 100%;
 		cursor: default;
+		text-align: center;
 	}
 
 		#nav > ul > li {
@@ -2087,7 +2090,7 @@ input, select, textarea {
 		overflow: hidden;
 		background: #fff;
 		text-align: center;
-		padding: 6em 0;
+		padding: 1em 0 3em 0;
 	}
 
 		#features p {
@@ -2208,8 +2211,8 @@ input, select, textarea {
 		position: relative;
 		overflow: hidden;
 		border-top: solid 2px #e5e5e5;
-		background: #f0f0f0;
-		padding: 6em 0 8em 0;
+		/* background: #f0f0f0; */
+		padding: 4em 0 4em 0;
 	}
 
 		#footer form input[type="text"],
