@@ -1,5 +1,5 @@
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans:300,400,600, 800");
 
 /*
 	Strongly Typed by HTML5 UP
@@ -98,7 +98,7 @@ input, select, textarea {
 		}
 
 	body, input, textarea, select {
-		font-family: 'Source Sans Pro';
+		font-family: 'Open Sans';
 		font-weight: 300;
 		color: #777;
 		line-height: 1.65em;
@@ -112,7 +112,8 @@ input, select, textarea {
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-		color: inherit;
+		color: #e49ea9;
+		font-size: 1.3em;
 		text-decoration: none;
 		border: 0;
 	}
@@ -127,6 +128,7 @@ input, select, textarea {
 
 	h3 {
 		font-size: 1em;
+		font-family: Montserrat;
 		letter-spacing: 2px;
 		margin: 0 0 1.25em 0;
 	}
@@ -149,12 +151,12 @@ input, select, textarea {
 		}
 
 		a:hover {
-			color: #ed786a;
+			color: #ecb7bf;
 			border-bottom-color: rgba(255, 255, 255, 0);
 		}
 
 			a:hover strong {
-				color: #ed786a;
+				color: #ecb7bf;
 			}
 
 	strong, b {
@@ -192,6 +194,7 @@ input, select, textarea {
 	p {
 		text-align: justify;
 		margin-bottom: 2em;
+		font-family: Montserrat;
 	}
 
 	ul, ol, dl, table, blockquote {
@@ -1769,7 +1772,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		position: relative;
 		display: inline-block;
-		background: #ed786a;
+		background: #e49ea9;
 		color: #fff !important;
 		text-transform: uppercase;
 		border-radius: 4px;
@@ -1915,12 +1918,12 @@ input, select, textarea {
 		}
 
 		#header h1 {
-			font-family: 'Arvo';
-			font-weight: 700;
+			font-family: 'Open Sans';
+			font-weight: 800;
 			color: #ed786a;
 			text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
 			font-size: 3em;
-			letter-spacing: 13px;
+			letter-spacing: 10px;
 		}
 
 			#header h1 a {
