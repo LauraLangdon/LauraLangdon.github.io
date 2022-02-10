@@ -1811,7 +1811,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background: #ed786a;
+			background: #ecb7bf;
 		}
 
 		input[type="button"].alt,
@@ -1920,7 +1920,7 @@ input, select, textarea {
 		#header h1 {
 			font-family: 'Open Sans';
 			font-weight: 800;
-			color: #ed786a;
+			color: #ecb7bf;
 			text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
 			font-size: 3em;
 			letter-spacing: 10px;
@@ -2004,13 +2004,13 @@ input, select, textarea {
 
 			#nav > ul > li.active > a:before,
 			#nav > ul > li:hover > a:before {
-				background: #ED786A;
+				background: #ecb7bf;
 				color: #fff;
 			}
 
 			#nav > ul > li.active > a > span,
 			#nav > ul > li:hover > a > span {
-				color: #ED786A;
+				color: #ecb7bf;
 			}
 
 	.dropotron {
@@ -2077,7 +2077,7 @@ input, select, textarea {
 				-webkit-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
 				-ms-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
 				transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
-				color: #ed786a;
+				color: #ecb7bf;
 			}
 
 /* Features */
