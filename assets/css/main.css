@@ -100,7 +100,7 @@ input, select, textarea {
 	body, input, textarea, select {
 		font-family: 'Open Sans';
 		font-weight: 300;
-		rgb(133, 132, 132);
+		color: rgb(133, 132, 132);
 		line-height: 1.65em;
 		font-size: 15pt;
 	}
@@ -1967,7 +1967,7 @@ input, select, textarea {
 				text-decoration: none;
 				text-transform: uppercase;
 				font-weight: 400;
-				rgb(133, 132, 132);
+				color: rgb(133, 132, 132);
 				outline: 0;
 				display: block;
 			}
