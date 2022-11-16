@@ -2068,7 +2068,9 @@ button.alt:active,
 
 #nav > ul > li {
     display: inline-block;
+    padding-left: 2em;
     padding-right: 2em;
+    padding-top: 2em;
 }
 
 #nav > ul > li:last-child {
@@ -2410,7 +2412,7 @@ button.alt:active,
     /* Header */
 
     #header > .container {
-        padding: 12em 0 5em 0;
+        padding: 3em 0 3em 0;
     }
 
     #header h1 {
@@ -2426,7 +2428,7 @@ button.alt:active,
     /* Features */
 
     #features {
-        padding: 4em 0;
+        padding: 3em 0;
     }
 
     /* Banner */
