@@ -173,7 +173,7 @@ html {
 }
 
 body {
-    background: #f0f0f0;
+    background: #ffffff;
 }
 
 body.is-preload *,
@@ -217,7 +217,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-    color: #e49ea9;
+    color:#B55A6F;
     font-size: 1.1em;
     text-decoration: none;
     border: 0;
@@ -233,7 +233,7 @@ h2 {
 
 h3 {
     font-size: 1em;
-    font-family: "Montserrat";
+    font-family: "Raleway";
     letter-spacing: 2px;
     margin: 0 0 1.25em 0;
 }
@@ -262,12 +262,12 @@ a strong {
 }
 
 a:hover {
-    color: #ecb7bf;
+    color: #ffffff;
     border-bottom-color: rgba(255, 255, 255, 0);
 }
 
 a:hover strong {
-    color: #ecb7bf;
+    color: #ffffff;
 }
 
 strong,
@@ -307,7 +307,7 @@ blockquote {
 p {
     text-align: justify;
     margin-bottom: 2em;
-    font-family: "Montserrat";
+    font-family: "Raleway";
 }
 
 ul,
@@ -1886,7 +1886,8 @@ button,
     -webkit-appearance: none;
     position: relative;
     display: inline-block;
-    background: #e49ea9;
+    background: #B55A6F;
+
     color: #fff !important;
     text-transform: uppercase;
     border-radius: 4px;
@@ -1925,7 +1926,7 @@ input[type="submit"]:active,
 input[type="reset"]:active,
 button:active,
 .button:active {
-    background: #ecb7bf;
+    background: #ffffff;
 }
 
 input[type="button"].alt,
@@ -2021,20 +2022,18 @@ button.alt:active,
 #header {
     position: relative;
     position: relative;
-    background: #fff;
+    background: #ffffff;
     text-align: center;
 }
 
 #header > .container {
     padding: 1em 0 1.5em 0;
-    border-bottom: solid 2px #e5e5e5;
-    box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5;
 }
 
 #header h1 {
     font-family: "Raleway";
     font-weight: 800;
-    color: #ecb7bf;
+    color: #ffffff;
     text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
     font-size: 3em;
     letter-spacing: 10px;
@@ -2122,13 +2121,13 @@ button.alt:active,
 
 #nav > ul > li.active > a:before,
 #nav > ul > li:hover > a:before {
-    background: #ecb7bf;
+    background: #ffffff;
     color: #fff;
 }
 
 #nav > ul > li.active > a > span,
 #nav > ul > li:hover > a > span {
-    color: #ecb7bf;
+    color: #ffffff;
 }
 
 .dropotron {
@@ -2201,7 +2200,7 @@ button.alt:active,
     -ms-transition: color 0.25s ease-in-out,
         border-bottom-color 0.25s ease-in-out;
     transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
-    color: #ecb7bf;
+    color: #ffffff;
 }
 
 /* Features */
@@ -2209,9 +2208,11 @@ button.alt:active,
 #features {
     position: relative;
     overflow: hidden;
-    background: #fff;
+    background: #ffffff;
     text-align: center;
-    padding: 1em 0 3em 0;
+    padding: 1em 0 0em 0;
+    border-top: solid 2px #e5e5e5;
+    box-shadow: inset 0px -8px 0px 0px #fff, inset 0px 8px 0px 0px #fff;
 }
 
 #features p {
@@ -2287,7 +2288,7 @@ button.alt:active,
 #main {
     position: relative;
     overflow: hidden;
-    background: #fff;
+    background: #ffffff;
     padding: 6em 0;
 }
 
@@ -2342,7 +2343,7 @@ button.alt:active,
 #footer form input[type="password"],
 #footer form select,
 #footer form textarea {
-    background: #f7f7f7;
+    background: #ffffff;
 }
 
 #footer form input[type="text"]:focus,
@@ -2412,7 +2413,7 @@ button.alt:active,
     /* Header */
 
     #header > .container {
-        padding: 3em 0 3em 0;
+        padding: 3em 0 1em 0;
     }
 
     #header h1 {
@@ -2554,7 +2555,7 @@ button.alt:active,
         display: block;
         width: 60px;
         height: 40px;
-        background: rgba(232, 232, 232, 0.9);
+        background: #ffffff;
         border-radius: 4px;
         position: absolute;
         left: 5px;
@@ -2591,7 +2592,7 @@ button.alt:active,
         top: 0;
         width: 275px;
         z-index: 10002;
-        background: #444;
+        background: #ffffff;
         border-right: solid 2px #3c3c3c;
         font-weight: 400;
         text-transform: uppercase;
@@ -2602,7 +2603,7 @@ button.alt:active,
 
     #navPanel .link {
         display: block;
-        color: #ddd;
+        color: #ffffff;
         text-decoration: none;
         height: 44px;
         line-height: 44px;
