@@ -262,12 +262,12 @@ a strong {
 }
 
 a:hover {
-    color: #ffffff;
+    color: #f5adbe;
     border-bottom-color: rgba(255, 255, 255, 0);
 }
 
 a:hover strong {
-    color: #ffffff;
+    color: #f5adbe;
 }
 
 strong,
@@ -1918,7 +1918,7 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 button:hover,
 .button:hover {
-    background: #fd887a;
+    background: #f5adbe;
 }
 
 input[type="button"]:active,
@@ -2122,12 +2122,12 @@ button.alt:active,
 #nav > ul > li.active > a:before,
 #nav > ul > li:hover > a:before {
     background: #ffffff;
-    color: #fff;
+    color: #f5adbe;
 }
 
 #nav > ul > li.active > a > span,
 #nav > ul > li:hover > a > span {
-    color: #ffffff;
+    color: #f5adbe;
 }
 
 .dropotron {
