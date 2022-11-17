@@ -1,5 +1,5 @@
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Raleway:300,400,600, 800");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Raleway:400,600,800");
 
 /*
 	Strongly Typed by HTML5 UP
@@ -208,7 +208,7 @@ h5,
 h6 {
     font-weight: 600;
     text-transform: uppercase;
-    color: rgb(129, 125, 125);
+    color: rgb(78, 61, 70);
 }
 
 h1 a,
@@ -217,7 +217,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-    color:#B55A6F;
+    color:#B04F66;
     font-size: 1.1em;
     text-decoration: none;
     border: 0;
@@ -262,12 +262,12 @@ a strong {
 }
 
 a:hover {
-    color: #f5adbe;
+    color: #fa90a8;
     border-bottom-color: rgba(255, 255, 255, 0);
 }
 
 a:hover strong {
-    color: #f5adbe;
+    color: #fa90a8;
 }
 
 strong,
@@ -1772,7 +1772,7 @@ form {
 form label {
     font-weight: 600;
     text-transform: uppercase;
-    color: #888;
+    color:  rgb(78, 61, 70);
     display: block;
     /*margin: 0.5rem 0;*/
 }
@@ -1886,7 +1886,7 @@ button,
     -webkit-appearance: none;
     position: relative;
     display: inline-block;
-    background: #B55A6F;
+    background: #B04F66;
 
     color: #fff !important;
     text-transform: uppercase;
@@ -2032,7 +2032,6 @@ button.alt:active,
 
 #header h1 {
     font-family: "Raleway";
-    font-weight: 800;
     color: #ffffff;
     text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
     font-size: 3em;
@@ -2122,12 +2121,12 @@ button.alt:active,
 #nav > ul > li.active > a:before,
 #nav > ul > li:hover > a:before {
     background: #ffffff;
-    color: #f5adbe;
+    color: #fa90a8;
 }
 
 #nav > ul > li.active > a > span,
 #nav > ul > li:hover > a > span {
-    color: #f5adbe;
+    color: #fa90a8;
 }
 
 .dropotron {
@@ -2212,6 +2211,7 @@ button.alt:active,
     text-align: center;
     padding: 1em 0 0em 0;
     border-top: solid 2px #e5e5e5;
+    border-bottom: solid 2px #e5e5e5;
     box-shadow: inset 0px -8px 0px 0px #fff, inset 0px 8px 0px 0px #fff;
 }
 
@@ -2333,9 +2333,9 @@ button.alt:active,
 #footer {
     position: relative;
     overflow: hidden;
-    border-top: solid 2px #e5e5e5;
+    
     /* background: #f0f0f0; */
-    padding: 4em 0 4em 0;
+    padding: 2em 0 2em 0;
 }
 
 #footer form input[type="text"],
