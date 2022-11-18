@@ -2032,7 +2032,7 @@ button.alt:active,
 
 #header h1 {
     font-family: "Raleway";
-    color: #ffffff;
+    color: #B04F66;
     text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
     font-size: 3em;
     letter-spacing: 10px;
@@ -2046,7 +2046,7 @@ button.alt:active,
 #header p {
     text-transform: uppercase;
     font-weight: 400;
-    color: #888;
+    color: rgb(78, 61, 70);
     margin: 2.5em 0 0 0;
     font-size: 0.85em;
     letter-spacing: 3px;
@@ -2080,14 +2080,14 @@ button.alt:active,
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 400;
-    color: rgb(133, 132, 132);
+    color: rgb(78, 61, 70);
     outline: 0;
     display: block;
 }
 
 #nav > ul > li > a:before {
     display: inline-block;
-    background: #878787;
+    background:rgb(78, 61, 70);
     color: #e4e4e4;
     width: 2.25em;
     font-size: 0.8em;
@@ -2596,14 +2596,14 @@ button.alt:active,
         border-right: solid 2px #3c3c3c;
         font-weight: 400;
         text-transform: uppercase;
-        color: #888;
+        color: rgb(78, 61, 70);
         letter-spacing: 2px;
         font-size: 0.85em;
     }
 
     #navPanel .link {
         display: block;
-        color: #ffffff;
+        color: #B04F66;
         text-decoration: none;
         height: 44px;
         line-height: 44px;
