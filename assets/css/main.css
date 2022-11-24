@@ -262,12 +262,12 @@ a strong {
 }
 
 a:hover {
-    color: #fa90a8;
+    color: #ca8595;
     border-bottom-color: rgba(255, 255, 255, 0);
 }
 
 a:hover strong {
-    color: #fa90a8;
+    color: #ca8595;
 }
 
 strong,
@@ -1747,7 +1747,7 @@ ul.icons > li:before {
     top: 2.6em;
     display: block;
     font-size: 0.8em;
-    background: #878787;
+    background: rgb(78, 61, 70);
     color: #e4e4e4;
     width: 2em;
     height: 2em;
@@ -1918,7 +1918,7 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 button:hover,
 .button:hover {
-    background: #f5adbe;
+    background: #ca8595;
 }
 
 input[type="button"]:active,
@@ -2121,12 +2121,12 @@ button.alt:active,
 #nav > ul > li.active > a:before,
 #nav > ul > li:hover > a:before {
     background: #ffffff;
-    color: #fa90a8;
+    color: #ca8595;
 }
 
 #nav > ul > li.active > a > span,
 #nav > ul > li:hover > a > span {
-    color: #fa90a8;
+    color: #ca8595;;
 }
 
 .dropotron {
@@ -2365,6 +2365,7 @@ button.alt:active,
     text-align: center;
     margin-top: 6em;
     padding-top: 4em;
+    color:#3c3c3c;
 }
 
 /* XLarge */
@@ -2608,7 +2609,7 @@ button.alt:active,
         height: 44px;
         line-height: 44px;
         border: 0;
-        border-top: solid 1px #3c3c3c;
+       
         padding: 0 1em 0 1em;
     }
 
@@ -2618,7 +2619,7 @@ button.alt:active,
 
     #navPanel .link.depth-0 {
         font-weight: 600;
-        color: #fff;
+        color: #B04F66;
     }
 
     #navPanel .indent-1 {
