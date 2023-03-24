@@ -2036,7 +2036,7 @@ button.alt:active,
     text-shadow: 0.05em 0.075em 0 rgba(0, 0, 0, 0.1);
     font-size: 3em;
     letter-spacing: 10px;
-    padding: 1em 0 0.5em 0;
+    padding: 2em 0 0.5em 0;
 }
 
 #header h1 a {
@@ -2209,7 +2209,7 @@ button.alt:active,
     overflow: hidden;
     background: #ffffff;
     text-align: center;
-    padding: 1em 0 0em 0;
+    /* padding: 0em 0 0em 0; */
     /* border-top: solid 2px #e5e5e5; */
     /* border-bottom: solid 2px #e5e5e5; */
     box-shadow: inset 0px -8px 0px 0px #fff, inset 0px 8px 0px 0px #fff;
@@ -2355,7 +2355,7 @@ button.alt:active,
     background: #fff;
 }
 
-#footer h2 {
+#footer h2, h3, p{
     text-align: center;
 }
 
@@ -2431,7 +2431,7 @@ button.alt:active,
     /* Features */
 
     #features {
-        padding: 3em 0;
+        padding: 0.25em 0;
     }
 
     /* Banner */
@@ -2457,7 +2457,7 @@ button.alt:active,
     /* Footer */
 
     #footer {
-        padding: 4em 0;
+        padding: 1em 0;
     }
 
     /* Copyright */
@@ -2609,8 +2609,7 @@ button.alt:active,
         text-decoration: none;
         height: 44px;
         line-height: 44px;
-        border: 0;
-       
+        border: 0; 
         padding: 0 1em 0 1em;
     }
 
