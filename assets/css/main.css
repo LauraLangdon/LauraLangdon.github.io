@@ -2217,6 +2217,7 @@ button.alt:active,
 
 #features p {
     text-align: center;
+    color: rgb(78, 61, 70);
 }
 
 #features ul.actions {
