@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{/match}}{{#match @custom.color_scheme "Auto"}} class="auto-dark-mode"{{/match}}>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{meta_title page=(t "meta-page")}}</title>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{{>services/google_fonts}}
+		<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}">
+		{{{block "post_css"}}}
+		{{ghost_head}}
+	</head>
+	<body class="{{body_class}}">
+		<div class="global-wrap">
+			<div class="global-content">
+				{{>header}}
+				<main class="global-main">
+					{{{body}}}
+					{{>members/subscribe_form}}
+				</main>
+				{{>footer}}
+			</div>
+		</div>
+		{{>members/notifications}}
+		{{>search}}
+		<script src="{{asset "js/global.js"}}"></script>
+		{{#if pagination.pages}}
+		<script src="{{asset "js/index.js"}}"></script>
+		{{/if}}
+		{{#is "post, page"}}
+		<script src="{{asset "js/post.js"}}"></script>
+		{{/is}}
+		{{{block "search_js"}}}
+		{{{block "notifications_js"}}}
+		{{{block "account_js"}}}
+		{{{block "membership_js"}}}
+		{{ghost_foot}}
+	</body>
+</html>

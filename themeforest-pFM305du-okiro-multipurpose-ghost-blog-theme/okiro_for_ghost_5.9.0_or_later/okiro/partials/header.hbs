@@ -1,0 +1,34 @@
+<header class="header-section">
+	<div class="header-wrap">
+		<div class="header-logo{{#if @site.logo}} is-image{{/if}}">
+			{{#is "post, page, author, tag"}}
+			{{#if @site.logo}}
+			<a href="{{@site.url}}" class="is-image"><img src="{{@site.logo}}" alt="{{@site.title}}"></a>
+			{{else}}
+			<a href="{{@site.url}}" class="is-title">{{@site.title}}</a>
+			{{/if}}
+			{{else if @site.logo}}
+			<h1 class="is-image"><a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}"></a></h1>
+			{{else}}
+			<h1 class="is-title"><a href="{{@site.url}}">{{@site.title}}</a></h1>
+			{{/is}}
+		</div>
+		<div class="header-nav">
+			<input id="toggle" class="header-checkbox" type="checkbox">
+			<label class="header-toggle" for="toggle">
+				<span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</span>
+			</label>
+			<nav class="is-search">
+				<ul>{{navigation}}</ul>
+				<ul>
+					<li class="header-search"{{#if @custom.content_api_key_for_search}} id="search-open"{{else}} data-ghost-search{{/if}}><span>{{t "Search"}}</span>{{>icons/site/search}}</li>
+					{{>members/login_panel}}
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>

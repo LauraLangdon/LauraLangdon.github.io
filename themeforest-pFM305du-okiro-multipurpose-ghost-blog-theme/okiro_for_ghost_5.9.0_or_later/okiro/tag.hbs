@@ -1,0 +1,29 @@
+{{!< default}}
+{{#tag}}
+<div class="archive-section">
+	<div class="archive-wrap">
+		<div class="archive-container is-custom">
+			<div class="archive-content is-custom">
+				<h1 class="archive-title">{{name}}</h1>
+				{{#if description}}
+				<p class="archive-description global-zigzag">
+				{{>icons/site/zigzag}}
+				{{description}}
+			</p>
+				{{/if}}
+			</div>
+		</div>
+		<div class="archive-counter is-custom">
+			<span>{{../pagination.total}}</span>
+			<span>{{plural ../pagination.total empty=(t "No posts") singular=(t "Post") plural=(t "Posts")}}</span>
+		</div>
+	</div>
+	{{#if feature_image}}
+	<div class="archive-cover global-image">
+		{{>images/archive_image archive_image=feature_image alt=name}}
+	</div>
+	{{/if}}
+</div>
+{{/tag}}
+{{>loop}}
+{{pagination}}

@@ -1,0 +1,17 @@
+<div id="notifications" class="global-notification">
+	<div class="subscribe">{{t "You’ve successfully subscribed to {blog-title}" blog-title=@site.title}}</div>
+	<div class="signin">{{t "Welcome back! You’ve successfully signed in."}}</div>
+	<div class="signup">{{t "Great! You’ve successfully signed up."}}</div>
+	<div class="update-email">{{t "Success! Your email is updated."}}</div>
+	<div class="expired">{{t "Your link has expired"}}</div>
+	{{#if @member}}
+	<div class="checkout-success">{{t "Success! You now have access to additional content."}}</div>
+	{{else}}
+	<div class="checkout-success">{{t "Success! Check your email for magic link to sign-in."}}</div>
+	{{/if}}
+</div>
+{{#contentFor "notifications_js"}}
+<script>
+!function(){"use strict";const p=new URLSearchParams(window.location.search),isAction=p.has("action"),isStripe=p.has("stripe"),success=p.get("success"),action=p.get("action"),stripe=p.get("stripe"),n=document.getElementById("notifications"),a="is-subscribe",b="is-signin",c="is-signup",f="is-update-email",d="is-expired",e="is-checkout-success";p&&(isAction&&(action=="subscribe"&&success=="true"&&n.classList.add(a),action=="signup-paid"&&success=="true"&&n.classList.add(a),action=="signin"&&success=="true"&&n.classList.add(b),action=="signup"&&success=="true"&&n.classList.add(c),action=="updateEmail"&&success=="true"&&n.classList.add(f),success=="false"&&n.classList.add(d)),isStripe&&stripe=="success"&&n.classList.add(e),(isAction||isStripe)&&setTimeout(function(){window.history.replaceState(null,null,window.location.pathname),n.classList.remove(a,b,c,d,e,f)},5000))}();
+</script>
+{{/contentFor}}

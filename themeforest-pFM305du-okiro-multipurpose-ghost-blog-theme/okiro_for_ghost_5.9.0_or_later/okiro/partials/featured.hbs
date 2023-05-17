@@ -1,0 +1,19 @@
+{{#get "pages" limit="3" filter="featured:true" include="tags" as |featured_pages|}}
+{{#if featured_pages}}
+<div class="featured-section global-sections is-pages">
+	{{#foreach featured_pages}}
+	{{>sections_item pages=true}}
+	{{/foreach}}
+</div>
+{{/if}}
+{{/get}}
+
+{{#get "posts" limit="5" filter="featured:true" include="authors,tags" as |featured_posts|}}
+{{#if featured_posts}}
+<div class="featured-section global-sections is-posts{{>global sections_counter=true}}">
+	{{#foreach featured_posts}}
+	{{>sections_item label=(t "Featured")}}
+	{{/foreach}}
+</div>
+{{/if}}
+{{/get}}

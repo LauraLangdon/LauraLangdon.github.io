@@ -1,0 +1,18 @@
+{{!< default}}
+{{#post}}
+<article class="post-section">
+	{{>post_header}}
+	<div class="post-content">
+		{{#if access}}
+		{{content}}
+		{{else}}
+		{{#if html}}
+		<div class="members-teaser">
+			{{{html}}}
+		</div>
+		{{/if}}
+		{{>members/cta}}
+		{{/if}}
+	</div>
+</article>
+{{/post}}

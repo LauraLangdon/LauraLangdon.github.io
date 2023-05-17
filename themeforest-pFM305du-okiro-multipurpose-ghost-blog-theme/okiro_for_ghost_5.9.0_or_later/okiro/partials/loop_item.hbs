@@ -1,0 +1,112 @@
+{{#if item_first}}
+<article class="item is-hero{{^if feature_image}} no-image{{/if}}">
+	{{#if feature_image}}
+	{{^is "author, tag"}}
+	<small class="item-label global-label global-zigzag">
+		{{t "Latest posts"}}
+		{{>icons/site/zigzag}}
+	</small>
+	{{/is}}
+	{{/if}}
+	<div class="item-container">
+		{{#if feature_image}}
+		<a href="{{url}}" class="item-image global-image">
+			{{>images/loop_first_image}}
+		</a>
+		{{/if}}
+		<div class="item-content">
+			<div class="item-tags global-tags">
+				{{>members/visibility_label}}
+				{{tags limit="1" separator=""}}
+			</div>
+			<h2 class="item-title"><a href="{{url}}">{{title}}</a></h2>
+			{{^if custom_excerpt}}
+			{{#if excerpt}}
+			<p class="item-excerpt global-zigzag">
+				{{>icons/site/zigzag}}
+				{{excerpt words="24"}}...
+			</p>
+			{{/if}}
+			{{else}}
+			<p class="item-excerpt global-zigzag">
+				{{>icons/site/zigzag}}
+				{{custom_excerpt}}
+			</p>
+			{{/if}}
+			<div class="item-meta global-meta">
+				{{#if authors}}
+				<div class="item-profile-image">
+					{{#foreach authors}}
+					{{#if profile_image}}
+					<a href="{{url}}" class="global-image">
+						{{>images/author_small_image}}
+					</a>
+					{{/if}}
+					{{/foreach}}
+				</div>
+				{{/if}}
+				<div class="item-authors">
+					{{#has author="count:<3"}}
+					{{authors}}
+					{{else has author="count:>2"}}
+					{{authors limit="1"}}
+					{{t "and others"}}
+					{{/has}}
+					<div class="item-time">
+						<time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at format="LL"}}</time> ∙ {{reading_time minute=(t "1 minute read") minutes=(t "% minutes read")}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{{else}}
+{{#if @first}}
+<div>
+	{{/if}}
+	<article class="item {{post_class}}"{{>global internal_tag_color=true}}>
+		<a href="{{url}}" class="global-link" aria-label="{{title}}"></a>
+		<div class="item-container">
+			{{#if feature_image}}
+			<div class="item-image global-image">
+				{{>images/loop_image}}
+			</div>
+			{{/if}}
+			<div class="item-content">
+				<h2 class="item-title"><a href="{{url}}">{{title}}</a></h2>
+				<div class="item-meta global-meta global-pointer">
+					<div>
+						{{#has author="count:<3"}}
+						{{authors}}
+						{{else has author="count:>2"}}
+						{{authors limit="1"}}
+						{{t "and others"}}
+						{{/has}}
+					</div>
+				</div>
+				{{^if feature_image}}
+				{{^if custom_excerpt}}
+				{{#if excerpt}}
+				<p class="item-excerpt global-excerpt global-zigzag">
+					{{>icons/site/zigzag}}
+					{{excerpt words="24"}}...
+				</p>
+				{{/if}}
+				{{else}}
+				<p class="item-excerpt global-excerpt global-zigzag">
+					{{>icons/site/zigzag}}
+					{{custom_excerpt}}
+				</p>
+				{{/if}}
+				{{/if}}
+			</div>
+			<div class="item-tags global-tags global-pointer">
+				{{>members/visibility_label}}
+				{{tags limit="1" separator=""}}
+			</div>
+		</div>
+	</article>
+	{{#if @last}}
+</div>
+{{/if}}
+{{/if}}

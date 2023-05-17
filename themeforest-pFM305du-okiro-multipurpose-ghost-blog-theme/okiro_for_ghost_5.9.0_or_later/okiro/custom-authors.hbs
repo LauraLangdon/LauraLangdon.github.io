@@ -1,0 +1,63 @@
+{{!< default}}
+{{#get "authors" limit="all" include="count.posts" order="count.posts desc"}}
+<div class="tag-authors-section featured-section global-sections is-top{{#foreach authors}}{{#if @last}} global-sections-items-{{@number}}{{/if}}{{/foreach}}">
+	{{#foreach authors to="5"}}
+	{{#if @first}}
+	<h2 class="global-label global-zigzag">
+	{{t "Authors"}}
+	{{>icons/site/zigzag}}
+	</h2>
+	{{/if}}
+	<div class="item-section">
+		<a href="{{url}}" class="global-link" aria-label="{{name}}"></a>
+		<div>
+			{{#if profile_image}}
+			<div class="tag-authors-image global-image">
+				{{>images/section_image section_image=profile_image alt=name}}
+			</div>
+			{{else if cover_image}}
+			<div class="tag-authors-image global-image">
+				{{>images/section_image section_image=cover_image alt=name}}
+			</div>
+			{{/if}}
+			<div class="global-sections-content">
+				<h3><a href="{{url}}">{{name}}</a></h3>
+				<span class="tag-authors-meta">{{#if location}}{{t "from"}} {{location}} ∙ {{/if}}{{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</span>
+				{{#if bio}}
+				<p class="tag-authors-excerpt global-excerpt global-zigzag">
+					{{>icons/site/zigzag}}
+					{{bio}}
+				</p>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+	{{/foreach}}
+</div>
+{{#foreach authors from="6"}}
+{{#if @first}}
+<div class="tag-authors-section global-sections is-bottom">
+	<small class="tag-authors-heading global-heading">{{t "See also"}}</small>
+	{{/if}}
+	<div class="item-section">
+		<a href="{{url}}" class="global-link" aria-label="{{name}}"></a>
+		<div>
+			{{#if profile_image}}
+			<div class="tag-authors-image global-image">
+				{{>images/section_small_image section_small_image=profile_image alt=name}}
+			</div>
+			{{else if cover_image}}
+			<div class="tag-authors-image global-image">
+				{{>images/section_small_image section_small_image=cover_image alt=name}}
+			</div>
+			{{/if}}
+			<div class="global-sections-content">
+				<h3><a href="{{url}}">{{name}}</a></h3>
+			</div>
+		</div>
+	</div>
+	{{#if @last}}
+</div>
+{{/if}}
+{{/foreach}}
+{{/get}}

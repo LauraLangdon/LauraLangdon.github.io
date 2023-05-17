@@ -1,0 +1,120 @@
+{{!< default}}
+{{#post}}
+{{#if @member.paid}}
+<div class="account-section">
+	<div class="account-info">
+		<div class="account-image global-image">
+			{{>icons/site/user}}
+			{{#if @member.avatar_image}}
+			<img src="{{@member.avatar_image}}">
+			{{/if}}
+		</div>
+		<h1 class="account-title">{{#if @member.name}}{{@member.name}}{{else}}{{t "Your account"}}{{/if}}</h1>
+		<p class="account-description global-zigzag">
+			{{#if custom_excerpt}}
+			{{>icons/site/zigzag}}
+			{{custom_excerpt}}
+			{{else}}
+			{{>icons/site/zigzag}}
+			{{t "Nice, you’re a paying subscriber! You’ve an active account with access to all posts."}}
+			{{/if}}
+		</p>
+	</div>
+	{{#foreach @member.subscriptions}}
+	<div class="account-details">
+		<h2 class="account-details-title">{{t "Account details"}}</h2>
+		<div class="account-details-wrap">
+			<div class="account-detail-column">
+				<div>
+					<label class="account-detail-heading">{{t "Email address"}}</label>
+					<span class="account-detail-content">{{@member.email}}</span>
+				</div>
+				<div>
+					<label class="account-detail-heading">{{t "Your plan"}}</label>
+					<span class="account-detail-content">{{tier.name}} — {{price plan}}/{{plan.interval}}</span>
+				</div>
+			</div>
+			<div class="account-detail-column">
+				<div>
+					<label class="account-detail-heading">{{t "Card"}}</label>
+					<span class="account-detail-content">**** **** **** {{default_payment_card_last4}}</span>
+				</div>
+				<div>
+					<label class="account-detail-heading">
+						{{#if cancel_at_period_end}}
+						{{t "Expires"}}
+						{{else}}
+						{{t "Next bill date"}}
+						{{/if}}
+					</label>
+					<span class="account-detail-content">{{date current_period_end format="DD MMM YYYY"}}</span>
+				</div>
+			</div>
+			{{#if cancel_at_period_end}}
+			<small class="account-alert-expired">
+			{{t "Your subscription will expire on"}} — {{date current_period_end format="DD MMMM YYYY"}}. {{t "If you change your mind in the meantime you can turn auto-renew back on to continue your subscription."}}
+			</small>
+			{{/if}}
+		</div>
+	</div>
+	<div class="account-buttons">
+		{{cancel_link class="account-button" errorClass="cancel-error global-alert" cancelLabel=(t "Cancel subscription") continueLabel=(t "Continue subscription")}}
+		<a href="javascript:" class="account-button" data-portal="account">{{t "Account settings"}}</a>
+		<a href="javascript:" class="account-button-billing" data-members-edit-billing>
+			{{t "Edit billing info"}} <span>&rarr;</span>
+		</a>
+	</div>
+</div>
+{{/foreach}}
+{{else if @member}}
+<div class="account-section">
+	<div class="account-info">
+		<div class="account-image global-image">
+			{{>icons/site/user}}
+			{{#if @member.avatar_image}}
+			<img src="{{@member.avatar_image}}">
+			{{/if}}
+		</div>
+		<h1 class="account-title">{{#if @member.name}}{{@member.name}}{{else}}{{t "Your account"}}{{/if}}</h1>
+		<p class="account-description global-zigzag">
+			{{#if custom_excerpt}}
+			{{>icons/site/zigzag}}
+			{{custom_excerpt}}
+			{{else}}
+			{{>icons/site/zigzag}}
+			{{t "Currently, you’re not a paying subscriber. You’ve an active account with access to posts for subscribers only."}}
+			{{/if}}
+		</p>
+	</div>
+	<div class="account-details">
+		<h2 class="account-details-title">{{t "Account details"}}</h2>
+		<div class="account-details-wrap">
+			<div class="account-detail-column">
+				<div>
+					<label class="account-detail-heading">{{t "Email address"}}</label>
+					<span class="account-detail-content">{{@member.email}}</span>
+				</div>
+			</div>
+			<div class="account-detail-column">
+				<div>
+					<label class="account-detail-heading">{{t "Your plan"}}</label>
+					<span class="account-detail-content">{{t "Free"}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="account-buttons">
+		<a href="javascript:" class="account-button" data-portal="account">{{t "Account settings"}}</a>
+	</div>
+</div>
+<small class="account-heading global-heading">{{t "More posts? Choose your plan"}}</small>
+{{>members/tiers}}
+{{else}}
+{{#contentFor "account_js"}}
+<script>window.addEventListener("load",function(){window.location='{{@site.url}}'})</script>
+{{/contentFor}}
+{{/if}}
+{{#contentFor "account_js"}}
+<script>document.addEventListener("DOMContentLoaded",function(){const a=document.querySelector(".account a");a.classList.add("is-active")})</script>
+{{/contentFor}}
+{{/post}}

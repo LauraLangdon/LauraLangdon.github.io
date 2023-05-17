@@ -1,0 +1,11 @@
+{{#if primary_tag}}
+{{#get "posts" limit="4" filter="tags:{{primary_tag.slug}}+id:-{{id}}" include="authors,tags" as |related_posts|}}
+{{#if related_posts}}
+<div class="global-sections{{>global sections_counter=true}}">
+	{{#foreach related_posts}}
+	{{>sections_item label=(t "See more")}}
+	{{/foreach}}
+</div>
+{{/if}}
+{{/get}}
+{{/if}}

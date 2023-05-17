@@ -1,0 +1,67 @@
+{{#contentFor "post_css"}}
+<style>hr{background-image:url("data:image/svg+xml;utf8,{{>icons/site/zigzag}}")}</style>
+{{/contentFor}}
+<div class="post-header item is-hero{{^if feature_image}} no-image{{/if}}">
+	<div class="item-container">
+		{{#if feature_image}}
+		<div class="item-image global-image">
+			{{>images/post_image}}
+			{{#if feature_image_caption}}
+				<span>{{feature_image_caption}}</span>
+			{{/if}}
+		</div>
+		{{/if}}
+		<div class="item-content">
+			<div class="item-tags global-tags">
+				{{>members/visibility_label}}
+				{{tags separator=""}}
+			</div>
+			<h1 class="item-title">{{title}}</h1>
+			{{#if membership}}
+			<p class="membership-excerpt item-excerpt global-zigzag">
+				{{#if custom_excerpt}}
+				{{>icons/site/zigzag}}
+				{{custom_excerpt}}
+				{{else}}
+				{{>icons/site/zigzag}}
+				{{t "Unlock full access to {blog-title} and see the entire library of subscribers-only content & updates" blog-title=@site.title}}
+				{{/if}}
+			</p>
+			{{else}}
+			{{#if custom_excerpt}}
+			<p class="item-excerpt global-zigzag">
+				{{>icons/site/zigzag}}
+				{{custom_excerpt}}
+			</p>
+			{{/if}}
+			{{/if}}
+			{{#is "post"}}
+			<div class="item-meta global-meta">
+				{{#if authors}}
+				<div class="item-profile-image">
+					{{#foreach authors}}
+					{{#if profile_image}}
+					<a href="{{url}}" class="global-image">
+						{{>images/author_small_image}}
+					</a>
+					{{/if}}
+					{{/foreach}}
+				</div>
+				{{/if}}
+				<div class="item-authors">
+					{{#has author="count:<3"}}
+					{{authors}}
+					{{else has author="count:3"}}
+					{{authors to="2"}} {{t "and"}} {{authors from="3"}}
+					{{else has author="count:>3"}}
+					{{authors}}
+					{{/has}}
+					<div class="item-time">
+						<time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at format="LL"}}</time> ∙ {{reading_time minute=(t "1 minute read") minutes=(t "% minutes read")}}
+					</div>
+				</div>
+			</div>
+			{{/is}}
+		</div>
+	</div>
+</div>

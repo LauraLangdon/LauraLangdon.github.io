@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en" class="auto-dark-mode">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Okiro [2.2.1] — User Documentation</title>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="noindex nofollow">
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+		<style>@font-face {
+   font-family: 'Lausanne';
+   font-style: normal;
+   font-weight: 300;
+   font-display: block;
+   src: url("https://fueko.net/assets/fonts/TWKLausanne-300.woff2") format('woff2');
+}
+@font-face {
+   font-family: 'Roboto Mono';
+   font-style: normal;
+   font-weight: 400;
+   font-display: block;
+   src: url("https://fueko.net/assets/fonts/RobotoMono-Regular.ttf") format('truetype');
+}
+</style>		<style>/* //////////////////////////////////////////////////////////////////////////
+
+   fueko 2.3.0
+
+   /////////////////////////////////////////////////////////////////////// */
+   :root{--global-wrap:1620px;--margin-wrap-left-right:4vw;--border-radius:8px;--gap:1.2vw;--item-padding:14px;--font-family-system:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif;--font-family-one:'Lausanne','Inter',var(--font-family-system);--font-weight-one-light:300;--font-family-monospace:'Roboto Mono',monospace;--font-weight-monospace-regular:400;--color-font-one:#0d033a;--color-font-two:#979ca2;--color-font-three:#fff;--color-font-black:#0d033a;--color-one:#0d033a;--color-two:#f3f4f7;--color-three:#0d033a;--color-four:#979ca2;--color-white:#fff;--color-black:#0d033a;--color-body:#fff;--color-link:var(--color-font-one);--color-link-hover:var(--ghost-accent-color);--underline:underline;--underline-hover:underline}.dark-mode{--color-font-one:#f7f7f5;--color-font-two:#747987;--color-font-three:#171822;--color-font-black:#171822;--color-two:#1d1e2a;--color-three:#f7f7f5;--color-four:#747987;--color-white:#fff;--color-black:#171822;--color-body:#171822;--color-link:var(--ghost-accent-color);--color-link-hover:var(--ghost-accent-color);--underline:none;--underline-hover:underline;--item-padding:0}@media (prefers-color-scheme:dark){.auto-dark-mode{--color-font-one:#f7f7f5;--color-font-two:#747987;--color-font-three:#171822;--color-font-black:#171822;--color-two:#232432;--color-four:#747987;--color-three:#f7f7f5;--color-white:#fff;--color-black:#171822;--color-body:#171822;--color-link:var(--ghost-accent-color);--color-link-hover:var(--ghost-accent-color);--underline:none;--underline-hover:underline;--item-padding:0}.auto-dark-mode .is-logo-light{display:none}.auto-dark-mode .is-logo-dark{display:inline-flex}}@media (prefers-color-scheme:light){.auto-dark-mode .is-logo-light{display:inline-flex}.auto-dark-mode .is-logo-dark{display:none}}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{overflow:visible;box-sizing:content-box;height:0}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{text-decoration:underline;text-decoration:underline dotted;border-bottom:none}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type='button'],[type='reset'],[type='submit']{-webkit-appearance:button}button::-moz-focus-inner,[type='button']::-moz-focus-inner,[type='reset']::-moz-focus-inner,[type='submit']::-moz-focus-inner{padding:0;border-style:none}button:-moz-focusring,[type='button']:-moz-focusring,[type='reset']:-moz-focusring,[type='submit']:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{display:table;box-sizing:border-box;max-width:100%;padding:0;white-space:normal;color:inherit}progress{vertical-align:baseline}textarea{overflow:auto}[type='checkbox'],[type='radio']{box-sizing:border-box;padding:0}[type='number']::-webkit-inner-spin-button,[type='number']::-webkit-outer-spin-button{height:auto}[type='search']{outline-offset:-2px;-webkit-appearance:textfield}[type='search']::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}.splide__main{position:relative;visibility:hidden;outline:none}.splide__sr{position:absolute;overflow:hidden;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;padding:0;border:0}.splide__main.is-initialized,.splide__main.is-rendered{visibility:visible}.splide__main.is-initialized:not(.is-active) .splide__list{display:block}.splide__bg.is-active{background-color:var(--ghost-bg-color)!important}.splide__bg .splide__slide{min-height:2000px}.splide__list{display:flex;height:100%;margin:0!important;padding:0!important;-webkit-backface-visibility:hidden;backface-visibility:hidden;transform-style:preserve-3d}.splide__slide{position:relative;flex-shrink:0;box-sizing:border-box;margin:0;list-style-type:none!important;outline:none;transform:translateX(0)!important;-webkit-backface-visibility:hidden;backface-visibility:hidden}.splide__slide img{vertical-align:bottom}.splide__slider{position:relative}.splide__track{position:relative;z-index:0;overflow:hidden}.splide--draggable>.splide__slider>.splide__track,.splide--draggable>.splide__track{-webkit-user-select:none;-moz-user-select:none;user-select:none}.splide--fade>.splide__slider>.splide__track>.splide__list,.splide--fade>.splide__track>.splide__list{display:block}.splide--fade>.splide__slider>.splide__track>.splide__list>.splide__slide,.splide--fade>.splide__track>.splide__list>.splide__slide{position:absolute;z-index:0;top:0;left:0;opacity:0}.splide--fade>.splide__slider>.splide__track>.splide__list>.splide__slide.is-active,.splide--fade>.splide__track>.splide__list>.splide__slide.is-active{position:relative;z-index:1;opacity:1}html{font-size:62.5%}html,body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:transparent}body{font-family:var(--font-family-one);font-size:2rem;font-weight:var(--font-weight-one-light);line-height:1.5;word-wrap:break-word;word-break:break-word;color:var(--color-font-one);background-color:var(--color-body)}html,body{height:100%}body{display:flex;flex-direction:column}main{flex:1 0 auto}footer{flex-shrink:0}h1,h2,h3,h4,h5,h6{font-family:var(--font-family-one);font-weight:var(--font-weight-one-light);line-height:1.3;width:100%}button{font-family:var(--font-family-one);font-weight:var(--font-weight-one-light)}a{transition:color .1s ease;text-decoration:none}a,a:hover{color:var(--color-font-one)}figure{margin:0}.global-padding{max-width:var(--global-wrap);margin-top:15vh;margin-right:auto;margin-left:auto;padding-right:var(--margin-wrap-left-right);padding-left:var(--margin-wrap-left-right)}.global-link{position:absolute;z-index:-1;top:0;right:0;bottom:0;left:0}.global-title-big,.global-title-medium,.global-title-small{font-family:var(--font-family-one);font-weight:var(--font-weight-one-light);width:100%}.global-title-big,.global-title-medium{line-height:1.1}.global-title-small{line-height:1.5}.global-title-big a{position:relative;display:inline-block;margin-right:3%}.global-title-big a span{font-size:45%;position:absolute;top:0;right:0;transition:color .15s ease;transform:translate(120%,20%);color:var(--color-font-one)}.global-title-big a:hover,.global-title-big a:hover span,.global-title-medium a:hover{color:var(--ghost-accent-color)}.global-title-big{font-size:6.2vw;max-width:92%;margin:0}body.tag-themes .global-title-big{max-width:75%}.global-title-medium{font-size:7.8rem;max-width:90%;margin:14vh 0 6vh}.global-title-medium a{text-decoration:underline}.global-title-big + .global-title-medium,.global-title-medium + .global-title-medium{margin-top:8vh;margin-bottom:0}.global-title-big span,.global-title-medium span,.global-title-medium span a,.global-title-small{color:var(--color-font-two)}.global-title-small{font-size:2.8rem;margin:0}.global-subtitle-section{display:flex;width:100%;margin:8vh 0 1.5vh}.global-subtitle-section .is-heading{flex:1 0 50%}.global-subtitle-section .is-link{flex:1 0 20%;text-align:right}.global-subtitle-section .is-link:hover{color:var(--ghost-accent-color)}@media (min-width:1921px){.global-title-big{font-size:12.5rem}}@media (max-width:1600px){.global-title-big{font-size:10rem}.global-title-medium{font-size:6rem}}@media (max-width:1280px){.global-title-big{font-size:10rem}body.tag-themes .global-title-big,.global-title-big,.global-title-medium{max-width:100%}.global-title-medium{font-size:5rem;margin-bottom:3vh}.global-title-big + .global-title-medium,.global-title-medium + .global-title-medium{margin-top:5vh}.global-title-medium,.global-subtitle-section{margin-top:8vh}}@media (max-width:1024px){.global-title-big{font-size:8rem}.global-title-medium{font-size:4rem}.global-title-small{font-size:2.2rem}}@media (max-width:480px){.global-title-big{font-size:5rem}.global-title-medium{font-size:3.4rem}.global-title-small{font-size:2rem}.global-subtitle-section{margin-top:5vh}}body.is-scroll-back .global-top-button{bottom:20px}.global-top-button{position:fixed;right:1%;bottom:-80px;cursor:pointer;transition:bottom .6s ease}.global-top-button span{font-size:2.4rem;padding:8px 3px;transition:color .15s ease;color:var(--color-font-two);border:2px solid;border-radius:100px}.global-top-button span:hover{color:var(--color-font-one)}@media (max-width:1280px){.global-top-button{display:none}}header{position:fixed;z-index:99;top:0;right:0;left:0;display:flex;align-items:center;padding:2.2vh 2vw;pointer-events:none}header a{pointer-events:auto}header img{width:auto;height:40px;aspect-ratio:attr(width)/attr(height)}header nav{margin-left:auto}header nav ul{display:flex;margin:0;padding:0;word-break:normal}header nav ul,header nav ul li{list-style:none;text-decoration:none}header nav a{font-size:2.8rem;display:inline-block;margin-left:1.5vw;transition-timing-function:ease-in-out;transition-duration:.15s;transition-property:opacity,transform,color;opacity:1;color:var(--color-font-two)}header nav a.is-active{color:var(--color-font-one)}header nav a.is-see-themes{padding:0 15px;transition-timing-function:ease;transition-duration:.15s;transition-property:background-color,color;color:var(--color-black);border-radius:100px;background-color:var(--ghost-accent-color)}header nav a.is-see-themes:hover{color:var(--color-font-three);background-color:var(--color-three)}body.is-scroll-nav header nav a:not(.is-see-themes){transform:translateY(-30px);opacity:0}@media (max-width:1024px){header nav a{font-size:2.4rem}}@media (max-width:768px){header nav a:not(.is-see-themes){display:none}}@media (max-width:480px){header nav a{font-size:2.2rem}}.item{position:relative;margin:12vh 0;will-change:transform}.item-content{position:absolute;z-index:1;top:0;right:15%;bottom:0;left:15%;margin:0 auto;content:'';transition:opacity .4s ease;opacity:0}.item-content:hover{opacity:1}.item-content,.item-content > div{display:flex;flex-wrap:wrap;place-content:center}.item-content > div{pointer-events:none}.item-title{font-size:20rem;margin:0;transform:translateX(-5px);color:var(--color-white)}.item-buttons{display:flex;flex-wrap:wrap}.item-buttons a{font-size:2.6rem;line-height:1.7;display:inline-block;margin:5px;padding:0 .8vw;transition:transform .2s ease;border-radius:100px;background-color:var(--color-body)}.item-buttons a + a{color:var(--color-black);background-color:var(--ghost-accent-color)}.item-buttons a:hover{transform:translateY(-3px)}.item-content:hover .item-buttons a{pointer-events:auto}.item-image{line-height:0;display:block}.item-image img{width:100%;max-width:400px;height:100%;transition-timing-function:ease;transition-duration:.3s;transition-property:transform,opacity;border-radius:var(--border-radius);aspect-ratio:2.72/4}.item-content:hover + .item-image img{transform:scale(.98);opacity:.4}@media (max-width:1600px){.item-content{right:5%;left:5%}.item-title{font-size:17rem}.item-image img{max-width:350px}}@media (max-width:1280px){.item{margin-top:6vh;margin-bottom:6vh}.item-content > a{pointer-events:none}.item-title{font-size:15rem}.item-buttons a{font-size:2.2rem;padding-right:10px;padding-left:10px}.item-image img{max-width:300px}}@media (max-width:768px){.item-title{font-size:10rem}.item-image img{max-width:240px}.item-buttons a{font-size:2rem}.item-buttons a:hover{transform:translateY(0)}}@media (max-width:480px){.item-title{font-size:9rem}.item-image img{max-width:200px}}.slider-section{position:relative;z-index:1;cursor:grab;-webkit-animation:slideTop .8s ease;animation:slideTop .8s ease;text-align:center;background-color:var(--color-two)}.slider-section,.slider-section > div + div{overflow:hidden}.slider-section:active{cursor:grabbing}.slider-section > div + div{position:absolute;z-index:-1;top:0;right:0;bottom:0;left:25%;width:50%}@media (max-width:1280px){.slider-section > div + div{left:0;width:100%}}.collection-section{box-sizing:border-box;width:100%}.collection-nav{display:flex;flex-wrap:wrap;margin:11vh 0 0;padding:0;list-style:none}.collection-nav-item{font-size:3.4rem;line-height:1.1;margin-right:1.3vw;margin-bottom:2.3vh;padding:0;cursor:pointer;transition:color .2s ease;color:var(--color-font-two);border:none;outline:none;background-color:transparent}.collection-nav-item:hover,.collection-nav-item.show{color:var(--color-font-one)}.collection-nav-item sup{font-size:60%;display:inline-block;transform:translate(3px,-8px)}.collection-content{display:grid;width:100%;-webkit-animation:slideTop .8s ease;animation:slideTop .8s ease;text-align:center;gap:var(--gap);grid-auto-columns:1fr;grid-gap:var(--gap);grid-template-columns:repeat(2,1fr)}.collection-content .item{box-sizing:border-box;margin:0;padding:10vh 4vw}.collection-content .item:not(.is-selected){display:none}.collection-content.is-showcase{padding:1vh 0 3vh;background-color:var(--color-two);gap:0;grid-gap:0;grid-template-columns:repeat(4,1fr)}.collection-content.is-showcase .item{padding:2.5vw 2.5vw 2vw;aspect-ratio:3/4}.collection-content.is-showcase .item .item-image img{display:block;box-sizing:border-box;padding:var(--item-padding);background-color:var(--color-body);aspect-ratio:initial}.collection-content.is-showcase .item .item-image img:hover{transform:translateY(-3px)}.collection-content.is-showcase .item img,.collection-content.is-showcase .item figcaption{max-width:100%}.collection-content.is-showcase .item figcaption{font-size:1.4rem;line-height:1;display:inline-block;width:100%;margin:1.4vh 0 0 auto;text-align:right}.collection-content.is-showcase .item figcaption a{transition:opacity .15s ease}.collection-content.is-showcase .item figcaption > a:hover{opacity:.8}.collection-content.is-showcase .item figcaption a,.collection-content.is-showcase .item figcaption span{color:var(--color-font-two)}.collection-content.is-showcase .item figcaption span{display:block;margin-top:6px}@media (min-width:1481px){.collection-content.is-themes .item img{max-width:380px}.collection-content.is-themes .item-title{font-size:17rem}}@media (max-width:1280px){.collection-content .item{padding-top:6vh;padding-bottom:6vh}.collection-nav{margin-top:8vh;margin-bottom:2vh}.collection-nav-item{font-size:2.8rem;margin-right:15px;margin-bottom:1.2vh}.collection-content.is-showcase{grid-template-columns:repeat(3,1fr)}.collection-content.is-showcase .item.number-7,.collection-content.is-showcase .item.number-8{display:none}}@media (max-width:1024px){.collection-content.is-themes{grid-template-columns:repeat(1,1fr)}.collection-content.is-themes .item.number-3,.collection-content.is-themes .item.number-4{display:none}.collection-content.is-showcase .item .item-image img{padding:calc(var(--item-padding) / 1.5)}}@media (max-width:768px){.collection-nav{margin-top:6vh}.collection-nav-item{font-size:2.4rem}.collection-content.is-showcase{grid-template-columns:repeat(2,1fr)}.collection-content.is-showcase .item{padding:4vw 5vw}.collection-content.is-showcase .item.number-5,.collection-content.is-showcase .item.number-6{display:none}}@media (max-width:480px){.collection-content{gap:calc(var(--gap) * 3);grid-gap:calc(var(--gap) * 3)}.collection-content.is-showcase .item .item-image img{padding:calc(var(--item-padding) / 2.5)}.collection-content.is-showcase .item figcaption{font-size:1.2rem}}.contact-form{margin-top:10vh;-webkit-animation:slideTop .8s ease;animation:slideTop .8s ease}.contact-form input,.contact-form select,.contact-form select:invalid,.contact-form textarea{font-size:2.8rem;box-sizing:border-box;width:100%;margin:0 0 2em 0;padding:1vh 0;transition-timing-function:ease;transition-duration:.15s;transition-property:color,border-bottom-color;letter-spacing:1px;border:none;border-bottom:solid 2px var(--color-font-two);border-radius:0;outline:none;background-color:transparent;box-shadow:none}.contact-form input:hover,.contact-form input:focus,.contact-form select:hover,.contact-form select:focus,.contact-form textarea:hover,.contact-form textarea:focus{border-bottom-color:var(--ghost-accent-color)}.contact-form input::placeholder,.contact-form textarea::placeholder{transition:color .15s ease;color:var(--color-font-two)}.contact-form input::-moz-placeholder,.contact-form textarea::-moz-placeholder{opacity:1;color:var(--color-font-two)}.contact-form input,.contact-form input:focus,.contact-form select,.contact-form textarea,.contact-form button{color:var(--color-font-one)}.contact-form input:hover::placeholder,.contact-form input:focus::placeholder,.contact-form select:invalid:hover,.contact-form select:invalid:focus,.contact-form textarea:hover::placeholder,.contact-form textarea:focus::placeholder{color:var(--color-font-one)}.contact-name{float:left;width:45%}.contact-email{float:right;width:52%}.contact-subject{width:100%}.contact-subject select{cursor:pointer;-moz-appearance:none;-webkit-appearance:none}.contact-subject select:invalid{color:var(--color-font-two)}.contact-message textarea{width:100%;min-height:5em;resize:vertical}.contact-checkbox{font-size:1.6rem;line-height:1.2;display:grid;margin-bottom:6vh;pointer-events:none;gap:16px;grid-template-columns:10px auto}.contact-checkbox input[type="checkbox"]{display:grid;width:18px;height:18px;margin:0;padding:0;cursor:pointer;pointer-events:auto;border:2px solid var(--color-four);background-color:var(--color-body);-webkit-appearance:none;appearance:none;place-content:center}.contact-checkbox input[type="checkbox"]::before{width:10px;height:10px;content:"";transition:80ms transform ease-in-out;transform:scale(0);box-shadow:inset 10px 10px var(--color-font-one);clip-path:polygon(14% 44%,0 65%,50% 100%,100% 16%,80% 0%,43% 62%)}.contact-checkbox input[type="checkbox"]:checked::before{transform:scale(1)}.contact-checkbox label a{transition:color .1s ease;text-decoration:underline;pointer-events:auto}.contact-checkbox label a:hover{color:var(--ghost-accent-color)}.contact-form button{font-size:2.8rem;display:inline-block;padding:.6em 1em;cursor:pointer;transition-timing-function:ease;transition-duration:.2s;transition-property:background-color,color,border-color;border:solid 2px var(--color-three);border-radius:100px;outline:none;background-color:transparent}.contact-form button:hover{color:var(--color-black);border-color:var(--ghost-accent-color);background-color:var(--ghost-accent-color)}@media (max-width:768px){.contact-form{margin-top:6vh}.contact-name,.contact-email{width:100%}.contact-form input,.contact-form select,.contact-form select:invalid,.contact-form textarea{font-size:1.6rem}.contact-form button{font-size:2rem}}footer{position:relative;padding-bottom:3vh}footer > div{display:flex;flex-wrap:wrap}.footer-copyright,.footer-nav{font-size:1.5rem;line-height:1.3}.footer-nav ul{display:flex;margin:0;padding:0;list-style:none;word-break:normal}.footer-nav li:not(:last-child){margin-right:1vw}.footer-copyright{flex:1 0 50%}.footer-copyright,.footer-copyright a,.footer-nav li a{color:var(--color-font-two)}.footer-copyright a:hover{color:var(--color-font-one)}@media (max-width:480px){.footer-copyright{font-size:1.4rem}}@-webkit-keyframes slideTop{0%{transform:translateY(40px)}100%{transform:translateY(0)}}@keyframes slideTop{0%{transform:translateY(40px)}100%{transform:translateY(0)}}.custom-page{text-align:center}.custom-page > div{display:flex;flex-direction:column;justify-content:center;min-height:calc(100vh - 15vh - 15vh - 20px - 3vh);margin-top:15vh;margin-bottom:15vh}.custom-page h1{max-width:1100px;margin:0 auto}.custom-page .error-title{font-size:24rem;line-height:1}.custom-page p{margin-top:3vh;color:var(--color-font-two)}.custom-page a{font-size:2.8rem;display:inline-block;margin-top:6vh;padding:.6em 1em;cursor:pointer;transition-timing-function:ease;transition-duration:.2s;transition-property:background-color,color,border-color;color:var(--color-font-one);border:solid 2px var(--color-three);border-radius:100px;outline:none;background-color:transparent}.custom-page a:hover{color:var(--color-black);border-color:var(--ghost-accent-color);background-color:var(--ghost-accent-color)}@media (max-width:768px){.custom-page .error-title{font-size:18rem}}@media (max-width:480px){.custom-page .error-title{font-size:14rem}}.post-header{display:flex;align-items:center}.post-header-content{flex:1 0 50%;box-sizing:border-box;margin-bottom:13vh;padding-right:12%}.post-header-content p{font-size:3.6rem;line-height:1.2}.post-header-content .item-buttons a{font-size:3rem;margin:0 .8vw 0 0;padding:.1vw 1vw}.post-header-content .item-buttons a:first-of-type{order:2;color:var(--color-font-three);background-color:var(--color-three)}.post-header-image{flex:1 0 50%;grid-template-columns:repeat(1,1fr)}.post-content{font-size:3rem;max-width:900px;margin:10vh 0}.post-content h2{margin-top:8vh}.post-content a{color:var(--color-link);text-decoration:var(--underline)}.post-content a:hover{color:var(--color-link-hover);text-decoration:var(--underline-hover)}@media (max-width:1024px){.post-content{font-size:2.6rem}}@media (max-width:480px){.post-content{font-size:2rem}}.kg-width-wide,.kg-width-full,.kg-gallery-container,.kg-gallery-row,.kg-gallery-image,.kg-bookmark-card,.kg-bookmark-container,.kg-bookmark-content,.kg-bookmark-metadata,.kg-bookmark-title,.kg-bookmark-description,.kg-bookmark-icon,.kg-bookmark-author,.kg-bookmark-publisher,.kg-bookmark-thumbnail,.kg-callout-card,.kg-callout-card-emoji,.kg-callout-card-text,.kg-callout-card-background-grey,.kg-callout-card-background-white,.kg-callout-card-background-blue,.kg-callout-card-background-green,.kg-callout-card-background-yellow,.kg-callout-card-background-red,.kg-callout-card-background-pink,.kg-callout-card-background-purple,.kg-callout-card-background-accent,.kg-nft-card,.kg-nft-card-container,.kg-nft-metadata,.kg-nft-image,.kg-nft-header,.kg-nft-title,.kg-nft-logo,.kg-nft-creator,.kg-nft-description,.kg-toggle-card,.kg-toggle-heading,.kg-toggle-heading-text,.kg-toggle-card-icon,.kg-toggle-content,.kg-audio-card,.kg-audio-thumbnail,.kg-audio-thumbnail.placeholder,.kg-audio-player-container,.kg-audio-title,.kg-audio-player,.kg-audio-current-time,.kg-audio-time,.kg-audio-duration,.kg-audio-play-icon,.kg-audio-pause-icon,.kg-audio-seek-slider,.kg-audio-playback-rate,.kg-audio-mute-icon,.kg-audio-unmute-icon,.kg-audio-volume-slider,.kg-video-card,.kg-video-hide,.kg-video-container,.kg-video-overlay,.kg-video-large-play-icon,.kg-video-thumbnail,.kg-video-thumbnail.placeholder,.kg-video-player-container,.kg-video-title,.kg-video-player,.kg-video-current-time,.kg-video-time,.kg-video-duration,.kg-video-play-icon,.kg-video-pause-icon,.kg-video-seek-slider,.kg-video-playback-rate,.kg-video-mute-icon,.kg-video-unmute-icon,.kg-video-volume-slider,.kg-button-card,.kg-button-card.kg-align-left,.kg-button-card.kg-align-center,.kg-btn,.kg-btn-accent,.kg-product-card,.kg-product-card-btn-accent,.kg-product-card-button,.kg-product-card-container,.kg-product-card-description,.kg-product-card-image,.kg-product-card-rating,.kg-product-card-rating-active,.kg-product-card-rating-star,.kg-product-card-title,.kg-product-card-title-container,.kg-before-after-card,.kg-before-after-card-image-before,.kg-before-after-card-image-after,.kg-file-card,.kg-file-card-container,.kg-file-card-contents,.kg-file-card-title,.kg-file-card-caption,.kg-file-card-filename,.kg-file-card-filesize,.kg-file-card-medium,.kg-file-card-small,.kg-blockquote-alt{display:none}
+</style>		<style>/* //////////////////////////////////////////////////////////////////////////
+
+   Docs 2.1.0
+
+   //////////////////////////////////////////////////////////////////////////
+    
+   I. Customize
+   |
+   ├─ Light version
+   └─ Dark version
+
+   II. Theme
+   |
+   ├─ 1.Release
+   ├─ 2.Header
+   ├─ 3.Sidebar
+   ├─ 4.Docs
+   ├─ 5.Changelog
+   ├─ 6.Third-party materials
+   └─ 7.GScan
+
+   //////////////////////////////////////////////////////////////////////////
+
+   I. Customize
+
+   ////////////////////////////////////////////////////////////////////////// */
+
+:root {
+
+   /* Light version
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+   --color-border: #ebebec;
+   --color-code-inline: #edeef0;
+   --color-blue: #1b58ff;
+   --color-red: #ff362a;
+}
+
+/* Dark version
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.dark-mode {
+   --color-border: #3c3e48;
+   --color-code-inline: #323345;
+}
+
+/* Automatic dark version [duplicate dark version]
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (prefers-color-scheme:dark) {
+   .auto-dark-mode {
+      --color-border: #3c3e48;
+      --color-code-inline: #323345;
+   }
+
+}
+
+/* //////////////////////////////////////////////////////////////////////////
+
+   II. Theme
+   
+   ////////////////////////////////////////////////////////////////////////// */
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+   1.Release
+   –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.release-wrap {
+   display: grid;
+   width: 100%;
+   gap: var(--gap);
+   grid-auto-columns: 1fr;
+   grid-gap: var(--gap);
+   grid-template-columns: repeat(3, 1fr);
+}
+
+/* Item
+   –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.release-item {
+   font-family: var(--font-family-monospace);
+   font-size: 7rem;
+   font-weight: var(--font-weight-monospace-regular);
+   line-height: 1;
+   box-sizing: border-box;
+   width: 100%;
+   padding: .4em;
+   transition: transform .2s ease;
+   background-color: var(--color-two);
+   will-change: transform;
+}
+
+.release-item:hover {
+   transform: translateY(-3px);
+}
+
+.release-item small {
+   font-size: 2rem;
+   line-height: 1.3;
+   display: block;
+   margin: 1.2em 0 0 2px;
+   color: var(--color-font-two);
+}
+
+.release-item:first-child {
+   background-color: var(--ghost-accent-color);
+}
+
+.release-item:first-child,
+.release-item:first-child small {
+   color: var(--color-font-black);
+}
+
+/* RWD — Release
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (max-width:1024px) {
+   .release-wrap {
+      grid-template-columns: repeat(1, 1fr);
+   }
+
+   .release-item {
+      font-size: 4rem;
+   }
+
+   .release-item small {
+      font-size: 1.4rem;
+   }
+
+}
+
+@media (max-width:480px) {
+   .release-wrap {
+      gap: calc(var(--gap) * 3);
+      grid-gap: calc(var(--gap) * 3);
+   }
+
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+   2.Header
+   –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+header nav.is-back {
+   margin-right: auto;
+   margin-left: 0;
+}
+
+header nav.is-back a {
+   line-height: 38px;
+   box-sizing: border-box;
+   width: 42px;
+   height: 42px;
+   margin-left: -4px;
+   transition: color .15s ease;
+   text-align: center;
+   color: var(--color-font-two);
+   border: 2px solid;
+   border-radius: 100px;
+   background-color: var(--color-body);
+}
+
+header nav.is-back a:hover {
+   color: var(--color-font-one);
+}
+
+header nav a.is-version {
+   pointer-events: none;
+}
+
+header nav a.is-version span {
+   font-family: var(--font-family-monospace);
+   font-weight: var(--font-weight-monospace-regular);
+}
+
+body.is-scroll-nav header nav.is-back a {
+   transform: translateY(0);
+   opacity: 1;
+}
+
+/* RWD — Header
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (max-width:768px) {
+   header nav.is-back a {
+      display: block;
+      margin-left: 0px;
+   }
+
+   body.is-scroll-nav header nav a.is-see-themes {
+      transform: translateY(-30px);
+      opacity: 0;
+   }
+
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+   3.Sidebar
+   –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.sidebar-section {
+   flex: 0 0 24%;
+   min-width: 280px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   user-select: none;
+}
+
+.sidebar-section > ul {
+   position: fixed;
+   top: 0;
+   overflow-y: auto;
+   width: 100%;
+   max-width: 280px;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+/* Wrap
+   –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.sidebar-wrap:first-child {
+   margin-top: 15vh;
+}
+
+/* Title
+   –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.sidebar-title {
+   font-size: 2.4rem;
+   display: inline-block;
+   margin: 0 0 1.5vh;
+}
+
+/* List
+   –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.sidebar-wrap:not(.active) .sidebar-list {
+   display: none;
+}
+
+.sidebar-list {
+   margin: .5vh 0 1.8vh 0;
+   padding: 0;
+}
+
+.sidebar-list li {
+   font-size: 1.8rem;
+   line-height: 1.2;
+   position: relative;
+   display: block;
+   margin: 0 0 0 17px;
+   padding: 0 0 1.4vh;
+   list-style: none;
+   pointer-events: none;
+}
+
+.sidebar-list li a {
+   pointer-events: auto;
+   color: var(--color-font-two);
+}
+
+.sidebar-list li.active a,
+.sidebar-list li:hover a {
+   color: var(--color-font-one);
+}
+
+/* Active dot
+   –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.sidebar-list li.active::before {
+   position: absolute;
+   top: 5px;
+   left: -15px;
+   display: block;
+   width: 8px;
+   height: 8px;
+   content: '';
+   border-radius: 100px;
+   background-color: var(--ghost-accent-color);
+}
+
+/* RWD — Sidebar
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (max-width:1024px) {
+   .sidebar-section {
+      display: none;
+   }
+
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+   4.Docs
+   –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.docs-section {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.docs-wrap {
+   flex: 1 0 50%;
+   max-width: 860px;
+}
+
+.docs-content small,
+.docs-content h6 {
+   font-family: var(--font-family-monospace);
+   font-size: 1.8rem;
+   font-weight: var(--font-weight-monospace-regular);
+   line-height: 1.4;
+}
+
+/* Margins
+   –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.docs-content .kg-image-card,
+.docs-content pre,
+.docs-content .kg-code-card,
+.docs-content .kg-code-card figcaption,
+.docs-content blockquote,
+.docs-content mark,
+.docs-content ol {
+   margin: 0 0 5vh;
+}
+
+/* Content
+   –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.docs-content {
+   margin-bottom: 16vh;
+}
+
+.docs-wrap div:last-child .docs-content:last-child {
+   margin-bottom: 0;
+}
+
+.docs-content::before {
+   display: block;
+   visibility: hidden;
+   height: 15vh;
+   margin-top: -15vh;
+   content: '';
+}
+
+/* Links */
+.docs-content a {
+   text-decoration: var(--underline);
+   color: var(--color-link);
+}
+
+.docs-content a:hover {
+   text-decoration: var(--underline-hover);
+   color: var(--color-link-hover);
+}
+
+/* Paragraphs */
+.docs-content small {
+   color: var(--color-font-two);
+}
+
+.docs-content p {
+   font-size: 2rem;
+   line-height: 1.6;
+   width: 100%;
+   margin: 0 0 20px;
+   padding: 0;
+}
+
+/* Headers */
+.docs-content h2 {
+   font-size: 7.8rem;
+   line-height: 1.1;
+   margin: 0;
+}
+
+.docs-content h3,
+.docs-content h4 {
+   font-size: 4rem;
+}
+
+.docs-content h6 {
+   display: inline-block;
+   width: 100%;
+   margin: 0 0 20px;
+   padding: 5vh 0 10px;
+   color: var(--color-font-one);
+   border-bottom: 1px solid var(--color-border);
+}
+
+/* Images */
+.docs-content img {
+   line-height: 1;
+   width: 100%;
+   height: auto;
+   box-shadow: 0 10px 45px 0 rgba(0, 0, 0, .13);
+}
+
+/* Code */
+.docs-content code {
+   font-family: var(--font-family-monospace);
+   font-size: 80%;
+   font-weight: var(--font-weight-monospace-regular);
+   padding: 1px 6px 3px;
+   color: var(--color-font-one);
+   border-radius: 5px;
+   background-color: var(--color-code-inline);
+}
+
+.docs-content pre code {
+   font-size: 80%;
+   display: block;
+   margin: 0 0 10px;
+   padding: 25px 30px;
+   white-space: pre-wrap;
+   background-color: var(--color-two);
+}
+
+.docs-content .kg-code-card pre {
+   margin: 0;
+}
+
+/* Figcaption */
+.docs-content figcaption {
+   font-size: 1.6rem;
+   color: var(--color-font-two);
+}
+
+/* Alerts */
+.docs-content blockquote,
+.docs-content mark {
+   font-size: 2rem;
+   display: block;
+   box-sizing: border-box;
+   width: 100%;
+   max-width: 90%;
+   padding: 12px 20px;
+   border-left: 3px solid;
+   background-color: var(--color-body);
+}
+
+.docs-content blockquote {
+   border-color: var(--color-blue);
+}
+
+.docs-content mark {
+   color: var(--color-font-one);
+   border-color: var(--color-red);
+}
+
+/* Lists */
+.docs-content ol {
+   font-size: 1.7rem;
+   display: block;
+   box-sizing: border-box;
+   width: 100%;
+   padding-left: 43px;
+   counter-reset: li;
+}
+
+.docs-content ol li {
+   font-size: 2rem;
+   line-height: 1.6;
+   position: relative;
+   z-index: 1;
+   box-sizing: border-box;
+   width: 100%;
+   padding-bottom: 20px;
+   list-style: none;
+   counter-increment: li;
+}
+
+.docs-content ol li:last-of-type {
+   padding-bottom: 0;
+}
+
+.docs-content ol li::before {
+   font-family: var(--font-family-monospace);
+   font-size: 1.6rem;
+   font-weight: var(--font-weight-monospace-regular);
+   line-height: 32px;
+   position: absolute;
+   z-index: -1;
+   top: 14px;
+   left: -45px;
+   display: block;
+   width: 32px;
+   height: 32px;
+   margin-top: 2px;
+   content: counter(li);
+   transform: translate(0, -50%);
+   text-align: center;
+   color: var(--color-white);
+   border-radius: 50%;
+   background-color: var(--color-blue);
+}
+
+.docs-content ol.alert {
+   margin-top: 40px;
+}
+
+.docs-content ol.alert li::before {
+   content: '!';
+   background-color: var(--color-red);
+}
+
+/* Colors
+   –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.docs-content h6 + .colors {
+   margin-top: 10px;
+}
+
+.docs-content section {
+   position: relative;
+   display: flex;
+   align-content: center;
+   flex: 1 0 calc(50% - 40px);
+   flex-wrap: wrap;
+   box-sizing: border-box;
+   min-width: 315px;
+   max-width: calc(45% - 40px);
+   height: 100px;
+   margin: 0 40px 30px 0;
+   padding: 15px;
+   border: 1px solid var(--color-border);
+   border-radius: 100px;
+}
+
+.docs-content section h3 {
+   font-size: 2rem;
+   line-height: 1;
+   display: block;
+   width: 100%;
+   margin: -2px 0 12px 90px;
+}
+
+.docs-content section.default h3::after {
+   font-family: var(--font-family-monospace);
+   font-size: 1.3rem;
+   font-weight: var(--font-weight-monospace-regular);
+   line-height: 1.6;
+   position: absolute;
+   margin-left: 10px;
+   padding-right: 5px;
+   padding-left: 7px;
+   content: 'Default';
+   letter-spacing: 1.5px;
+   text-transform: uppercase;
+   color: var(--color-white);
+   border-radius: 4px;
+   background-color: var(--color-blue);
+}
+
+.docs-content section h3::before {
+   position: absolute;
+   top: 14px;
+   left: 15px;
+   width: 70px;
+   height: 70px;
+   content: '';
+   border-radius: 50%;
+}
+
+.docs-content section code {
+   font-size: 1.7rem;
+   line-height: 1;
+   margin-left: 90px;
+}
+
+/* RWD — Docs
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (max-width:1280px) {
+   .docs-content h2 {
+      font-size: 5rem;
+   }
+
+   .docs-content h3,
+   .docs-content h4 {
+      font-size: 3rem;
+   }
+
+   .docs-content {
+      margin-bottom: 10vh;
+   }
+
+}
+
+@media (max-width:480px) {
+   .docs-content h2 {
+      font-size: 4rem;
+   }
+
+   .docs-content h3,
+   .docs-content h4 {
+      font-size: 2.6rem;
+   }
+
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+   5.Changelog
+   –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.changelog-item h3,
+.changelog-item code {
+   font-family: var(--font-family-monospace);
+   font-weight: var(--font-weight-monospace-regular);
+}
+
+.changelog-item h3 {
+   font-size: 7.8rem;
+   margin: 0;
+}
+
+.changelog-item code {
+   font-size: 75%;
+   padding: 1px 6px 3px;
+   border-radius: 5px;
+   background-color: var(--color-code-inline);
+}
+
+.changelog-item span {
+   font-family: var(--font-family-one);
+   font-weight: var(--font-weight-one-light);
+   color: var(--color-font-two);
+}
+
+.changelog-item ul {
+   margin: 3vh 0 9vh;
+   padding: 0;
+}
+
+.changelog-item ul li {
+   font-size: 2.4rem;
+   display: block;
+   align-items: baseline;
+   width: 100%;
+   padding-bottom: 8px;
+   list-style: none;
+}
+
+.changelog-item ul li strong {
+   font-size: 1.3rem;
+   display: inline-block;
+   margin-right: 10px;
+   padding: 3px 6px;
+   transform: translateY(-3px);
+   letter-spacing: 1.5px;
+   word-break: normal;
+   border: 1px solid var(--color-four);
+   border-radius: 100px;
+}
+
+/* RWD — Changelog
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (max-width:1024px) {
+   .changelog-item h3 {
+      font-size: 6rem;
+   }
+
+   .changelog-item span {
+      line-height: 1;
+      display: block;
+   }
+
+}
+
+@media (max-width:480px) {
+   .changelog-item h3 {
+      font-size: 4rem;
+   }
+
+   .changelog-item ul {
+      margin-bottom: 5vh;
+   }
+
+   .changelog-item ul li {
+      font-size: 1.8rem;
+   }
+
+   .changelog-item ul li strong {
+      font-size: 1rem;
+   }
+
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+   6.Third-party materials
+   –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.third-party-section a {
+   font-size: 6rem;
+   display: inline-block;
+   margin-right: 1vw;
+   pointer-events: none;
+}
+
+.third-party-section a span {
+   pointer-events: auto;
+}
+
+.third-party-section a sup {
+   font-size: 65%;
+   margin-left: 3px;
+   transition: color .1s ease;
+   color: var(--color-font-two);
+}
+
+.third-party-section a:hover,
+.third-party-section a:hover sup {
+   color: var(--ghost-accent-color);
+}
+
+/* RWD — Third-party materials
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (max-width:1024px) {
+   .third-party-section a {
+      font-size: 3.6rem;
+   }
+
+}
+
+@media (max-width:480px) {
+   .third-party-section a {
+      font-size: 3rem;
+      display: block;
+   }
+
+}
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+   7.GScan
+   –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.kg-width-wide,.kg-width-full,.kg-gallery-container,.kg-gallery-row,.kg-gallery-image,.kg-bookmark-card,.kg-bookmark-container,.kg-bookmark-content,.kg-bookmark-metadata,.kg-bookmark-title,.kg-bookmark-description,.kg-bookmark-icon,.kg-bookmark-author,.kg-bookmark-publisher,.kg-bookmark-thumbnail,.kg-callout-card,.kg-callout-card-emoji,.kg-callout-card-text,.kg-callout-card-background-grey,.kg-callout-card-background-white,.kg-callout-card-background-blue,.kg-callout-card-background-green,.kg-callout-card-background-yellow,.kg-callout-card-background-red,.kg-callout-card-background-pink,.kg-callout-card-background-purple,.kg-callout-card-background-accent,.kg-nft-card,.kg-nft-card-container,.kg-nft-metadata,.kg-nft-image,.kg-nft-header,.kg-nft-title,.kg-nft-logo,.kg-nft-creator,.kg-nft-description,.kg-toggle-card,.kg-toggle-heading,.kg-toggle-heading-text,.kg-toggle-card-icon,.kg-toggle-content,.kg-audio-card,.kg-audio-thumbnail,.kg-audio-thumbnail.placeholder,.kg-audio-player-container,.kg-audio-title,.kg-audio-player,.kg-audio-current-time,.kg-audio-time,.kg-audio-duration,.kg-audio-play-icon,.kg-audio-pause-icon,.kg-audio-seek-slider,.kg-audio-playback-rate,.kg-audio-mute-icon,.kg-audio-unmute-icon,.kg-audio-volume-slider,.kg-video-card,.kg-video-hide,.kg-video-container,.kg-video-overlay,.kg-video-large-play-icon,.kg-video-thumbnail,.kg-video-thumbnail.placeholder,.kg-video-player-container,.kg-video-title,.kg-video-player,.kg-video-current-time,.kg-video-time,.kg-video-duration,.kg-video-play-icon,.kg-video-pause-icon,.kg-video-seek-slider,.kg-video-playback-rate,.kg-video-mute-icon,.kg-video-unmute-icon,.kg-video-volume-slider,.kg-button-card,.kg-button-card.kg-align-left,.kg-button-card.kg-align-center,.kg-btn,.kg-btn-accent,.kg-product-card,.kg-product-card-btn-accent,.kg-product-card-button,.kg-product-card-container,.kg-product-card-description,.kg-product-card-image,.kg-product-card-rating,.kg-product-card-rating-active,.kg-product-card-rating-star,.kg-product-card-title,.kg-product-card-title-container,.kg-before-after-card,.kg-before-after-card-image-before,.kg-before-after-card-image-after,.kg-file-card,.kg-file-card-container,.kg-file-card-contents,.kg-file-card-title,.kg-file-card-caption,.kg-file-card-filename,.kg-file-card-filesize,.kg-file-card-medium,.kg-file-card-small,.kg-blockquote-alt{display:none}
+</style>		
+		<style>:root {--ghost-accent-color: #96ff65;}</style>
+		<style>/* Colors of details */
+.colors section.violet h3::before{background-color:#cb73ff}.colors section.sapphire h3::before{background-color:#646eff}.colors section.blue h3::before{background-color:#467eff}.colors section.mint h3::before{background-color:#03d5b8}.colors section.apple h3::before{background-color:#11cf61}.colors section.coral h3::before{background-color:#f86c5f}.colors section.raspberry h3::before{background-color:#ff4a97}.colors section.goldenrod h3::before{background-color:#f5ab09}.colors section.orange h3::before{background-color:#ff7f00}.colors section.steel h3::before{background-color:#4c596e}
+/* Posts colors */
+.colors section.post-card-gray h3::before{background-color:#f4f4f7}.colors section.post-card-pearl h3::before{background-color:#ede7e7}.colors section.post-card-avocado h3::before{background-color:#e6f5ca}.colors section.post-card-cream h3::before{background-color:#fdeacc}.colors section.post-card-sand h3::before{background-color:#ffeab9}.colors section.post-card-rose h3::before{background-color:#fce6f0}.colors section.post-card-peach h3::before{background-color:#fddfd8}.colors section.post-card-iris h3::before{background-color:#e1e6ff}.colors section.post-card-sky h3::before{background-color:#e0e9ff}.colors section.post-card-lavender h3::before{background-color:#e8e5ff}.colors section.post-card-pool h3::before{background-color:#d7f8ff}.colors section.post-card-aqua h3::before{background-color:#d2f8f0}.colors section.post-card-seafoam h3::before{background-color:#c3f4df}.colors section.post-card-turquoise h3::before{background-color:#b0f3f7}
+</style>
+<script>
+(function(){if(window.location.href.search(new RegExp("\.zip[\\/]","i"))>=0){alert("It looks like you are in the preview mode of the zip archive. The documentation files are not displayed correctly. Please extract the zip archive (right-click on the archive downloaded from Themeforest and select 'Extract All'). Then reopen the index.html file from new location.");}})();
+</script>
+	</head>
+	<body>
+		<header>
+	<nav class="is-back">
+		<ul><li><a href="../../index.html" aria-label="back">←</a></li></ul>
+	</nav>
+	<nav>
+	<ul>
+		<li><a href="../../index.html" class="is-version">Okiro <span>2.2.1</span> — User Documentation</a></li>
+		<li><a href="https://fueko.net/themes/" class="is-see-themes">See Themes</a></li>
+	</ul>
+</nav>
+</header>
+		<main>
+			<div class="docs-section global-padding">
+	<div class="sidebar-section" id="sidebar">
+	<ul>
+		<li class="sidebar-wrap">
+			<a href="#getting-started" class="sidebar-title">Getting Started</a>
+			<ul class="sidebar-list">
+				<li><a href="#introduction">Introduction</a></li>
+				<li><a href="#uploading-a-theme-3">Uploading a theme</a></li>
+				<li><a href="#editing-a-theme">Editing a theme</a></li>
+				<li><a href="#updating-a-theme">Updating a theme</a></li>
+				<li><a href="#uploading-a-logo-3">Uploading a logo</a></li>
+				<li><a href="#adding-navigation-2">Adding navigation</a></li>
+			</ul>
+		</li>
+		<li class="sidebar-wrap">
+			<a href="#services" class="sidebar-title">Services</a>
+			<ul class="sidebar-list">
+				<li><a href="#formspree-2">Formspree</a></li>
+				<li><a href="#getform-2">Getform</a></li>
+				<li><a href="#disqus-2">Disqus</a></li>
+			</ul>
+		</li>
+		<li class="sidebar-wrap">
+			<a href="#activation" class="sidebar-title">Activation</a>
+			<ul class="sidebar-list">
+				<li><a href="#members-feature">Members feature</a></li>
+				<li><a href="#featured-section">Featured section</a></li>
+				<li><a href="#special-sections-2">Special sections</a></li>
+				<li><a href="#dark-version-2">Dark version</a></li>
+				<li><a href="#social-accounts">Social accounts</a></li>
+				<li><a href="#search-function-2">Search function</a></li>
+				<li><a href="#authors-page">Authors page</a></li>
+				<li><a href="#tags-page">Tags page</a></li>
+				<li><a href="#contact-page">Contact page</a></li>
+				<li><a href="#responsive-tables">Responsive tables</a></li>
+			</ul>
+		</li>
+		<li class="sidebar-wrap">
+			<a href="#members" class="sidebar-title">Members</a>
+			<ul class="sidebar-list">
+				<li><a href="#create-members-pages">Create members pages</a></li>
+				<li><a href="#login-panel-2">Login panel</a></li>
+				<li><a href="#sign-in-and-sign-up-pages">Sign-in and sign-up pages</a></li>
+				<li><a href="#membership-page-2">Membership page</a></li>
+				<li><a href="#account-page">Account page</a></li>
+				<li><a href="#subscribe-page-2">Subscribe page</a></li>
+				<li><a href="#subscription-form-2">Subscription form</a></li>
+			</ul>
+		</li>
+		<li class="sidebar-wrap">
+			<a href="#customization" class="sidebar-title">Customization</a>
+			<ul class="sidebar-list">
+				<li><a href="#accent-color-2">Accent color</a></li>
+				<li><a href="#footer-navigation-2">Footer navigation</a></li>
+				<li><a href="#dropdown-menu">Dropdown menu</a></li>
+				<li><a href="#colors-of-post-cards">Colors of post-cards</a></li>
+				<li><a href="#logo-height">Logo height</a></li>
+				<li><a href="#posts-per-page">Posts per page</a></li>
+				<li><a href="#theme-translation">Theme translation</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+	<div class="docs-wrap">
+		<div id="getting-started"id="getting-started"id="getting-started"id="getting-started"id="getting-started"id="getting-started">
+			<div class="docs-content" id="introduction">
+				<small>Getting Started</small>
+				<h2>Introduction</h2>
+				<h3 id="the-following-documentation-is-your-guide-to-the-new-theme-since-this-is-a-ghost-theme-documentation-it-is-assumed-that-you-have-a-basic-knowledge-of-the-ghost-app">The following documentation is your guide to the new theme. Since this is a Ghost theme documentation, it is assumed that you have a basic knowledge of the Ghost app.</h3><h3 id="if-you%E2%80%99re-just-starting-out-with-ghost-it-is-best-to-see-the-guides-in-the-official-ghost-help-center-%E2%80%93-check-this-out-and-you%E2%80%99ll-have-all-the-information-that-is-available">If you’re just starting out with Ghost, it is best to see the guides in the official <a href="https://ghost.org/help/">Ghost Help Center</a> – check this out and you’ll have all the information that is available.</h3>
+			</div>
+			<div class="docs-content" id="uploading-a-theme-3">
+				<small>Getting Started</small>
+				<h2>Uploading a theme</h2>
+				<h3 id="this-is-where-the-magic-happens-you-are-able-to-upload-activate-and-delete-a-theme-in-the-ghost-admin-of-your-publication">This is where the magic happens! You are able to upload, activate and delete a theme in the Ghost Admin of your publication.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>To upload a theme, go to the <strong>Design </strong>settings in the Ghost Admin and click <strong>Change theme </strong>in the bottom left corner.</li><li>Then click the <strong>Upload theme </strong>button in the upper right corner.</li><li>Once uploaded, click <strong>Activate</strong> to activate the theme on your site.</li></ol><h6 id="tip-after-uploading-the-theme-my-settings-in-design-section-were-reset-what-should-i-do">Tip: After uploading the theme my settings in Design section were reset, what should I do?</h6><p>The best solution is to always use the same name e.g. <code>theme-name.zip</code> – that way you will not have to enter your settings again after uploading a theme.</p><blockquote>Ghost assigns the settings in the <strong>Design</strong> section to the name of the uploaded archive. If you upload <code>theme-v1.zip</code> and <code>theme-v2.zip</code> – Ghost will recognize them as two different themes – so the settings will reset.</blockquote>
+			</div>
+			<div class="docs-content" id="editing-a-theme">
+				<small>Getting Started</small>
+				<h2>Editing a theme</h2>
+				<h3 id="in-many-places-in-the-following-documentation-you-will-encounter-information-about-editing-theme-files-to-edit-files-you-will-need-to-unzip-the-theme-archive-%E2%80%93-at-this-point-you-will-have-access-to-the-necessary-files-indicated-in-the-theme-documentation">In many places in the following documentation you will encounter information about editing theme files. To edit files, you will need to unzip the theme archive – at this point you will have access to the necessary files indicated in the theme documentation.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>To edit your theme files, download a copy of the theme. For this purpose go to the <strong>Design </strong>settings in the Ghost Admin and click <strong>Change theme</strong> in the bottom left corner.</li><li>Use the <strong>Advanced </strong>dropdown menu in the upper right corner to download your theme, then unzip the theme locally.</li><li>Once the theme is unzipped, the files can be edited using an code editor – make the changes indicated in the theme documentation.</li></ol><blockquote>You can edit files using applications (code editor) such as <a href="https://www.sublimetext.com/" rel="noopener">Sublime Text</a>, <a href="https://code.visualstudio.com/" rel="noopener">Visual Studio Code</a> or <a href="https://atom.io/" rel="noopener">Atom</a>. Using native text editors like TextEdit on macOS may add formatting may cause the theme to work incorrectly.</blockquote><!--kg-card-begin: html--><ol style="counter-reset: li 3">
+<li>When you’ve finished making changes to the theme code, re-zip the theme directory for uploading back to Ghost.</li>
+</ol><!--kg-card-end: html--><blockquote>To create a zip archive on a macOS, <strong>right-click</strong> on the theme folder to view the context menu. Then, click the <strong>Compress</strong> option. On Windows <strong>right-click</strong> on the theme folder, select <strong>Send to</strong>, and then select <strong>Compressed (zipped) folder</strong>.</blockquote><!--kg-card-begin: html--><ol style="counter-reset: li 4">
+<li>To upload a theme, go to the <strong>Design</strong> settings in the Ghost Admin and click <strong>Change theme</strong> in the bottom left corner.</li>
+<li>Then click the <strong>Upload theme</strong> button in the upper right corner.</li>
+    <li>Once uploaded, click <strong>Activate</strong> to activate the theme on your site.</li>
+</ol><!--kg-card-end: html-->
+			</div>
+			<div class="docs-content" id="updating-a-theme">
+				<small>Getting Started</small>
+				<h2>Updating a theme</h2>
+				<h3 id="updates-to-the-theme-ensure-compatibility-with-the-latest-ghost-version-performance-improvements-and-minor-bug-fixes-so-it-is-important-that-you-use-the-latest-available-theme-version">Updates to the theme ensure compatibility with the latest Ghost version, performance improvements and minor bug fixes. So it is important that you use the latest available theme version.</h3><!--kg-card-begin: markdown--><p><mark>If your theme features custom code, updating it with the latest versions will overwrite all your customizations.</mark></p>
+<!--kg-card-end: markdown--><h6 id="step-by-step">Step-by-Step</h6><ol><li>Download the latest version of the theme from <a href="https://themeforest.net/">Themeforest</a>, then unzip the archive locally.</li><li>Choose a theme version that is compatible with your Ghost version.</li><li>To upload a theme, go to the <strong>Design </strong>settings in the Ghost Admin and click <strong>Change theme </strong>in the bottom left corner.</li><li>Then click the <strong>Upload theme </strong>button in the upper right corner.</li><li>Once uploaded, click <strong>Activate</strong> to activate the theme on your site.</li></ol><h6 id="tip-what-if-you%E2%80%99ve-already-edited-the-theme-and-want-to-update-it-without-losing-your-changes">Tip: What if you’ve already edited the theme, and want to update it without losing your changes?</h6><p>That’s a bit trickier to deal with but not impossible, as long as you can remember what the changes were, or more specifically which files you edited. Unfortunately in Ghost when updating a theme you have to re-enter your changes.</p><p>For more advanced users, it can be helpful to use a comparing files app like <a href="https://www.sublimemerge.com/">Sublime Merge</a> – that way you can find your changes if you don’t remember them.</p><h6 id="tip-after-uploading-the-theme-my-settings-in-design-section-were-reset-what-should-i-do">Tip: After uploading the theme my settings in Design section were reset, what should I do?</h6><p>The best solution is to always use the same name e.g. <code>theme-name.zip</code> – that way you will not have to enter your settings again after uploading a theme.</p><blockquote>Ghost assigns the settings in the <strong>Design</strong> section to the name of the uploaded archive. If you upload <code>theme-v1.zip</code> and <code>theme-v2.zip</code> – Ghost will recognize them as two different themes – so the settings will reset.</blockquote>
+			</div>
+			<div class="docs-content" id="uploading-a-logo-3">
+				<small>Getting Started</small>
+				<h2>Uploading a logo</h2>
+				<h3 id="a-publication-logo-is-the-primary-logo-for-your-brand-and-is-displayed-across-your-theme">A publication logo is the primary logo for your brand and is displayed across your theme.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>To upload a logo, go to the <strong>Design</strong> settings in the Ghost Admin.</li><li>On the left you’ll see the option <strong>Brand </strong>– expand this settings list and go to the <strong>Publication logo </strong>position.</li><li>Click <strong>Upload logo</strong> to upload your logo.</li><li>Finally, click <strong>Save</strong> to activate.</li></ol><h6 id="tip-customize-the-logo">Tip: Customize the logo</h6><blockquote>By default, the logo height is <code>45px</code> for the header, and <code>35px</code> for the footer. </blockquote><ol><li>To change to another value go to the <strong>Code injection</strong> settings in the Ghost Admin and paste this code to the <strong>Site header</strong>:</li></ol><pre><code>&lt;style&gt;
+:root {
+   --height-logo-header: 45px;
+   --height-logo-footer: 35px;
+   --height-logo-signin: 45px;
+   --height-logo-mobile: 35px;
+}
+&lt;/style&gt;</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 1">
+<li>Change the current value to the expected value.</li>
+<li>Finally, click <strong>Save</strong> to activate.</li>
+</ol><!--kg-card-end: html-->
+			</div>
+			<div class="docs-content" id="adding-navigation-2">
+				<small>Getting Started</small>
+				<h2>Adding navigation</h2>
+				<h3 id="adding-a-navigation-menu-to-your-publication-can-be-implemented-and-edited-quickly-under-the-navigation-settings-menu-">Adding a navigation menu to your publication can be implemented and edited quickly under the 'Navigation' settings menu.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>To add a navigation, go to the <strong>Navigation</strong> settings in the Ghost Admin.</li><li>Once here, you can remove any navigation items that you want by using the trash icon to the right of the item. You can add new items by just typing them in. You can change the order by clicking on the icon on the left and dragging it to the spot you want.</li><li>Once your items are added, click <strong>Save</strong> to activate new navigation on your site.</li></ol><h6 id="tip-adding-secondary-navigation-in-the-footer">Tip: Adding secondary navigation in the footer</h6><blockquote>There are two types of navigation, primary and secondary. Primary navigation is used in the theme header, secondary in the footer. Please read the section on <a href="#footer-navigation-2">Footer navigation</a> for more information.</blockquote>
+			</div>
+		</div>
+		<div id="services"id="services"id="services">
+			<div class="docs-content" id="formspree-2">
+				<small>Services</small>
+				<h2>Formspree</h2>
+				<h3 id="formspree-is-a-service-that-hosts-forms-so-that-you-can-gather-content-from-your-visitors-get-email-notifications-of-every-submission"><a href="https://formspree.io/">Formspree</a> is a service that hosts forms so that you can gather content from your visitors. Get email notifications of every submission.</h3><h6 id="step-1-add-your-formspree-endpoint">Step 1: Add your Formspree endpoint</h6><ol><li>Go to the <strong>Design</strong> settings in the Ghost Admin.</li><li>On the left you’ll see the option <strong>Site-wide </strong>– expand this settings list and go to the <strong>Contact form endpoint </strong>position.</li><li>Paste your Formspree endpoint, e.g. <code>https://formspree.io/f/xhyplkej</code></li><li>Finally, click <strong>Save</strong> to activate.</li></ol><h6 id="step-2-add-a-contact-page">Step 2: Add a contact page</h6><ol><li>Create a new page, add a <strong>Page title</strong>, and open the <strong>Page settings</strong> panel using the icon in the top right of the screen.</li><li>At the bottom of the panel you’ll see a dropdown menu titled <strong>Template</strong>.</li><li>Use the dropdown to select the <strong>Contact </strong>template, close the panel.</li><li>Click <strong>Publish</strong>.</li></ol><h6 id="tip-adding-page-to-the-navigation">Tip: Adding page to the navigation</h6><blockquote>If you want this page to appear in the main navigation of your site, just add it to the <strong>Navigation</strong> list in your site settings.</blockquote>
+			</div>
+			<div class="docs-content" id="getform-2">
+				<small>Services</small>
+				<h2>Getform</h2>
+				<h3 id="getform-is-a-form-backend-platform-that-lets-you-handle-your-forms-on-your-websites-you-can-set-up-a-form-and-start-collecting-submissions-to-your-form-within-minutes"><a href="https://getform.io/">Getform</a> is a form backend platform that lets you handle your forms on your websites. You can set up a form and start collecting submissions to your form within minutes.</h3><h6 id="step-1-add-your-getform-endpoint">Step 1: Add your Getform endpoint</h6><ol><li>Go to the <strong>Design</strong> settings in the Ghost Admin.</li><li>On the left you’ll see the option <strong>Site-wide </strong>– expand this settings list and go to the <strong>Contact form endpoint </strong>position.</li><li>Paste your Getform endpoint, e.g. <code>https://getform.io/f/3fc0b738-4221-415e-8288-zf62f84aff50</code></li><li>Finally, click <strong>Save</strong> to activate.</li></ol><h6 id="step-2-add-a-contact-page">Step 2: Add a contact page</h6><ol><li>Create a new page, add a <strong>Page title</strong>, and open the <strong>Page settings</strong> panel using the icon in the top right of the screen.</li><li>At the bottom of the panel you’ll see a dropdown menu titled <strong>Template</strong>.</li><li>Use the dropdown to select the <strong>Contact </strong>template, close the panel.</li><li>Click <strong>Publish</strong>.</li></ol><h6 id="tip-adding-page-to-the-navigation">Tip: Adding page to the navigation</h6><blockquote>If you want this page to appear in the main navigation of your site, just add it to the <strong>Navigation</strong> list in your site settings.</blockquote>
+			</div>
+			<div class="docs-content" id="disqus-2">
+				<small>Services</small>
+				<h2>Disqus</h2>
+				<h3 id="disqus-is-a-commenting-platform-that-lets-you-communicate-directly-with-your-readers-the-theme-integrates-with-disqus-so-you-can-collect-user%E2%80%99s-feedback-on-your-articles"><a href="https://disqus.com/">Disqus</a> is a commenting platform that lets you communicate directly with your readers. The theme integrates with Disqus so you can collect user’s feedback on your articles.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Go to the <strong>Design</strong> settings in the Ghost Admin.</li><li>On the left you’ll see the option <strong>Post </strong>– expand this settings list and go to the <strong>Disqus shortname </strong>position.</li><li>Paste your <strong>Disqus shortname</strong>, e.g. copy only <code>your-site</code> from <code>your-site.disqus.com</code></li><li>Finally, click <strong>Save</strong> to activate.</li></ol>
+			</div>
+		</div>
+		<div id="activation"id="activation"id="activation"id="activation"id="activation"id="activation"id="activation"id="activation"id="activation"id="activation">
+			<div class="docs-content" id="members-feature">
+				<small>Activation</small>
+				<h2>Members feature</h2>
+				<h3 id="the-members-feature-allows-you-to-turn-any-site-into-a-membership-business-with-member-signup-paid-subscriptions-and-email-newsletters-">The Members feature allows you to turn any site into a membership business with member signup, paid subscriptions and email newsletters.</h3><!--kg-card-begin: markdown--><p><mark>The members feature is enabled by default. However, you need to create the following pages to avoid the 404 error.</mark></p>
+<!--kg-card-end: markdown--><h6 id="step-by-step">Step-by-Step</h6><ol><li>Create <a href="#sign-in-and-sign-up-pages">sign-in and sign-up pages</a></li><li>Create an <a href="#account-page">account page</a></li></ol><h6 id="tip-what-to-do-in-case-of-an-400-error-with-message-e-g-missing-template-members-signin-hbs-for-route-signin-">Tip: What to do in case of an 400 error with message e.g. 'Missing template members/signin.hbs for route /signin/'</h6><blockquote>The error indicates that there was previously used a <code>routes.yaml</code> file with another theme that required it. To solve the problem, reset the <code>routes.yaml</code> file to its default settings.</blockquote><figure class="kg-card kg-code-card"><pre><code>routes:
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/</code></pre><figcaption>Default settings for routes.yaml file.</figcaption></figure>
+			</div>
+			<div class="docs-content" id="featured-section">
+				<small>Activation</small>
+				<h2>Featured section</h2>
+				<h3 id="select-which-posts-or-pages-you-want-to-appear-at-the-top-of-your-site-in-the-featured-section-">Select which posts or pages you want to appear at the top of your site in the featured section.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Open the post you would like to add to the featured section.</li><li>Then, go to the <strong>Post/Page settings</strong> panel using the icon in the top right of the screen.</li><li>At the bottom of the panel, you’ll see a checkbox titled <strong>Feature this post/page</strong>.</li><li>Click on the checkbox, close the panel.</li></ol><h6 id="tip-how-to-remove-featured-posts-from-the-main-collection">Tip: How to remove featured posts from the main collection?</h6><ol><li>Go to the <strong>Labs</strong> settings in the Ghost Admin and scroll down until you see the <strong>Routes</strong> section.</li><li>Upload the <code>routes.yaml</code> file with these settings:</li></ol><figure class="kg-card kg-code-card"><pre><code>routes:
+
+collections:
+  /:
+    permalink: /{slug}/
+    filter: featured:false
+    template: index
+  /featured/:
+    permalink: /featured/{slug}/
+    filter: featured:true
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/</code></pre><figcaption>This would set an additional <code>/featured/</code> URL address for all posts that has been marked as featured. This change is required to remove those posts from the main collection.</figcaption></figure><!--kg-card-begin: markdown--><p><mark>The most important thing to know when working with <code>.yaml</code> is that it uses indentation to denote structure. That means the only type of nesting which works is 2 spaces. The most common reason for <code>.yaml</code> files not working is when you accidentally use the wrong type or quantity of spacing for indentation.</mark></p>
+<!--kg-card-end: markdown-->
+			</div>
+			<div class="docs-content" id="special-sections-2">
+				<small>Activation</small>
+				<h2>Special sections</h2>
+				<h3 id="we-have-added-an-easy-way-to-add-the-special-section-with-posts-on-the-homepage-below-the-load-more-button-">We have added an easy way to add the special section with posts on the homepage, below the 'Load more' button.</h3><h6 id="step-by-step">Step-by Step</h6><ol><li>You’ll need to open the theme’s <code>../partials/sections.hbs</code> file in your code editor.</li><li>The only thing you need to change is <strong>XXXXX</strong> – which should be replaced with your own tag,<strong> </strong>for example <code>filter="tag:your-tag-slug"</code> and <code>label="Your Tag Name"</code>.</li></ol><blockquote>Please note that in the case of 'filter' atribute, you must enter the tag’s slug, not its name.</blockquote><!--kg-card-begin: html--><ol style="counter-reset: li 2">
+    <li>Then, uncomment the block – remove the lines which contains <code>{{!--</code> and <code>--}}</code></li>
+    <li>Save your <code>sections.hbs</code> file in <code>../partials/</code> folder.</li>
+</ol><!--kg-card-end: html--><h6 id="tip-how-to-add-a-section-with-posts-for-members-only">Tip: How to add a section with posts for members only?</h6><ol><li>Add the below code to the <code>sections.hbs</code> file.</li></ol><pre><code>{{#get "posts" limit="4" filter="visibility:members" include="authors,tags"}}
+&lt;div class="global-sections{{&gt;global sections_counter=true}}"&gt;
+	{{#foreach posts}}
+	{{&gt;sections_items label="Members only"}}
+	{{/foreach}}
+&lt;/div&gt;
+{{/get}}</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 1">
+<li>Save your <code>sections.hbs</code> file in <code>../partials/</code> folder.</li>
+</ol><!--kg-card-end: html--><h6 id="tip-how-to-add-a-section-with-posts-for-paid-members-only">Tip: How to add a section with posts for paid-members only?</h6><ol><li>Add the below code to the <code>sections.hbs</code> file.</li></ol><pre><code>{{#get "posts" limit="4" filter="visibility:paid" include="authors,tags"}}
+&lt;div class="global-sections{{&gt;global sections_counter=true}}"&gt;
+	{{#foreach posts}}
+	{{&gt;sections_items label="Paid-members only"}}
+	{{/foreach}}
+&lt;/div&gt;
+{{/get}}</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 1">
+<li>Save your <code>sections.hbs</code> file in <code>../partials/</code> folder.</li>
+</ol><!--kg-card-end: html-->
+			</div>
+			<div class="docs-content" id="dark-version-2">
+				<small>Activation</small>
+				<h2>Dark version</h2>
+				<h3 id="the-dark-version-introduces-a-new-look-for-your-site">The dark version introduces a new look for your site.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Go to the <strong>Design</strong> settings in the Ghost Admin.</li><li>On the left you’ll see the option <strong>Site-wide </strong>– expand this settings list and go to the <strong>Color scheme </strong>position.</li><li>Use the dropdown menu to select the <strong>Dark</strong> option.</li><li>Finally, click <strong>Save</strong> to activate.</li></ol><h6 id="tip-dark-version-depending-on-operating-system-preferences">Tip: Dark version depending on operating system preferences</h6><blockquote>Modern operating systems (Windows, macOS, iOS, etc.) allow users to choose their preference for light or dark system themes. The below feature is used to detect if the user has requested the system to use a light or dark color theme.</blockquote><ol><li>To activate an auto dark version based on user operating system preferences, go to the <strong>Design</strong> settings in the Ghost Admin.</li><li>On the left you’ll see the option <strong>Site-wide </strong>– expand this settings list and go to the <strong>Color scheme </strong>position.</li><li>Use the dropdown menu to select the <strong>Auto </strong>option.</li><li>Finally, click <strong>Save</strong> to activate.</li></ol>
+			</div>
+			<div class="docs-content" id="social-accounts">
+				<small>Activation</small>
+				<h2>Social accounts</h2>
+				<h3 id="enter-your-facebook-and-twitter-account-details-in-the-general-settings-of-the-ghost-admin-to-enable-links-to-your-social-profiles-">Enter your Facebook and Twitter account details in the 'General' settings of the Ghost Admin to enable links to your social profiles.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>To add Facebook and Twitter account to your publication, go to the <strong>General</strong> settings in the Ghost Admin.</li><li>Then scroll down and at the bottom, you’ll see the option <strong>Social accounts</strong>.</li><li>Once adding social accounts, click <strong>Save</strong> to activate.</li></ol><h6 id="tip-adding-other-social-accounts-to-the-footer">Tip: Adding other social accounts to the footer</h6><ol><li>Open <code>../partials/footer_icons.hbs</code> file in your code editor.</li><li>Then, uncomment the block – remove the lines which contains <code>{{!--</code> and <code>--}}</code> for the chosen profile icon.</li><li>Now replace the <code>#</code> for each <code>href</code> value with your own profile links.</li><li>Save your <code>footer_icons.hbs</code> file in <code>../partials/</code> folder.</li></ol>
+			</div>
+			<div class="docs-content" id="search-function-2">
+				<small>Activation</small>
+				<h2>Search function</h2>
+				<h3 id="the-search-function-isn%E2%80%99t-a-built-in-function-in-ghost-the-theme-uses-the-search-function-on-the-client-side-with-the-use-of-the-browser">The search function isn’t a built-in function in Ghost. The theme uses the search function on the client-side with the use of the browser.</h3><blockquote>To work properly, the search function requires <strong>Content API key</strong>.</blockquote><h6 id="step-1-generating-content-api-key">Step 1: Generating Content API key</h6><ol><li>To generate <strong>Content API key</strong>, go to the <strong>Integrations</strong> settings in the Ghost Admin.</li><li>Click <strong>Add custom integration</strong>, then give the new integration a name, like 'Search', and click the <strong>Create</strong> button.</li><li>Copy your <strong>Content API key</strong> and click <strong>Save</strong>.</li></ol><h6 id="step-2-activate-the-search-function">Step 2: Activate the search function</h6><ol><li>Go to the <strong>Design</strong> settings in the Ghost Admin.</li><li>On the left you’ll see the option<strong> Site-wide</strong> – expand this settings list and go to the <strong>Search API key</strong> position.</li><li>Paste your <strong>Content API key</strong>.</li><li>Finally, click <strong>Save changes</strong> to activate.</li></ol><h6 id="about-the-search-function">About the search function</h6><p>Search function in Ghost is a complex issue but generally we can divide it into three categories:</p><p><strong>Search function on client-side with the use of browser.</strong><br>It’s the most commonly used search function option in the Ghost themes. It requires adding the appropriate script to the theme. The downside of this solution is the low efficiency. It works better with small and medium blogs. Beside the flaws it’s still the easiest solution for smaller blogs. <strong>This option is used in this theme.</strong></p><p><strong>Search function on server-side in databases.</strong><br>It’s a solution that the Ghost team is currently working at. More on this subject: <a href="https://github.com/TryGhost/Ghost/issues/5321">GitHub Ghost</a>, <a href="https://forum.ghost.org/t/search-for-ghost/832">Ghost Forum</a></p><p><strong>Searching function using external services.</strong><br>If your blog is very big (hundreds or thousands of posts) we recommend using the third solution – using an external service. Calculations are conducted on its servers and the results are sent to the blog. Recommended solutions: <a href="https://www.algolia.com/">Agolia</a></p>
+			</div>
+			<div class="docs-content" id="authors-page">
+				<small>Activation</small>
+				<h2>Authors page</h2>
+				<h3 id="to-present-all-authors-from-your-publication-in-an-elegant-way-you-can-add-a-custom-authors-page-">To present all authors from your publication in an elegant way, you can add a custom authors page. </h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Create a new page, add a <strong>Page title</strong>, and open the <strong>Page settings</strong> panel using the icon in the top right of the screen.</li><li>At the bottom of the panel you’ll see a dropdown menu titled <strong>Template</strong>.</li><li>Use the dropdown menu to select the <strong>Authors</strong> template, close the panel.</li><li>Finally, click <strong>Publish</strong>.</li></ol><h6 id="tip-adding-page-to-the-navigation">Tip: Adding page to the navigation</h6><blockquote>If you want this page to appear in the main navigation of your site, just add it to the <strong>Navigation</strong> list in your site settings.</blockquote>
+			</div>
+			<div class="docs-content" id="tags-page">
+				<small>Activation</small>
+				<h2>Tags page</h2>
+				<h3 id="to-present-all-tags-from-your-publication-in-an-elegant-way-you-can-add-a-custom-tags-page-">To present all tags from your publication in an elegant way, you can add a custom tags page. </h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Create a new page, add a <strong>Page title</strong>, and open the <strong>Page settings</strong> panel using the icon in the top right of the screen.</li><li>At the bottom of the panel you’ll see a dropdown menu titled <strong>Template</strong>.</li><li>Use the dropdown menu to select the <strong>Tags</strong> template, close the panel.</li><li>Finally, click <strong>Publish</strong>.</li></ol><h6 id="tip-adding-page-to-the-navigation">Tip: Adding page to the navigation</h6><blockquote>If you want this page to appear in the main navigation of your site, just add it to the <strong>Navigation</strong> list in your site settings.</blockquote>
+			</div>
+			<div class="docs-content" id="contact-page">
+				<small>Activation</small>
+				<h2>Contact page</h2>
+				<h3 id="if-you-wish-to-have-a-direct-way-in-which-your-readers-can-contact-you-you-can-add-a-contact-page-based-on-formspree-or-getform">If you wish to have a direct way in which your readers can contact you, you can add a contact page based on <a href="#formspree-2">Formspree</a> or <a href="#getform-2">Getform</a>.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Configure the <a href="#formspree-2">Formspree</a> or <a href="#getform-2">Getform</a> service.</li><li>Create a new page, add a <strong>Page title</strong>, and open the <strong>Page settings</strong> panel using the icon in the top right of the screen.</li><li>At the bottom of the panel you’ll see a dropdown menu titled <strong>Template</strong>.</li><li>Use the dropdown menu to select the <strong>Contact </strong>template, close the panel.</li><li>Finally, click <strong>Publish</strong>.</li></ol><h6 id="tip-adding-page-to-the-navigation">Tip: Adding page to the navigation</h6><blockquote>If you want this page to appear in the main navigation of your site, just add it to the <strong>Navigation</strong> list in your site settings.</blockquote>
+			</div>
+			<div class="docs-content" id="responsive-tables">
+				<small>Activation</small>
+				<h2>Responsive tables</h2>
+				<h3 id="the-responsive-table-will-display-a-horizontal-scroll-bar-if-the-screen-is-too-small-to-display-the-full-content-the-following-description-applies-to-the-table-added-using-the-markdown-card-">The responsive table will display a horizontal scroll bar if the screen is too small to display the full content. The following description applies to the table added using the markdown card.</h3><p>By default, the table adapts to the window width. If you have a table that is too wide, you can add a container <code>&lt;div class="responsive-table"&gt;</code> element with around the table, and it will display a horizontal scroll bar when needed.</p><h6 id="step-by-step">Step-by-Step</h6><ol><li>To add a responsive table, use the <strong>Markdown card</strong>.</li><li>Add a container <code>&lt;div class="responsive-table"&gt;</code> element with around the table (in markdown there always needs to be a blank line between any <code>HTML</code> and <code>markdown</code>).</li></ol><figure class="kg-card kg-code-card"><pre><code>&lt;div class="responsive-table"&gt;
+
+| # | Heading | Heading | Heading | Heading | Heading |
+|:--|:--------|:--------|:--------|:--------|:--------|
+| 1 | Cell    | Cell    | Cell    | Cell    | Cell    |
+| 2 | Cell    | Cell    | Cell    | Cell    | Cell    |
+| 3 | Cell    | Cell    | Cell    | Cell    | Cell    |
+
+&lt;/div&gt;</code></pre><figcaption>Markdown table syntax is quite simple. It does not allow row or cell spanning as well as putting multi-line text in a cell. The first row is always the header followed by an extra line with dashes <code>-</code> and optional colons <code>:</code> for forcing column alignment.</figcaption></figure><h6 id="tip-what-it-takes-to-generate-a-table">Tip: What it takes to generate a table?</h6><blockquote>To generate a table, you can use the tool <a href="https://www.tablesgenerator.com/markdown_tables">Markdown Tables Generator</a></blockquote>
+			</div>
+		</div>
+		<div id="members"id="members"id="members"id="members"id="members"id="members"id="members">
+			<div class="docs-content" id="create-members-pages">
+				<small>Members</small>
+				<h2>Create members pages</h2>
+				<h3 id="the-members-feature-allows-you-to-turn-any-site-into-a-membership-business-with-member-signup-paid-subscriptions-and-email-newsletters-">The members feature allows you to turn any site into a membership business with member signup, paid subscriptions and email newsletters.</h3><!--kg-card-begin: markdown--><p><mark>The members feature is enabled by default. However, you need to create the following pages to avoid the 404 error.</mark></p>
+<!--kg-card-end: markdown--><h6 id="step-by-step">Step-by-Step</h6><ol><li>Create <a href="#sign-in-and-sign-up-pages">sign-in and sign-up pages</a></li><li>Create an <a href="#account-page">account page</a></li></ol><h6 id="tip-what-to-do-in-case-of-an-400-error-with-message-e-g-missing-template-members-signin-hbs-for-route-signin-">Tip: What to do in case of an 400 error with message e.g. 'Missing template members/signin.hbs for route /signin/'</h6><blockquote>The error indicates that there was previously used a <code>routes.yaml</code> file with another theme that required it. To solve the problem, reset the <code>routes.yaml</code> file to its default settings.</blockquote><figure class="kg-card kg-code-card"><pre><code>routes:
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/</code></pre><figcaption>Default settings for routes.yaml file.</figcaption></figure>
+			</div>
+			<div class="docs-content" id="login-panel-2">
+				<small>Members</small>
+				<h2>Login panel</h2>
+				<h3 id="the-login-panel-is-a-navigation-component-that-shows-sign-in-sign-up-buttons-when-a-member-is-logged-out-and-account-sign-out-buttons-when-a-member-is-logged-in-">The login panel is a navigation component that shows 'Sign in / Sign up' buttons when a member is logged out, and 'Account / Sign out' buttons when a member is logged in.</h3><h6 id="tip-replacing-sign-up-with-membership-">Tip: Replacing 'Sign up' with 'Membership'</h6><ol><li>You can easily replace the 'Sign up' page with 'Membership', for this purpose open <code>../partials/members/login_panel.hbs</code> file in your code editor and find:</li></ol><pre><code>&lt;a href="{{@site.url}}/signup/" class="global-button"&gt;{{t "Sign up"}}&lt;/a&gt;</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 1">
+<li>Then, replace with:</li>
+</ol><!--kg-card-end: html--><pre><code>&lt;a href="{{@site.url}}/membership/" class="global-button"&gt;Membership&lt;/a&gt;</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 2">
+    <li>Save your <code>login_panel.hbs</code> file in <code>../partials/members/</code> folder.</li>
+</ol><!--kg-card-end: html--><h6 id="tip-how-to-remove-the-login-panel">Tip: How to remove the login panel?</h6><ol><li>You’ll need to open the theme’s <code>../partials/header.hbs</code> file in your code editor.</li><li>You need to remove <code>{{&gt;members/login_panel}}</code> partial reference.</li><li>Save your <code>header.hbs</code> file in <code>../partials/</code> folder.</li></ol>
+			</div>
+			<div class="docs-content" id="sign-in-and-sign-up-pages">
+				<small>Members</small>
+				<h2>Sign-in and sign-up pages</h2>
+				<h3 id="the-sign-in-and-sign-up-pages-are-allowing-your-visitors-to-sign-up-to-your-site-in-order-to-access-members-only-content-">The sign-in and sign-up pages are allowing your visitors to sign up to your site in order to access members only content.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Create a new page, add a <strong>Page title</strong>, and open the <strong>Page settings</strong> panel using the icon in the top right of the screen.</li><li>At the bottom of the panel you’ll see a dropdown menu titled <strong>Template</strong>.</li><li>Use the dropdown menu to select the <strong>Sign In</strong> template. Then create another page with the <strong>Sign Up</strong> template.</li><li>Finally, click <strong>Publish</strong>.</li></ol><!--kg-card-begin: html--><ol class="alert">
+    <li>The <strong>Page URL</strong> should be <code>/signin/</code> and <code>/signup/</code></li>
+</ol><!--kg-card-end: html-->
+			</div>
+			<div class="docs-content" id="membership-page-2">
+				<small>Members</small>
+				<h2>Membership page</h2>
+				<h3 id="the-membership-page-is-helping-your-visitors-to-quickly-visualize-and-compare-the-different-pricing-plans-you-offer">The membership page is helping your visitors to quickly visualize and compare the different pricing plans you offer.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Create a new page, add a <strong>Page title</strong>, and open the <strong>Page settings</strong> panel using the icon in the top right of the screen.</li><li>At the bottom of the panel you’ll see a dropdown menu titled <strong>Template</strong>.</li><li>Use the dropdown menu to select the <strong>Membership</strong> template, close the panel.</li><li>Finally, click <strong>Publish</strong>.</li></ol><h6 id="tip-how-to-add-premium-tier">Tip: How to add premium tier?</h6><ol><li>Go to the <strong>Membership</strong> settings in the Ghost Admin.</li><li>At the bottom you’ll see the option <strong>Membership tiers</strong>.</li><li>If you have Stripe connected expand <strong>Premium</strong> position and click <strong>+Add tier </strong>– add your own tier name, description, monthly and yearly prices and list of benefits.</li><li>Click <strong>Add tier</strong> to activate.</li><li>Making tiers available to visitors – from the <strong>Portal </strong>settings, you can control which tiers appear on your site.</li></ol><h6 id="tip-how-to-add-description-and-list-of-benefits-to-free-tier">Tip: How to add description and list of benefits to free tier?</h6><ol><li>Go to the <strong>Membership</strong> settings in the Ghost Admin.</li><li>At the bottom you’ll see the option <strong>Membership tiers</strong>.</li><li>Expand <strong>Free</strong> position and add your tier description and list of benefits.</li><li>Finally, click <strong>Save</strong> to activate.</li></ol><h6 id="tip-adding-page-to-the-navigation">Tip: Adding page to the navigation</h6><blockquote>If you want this page to appear in the main navigation of your site, just add it to the <strong>Navigation</strong> list in your site settings.</blockquote>
+			</div>
+			<div class="docs-content" id="account-page">
+				<small>Members</small>
+				<h2>Account page</h2>
+				<h3 id="the-account-page-shows-your-members-the-type-of-account-they-re-having-and-gives-them-some-subscription-specific-data-">The account page shows your members the type of account they’re having and gives them some subscription specific data.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Create a new page called <strong>Account</strong> and open the <strong>Page settings</strong> panel using the icon in the top right of the screen.</li><li>At the bottom of the panel you’ll see a dropdown menu titled <strong>Template</strong>.</li><li>Use the dropdown menu to select the <strong>Account</strong> template, close the panel.</li></ol><blockquote>There is also a special template called <strong>Account Basic</strong> which does not display pricing plans. This template is a good choice when you do not offer paid plans and you don’t have posts marked as 'Paid-members only'.</blockquote><!--kg-card-begin: html--><ol style="counter-reset: li 3">
+    <li>Finally, click <strong>Publish</strong>.</li>
+</ol><!--kg-card-end: html--><!--kg-card-begin: html--><ol class="alert">
+    <li>The <strong>Page URL</strong> should be <code>/account/</code></li>
+</ol><!--kg-card-end: html-->
+			</div>
+			<div class="docs-content" id="subscribe-page-2">
+				<small>Members</small>
+				<h2>Subscribe page</h2>
+				<h3 id="the-subscribe-page-is-allowing-your-visitors-to-sign-up-to-your-site-in-order-to-access-members-only-content-and-or-receive-the-premium-newsletter-it-depend-on-you-how-you-re-going-to-use-this-page-">The subscribe page is allowing your visitors to sign up to your site in order to access members only content and/or receive the premium newsletter. It depend on you how you’re going to use this page.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Create a new page, add a <strong>Page title</strong>, and open the <strong>Page settings</strong> panel using the icon in the top right of the screen.</li><li>At the bottom of the panel you’ll see a dropdown menu titled <strong>Template</strong>.</li><li>Use the dropdown menu to select the <strong>Subscribe</strong> template, close the panel.</li><li>Finally, click <strong>Publish</strong>.</li></ol><h6 id="tip-adding-page-to-the-navigation">Tip: Adding page to the navigation</h6><blockquote>If you want this page to appear in the main navigation of your site, just add it to the <strong>Navigation</strong> list in your site settings.</blockquote>
+			</div>
+			<div class="docs-content" id="subscription-form-2">
+				<small>Members</small>
+				<h2>Subscription form</h2>
+				<h3 id="the-subscription-form-is-placed-at-the-bottom-of-the-homepage-and-posts-">The subscription form is placed at the bottom of the homepage and posts.</h3><h6 id="tip-how-to-remove-the-subscription-form">Tip: How to remove the subscription form?</h6><ol><li>You’ll need to open the theme’s <code>default.hbs</code> file in your code editor.</li><li>You need to remove <code>{{&gt;members/subscribe_form}}</code> partial reference.</li><li>Save your <code>default.hbs</code> file in root folder.</li></ol>
+			</div>
+		</div>
+		<div id="customization"id="customization"id="customization"id="customization"id="customization"id="customization"id="customization">
+			<div class="docs-content" id="accent-color-2">
+				<small>Customization</small>
+				<h2>Accent color</h2>
+				<h3 id="primary-color-used-in-your-publication">Primary color used in your publication.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>To change the accent color in your publication, go to the <strong>Design</strong> settings in the Ghost Admin.</li><li>On the left you’ll see the option <strong>Brand</strong> – expand this settings list and go to the <strong>Accent color </strong>position.</li><li>Choose your color.</li><li>Finally, click <strong>Save</strong> to activate.</li></ol><h6 id="tip-recommended-colors">Tip: Recommended colors</h6><!--kg-card-begin: html--><div class="colors global-flex" style="display:flex;flex-wrap:wrap">
+    <section class="violet">
+        <h3>Violet</h3>
+        <code>#cb73ff</code>
+    </section>
+    <section class="sapphire default">
+        <h3>Sapphire</h3>
+        <code>#646eff</code>
+    </section>
+    <section class="blue">
+        <h3>Blue</h3>
+        <code>#467eff</code>
+    </section>
+    <section class="mint">
+        <h3>Mint</h3>
+        <code>#03d5b8</code>
+    </section>
+    <section class="apple">
+        <h3>Apple</h3>
+        <code>#11cf61</code>
+    </section>
+    <section class="coral">
+        <h3>Coral</h3>
+        <code>#f86c5f</code>
+    </section>
+    <section class="raspberry">
+        <h3>Raspberry</h3>
+        <code>#ff4a97</code>
+    </section>
+    <section class="goldenrod">
+        <h3>Goldenrod</h3>
+        <code>#f5ab09</code>
+    </section>
+    <section class="orange">
+        <h3>Orange</h3>
+        <code>#ff7f00</code>
+    </section>
+      <section class="steel">
+        <h3>Steel</h3>
+        <code>#ff7f00</code>
+    </section>  
+</div><!--kg-card-end: html-->
+			</div>
+			<div class="docs-content" id="footer-navigation-2">
+				<small>Customization</small>
+				<h2>Footer navigation</h2>
+				<h3 id="there-are-two-types-of-navigation-primary-and-secondary-primary-navigation-is-used-in-the-theme-header-secondary-in-the-footer-">There are two types of navigation, primary and secondary. Primary navigation is used in the theme header, secondary in the footer.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>To add a secondary navigation, go to the <strong>Navigation</strong> settings in the Ghost Admin.</li><li>At the bottom of the page, you’ll see the <strong>Secondary navigation</strong> section<strong>. </strong></li><li>Once your items are added, click <strong>Save</strong> to activate new navigation on your site.</li></ol><blockquote>The theme has three columns in the footer. By default, every four elements a new column is started.</blockquote><h6 id="tip-how-to-add-your-own-column-names">Tip: How to add your own column names?</h6><ol><li>To add your own column names, you’ll need to open the theme’s <code>../locales/en.json</code> file in your code editor.</li><li>Then, add your own translations, for example:</li></ol><pre><code>{
+    "Column 1": "About",
+    "Column 2": "Features",
+    "Column 3": "Support",
+    ...
+}</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 2">
+<li>Save your <code>en.json</code> file in <code>../locales/</code> folder.</li>
+</ol><!--kg-card-end: html--><h6 id="tip-how-to-change-the-number-of-items-in-column">Tip: How to change the number of items in column?</h6><ol><li>You’ll need to open the theme’s <code>../partials/navigation.hbs</code> file in your code editor.</li><li>At the middle, you’ll see the <strong>Footer navigation</strong> section<strong>.</strong></li><li>The columns have a <code>limit</code> and <code>from</code> parameter, that needs to be changed. For example, to change the number of items to 5 for each column:</li></ol><pre><code>{{#foreach navigation limit="5"}}
+...
+
+{{#foreach navigation limit="5" from="6"}}
+...
+
+{{#foreach navigation from="11"}}
+...</code></pre><p>Another possible case is when you change elements up to e.g. 6 only for second column:</p><pre><code>{{#foreach navigation limit="4"}}
+...
+
+{{#foreach navigation limit="6" from="5"}}
+...
+
+{{#foreach navigation from="11"}}
+...</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 3">
+<li>Save your <code>navigation.hbs</code> file in <code>../partials/ </code>folder.</li>
+</ol><!--kg-card-end: html-->
+			</div>
+			<div class="docs-content" id="dropdown-menu">
+				<small>Customization</small>
+				<h2>Dropdown menu</h2>
+				<h3 id="the-dropdown-menu-is-used-inside-the-primary-navigation-to-display-a-list-of-related-links-when-a-user-click-on-the-dots-element-">The dropdown menu is used inside the primary navigation to display a list of related links when a user click on the 'dots' element. </h3><h6 id="tip-how-to-change-the-number-of-items-before-dots-element">Tip: How to change the number of items before 'dots' element?</h6><ol><li>You’ll need to open the theme’s <code>../partials/navigation.hbs</code> file in your code editor.</li><li>At the top, you’ll see the <strong>Header navigation</strong> section<strong>.</strong></li><li>Replace the current <code>to="3"</code> and <code>from="4"</code> value with your own, for example <code>to="4"</code> and <code>from="5"</code>.</li><li>Save your <code>navigation.hbs</code> file in <code>../partials/</code> folder.</li></ol>
+			</div>
+			<div class="docs-content" id="colors-of-post-cards">
+				<small>Customization</small>
+				<h2>Colors of post-cards</h2>
+				<h3 id="we-have-added-an-easy-way-to-add-the-color-of-post-cards-you-can-choose-a-color-from-the-color-palette-or-add-your-own-">We have added an easy way to add the color of post-cards. You can choose a color from the color palette or add your own.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>To add the color, just add an adequate internal tag in <strong>Post settings</strong> panel to the published post.</li><li>For example, add an internal tag <code>#post-card-sand</code> (tags which are prefixed by a <code>#</code> character, are internal tags within Ghost).</li><li>Click <strong>Update, </strong>to activate.</li></ol><!--kg-card-begin: html--><ol class="alert">
+    <li>The tag slug should be <code>hash-post-card-colorname</code>, for example <code>hash-post-card-sand</code></li>
+</ol><!--kg-card-end: html--><h6 id="available-colors">Available colors</h6><!--kg-card-begin: html--><div class="colors global-flex" style="display:flex;flex-wrap:wrap">
+    <section class="post-card-gray default">
+        <h3>Gray</h3>
+        <code>#post-card-gray</code>
+    </section>
+    <section class="post-card-pearl">
+        <h3>Pearl</h3>
+        <code>#post-card-pearl</code>
+    </section>
+    <section class="post-card-avocado">
+        <h3>Avocado</h3>
+        <code>#post-card-avocado</code>
+    </section>
+    <section class="post-card-cream">
+        <h3>Cream</h3>
+        <code>#post-card-cream</code>
+    </section>
+    <section class="post-card-sand">
+        <h3>Sand</h3>
+        <code>#post-card-sand</code>
+    </section>
+    <section class="post-card-rose">
+        <h3>Rose</h3>
+        <code>#post-card-rose</code>
+    </section>
+    <section class="post-card-peach">
+        <h3>Peach</h3>
+        <code>#post-card-peach</code>
+    </section>
+    <section class="post-card-iris">
+        <h3>Iris</h3>
+        <code>#post-card-iris</code>
+    </section>
+    <section class="post-card-sky">
+        <h3>Sky</h3>
+        <code>#post-card-sky</code>
+    </section>
+    <section class="post-card-lavender">
+        <h3>Lavender</h3>
+        <code>#post-card-lavender</code>
+    </section>
+    <section class="post-card-pool">
+        <h3>Pool</h3>
+        <code>#post-card-pool</code>
+    </section>
+    <section class="post-card-aqua">
+        <h3>Aqua</h3>
+        <code>#post-card-aqua</code>
+    </section>
+    <section class="post-card-seafoam">
+        <h3>Seafoam</h3>
+        <code>#post-card-seafoam</code>
+    </section>
+    <section class="post-card-turquoise">
+        <h3>Turquoise</h3>
+        <code>#post-card-turquoise</code>
+    </section>  
+</div><!--kg-card-end: html--><h6 id="tip-how-to-edit-existing-color">Tip: How to edit existing color?</h6><ol><li>To edit existing color, go the <strong>Tags</strong> settings in the Ghost Admin.</li><li>Then, open <strong>Internal tags </strong>tab<strong> </strong>and select a tag, for example <code>#post-card-sand</code> and add your own color, for example <code>#f2d16b</code>.</li><li>Click <strong>Save</strong>, to activate.</li></ol><h6 id="tip-how-to-add-your-own-color">Tip: How to add your own color?</h6><ol><li>To add your own color, go the <strong>Tags</strong> settings in the Ghost Admin.</li><li>Then, open <strong>Internal tags </strong>tab<strong> </strong>and click <strong>New tag</strong>.</li><li>Create for example <code>#post-card-arctic</code> and add your color, for example <code>#aac7ff</code>.</li><li>Click <strong>Save</strong>, to activate just add <code>#post-card-arctic</code> in <strong>Post settings</strong> panel to the published post.</li></ol><!--kg-card-begin: html--><ol class="alert">
+    <li>The tag slug should be <code>hash-post-card-colorname</code>, for example <code>hash-post-card-arctic</code></li>
+</ol><!--kg-card-end: html-->
+			</div>
+			<div class="docs-content" id="logo-height">
+				<small>Customization</small>
+				<h2>Logo height</h2>
+				<h3 id="follow-below-steps-to-change-the-size-of-the-logo-on-your-site-by-adding-simple-css-code-">Follow below steps to change the size of the logo on your site by adding simple CSS code. </h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>By default, the logo height is <code>45px</code> for the header and <code>35px</code> for the footer, to change to another value, go to the <strong>Code injection</strong> settings in the Ghost Admin.</li><li>Then, paste this code to the <strong>Site header</strong>:</li></ol><pre><code>&lt;style&gt;
+:root { 
+   --height-logo-header: 45px;
+   --height-logo-footer: 35px;
+   --height-logo-signin: 45px;
+   --height-logo-mobile: 35px;
+}
+&lt;/style&gt;</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 2">
+<li>Change the current value to the expected value.</li>
+<li>Finally, click <strong>Save</strong> to activate.</li>
+</ol><!--kg-card-end: html-->
+			</div>
+			<div class="docs-content" id="posts-per-page">
+				<small>Customization</small>
+				<h2>Posts per page</h2>
+				<h3 id="by-default-the-homepage-author-s-and-tag-s-page-display-a-maximum-of-6-posts-per-page-but-you-are-able-to-change-this-number-">By default, the homepage, author’s and tag’s page display a maximum of 6 posts per page, but you are able to change this number.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>You’ll need to open the theme’s <code>package.json</code> file in your code editor and find:</li></ol><pre><code>"config": {
+    ...
+    "posts_per_page": 6
+    ...
+}</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 1">
+<li>Change the value of the <code>6</code> to the expected value.</li>
+</ol><!--kg-card-end: html--><!--kg-card-begin: markdown--><p><mark>Value must be increased by 3, for example 9, 12. Otherwise layout of posts will not be kept.</mark></p>
+<!--kg-card-end: markdown--><!--kg-card-begin: html--><ol style="counter-reset: li 2">
+<li>Save your <code>package.json</code> file in root folder.</li>
+</ol><!--kg-card-end: html-->
+			</div>
+			<div class="docs-content" id="theme-translation">
+				<small>Customization</small>
+				<h2>Theme translation</h2>
+				<h3 id="the-theme-is-fully-translatable-by-enabling-a-publication-language-in-the-settings-of-the-ghost-admin-before-that-you-must-prepare-your-language-file-">The theme is fully translatable by enabling a publication language in the settings of the Ghost Admin. Before that, you must prepare your language file.</h3><h6 id="step-by-step">Step-by-Step</h6><ol><li>Inside the <code>../locales/</code> folder, add target language files for each translatable language used on your site. For example <code>es.json</code> for Spanish and <code>pl.json</code> for Polish. <a href="https://www.w3schools.com/tags/ref_language_codes.asp">A valid language</a> code must be used.</li><li>Translate the sentences used in theme inside your new language files, for example, in <code>en.json</code>:</li></ol><pre><code>{
+    "Back": "Back",
+    "Newer Posts": "Newer Posts",
+    "Older Posts": "Older Posts",
+    ...
+}</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 2">
+	<li>And edited to translate into Spanish for <code>es.json</code>:</li>
+</ol><!--kg-card-end: html--><pre><code class="language-json">{
+    "Back": "Volver",
+    "Newer Posts": "Artículos Siguientes",
+    "Older Posts": "Artículos Anteriores",
+    ...
+}</code></pre><!--kg-card-begin: html--><ol style="counter-reset: li 3">
+	<li>Upload a theme with a new language file.</li>
+	<li>Go to the <strong>General</strong> settings in the Ghost Admin.</li>
+	<li>At the top of the page, you’ll see the <strong>Publication info</strong> section<strong>.</strong></li>
+	<li>Enter the correct language code into your <strong>Publication language </strong>settings menu.</li>
+	<li>Finally, click <strong>Save</strong> to activate.</li>
+</ol><!--kg-card-end: html--><h6 id="tip-reactivate-the-translation-file">Tip: Reactivate the translation file</h6><blockquote>If you edited the active language, you have to restart Ghost to make the changes effective. Alternatively, enter another language code and click <strong>Save</strong> to activate, then switch back to your language code.</blockquote>
+			</div>
+		</div>
+	</div>
+</div>
+		</main>
+		<footer>
+	<div class="global-padding">
+		<div class="footer-copyright">
+			&copy; <a href="https://fueko.net">fueko</a> 2023.
+			Made with ♥ for <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>. All Right Reserved.
+		</div>
+		<div class="footer-nav">
+			<nav>
+	<ul>
+		<li><a href="../../changelog/index.html">Changelog</a></li>
+		<li><a href="../../third-party-materials/index.html">Third-party materials</a></li>
+		<li><a href="https://fueko.net/privacy/">Privacy Policy</a></li>
+	</ul>
+</nav>
+		</div>
+		<div class="global-top-button"><span>↑</span></div>
+	</div>
+</footer>		<script>
+/* gumshoe
+   ––––––––––––––––––––––––––––––––––––––––––––––––––––
+   Version : 5.1.1
+   Repo    : github.com/cferdinandi/gumshoe
+   Author  : Chris Ferdinandi
+   License : MIT
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+!(function(t,e){"function"==typeof define&&define.amd?define([],(function(){return e(t)})):"object"==typeof exports?module.exports=e(t):t.Gumshoe=e(t)})("undefined"!=typeof global?global:"undefined"!=typeof window?window:this,(function(t){"use strict";var e={navClass:"active",contentClass:"active",nested:!1,nestedClass:"active",offset:0,reflow:!1,events:!0},n=function(t,e,n){if(n.settings.events){var o=new CustomEvent(t,{bubbles:!0,cancelable:!0,detail:n});e.dispatchEvent(o)}},o=function(t){var e=0;if(t.offsetParent)for(;t;)e+=t.offsetTop,t=t.offsetParent;return e>=0?e:0},s=function(t){t&&t.sort((function(t,e){return o(t.content)<o(e.content)?-1:1}))},c=function(e,n,o){var s=e.getBoundingClientRect(),c=(function(t){return"function"==typeof t.offset?parseFloat(t.offset()):parseFloat(t.offset)})(n);return o?parseInt(s.bottom,10)<(t.innerHeight||document.documentElement.clientHeight):parseInt(s.top,10)<=c},i=function(){return t.innerHeight+t.pageYOffset>=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight,document.body.clientHeight,document.documentElement.clientHeight)},r=function(t,e){var n=t[t.length-1];if(function(t,e){return!(!i()||!c(t.content,e,!0))}(n,e))return n;for(var o=t.length-1;o>=0;o--)if(c(t[o].content,e))return t[o]},a=function(t,e){if(e.nested){var n=t.parentNode.closest("li");n&&(n.classList.remove(e.nestedClass),a(n,e))}},l=function(t,e){if(t){var o=t.nav.closest("li");o&&(o.classList.remove(e.navClass),t.content.classList.remove(e.contentClass),a(o,e),n("gumshoeDeactivate",o,{link:t.nav,content:t.content,settings:e}))}},u=function(t,e){if(e.nested){var n=t.parentNode.closest("li");n&&(n.classList.add(e.nestedClass),u(n,e))}};return function(o,c){var i,a,f,d,v,m={};m.setup=function(){i=document.querySelectorAll(o),a=[],Array.prototype.forEach.call(i,(function(t){var e=document.getElementById(decodeURIComponent(t.hash.substr(1)));e&&a.push({nav:t,content:e})})),s(a)},m.detect=function(){var t=r(a,v);t?f&&t.content===f.content||(l(f,v),(function(t,e){if(t){var o=t.nav.closest("li");o&&(o.classList.add(e.navClass),t.content.classList.add(e.contentClass),u(o,e),n("gumshoeActivate",o,{link:t.nav,content:t.content,settings:e}))}})(t,v),f=t):f&&(l(f,v),f=null)};var p=function(e){d&&t.cancelAnimationFrame(d),d=t.requestAnimationFrame(m.detect)},h=function(e){d&&t.cancelAnimationFrame(d),d=t.requestAnimationFrame((function(){s(a),m.detect()}))};m.destroy=function(){f&&l(f,v),t.removeEventListener("scroll",p,!1),v.reflow&&t.removeEventListener("resize",h,!1),a=null,i=null,f=null,d=null,v=null};return v=(function(){var t={};return Array.prototype.forEach.call(arguments,(function(e){for(var n in e){if(!e.hasOwnProperty(n))return;t[n]=e[n]}})),t})(e,c||{}),m.setup(),m.detect(),t.addEventListener("scroll",p,!1),v.reflow&&t.addEventListener("resize",h,!1),m}}));
+
+/* Custom settings for gumshoe */
+var sidebar = document.getElementById("sidebar");
+if (sidebar) {var spy=new Gumshoe('.sidebar-list a',{nested:true})}
+</script>
+
+<script>document.addEventListener("DOMContentLoaded",function(){const n=document.body,g=document.querySelector(".global-top-button");window.addEventListener("scroll",function(){1500<window.scrollY?n.classList.add("is-scroll-back"):n.classList.remove("is-scroll-back")}),g.addEventListener("click",function(){window.scrollTo(0,0)});window.addEventListener("scroll",function(){50<window.scrollY?n.classList.add("is-scroll-nav"):n.classList.remove("is-scroll-nav")})});</script>
+
+	</body>
+</html>

@@ -1,0 +1,24 @@
+{{#if @custom.content_api_key_for_search}}
+	<div id="search" class="search-section">
+		<span id="search-close" class="search-close">{{>icons/site/close}}</span>
+		<div id="search-content" class="search-content">
+			<form class="search-form" onsubmit="return false">
+				<input id="search-input" type="text" placeholder="{{t "Type your keywords"}}">
+				<div class="search-meta">
+					<span id="search-info">{{t "Please enter at least 3 characters"}}</span>
+					<span id="search-counter" class="is-hide">
+						<span id="search-counter-results">0</span>
+						{{t "Results for your search"}}
+					</span>
+				</div>
+			</form>
+			<div id="search-results" class="search-results"></div>
+		</div>
+		<div id="search-overlay" class="search-overlay"></div>
+	</div>
+	{{#contentFor "search_js"}}
+	<script>
+	const searchUrl='{{@site.url}}',searchKey="{{@custom.content_api_key_for_search}}",searchAPI=searchUrl+'/ghost/api/content/posts/?key='+searchKey+'&limit=all&fields=url,title,published_at,custom_excerpt,visibility,html';
+	</script>
+	{{/contentFor}}
+{{/if}}

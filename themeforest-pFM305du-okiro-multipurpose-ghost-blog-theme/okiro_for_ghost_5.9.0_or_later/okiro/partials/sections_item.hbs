@@ -1,0 +1,56 @@
+{{^if pages}}
+{{#if @first}}
+<h2 class="global-label global-zigzag">
+	{{label}}
+	{{>icons/site/zigzag}}
+</h2>
+{{/if}}
+{{/if}}
+{{#if pages}}
+<article class="item-section {{post_class}}"{{>global internal_tag_color=true}}>
+	<a href="{{url}}" class="global-link" aria-label="{{title}}"></a>
+	<div>
+		{{#if feature_image}}
+		<div class="global-image">
+			{{>images/section_small_image section_small_image=feature_image alt=title}}
+		</div>
+		{{/if}}
+		<div class="global-sections-content">
+			<h3><a href="{{url}}">{{title}}</a></h3>
+		</div>
+	</div>
+</article>
+{{else}}
+<article class="item-section {{post_class}}"{{>global internal_tag_color=true}}>
+	<a href="{{url}}" class="global-link" aria-label="{{title}}"></a>
+	{{#if feature_image}}
+	<div class="global-image">
+		{{>images/section_image section_image=feature_image alt=title}}
+	</div>
+	{{/if}}
+	<div class="global-sections-content">
+		<h3><a href="{{url}}">{{title}}</a></h3>
+		<div class="global-sections-meta global-meta global-pointer">
+			{{#has author="count:<3"}}
+			{{authors}}
+			{{else has author="count:>2"}}
+			{{authors limit="1"}}
+			{{t "and others"}}
+			{{/has}}
+		</div>
+		{{^if feature_image}}
+		{{^if custom_excerpt}}
+		{{#if excerpt}}
+		<p class="global-excerpt">
+			{{excerpt words="18"}}...
+		</p>
+		{{/if}}
+		{{else}}
+		<p class="global-excerpt">
+			{{custom_excerpt}}
+		</p>
+		{{/if}}
+		{{/if}}
+	</div>
+</article>
+{{/if}}

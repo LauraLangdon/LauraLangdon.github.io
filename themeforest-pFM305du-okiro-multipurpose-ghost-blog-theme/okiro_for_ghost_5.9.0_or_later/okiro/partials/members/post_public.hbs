@@ -1,0 +1,9 @@
+{{#get "posts" limit="4" filter="visibility:public" include="authors,tags" as |public_posts|}}
+{{#if public_posts}}
+<div class="global-sections{{>global sections_counter=true}}">
+	{{#foreach public_posts}}
+	{{>sections_item label=(t "See free posts")}}
+	{{/foreach}}
+</div>
+{{/if}}
+{{/get}}
