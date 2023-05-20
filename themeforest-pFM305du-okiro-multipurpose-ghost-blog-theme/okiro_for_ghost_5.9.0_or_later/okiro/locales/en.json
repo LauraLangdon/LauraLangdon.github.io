@@ -1,6 +1,6 @@
 {
-    "Column 1": "Links",
-    "Column 2": "Links",
+    "Column 1": "Socials",
+    "Column 2": "Content & Code",
     "Column 3": "Links",
     "meta-page": " (Page %)",
     "Authors": "Authors",
@@ -96,5 +96,5 @@
     "Success! Check your email for magic link to sign-in.": "Success! Check your email for magic link to sign-in.",
     "Success! You now have access to additional content.": "Success! You now have access to additional content.",
     "Back to homepage": "Back to homepage",
-    "All Right Reserved. Published with {ghost-link} & {theme-name}.": "All Right Reserved. Published with {ghost-link} & {theme-name}."
+    "All Rights Reserved. Published with {ghost-link} & {theme-name}.": "All Rights Reserved. Published with {ghost-link} & {theme-name}."
 }
