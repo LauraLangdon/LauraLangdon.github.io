@@ -1,0 +1,18 @@
+routes:
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+  /blog/:
+    permalink: /blog/{slug}/
+    template: blog
+    filter: primary_tag:blog
+  /stream/:
+    permalink: /stream/{slug}/
+    template: stream
+    filter: primary_tag:stream
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
