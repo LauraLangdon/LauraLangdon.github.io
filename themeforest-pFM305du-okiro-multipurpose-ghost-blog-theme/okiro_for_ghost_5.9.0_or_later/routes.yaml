@@ -1,9 +1,7 @@
 routes:
+  /: home
 
 collections:
-  /:
-    permalink: /{slug}/
-    template: index
   /blog/:
     permalink: /blog/{slug}/
     template: blog
