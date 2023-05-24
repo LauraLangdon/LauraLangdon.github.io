@@ -1,18 +1,31 @@
 {{! Detailed instructions can be found in the Documentation >> Activation >> Special sections }}
 
 
-{{#get "posts" limit="3" filter="tag:blog" include="authors,tags"}}
+{{#get "posts" limit="3" filter="tag:blog, featured:true" include="authors,tags"}}
 <div class="global-sections{{>global sections_counter=true}}">
 	{{#foreach posts}}
 	{{>sections_item label="blog"}}
 	{{/foreach}}
+	<div class="pagination-section">
+		<div class="pagination-wrap">
+			<a href="https://www.lauralangdon.io/blog/" id="blog">
+			<button class="global-button">{{t "See all blog posts"}}</button></a>
+		</div>
+	</div>
 </div>
 {{/get}}
-{{#get "posts" limit="3" filter="tag:stream" include="authors,tags"}}
+
+{{#get "posts" limit="5" filter="tag:stream" include="authors,tags"}}
 <div class="global-sections{{>global sections_counter=true}}">
 	{{#foreach posts}}
 	{{>sections_item label="stream"}}
 	{{/foreach}}
+	<div class="pagination-section">
+		<div class="pagination-wrap">
+			<a href="https://www.lauralangdon.io/stream/" id="stream">
+			<button class="global-button">{{t "See all streams"}}</button></a>
+		</div>
+	</div>
 </div>
 {{/get}}
 
