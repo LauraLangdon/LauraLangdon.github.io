@@ -1,5 +1,23 @@
 {{!< default}}
+{{!-- {{pagination}} --}}
+{{!-- {{>sections}} --}}
+
+<main id="main">
+  <section class="p-outer">
+        <div class="p-inner p-hero">
+            <div class="p-hero-left">
+            <div>
+                <h1>Hi, I'm Laura! 😊</h1>
+                <p>I'm a Developer Advocate passionate about documentation, inclusion, and UX. Previously a math lecturer, I'm devoted to issues in pedagogy, neurodivergence, and social responsibility in tech. In my free time, I enjoy recreational research and optimizing all the things.</p>
+            </div>
+            </div>
+            <div class="p-hero-right">
+            {{! Loads the your cover image as defined in Ghost admin }}
+            <img src="{{img_url @site.cover_image size="s"}}" alt="White woman with dark, curly, shoulder-length hair, green eyes, and berry lip stain" />
+            </div>
+        </div>
+    </section>
+</main>
+
 {{>featured}}
 {{>loop}}
-{{!-- {{pagination}} --}}
-{{>sections}}
