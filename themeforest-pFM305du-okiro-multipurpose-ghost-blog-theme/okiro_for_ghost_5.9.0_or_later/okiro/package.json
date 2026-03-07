@@ -63,11 +63,6 @@
             "footer_copyright": {
                 "type": "text"
             },
-            "tag_for_special_section": {
-                "type": "text",
-                "group": "homepage",
-                "description": "Provide the tag slug you want to display in the special section, for example: lifestyle"
-            },
             "disqus_shortname": {
                 "type": "text",
                 "group": "post"
