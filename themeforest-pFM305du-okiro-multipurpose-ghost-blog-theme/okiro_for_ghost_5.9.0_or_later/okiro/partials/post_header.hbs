@@ -37,6 +37,7 @@
 			{{/if}}
 			{{#is "post"}}
 			<div class="item-meta global-meta">
+				{{#if @custom.show_author}}
 				{{#if authors}}
 				<div class="item-profile-image">
 					{{#foreach authors}}
@@ -48,7 +49,9 @@
 					{{/foreach}}
 				</div>
 				{{/if}}
+				{{/if}}
 				<div class="item-authors">
+					{{#if @custom.show_author}}
 					{{#has author="count:<3"}}
 					{{authors}}
 					{{else has author="count:3"}}
@@ -56,6 +59,7 @@
 					{{else has author="count:>3"}}
 					{{authors}}
 					{{/has}}
+					{{/if}}
 					<div class="item-time">
 						<time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at format="LL"}}</time> ∙ {{reading_time minute=(t "1 minute read") minutes=(t "% minutes read")}}
 					</div>

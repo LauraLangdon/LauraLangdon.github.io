@@ -1,7 +1,8 @@
 {{!< default}}
-{{#get "tags" limit="all" filter="visibility:public" include="count.posts" order="count.posts desc"}}
+{{#get "tags" limit="100" filter="visibility:public" include="count.posts" order="count.posts desc"}}
 <div class="tag-authors-section featured-section global-sections is-top{{#foreach tags}}{{#if @last}} global-sections-items-{{@number}}{{/if}}{{/foreach}}">
 	{{#foreach tags to="5"}}
+	{{#if count.posts}}
 	{{#if @first}}
 	<h2 class="global-label global-zigzag">
 	{{t "Tags"}}
@@ -30,9 +31,11 @@
 			</div>
 		</div>
 	</div>
+	{{/if}}
 	{{/foreach}}
 </div>
 {{#foreach tags from="6"}}
+{{#if count.posts}}
 {{#if @first}}
 <div class="tag-authors-section global-sections is-bottom">
 	<small class="tag-authors-heading global-heading">{{t "See also"}}</small>
@@ -52,6 +55,7 @@
 	</div>
 	{{#if @last}}
 </div>
+{{/if}}
 {{/if}}
 {{/foreach}}
 {{/get}}

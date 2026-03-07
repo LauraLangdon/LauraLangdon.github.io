@@ -1,7 +1,14 @@
-<img srcset="{{img_url section_image size="xs"}} 300w,
-			 {{img_url section_image size="s"}} 400w,
-			 {{img_url section_image size="m"}} 600w"
-	 sizes="(max-width:480px) 150px, 200px"
-	 src="{{img_url section_image size="xs"}}"
-	 loading="lazy"
-	 alt="{{alt}}">
+<picture>
+	<source srcset="{{img_url section_image size="xs" format="webp"}} 300w,
+					{{img_url section_image size="s" format="webp"}} 400w,
+					{{img_url section_image size="m" format="webp"}} 600w"
+			sizes="(max-width:480px) 150px, 200px"
+			type="image/webp">	
+	<img srcset="{{img_url section_image size="xs"}} 300w,
+				 {{img_url section_image size="s"}} 400w,
+				 {{img_url section_image size="m"}} 600w"
+		 sizes="(max-width:480px) 150px, 200px"
+		 src="{{img_url section_image size="xs"}}"
+		 loading="lazy"
+		 alt="{{alt}}">
+</picture>

@@ -1,1 +1,10 @@
-<img src="{{img_url profile_image size="xxs"}}" loading="lazy" alt="{{name}}">
+<picture>
+	<source srcset="{{img_url profile_image size="xxs" format="webp"}} 120w"
+			sizes="120px"
+			type="image/webp">
+	<img srcset="{{img_url profile_image size="xxs"}} 120w"
+		 sizes="120px"
+		 src="{{img_url profile_image size="xxs"}}"
+		 loading="lazy" 
+		 alt="{{name}}">
+</picture>

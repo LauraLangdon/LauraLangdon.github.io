@@ -1,0 +1,12 @@
+{{#if @custom.logo_for_dark_color_scheme}}
+	{{#match @custom.color_scheme "Dark"}}
+	<a href="{{@site.url}}" class="is-image"><img src="{{@custom.logo_for_dark_color_scheme}}" alt="{{@site.title}} home"></a>
+	{{else match @custom.color_scheme "Auto"}}
+	<a href="{{@site.url}}" class="is-dark is-image"><img src="{{@custom.logo_for_dark_color_scheme}}" alt="{{@site.title}} home"></a>
+	{{/match}}
+	{{^match @custom.color_scheme "Dark"}}
+	<a href="{{@site.url}}"{{#if @site.logo}} class="is-image"><img src="{{@site.logo}}" alt="{{@site.title}} home">{{else}} class="is-title">{{@site.title}}{{/if}}</a>
+	{{/match}}
+{{else}}
+	<a href="{{@site.url}}"{{#if @site.logo}} class="is-image"><img src="{{@site.logo}}" alt="{{@site.title}} home">{{else}} class="is-title">{{@site.title}}{{/if}}</a>
+{{/if}}

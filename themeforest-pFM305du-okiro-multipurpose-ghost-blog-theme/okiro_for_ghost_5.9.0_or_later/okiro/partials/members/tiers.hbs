@@ -1,7 +1,9 @@
-<div class="membership-switch" data-active-price="yearly">
+{{#if @site.paid_members_enabled}}
+<div class="membership-switch" data-active-price="{{@site.portal_default_plan}}" data-active-price-plans="{{@site.portal_plans}}"{{#get "tiers" limit="100" filter="visibility:public+type:paid" as |public_paid_tiers|}} data-active-public-paid-tiers="{{#if public_paid_tiers}}true{{else}}false{{/if}}"{{/get}}>
 	<button data-price="monthly">{{t "Monthly"}}</button>
 	<button data-price="yearly">{{t "Yearly"}}</button>
 </div>
+{{/if}}
 <div class="membership-cards">
 	{{#if free_tier}}
 	{{^if @member}}
@@ -28,7 +30,8 @@
 	{{/get}}
 	{{/if}}
 	{{/if}}
-	{{#get "tiers" include="monthly_price,yearly_price,benefits" filter="visibility:public+type:paid" limit="all"}}
+	{{#if @site.paid_members_enabled}}
+	{{#get "tiers" include="monthly_price,yearly_price,benefits" filter="visibility:public+type:paid" limit="100"}}
 	{{#foreach tiers}}
 	<div class="membership-card">
 		<div class="membership-card-content">
@@ -46,14 +49,15 @@
 			</div>
 			{{/if}}
 		</div>
-		<a href="javascript:" data-portal="signup/{{id}}/monthly" class="global-button" data-monthly>{{t "Subscribe now"}}</a>
-		<a href="javascript:" data-portal="signup/{{id}}/yearly" class="global-button" data-yearly>{{t "Subscribe now"}}</a>
+		<a href="javascript:" data-portal="signup/{{id}}/monthly" class="global-button" data-monthly>{{#if trial_days}}{{t "Start {trial}-day free trial" trial=trial_days}}{{else}}{{t "Subscribe now"}}{{/if}}</a>
+		<a href="javascript:" data-portal="signup/{{id}}/yearly" class="global-button" data-yearly>{{#if trial_days}}{{t "Start {trial}-day free trial" trial=trial_days}}{{else}}{{t "Subscribe now"}}{{/if}}</a>
 	</div>
 	{{/foreach}}
 	{{/get}}
+	{{/if}}
 </div>
 {{#contentFor "membership_js"}}
 <script>
-!function(){const e=document.querySelector(".membership-switch"),r=document.querySelectorAll(".membership-switch button"),c=document.querySelectorAll(".membership-cards [data-monthly]"),l=document.querySelectorAll(".membership-cards [data-yearly]");c.length>0&&l.length>0&&r.forEach(r=>{e.style.display="flex",r.addEventListener("click",t=>{e.setAttribute("data-active-price",r.getAttribute("data-price"))})})}();
+!function(){const c=document.querySelector(".membership-switch"),t=document.querySelectorAll(".membership-switch button");c&&t.forEach(e=>{e.addEventListener("click",t=>{c.setAttribute("data-active-price",e.getAttribute("data-price"))})})}();
 </script>
 {{/contentFor}}

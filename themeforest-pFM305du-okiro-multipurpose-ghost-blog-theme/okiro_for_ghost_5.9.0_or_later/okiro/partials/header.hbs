@@ -1,17 +1,7 @@
 <header class="header-section">
 	<div class="header-wrap">
-		<div class="header-logo{{#if @site.logo}} is-image{{/if}}">
-			{{#is "post, page, author, tag"}}
-			{{#if @site.logo}}
-			<a href="{{@site.url}}" class="is-image"><img src="{{@site.logo}}" alt="{{@site.title}}"></a>
-			{{else}}
-			<a href="{{@site.url}}" class="is-title">{{@site.title}}</a>
-			{{/if}}
-			{{else if @site.logo}}
-			<h1 class="is-image"><a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}"></a></h1>
-			{{else}}
-			<h1 class="is-title"><a href="{{@site.url}}">{{@site.title}}</a></h1>
-			{{/is}}
+		<div class="header-logo{{#if @site.logo}} is-image{{else if @custom.logo_for_dark_color_scheme}} is-image{{/if}}">
+			{{>logo}}
 		</div>
 		<div class="header-nav">
 			<input id="toggle" class="header-checkbox" type="checkbox">

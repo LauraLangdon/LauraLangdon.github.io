@@ -30,6 +30,7 @@
 	{{/if}}
 	<div class="global-sections-content">
 		<h3><a href="{{url}}">{{title}}</a></h3>
+		{{#if @custom.show_author}}
 		<div class="global-sections-meta global-meta global-pointer">
 			{{#has author="count:<3"}}
 			{{authors}}
@@ -38,6 +39,7 @@
 			{{t "and others"}}
 			{{/has}}
 		</div>
+		{{/if}}
 		{{^if feature_image}}
 		{{^if custom_excerpt}}
 		{{#if excerpt}}

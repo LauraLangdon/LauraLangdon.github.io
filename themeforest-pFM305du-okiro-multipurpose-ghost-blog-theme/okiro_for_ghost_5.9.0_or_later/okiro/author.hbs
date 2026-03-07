@@ -27,13 +27,34 @@
 		</div>
 		<div class="archive-icons">
 			{{#if website}}
-			<a href="{{website}}" aria-label="link Website">{{>icons/site/link}}</a>
-			{{/if}}
-			{{#if facebook}}
-			<a href="{{facebook_url}}" aria-label="link Facebook">{{>icons/social/facebook}}</a>
+			<a href="{{website}}" target="_blank" rel="noopener" aria-label="link Website">{{>icons/site/link}}</a>
 			{{/if}}
 			{{#if twitter}}
-			<a href="{{twitter_url}}" aria-label="link Twitter">{{>icons/social/twitter}}</a>
+			<a href="{{social_url type="twitter"}}" target="_blank" rel="noopener" aria-label="link X">{{>icons/social/x}}</a>
+			{{/if}}
+			{{#if facebook}}
+			<a href="{{social_url type="facebook"}}" target="_blank" rel="noopener" aria-label="link Facebook">{{>icons/social/facebook}}</a>
+			{{/if}}
+			{{#if linkedin}}
+			<a href="{{social_url type="linkedin"}}" target="_blank" rel="noopener" aria-label="link LinkedIn">{{>icons/social/linkedin}}</a>
+			{{/if}}
+			{{#if bluesky}}
+			<a href="{{social_url type="bluesky"}}" target="_blank" rel="noopener" aria-label="link Bluesky">{{>icons/social/bluesky}}</a>
+			{{/if}}
+			{{#if threads}}
+			<a href="{{social_url type="threads"}}" target="_blank" rel="noopener" aria-label="link Threads">{{>icons/social/threads}}</a>
+			{{/if}}
+			{{#if mastodon}}
+			<a href="{{social_url type="mastodon"}}" target="_blank" rel="noopener" aria-label="link Mastodon">{{>icons/social/mastodon}}</a>
+			{{/if}}
+			{{#if tiktok}}
+			<a href="{{social_url type="tiktok"}}" target="_blank" rel="noopener" aria-label="link TikTok">{{>icons/social/tiktok}}</a>
+			{{/if}}
+			{{#if youtube}}
+			<a href="{{social_url type="youtube"}}" target="_blank" rel="noopener" aria-label="link YouTube">{{>icons/social/youtube}}</a>
+			{{/if}}
+			{{#if instagram}}
+			<a href="{{social_url type="instagram"}}" target="_blank" rel="noopener" aria-label="link Instagram">{{>icons/social/instagram}}</a>
 			{{/if}}
 		</div>
 	</div>
@@ -46,3 +67,6 @@
 {{/author}}
 {{>loop}}
 {{pagination}}
+{{#contentFor "author_js"}}
+<script>document.addEventListener("DOMContentLoaded",()=>{const c=document.querySelector(".archive-icons");if(c&&c.children.length>5)c.style.flexGrow="1"});</script>
+{{/contentFor}}

@@ -2,21 +2,17 @@
 	<div class="footer-wrap">
 		<div class="footer-data">
 			<div class="footer-logo">
-				{{#if @site.logo}}
-				<a href="{{@site.url}}" class="is-image"><img src="{{@site.logo}}" alt="{{@site.title}}"></a>
-				{{else}}
-				<a href="{{@site.url}}" class="is-title">{{@site.title}}</a>
-				{{/if}}
+				{{>logo}}
 			</div>
 			{{#if @site.description}}
 			<p class="footer-description">{{@site.description}}</p>
 			{{/if}}
 			<div class="footer-icons">
 				{{#if @site.facebook}}
-				<a href="{{facebook_url}}" aria-label="link Facebook">{{>icons/social/facebook}}</a>
+				<a href='{{social_url type="facebook"}}' aria-label="link Facebook">{{>icons/social/facebook}}</a>
 				{{/if}}
 				{{#if @site.twitter}}
-				<a href="{{twitter_url}}" aria-label="link Twitter">{{>icons/social/twitter}}</a>
+				<a href='{{social_url type="twitter"}}' aria-label="link X">{{>icons/social/x}}</a>
 				{{/if}}
 				{{>footer_icons}}
 			</div>
@@ -28,11 +24,11 @@
 		</div>
 	</div>
 	<div class="footer-copyright">
-		<a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}.
+		&copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>.
 		{{#if @custom.footer_copyright}}
 		{{{@custom.footer_copyright}}}
 		{{else}}
 		{{{t "All Rights Reserved. "}}}
 		{{/if}}
 	</div>
-</footer>	
+</footer>

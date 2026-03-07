@@ -19,7 +19,11 @@
 				{{>members/visibility_label}}
 				{{tags limit="1" separator=""}}
 			</div>
+			{{#is "index"}}
+			<h1 class="item-title"><a href="{{url}}">{{title}}</a></h1>
+			{{else}}
 			<h2 class="item-title"><a href="{{url}}">{{title}}</a></h2>
+			{{/is}}
 			{{^if custom_excerpt}}
 			{{#if excerpt}}
 			<p class="item-excerpt global-zigzag">
@@ -34,6 +38,7 @@
 			</p>
 			{{/if}}
 			<div class="item-meta global-meta">
+				{{#if @custom.show_author}}
 				{{#if authors}}
 				<div class="item-profile-image">
 					{{#foreach authors}}
@@ -45,13 +50,16 @@
 					{{/foreach}}
 				</div>
 				{{/if}}
+				{{/if}}
 				<div class="item-authors">
+					{{#if @custom.show_author}}
 					{{#has author="count:<3"}}
 					{{authors}}
 					{{else has author="count:>2"}}
 					{{authors limit="1"}}
 					{{t "and others"}}
 					{{/has}}
+					{{/if}}
 					<div class="item-time">
 						<time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at format="LL"}}</time> ∙ {{reading_time minute=(t "1 minute read") minutes=(t "% minutes read")}}
 					</div>
@@ -74,6 +82,7 @@
 			{{/if}}
 			<div class="item-content">
 				<h2 class="item-title"><a href="{{url}}">{{title}}</a></h2>
+				{{#if @custom.show_author}}
 				<div class="item-meta global-meta global-pointer">
 					<div>
 						{{#has author="count:<3"}}
@@ -84,6 +93,7 @@
 						{{/has}}
 					</div>
 				</div>
+				{{/if}}
 				{{^if feature_image}}
 				{{^if custom_excerpt}}
 				{{#if excerpt}}

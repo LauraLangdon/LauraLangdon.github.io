@@ -1,7 +1,9 @@
 {{!< default}}
 {{#post}}
 <article class="post-section">
+	{{#match @page.show_title_and_feature_image}}
 	{{>post_header}}
+	{{/match}}
 	<div class="post-content">
 		{{#if access}}
 		{{content}}

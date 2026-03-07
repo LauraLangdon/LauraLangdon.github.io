@@ -1,1 +1,9 @@
-<img src="{{img_url section_small_image size="s"}}" loading="lazy" alt="{{alt}}">
+<picture>
+	<source srcset="{{img_url section_small_image  size="s" format="webp"}} 400w"
+			sizes="400px"
+			type="image/webp">
+	<img src="{{img_url section_small_image  size="s"}} 400w"
+		 sizes="400px"
+		 loading="lazy" 
+		 alt="{{alt}}">
+</picture>

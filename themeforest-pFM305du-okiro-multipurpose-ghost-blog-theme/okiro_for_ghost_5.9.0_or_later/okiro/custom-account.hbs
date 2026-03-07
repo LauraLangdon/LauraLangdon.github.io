@@ -81,8 +81,13 @@
 			{{>icons/site/zigzag}}
 			{{custom_excerpt}}
 			{{else}}
+			{{#if @site.paid_members_enabled}}
 			{{>icons/site/zigzag}}
 			{{t "Currently, you’re not a paying subscriber. You’ve an active account with access to posts for subscribers only."}}
+			{{else}}
+			{{>icons/site/zigzag}}
+			{{t "You’ve an active account with access to posts for subscribers."}}
+			{{/if}}
 			{{/if}}
 		</p>
 	</div>
@@ -95,20 +100,24 @@
 					<span class="account-detail-content">{{@member.email}}</span>
 				</div>
 			</div>
+			{{#if @site.paid_members_enabled}}
 			<div class="account-detail-column">
 				<div>
 					<label class="account-detail-heading">{{t "Your plan"}}</label>
 					<span class="account-detail-content">{{t "Free"}}</span>
 				</div>
 			</div>
+			{{/if}}
 		</div>
 	</div>
 	<div class="account-buttons">
 		<a href="javascript:" class="account-button" data-portal="account">{{t "Account settings"}}</a>
 	</div>
 </div>
+{{#if @site.paid_members_enabled}}
 <small class="account-heading global-heading">{{t "More posts? Choose your plan"}}</small>
 {{>members/tiers}}
+{{/if}}
 {{else}}
 {{#contentFor "account_js"}}
 <script>window.addEventListener("load",function(){window.location='{{@site.url}}'})</script>
