@@ -463,6 +463,85 @@ Routes and redirects to be imported via the same Labs page once content import i
 
 ---
 
-## Phase 10: DNS Cutover
+## Phase 10: IDE-First Publishing Workflow
+
+Rather than writing posts in Ghost Admin, posts are authored as Markdown files in the repo and pushed to Ghost via the Admin API. Ghost remains the canonical content store (for ActivityPub, email newsletters), but the local file is the source of truth — Ghost Admin is never used for editing.
+
+### Structure
+
+```
+frontend/posts/my-post/index.md   # post content + frontmatter
+frontend/posts/my-post/image.png  # local images (optional)
+```
+
+### Frontmatter fields
+
+```yaml
+---
+title: Post Title
+slug: post-slug           # defaults to directory name
+status: draft             # or published
+featured: false
+tags:
+  - tag-name
+excerpt: Optional custom excerpt.
+---
+```
+
+### Publish script
+
+`frontend/scripts/publish.mjs` uses Node's built-in `crypto` to generate a Ghost Admin API JWT (no extra auth library needed), `gray-matter` to parse frontmatter, and `marked` to convert Markdown to HTML.
+
+On publish:
+1. Parses frontmatter and Markdown body
+2. Finds all local image references (`src="..."` with relative paths)
+3. Uploads each image to Ghost via `POST /ghost/api/admin/images/upload/`
+4. Rewrites image src attributes to Ghost-hosted URLs
+5. Checks if a post with the same slug already exists
+6. Creates (POST) or updates (PUT) the post with `?source=html`
+
+Updating a post requires passing `updated_at` from the existing post for optimistic locking.
+
+### Usage
+
+```bash
+cd frontend
+npm run publish posts/my-post/
+```
+
+Start posts as `status: draft`, preview at the UUID URL Ghost returns, then change to `status: published` and run again.
+
+### Dependencies added
+
+- `gray-matter` — frontmatter parsing
+- `marked` — Markdown to HTML
+- `dotenv` — load `.env` in Node script context
+
+### Ghost Admin API key
+
+Created a custom integration in Ghost Admin (Settings → Integrations) to obtain an Admin API key. Stored in `frontend/.env` as `GHOST_ADMIN_API_KEY` (not committed).
+
+### Permissions fix
+
+Ghost couldn't create `content/images/2026/` on first image upload due to ownership mismatch. Fixed with:
+
+```bash
+sudo chown -R ghost:ghost-user /var/www/ghost/content/images
+sudo chmod -R 775 /var/www/ghost/content/images
+```
+
+### SSH config alias
+
+Added to `~/.ssh/config` for convenience:
+
+```
+Host ghost
+    HostName 143.198.144.150
+    User root
+```
+
+---
+
+## Phase 11: DNS Cutover
 
 *Pending*
