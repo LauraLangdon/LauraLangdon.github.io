@@ -113,7 +113,7 @@ const posts = await getPosts();
 						</div>
 						{post.feature_image && (
 							<a href={`/blog/${post.slug}/`}>
-								<img class="post-image" src={post.feature_image} alt="" />
+								<img class="post-image" src={post.feature_image} alt={post.feature_image_alt ?? ''} />
 							</a>
 						)}
 					</li>
