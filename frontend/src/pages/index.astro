@@ -24,13 +24,13 @@ const recentPosts = await getRecentPosts(5);
 			}
 			.hero-photo {
 				flex-shrink: 0;
-			}
-			.hero-photo img {
 				width: 180px;
 				height: 180px;
 				border-radius: 50%;
-				object-fit: cover;
 				border: 3px solid var(--accent);
+				background-image: url('/profile.png');
+				background-size: cover;
+				background-position: center 20%;
 			}
 			.hero-content {
 				flex: 1;
@@ -186,9 +186,7 @@ const recentPosts = await getRecentPosts(5);
 		<Header />
 		<main>
 			<section class="hero">
-				<div class="hero-photo">
-					<img src="/profile.png" alt="Laura Langdon" />
-				</div>
+				<div class="hero-photo" role="img" aria-label="Laura Langdon"></div>
 				<div class="hero-content">
 					<h1 class="hero-name">Laura Langdon</h1>
 					<p class="hero-tagline">// Community Manager · UC OSPO Network</p>
