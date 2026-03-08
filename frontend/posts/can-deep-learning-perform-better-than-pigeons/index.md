@@ -12,6 +12,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "My second attempt at Lesson 2 of “Practical Deep Learning for Coders” by fast.ai"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/picasso.jpg
+feature_image_alt: "Picasso painting"
 ---
 
 I’m working through [Lesson 2](https://course.fast.ai/videos/?lesson=2) of the marvelous [“Practical Deep Learning for Coders”](https://course.fast.ai/) course by Jeremy Howard and Rachel Thomas of fast.ai, and last week, I trained a deep learning model to [classify images of pregnancy tests](https://towardsdatascience.com/classifying-pregnancy-test-results-99adda4bca4c) whose results were not distinctly positive or negative, but were either faintly positive or showing evaporation lines. The model’s accuracy wasn’t what I wanted it to be, however, so I decided to start again with a classification problem for which I could easily acquire better sets of images than I could for the tricky pregnancy test classification problem. I then tried to train a model to classify redwood vs. sequoia trees, but again achieved a very low accuracy rate, with most of the errors coming from sequoias classified as redwoods. Sequoias’ trunks are much larger than redwoods’, but in images, it can be challenging to get a sense of scale, and I think that issue is most likely the reason why the model mistook sequoias for redwoods.

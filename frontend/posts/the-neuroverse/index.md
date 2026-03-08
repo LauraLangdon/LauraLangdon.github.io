@@ -8,6 +8,7 @@ tags:
   - "Blog"
   - "#Import 2026-03-08 05:42"
 feature_image: ./7e1773ac.jpg
+feature_image_alt: "A plasma ball with electric tendrils radiating outward in pink and purple"
 ---
 
 A few months ago, [I saw the word "neurodiverse" and misread it as "neuroverse"](https://hachyderm.io/@LauraLangdon/109711363031125042), which struck me as an incredibly lovely way to consider what we usually pose as a juxtaposition between the "neurotypical" and "neurodivergent":

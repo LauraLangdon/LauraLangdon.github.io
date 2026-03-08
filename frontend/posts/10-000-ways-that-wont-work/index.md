@@ -12,6 +12,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "Lesson 3 of “Practical Deep Learning for Coders” by fast.ai"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_L0UbDLtAuq7w2CfjqUH1xw.jpg
+feature_image_alt: "Woman looking at a laptop and biting a pencil in frustration"
 ---
 
 > “I have not failed. I’ve just found 10,000 ways that won’t work.”  

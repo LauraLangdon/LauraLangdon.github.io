@@ -10,6 +10,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "How I set up my keyboard for unparalleled ergonomics *and* portability"
 feature_image: https://staging.lauralangdon.io/content/images/2023/09/3-1.jpeg
+feature_image_alt: "Half of a split keyboard, magnetically attached to a folding stand on a wooden board"
 ---
 
 My Moonlander became a big sister this week! I've loved the Moonlander since the day I got it, and little sister Voyager was an instant-buy for me when ZSA announced it a couple of weeks ago.

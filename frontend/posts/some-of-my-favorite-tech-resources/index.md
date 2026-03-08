@@ -14,6 +14,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "My favorite tech learning resources and tools"
 feature_image: ./b60bd313.jpg
+feature_image_alt: "A cozy desk setup with a laptop on a stand, mechanical keyboard, tablet, lamp, and decorative shelving with plants and a cactus"
 ---
 
 Folks ask me once in a while what resources I like for learning various aspects of tech, so I've compiled them into a list. These are certainly not the only ways to learn! There are oodles of resources available for each topic, and the ones below are the ones that resonated most with me. If they don't hit the spot for you, keep looking for ones that do! There isn't one right way to learn. I'll update this list every so often!

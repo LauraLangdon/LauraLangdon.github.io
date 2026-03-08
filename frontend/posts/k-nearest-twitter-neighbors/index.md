@@ -14,6 +14,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "An introduction to a (relatively) intuitive algorithm"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/knn-1.jpeg
+feature_image_alt: "Dots labelled 'a', 'b', or '?'"
 ---
 
 Hi! I’m Laura, and I’m learning machine learning. I’m also a mathematics lecturer at Cal State East Bay, and have been fortunate to be able to work with my mentor [Prateek Jain](https://www.linkedin.com/in/prateekj/) as a Data Science Fellow at [SharpestMinds](https://www.sharpestminds.com/). This project was selected as a way for me to practice writing a machine learning algorithm from scratch (no scikit-learn allowed!) and to therefore deeply learn and understand the k-nearest neighbors algorithm, or k-NN.

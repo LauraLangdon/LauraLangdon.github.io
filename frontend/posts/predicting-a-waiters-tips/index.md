@@ -12,6 +12,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "Lesson 4 of “Practical Deep Learning for Coders” by fast.ai"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_e3LisARxj0MwvVGhNndBLA.png
+feature_image_alt: "Table of values"
 ---
 
 In Lesson 4 of [“Practical Deep Learning for Coders”](https://course.fast.ai/) by fast.ai, we discover how to how to use deep learning and collaborative filtering to solve tabular data problems. As I always do with the fast.ai lectures, I [watched the lecture](https://course.fast.ai/videos/?lesson=4) through once, then watched it again as I ran through the notebooks, pausing as needed. When I finished that, I wanted to make sure I could replicate the process with a different dataset, and I chose the Kaggle dataset “[A Waiter’s Tips](https://www.kaggle.com/jsphyg/tipping)” by Joe Young. With this dataset, we want to make a model to predict the tip amount for a waiter in a restaurant.

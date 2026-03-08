@@ -12,6 +12,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "My deep learning self-study for 10/21/19–11/10/19"
 feature_image: ./f289e6f1.jpg
+feature_image_alt: "A three-toed sloth hanging from branches in a lush green forest"
 ---
 
 If you’re new to my posts, I’m a mathematics lecturer studying to transition into data science — with a particular interest in artificial general intelligence — and I’ve started keeping a roughly weekly [blog on my progress](https://towardsdatascience.com/fear-tells-us-what-we-have-to-do-ec016aecdbf2). The last three weeks have been more about taking things as they came than crossing items off of my to-do list (though some items have been crossed off as well). I teach math at CSU East Bay, and some weeks — hello, midterms! — are busier than others.

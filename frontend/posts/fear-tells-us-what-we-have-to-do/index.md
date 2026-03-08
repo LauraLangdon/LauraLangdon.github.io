@@ -12,6 +12,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "My deep learning self-study for 09/30/19–10/07/19"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_2A5ROBhoSqee1W4veJLJYw.jpg
+feature_image_alt: "GIF of a digital robotic hand touching a block"
 ---
 
 I’m a math lecturer and aspiring data scientist hoping to participate in artificial general intelligence research, and this week I decided to start keeping a weekly blog of what I’ve been doing, both for my own reference and potentially to help others on a similar path, following the advice of [Rachel Thomas](https://medium.com/@racheltho/why-you-yes-you-should-blog-7d2544ac1045) of fast.ai to “write the blog that would have helped you to read six months ago.”

@@ -12,6 +12,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "My first attempt at Lesson 2 of “Practical Deep Learning for Coders” by fast.ai"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_g7RdzrwvH5uqi-d7JLPCWg.jpg
+feature_image_alt: "2 by 2 classification table"
 ---
 
 I’m a math adjunct and aspiring data scientist working through the “Practical Deep Learning for Coders” course by fast.ai (you can read about my experience with Lesson 1 [here](https://towardsdatascience.com/getting-started-with-fast-ai-350914ee65d2)), and for Lesson 2, we’re to gather a set of images from Google Images to create and train a deep learning model to classify the images.
