@@ -1,24 +1,27 @@
 ---
-import { getPosts, getPost } from '../../lib/ghost';
+import { getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 
 export async function getStaticPaths() {
-	const posts = await getPosts();
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: { slug: post.slug },
-	}));
+	const posts = await getCollection('blog');
+	return posts
+		.filter((p) => p.data.status === 'published')
+		.map((post) => ({
+			params: { slug: post.data.slug },
+			props: { post },
+		}));
 }
 
-const { slug } = Astro.props;
-const post = await getPost(slug);
+const { post } = Astro.props;
+const { Content } = await render(post);
 ---
 
 <BlogPost
-	title={post.title ?? ''}
-	description={post.excerpt ?? ''}
-	pubDate={new Date(post.published_at ?? '')}
-	heroImage={post.feature_image ?? undefined}
+	title={post.data.title}
+	description={post.data.excerpt}
+	pubDate={post.data.date}
+	heroImage={post.data.feature_image}
+	heroImageAlt={post.data.feature_image_alt}
 >
-	<div set:html={post.html} />
+	<Content />
 </BlogPost>

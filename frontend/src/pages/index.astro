@@ -4,10 +4,14 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { getFeaturedPosts, getRecentPosts } from '../lib/ghost';
+import { getCollection } from 'astro:content';
 
-const featuredPosts = await getFeaturedPosts();
-const recentPosts = await getRecentPosts(5);
+const allPosts = await getCollection('blog');
+const publishedPosts = allPosts
+	.filter((p) => p.data.status === 'published')
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const featuredPosts = publishedPosts.filter((p) => p.data.featured);
+const recentPosts = publishedPosts.slice(0, 5);
 ---
 
 <!doctype html>
@@ -213,14 +217,14 @@ const recentPosts = await getRecentPosts(5);
 					<div class="post-grid">
 						{featuredPosts.map((post) => (
 							<div class="post-card">
-								<a href={`/blog/${post.slug}/`}>
-									{post.feature_image && (
-										<img src={post.feature_image} alt="" />
+								<a href={`/blog/${post.data.slug}/`}>
+									{post.data.feature_image && (
+										<img src={post.data.feature_image} alt={post.data.feature_image_alt ?? ''} />
 									)}
 									<div class="post-card-body">
-										<div class="post-card-title">{post.title}</div>
+										<div class="post-card-title">{post.data.title}</div>
 										<div class="post-card-date">
-											<FormattedDate date={new Date(post.published_at ?? '')} />
+											<FormattedDate date={post.data.date} />
 										</div>
 									</div>
 								</a>
@@ -235,9 +239,9 @@ const recentPosts = await getRecentPosts(5);
 				<ul class="post-list">
 					{recentPosts.map((post) => (
 						<li class="post-list-item">
-							<a href={`/blog/${post.slug}/`}>{post.title}</a>
+							<a href={`/blog/${post.data.slug}/`}>{post.data.title}</a>
 							<span class="post-list-date">
-								<FormattedDate date={new Date(post.published_at ?? '')} />
+								<FormattedDate date={post.data.date} />
 							</span>
 						</li>
 					))}
