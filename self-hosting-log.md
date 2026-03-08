@@ -542,6 +542,102 @@ Host ghost
 
 ---
 
-## Phase 11: DNS Cutover
+## Phase 11: Pulling Ghost Posts Locally
+
+To fully support the IDE-first workflow, all existing Ghost posts are mirrored locally as Markdown files so they can be edited and re-published from the repo.
+
+### Pull script
+
+`frontend/scripts/pull.mjs` fetches all posts from Ghost via the Content API, converts the HTML to Markdown using `turndown`, downloads all images locally into the post directory, and writes `posts/slug/index.md` with frontmatter.
+
+```bash
+cd frontend
+npm run pull
+```
+
+Re-running `pull` skips existing posts by default. Pass `--overwrite` to force a refresh.
+
+### Frontmatter fields written by the pull script
+
+```yaml
+---
+title: Post Title
+slug: post-slug
+status: published
+featured: false
+tags:
+  - "tag name"
+excerpt: Auto-generated excerpt from Ghost.
+---
+```
+
+Tag names are quoted with `JSON.stringify` to handle special characters (`:`, `#`, etc.) that would otherwise cause YAML parse errors.
+
+### Known issue: images with complex alt text
+
+Images whose alt text contains `[[brackets]]` (a common Ghost card format) produce Markdown like `![alt with [[...]]](url)`, which `marked` cannot parse back to HTML on publish — the image is rendered as a literal text block instead. A fix to the pull or publish script is pending.
+
+### publish-all script
+
+`frontend/scripts/publish-all.mjs` iterates all directories in `posts/` and runs `publish.mjs` for each — useful for bulk re-publishing after a template or style change.
+
+---
+
+## Phase 12: Image Migration
+
+After importing content from Ghost Pro, images in post bodies had URLs rewritten to `staging.lauralangdon.io`, but the actual image files were never copied to the server — only posts created after the import had local images.
+
+### Investigation
+
+Ghost Pro images use Ghost's CDN, which serves files from the `laura-langdon.ghost.io` subdomain. The staging server only had images from `2026/` in `/var/www/ghost/content/images/`. All earlier posts showed alt text instead of images.
+
+### Migration script
+
+`frontend/scripts/migrate-images.mjs` fetches all posts from Ghost, finds `staging.lauralangdon.io` image URLs in each post's HTML, downloads the original files from `laura-langdon.ghost.io` (same URL paths, different domain), and uploads them to the server via `scp`. Already-present files are skipped.
+
+```bash
+cd frontend
+npm run migrate-images
+```
+
+After the migration, all historical post images appeared correctly on staging.
+
+---
+
+## Phase 13: Frontend Polish
+
+### Social icons in footer
+
+Replaced text links in `Footer.astro` with SVG icons using the `simple-icons` npm package (GitHub, Mastodon, Bluesky, RSS). LinkedIn was added as a hardcoded SVG path — LinkedIn filed a DMCA takedown against Simple Icons ([#12546](https://github.com/simple-icons/simple-icons/issues/12546)) so it is no longer available via the package.
+
+### Blog post layout
+
+- Post content centered with `max-width: 680px; margin: 0 auto` on the `article` element
+- Inline images constrained to text width with `width: 100%; height: auto` (preserves aspect ratio)
+- `figure` wrappers (used by Ghost's image cards) sized to match text width
+
+### Self-hosted fonts
+
+Removed dependency on fontsource npm packages. Fonts are now served from `public/fonts/` with `@font-face` declarations in `global.css`:
+
+- **Atkinson Hyperlegible** (400/700 woff) — body text
+- **PT Mono** (400 woff2) — code blocks
+- **Nunito Sans**, **Raleway**, **Montserrat** (400/700 woff2) — available for future use
+
+Files were located in the fontsource package directories, copied to `public/fonts/`, and the packages were uninstalled.
+
+### nginx deployment
+
+Static files are served from `/var/www/astro/`. Deployed with:
+
+```bash
+rsync -avz --delete dist/ root@143.198.144.150:/var/www/astro/
+```
+
+The nginx `location /` block serves the Astro build with `try_files $uri $uri/ $uri.html =404`. Ghost admin, API, content, and ActivityPub routes are proxied to Ghost on port 2368.
+
+---
+
+## Phase 14: DNS Cutover
 
 *Pending*
