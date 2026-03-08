@@ -28,13 +28,15 @@ import { SITE_TITLE } from '../consts';
 				padding-bottom: 3rem;
 				border-bottom: 1px solid var(--border);
 			}
-			.intro-photo img {
+			.intro-photo {
+				flex-shrink: 0;
 				width: 140px;
 				height: 140px;
 				border-radius: 50%;
-				object-fit: cover;
 				border: 3px solid var(--accent);
-				flex-shrink: 0;
+				background-image: url('/profile.png');
+				background-size: cover;
+				background-position: center 20%;
 			}
 			.intro-bio {
 				font-size: 1.05rem;
@@ -147,9 +149,7 @@ import { SITE_TITLE } from '../consts';
 			<p class="page-heading">About</p>
 
 			<div class="intro">
-				<div class="intro-photo">
-					<img src="/profile.png" alt="Laura Langdon" />
-				</div>
+				<div class="intro-photo" role="img" aria-label="Laura Langdon"></div>
 				<p class="intro-bio">
 					Hello! I'm Laura, and I'm passionate about community, diversity and
 					inclusion across all axes, and open source as a force for public good. I find
