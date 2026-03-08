@@ -3,7 +3,7 @@
 	--bg-card: #fff5f8;
 	--text: #660066;
 	--text-muted: #960096;
-	--accent: #e916a6;
+	--accent: #DA0B99;
 	--accent-2: #666bff;
 	--cyan: #00a5b3;
 	--green: #00aa64;
@@ -150,7 +150,7 @@ code {
 	font-family: "PT Mono", monospace;
 	padding: 2px 6px;
 	background-color: var(--code-bg);
-	color: var(--accent-2);
+	color: #5A59F3;
 	border-radius: 4px;
 	font-size: 0.9em;
 }
