@@ -70,6 +70,10 @@ async function uploadImage(imagePath, token) {
   });
   if (!res.ok) {
     const text = await res.text();
+    if (res.status === 400) {
+      console.warn(`  Warning: Ghost rejected image (unsupported format?), skipping: ${basename(imagePath)}`);
+      return null;
+    }
     throw new Error(`Image upload failed (${res.status}): ${text}`);
   }
   const data = await res.json();
@@ -86,7 +90,7 @@ async function processImages(html, postDir, token) {
     if (existsSync(fullPath)) {
       console.log(`  Uploading: ${localRef}`);
       const remoteUrl = await uploadImage(fullPath, token);
-      html = html.replace(match[0], `src="${remoteUrl}"`);
+      if (remoteUrl) html = html.replace(match[0], `src="${remoteUrl}"`);
       console.log(`    → ${remoteUrl}`);
     } else {
       console.warn(`  Warning: image not found locally, skipping: ${fullPath}`);
@@ -116,9 +120,10 @@ if (!existsSync(mdPath)) {
 const { data: fm, content } = matter(readFileSync(mdPath, 'utf-8'));
 const slug = fm.slug ?? basename(postDir);
 const title = fm.title ?? 'Untitled';
-const status = fm.status ?? 'draft';
+const VALID_STATUSES = ['published', 'draft', 'scheduled', 'sent'];
+const status = VALID_STATUSES.includes(fm.status) ? fm.status : 'draft';
 const featured = fm.featured ?? false;
-const tags = (fm.tags ?? []).map((t) => (typeof t === 'string' ? { name: t } : t));
+const tags = (fm.tags ?? []).map((t) => (typeof t === 'string' ? { name: t } : t)).filter(t => t?.name);
 const customExcerpt = fm.excerpt ?? undefined;
 
 console.log(`Publishing "${title}" (${slug}) as ${status}…`);
