@@ -1,15 +1,32 @@
 ---
+import { siGithub, siMastodon, siBluesky, siRss } from 'simple-icons';
+
 const today = new Date();
+
+const links = [
+	{ href: 'https://github.com/LauraLangdon', label: 'GitHub', icon: siGithub },
+	{ href: 'https://hachyderm.io/@LauraLangdon', label: 'Mastodon', rel: 'me', icon: siMastodon },
+	{ href: 'https://bsky.app/profile/lauralangdon.io', label: 'Bluesky', icon: siBluesky },
+	{ href: '/rss.xml', label: 'RSS', icon: siRss },
+];
 ---
 
 <footer>
 	<div class="footer-inner">
 		<span class="copyright">&copy; {today.getFullYear()} Laura Langdon</span>
 		<nav class="footer-links">
-			<a href="https://github.com/LauraLangdon">GitHub</a>
-			<a href="https://hachyderm.io/@LauraLangdon" rel="me">Mastodon</a>
-			<a href="https://bsky.app/profile/lauralangdon.io">Bluesky</a>
-			<a href="/rss.xml">RSS</a>
+			{links.map(({ href, label, rel, icon }) => (
+				<a href={href} aria-label={label} rel={rel} title={label}>
+					<svg
+						role="img"
+						viewBox="0 0 24 24"
+						xmlns="http://www.w3.org/2000/svg"
+						aria-hidden="true"
+					>
+						<path d={icon.path} />
+					</svg>
+				</a>
+			))}
 		</nav>
 	</div>
 </footer>
@@ -37,15 +54,21 @@ const today = new Date();
 	.footer-links {
 		display: flex;
 		gap: 1.25rem;
+		align-items: center;
 	}
 	.footer-links a {
-		font-family: monospace;
-		font-size: 0.8rem;
+		display: flex;
 		color: var(--text-muted);
 		text-decoration: none;
+		transition: color 0.2s ease;
 	}
 	.footer-links a:hover {
 		color: var(--accent);
+	}
+	.footer-links svg {
+		width: 18px;
+		height: 18px;
+		fill: currentColor;
 	}
 	@media (max-width: 720px) {
 		.footer-inner {
