@@ -1,0 +1,24 @@
+---
+import { getPosts, getPost } from '../../lib/ghost';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+	const posts = await getPosts();
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { slug: post.slug },
+	}));
+}
+
+const { slug } = Astro.props;
+const post = await getPost(slug);
+---
+
+<BlogPost
+	title={post.title ?? ''}
+	description={post.excerpt ?? ''}
+	pubDate={new Date(post.published_at ?? '')}
+	heroImage={post.feature_image ?? undefined}
+>
+	<div set:html={post.html} />
+</BlogPost>
