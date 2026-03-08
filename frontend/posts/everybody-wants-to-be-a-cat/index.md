@@ -12,6 +12,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "Lesson 6 of “Practical Deep Learning for Coders” by fast.ai"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_OrXdQxoSNuQ5gbhWD-9VsA.png
+feature_image_alt: "Table of convolution values and Grumpy Cat in greyscale"
 ---
 
 I’m working through the [“Practical Deep Learning for Coders”](https://course.fast.ai/) course by Jeremy Howard and Rachel Thomas of fast.ai, and blogging about my experience. Since the incredibly generous fast.ai community has already made detailed notes for each lesson (see the ones for Lesson 6 [here](https://github.com/hiromis/notes/blob/master/Lesson6.md)), I’m just writing about the parts of the lecture and accompanying Jupyter notebooks that I needed stop and think through several times.

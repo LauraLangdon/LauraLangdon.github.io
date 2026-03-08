@@ -11,6 +11,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "How I transitioned from being a math lecturer to data science"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/8_ZPlhoPy--1-.jpg
+feature_image_alt: "An illuminated sign reading 'Data has a better idea' in front of a cityscape"
 ---
 
 I have an M.S. in pure math (think theorem-proving, not number-crunching), and recently decided to begin transitioning into data science, specifically machine learning/AI. My background has taught me to think rigorously and precisely, but hasn’t prepared me to do anything other than teaching, either as an adjunct at a college or university, or a high school. Research was my objective, not teaching, though the Ph.D. and tenured faculty position I had in mind would certainly have involved some teaching. It turned out I might actually be good at teaching, and for a few years I thought I could make a decent fist of it, but while the lack of a doctorate means I’m effectively shut out of mathematical research for the time being, the urge to work on new questions and ideas has never left me.

@@ -11,6 +11,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "Interacting with three OSs simultaneously, using one keyboard and mouse"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/image-1.png
+feature_image_alt: "Desk with an iMac, laptop, keyboard, and mouse"
 ---
 
 I’m about to build a computer vision project on a [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/), and it’s my first time using a Pi. I found the [setup instructions](https://projects.raspberrypi.org/en/projects/raspberry-pi-getting-started) on raspberrypi.org to be excellent (much easier than finding the SD card and HDMI adapter my husband had hidden put away!), though the card that came in the box was bemusing.

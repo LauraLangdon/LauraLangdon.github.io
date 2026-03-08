@@ -11,6 +11,7 @@ tags:
   - "OSS"
   - "Hacktoberfest"
   - "#Import 2026-03-08 05:42"
+feature_image_alt: "Twitch thumbnail"
 ---
 
 [

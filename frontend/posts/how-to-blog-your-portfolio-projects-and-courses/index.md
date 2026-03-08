@@ -11,6 +11,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "How blogging your projects helps you learn and optimize your job search"
 feature_image: ./05235e11.jpg
+feature_image_alt: "Person sitting cross-legged on a bed, typing on a laptop while holding a latte with leaf art"
 ---
 
 If you're like me, when you've finished a project or a course you're very ready to slap it on your portfolio and start something new. But if you don't write up a blog post about the project/course, you're leaving _so_ much value on the table! Blogging my courses and projects got me my job, in fact.

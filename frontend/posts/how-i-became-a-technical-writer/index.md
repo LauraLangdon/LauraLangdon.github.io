@@ -12,6 +12,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "Or \"On second thought, let's not become a data scientist\""
 feature_image: ./a55024e3.jpg
+feature_image_alt: "Close-up of a typewriter with paper loaded, typed text reading \"the best way is just to start!\""
 ---
 
 ### My background

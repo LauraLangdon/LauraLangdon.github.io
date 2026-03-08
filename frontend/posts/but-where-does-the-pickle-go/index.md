@@ -12,6 +12,7 @@ tags:
   - "#Import 2026-03-08 05:42"
 excerpt: "Lesson 5 of “Practical Deep Learning for Coders” by fast.ai"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_pukvitVHuEDRLTcUtmch3g--1-.png
+feature_image_alt: "Spreadsheet with prediction values"
 ---
 
 I’m working through the [“Practical Deep Learning for Coders”](https://course.fast.ai/) course by fast.ai, and blogging about my experience. Since the incredibly generous fast.ai community has already made detailed notes for each lesson (see the ones for Lesson 5 [here](https://github.com/hiromis/notes/blob/master/Lesson5.md#mnist-sgd-12359)), I’m just writing about the parts of the lecture and accompanying Jupyter notebooks that I needed stop and think through several times.

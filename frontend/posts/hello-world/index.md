@@ -7,6 +7,7 @@ date: 2026-03-08T10:13:56.000-07:00
 tags:
   - "meta"
 excerpt: "A first post to test the local publishing workflow."
+feature_image_alt: ""
 ---
 
 This is a test post written entirely in the IDE and published to Ghost via the Admin API.
