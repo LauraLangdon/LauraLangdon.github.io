@@ -25,7 +25,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				max-height: 480px;
 				overflow: hidden;
 				border-radius: 12px;
-				margin-bottom: 2.5rem;
+				margin: 0 auto 2.5rem;
 			}
 			.hero-image img {
 				width: 100%;
@@ -54,6 +54,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				font-style: italic;
 				margin-top: 0.25rem;
 			}
+			article {
+				max-width: 680px;
+				margin: 0 auto;
+			}
 			.prose {
 				max-width: 680px;
 			}
@@ -69,9 +73,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.prose :global(a:hover) {
 				color: var(--accent);
 			}
+			.prose :global(figure) {
+				margin: 1.5em 0;
+				width: 100%;
+			}
 			.prose :global(img) {
 				border-radius: 8px;
-				margin: 1.5em 0;
+				width: 100%;
+				height: auto;
 			}
 			.prose :global(pre) {
 				background-color: var(--code-bg);
