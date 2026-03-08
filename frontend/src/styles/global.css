@@ -42,6 +42,55 @@
 	font-style: normal;
 	font-display: swap;
 }
+@font-face {
+	font-family: "Nunito Sans";
+	src: url("/fonts/nunito-sans-latin-400-normal.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Nunito Sans";
+	src: url("/fonts/nunito-sans-latin-700-normal.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Raleway";
+	src: url("/fonts/raleway-latin-400-normal.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Raleway";
+	src: url("/fonts/raleway-latin-700-normal.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("/fonts/montserrat-latin-400-normal.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("/fonts/montserrat-latin-700-normal.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "PT Mono";
+	src: url("/fonts/pt-mono-latin-400-normal.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
 
 body {
 	font-family: "Atkinson", sans-serif;
@@ -98,7 +147,7 @@ img {
 }
 
 code {
-	font-family: monospace;
+	font-family: "PT Mono", monospace;
 	padding: 2px 6px;
 	background-color: var(--code-bg);
 	color: var(--accent-2);
