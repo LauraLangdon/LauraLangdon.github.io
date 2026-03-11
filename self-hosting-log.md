@@ -638,6 +638,86 @@ The nginx `location /` block serves the Astro build with `try_files $uri $uri/ $
 
 ---
 
-## Phase 14: DNS Cutover
+## Phase 14: Accessibility Audit Fixes
+
+A pa11y CI audit run against the built Astro frontend surfaced two categories of errors across all pages.
+
+### Color contrast (WCAG AA, 4.5:1 minimum)
+
+Several colors in the light mode palette fell just short:
+
+| Element | Old color | Ratio | New color | Ratio |
+|---------|-----------|-------|-----------|-------|
+| Nav active link (`--accent`) | `#e916a6` | 4.09:1 on white | `#DF0B99` | 4.52:1 |
+| `.highlight-card-title` (on `--bg-card: #fff5f8`) | `var(--accent)` | 3.83:1 | `#D60B99` | 4.50:1 |
+| Blog post body links / `.job-tag` (`--accent-2`) | `#666bff` | 4.11:1 | `#5A5FF3` | 4.81:1 |
+| Inline `code` text (on `--code-bg: #f8f0fc`) | `var(--accent-2)` | 4.31:1 | `#5A59F3` | 4.54:1 |
+
+Dark mode colors all passed (ratios 6.2:1–8.2:1) and were left unchanged.
+
+`#DF0B99` is the lightest pink on that hue that clears 4.5:1 on white. `.highlight-card-title` needed a slightly darker override (`#D60B99`) because its background is `--bg-card` rather than pure white. `#5A5FF3` passes on white and bg-card but not on `--code-bg`, so `code` was given its own hardcoded value.
+
+**Files changed:** `src/styles/global.css`, `src/pages/about.astro`
+
+### Missing alt text on blog listing images
+
+All post cards on `/blog/` wrapped a `<img class="post-image">` inside an `<a>` with `alt=""`. When an image is the sole content of a link, its alt text must describe the link destination.
+
+Initial fix used `post.feature_image_alt` from the Ghost Content API. However, only 6 of 22 posts had `feature_image_alt` populated in Ghost — the remaining 16 were addressed as part of Phase 15 by adding the field to every post's local markdown frontmatter.
+
+**File changed:** `src/pages/blog/index.astro`
+
+---
+
+## Phase 15: Astro Content Collections Migration
+
+The Ghost Content API was not returning `feature_image_alt` for most posts, and the IDE-first authoring workflow (Phase 10) already kept all posts as local markdown files. The logical fix was to cut the Ghost Content API out of the Astro build entirely and read directly from those local files using Astro content collections.
+
+### content.config.ts
+
+Replaced the Ghost API content collection with a glob loader reading `posts/*/index.md`:
+
+```typescript
+import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
+
+const blog = defineCollection({
+  loader: glob({ base: './posts', pattern: '*/index.md' }),
+  schema: z.object({
+    title: z.string(),
+    slug: z.string(),
+    status: z.enum(['published', 'draft']).default('published'),
+    featured: z.boolean().default(false),
+    date: z.coerce.date(),
+    tags: z.array(z.string()).optional(),
+    excerpt: z.string().optional(),
+    feature_image: z.string().optional(),
+    feature_image_alt: z.string().optional(),
+  }),
+});
+
+export const collections = { blog };
+```
+
+Astro's `image()` helper was not used for `feature_image` — it is not compatible with relative image paths from subdirectories outside `src/`.
+
+### Pages updated
+
+- `src/pages/blog/index.astro` — replaced Ghost API call with `getCollection('blog')`; all `post.X` references updated to `post.data.X`
+- `src/pages/blog/[...slug].astro` — replaced Ghost API with `getCollection` + `render`; uses `<Content />` instead of `set:html`
+- `src/pages/index.astro` — replaced `getFeaturedPosts`/`getRecentPosts` with `getCollection('blog')` + filter/slice
+- `src/layouts/BlogPost.astro` — added `heroImageAlt?: string` prop, updated `alt` on hero image
+
+### feature_image_alt added to all posts
+
+All 24 posts in `posts/` now have `feature_image_alt` in their frontmatter. Alt text was written or confirmed manually for each image.
+
+### GIF pixel limit fix
+
+Large animated GIFs in post bodies exceeded sharp's default pixel limit and caused build errors. Fixed by adding `sharpImageService({ limitInputPixels: false })` to `astro.config.mjs`.
+
+---
+
+## Phase 16: DNS Cutover
 
 *Pending*
