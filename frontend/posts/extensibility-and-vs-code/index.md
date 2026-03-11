@@ -21,7 +21,7 @@ Extensibility and VS Code
 
 A conversation with Jay Miller of Microsoft
 
-![](./719a1edd.png)Suborbital Launch PadLaura Langdon
+![Suborbital logo](./719a1edd.png)Suborbital Launch PadLaura Langdon
 
 ![](https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1676655222679%2F3c622994-6efd-40f0-91ef-af1e3b980b60.png%3Fw%3D1200%26h%3D630%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng)
 

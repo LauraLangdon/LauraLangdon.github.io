@@ -22,7 +22,7 @@ I wasn’t convinced at the time, but after deciding that spending another five 
 
 It then took an enormous leap of faith for me to heed the advice of Harris and many others to not follow my deeply-ingrained learning pattern from grad school: thoroughly learning each component before putting them all together. Instead, I’m adopting a top-down approach: learning tools by using them, not before using them. This is an enormous mindset shift for me, and I don’t know how long it’ll take me to get used to it.
 
-![](./21296046.jpeg)
+![Overhead view of a MacBook with code on the screen, a glass of coffee, and a smartphone showing an Instagram profile](\./21296046\.jpeg)
 
 Photo by [Fabian Grohs](https://unsplash.com/photos/PuxTq4DwUHE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/coding?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

@@ -29,7 +29,7 @@ Photo by [Clay Banks](https://unsplash.com/@claybanks?utm_source=unsplash&utm_me
 
 k-NN works very similarly. Given a set of labeled data and an unlabeled data point x , we’ll look at some number k of x's neighbors, and assign to x the most common label among those k neighbors. Let’s get a visual: in the image below, we have an unlabeled dot and 15 neighbors of its neighbors. Of those 15 neighbors, 9 have a magenta “A” label and 6 have a blue “B” label.
 
-![](./509cf17b.jpeg)
+![A scatter plot of circles labelled A or B, with one unlabelled circle marked with a question mark in the center](\./509cf17b\.jpeg)
 
 Illustration by me!
 
