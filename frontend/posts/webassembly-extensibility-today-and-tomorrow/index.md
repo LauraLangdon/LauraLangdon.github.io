@@ -20,7 +20,7 @@ WebAssembly Extensibility: Today and Tomorrow
 
 How Wasm is creating new possibilities in and out of the browser
 
-![](./719a1edd.png)Suborbital Launch PadLaura Langdon
+![Suborbital logo](./719a1edd.png)Suborbital Launch PadLaura Langdon
 
 ![](https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1651499862618%2FafFWdOIHP.jpeg%3Fw%3D1200%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng)
 

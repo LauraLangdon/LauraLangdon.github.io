@@ -17,7 +17,7 @@ feature_image_alt: "A three-toed sloth hanging from branches in a lush green for
 
 If you’re new to my posts, I’m a mathematics lecturer studying to transition into data science — with a particular interest in artificial general intelligence — and I’ve started keeping a roughly weekly [blog on my progress](https://towardsdatascience.com/fear-tells-us-what-we-have-to-do-ec016aecdbf2). The last three weeks have been more about taking things as they came than crossing items off of my to-do list (though some items have been crossed off as well). I teach math at CSU East Bay, and some weeks — hello, midterms! — are busier than others.
 
-![](./90d11866.gif)
+![A person sitting at a desk looking at a pile of papers and appearing exasperated](\./90d11866\.gif)
 
 [Gfycat](https://gfycat.com/measlyquaintleech)
 

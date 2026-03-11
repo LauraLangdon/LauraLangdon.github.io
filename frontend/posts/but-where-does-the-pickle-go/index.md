@@ -42,11 +42,11 @@ It looks like we put the data in a new folder in the ‘data’ subdirectory? Ok
 
 Then we flatten the images and see that this one, for instance, is the number 5:
 
-![](./f5543838.png)
+![A pixelated white numeral 5 on a black background, plotted on a grid](./f5543838.png)
 
 The next bit that tripps me up slightly iss when Jeremy says of the images: “Currently they are numpy arrays. I need them to be tensors. So I can just map torch.tensor across all of them, and so now they’re tensors.” I realize I don’t know what the difference between a numpy array and a tensor is, so I look it up. It turns out there are many different definitions of tensors, some of which directly contradict one another.
 
-![](./8df041f3.gif)
+![A young child in a car seat with a confused expression](./8df041f3.gif)
 
 Finally, I decide the definition in Ian Goodfellow’s _Deep Learning_ makes the most sense to me, and coming from that book must mean it’s the right one for these purposes, anyway. Goodfellow says: “In some cases we will need an array with more than two axes. In the general case, an array of numbers arranged on a regular grid with a variable number of axes is known as a tensor.” So this is in line with those who say a tensor is a multi-dimensional array, where a scalar is a 0-dimensional tensor, a vector is a 1-dimensional tensor, and a matrix is a 2-dimensional tensor. Works for me! I also read through [this tutorial](https://machinelearningmastery.com/introduction-to-tensors-for-machine-learning/) on how numpy handles tensor arithmetic.
 
@@ -64,7 +64,7 @@ But I have no idea how to proceed from there, so I turn to the fast.ai forums an
 
 The next bit I had to stop and think about was the choice of loss functions. In previous lessons, we’d used the mean-squared error function, or MSE. That works well when you make a prediction and can then measure “how far off” your observed result was from your prediction, as shown below.
 
-![](./7877078c.png)
+![A scatter plot with a blue regression line and red vertical lines showing the residuals between each data point (x1,y1) through (x7,y7) and the line](./7877078c.png)
 
 [freecodecamp.org](https://www.freecodecamp.org/news/machine-learning-mean-squared-error-regression-line-c7dde9a26b93/)
 
@@ -72,7 +72,7 @@ But as Jeremy says, that loss function doesn’t make sense for a classification
 
 So he says we’ll use cross-entropy loss instead, which considers not only whether a prediction was correct or incorrect, but the confidence with which the prediction was made. In the example from the lesson shown below, we’re predicting whether an image is of a cat or a dog.
 
-![](./ecc32ec9.png)
+![A spreadsheet with columns for Cat, Dog, Pred(Cat), Pred(Dog), X-Entropy, and G, showing prediction values and cross-entropy losses summing to 1.66](./ecc32ec9.png)
 
 Screenshot from Lesson 5
 

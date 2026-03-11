@@ -39,7 +39,7 @@ Sometimes when learning something, it can feel like “Yes, all of this makes pe
 
 This moment was one of those for me: we’re running a tensor through a series of convolutions, each reducing the height and width but increasing the number of output channels, and when we’re finished, we have the tensor illustrated below.
 
-![](./d58ac81b.gif)
+![Screen recording of Jeremy Howard drawing a tensor diagram during a fast.ai lecture](./d58ac81b.gif)
 
 [https://www.youtube.com/watch?v=U7c-nYXrKD4&feature=youtu.be&t=5630](https://www.youtube.com/watch?v=U7c-nYXrKD4&feature=youtu.be&t=5630)
 
@@ -55,11 +55,11 @@ We have many images, so many such tensors, but PyTorch expects us to use mini-ba
 
 Then we run the tensor through a series of activations, starting with a 2-dimensional convolution `Conv2d`, which uses a stride of size 2. That means that rather than “looking” at each element of the matrix, it’s “looking” at every other element, “jumping over” half of them. That’s what causes the height and width to be cut in half, and the number of output channels to double.
 
-![](./608a9728.png)
+![Jupyter output showing the first layer of a Sequential model: Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)](./608a9728.png)
 
 So when we run the tensor through the first convolutional layer, we take a matrix of dimensions 352 x 352 x 3 and run it through 64 convolutions (or kernels) with a stride of size 2, and we get back a matrix of dimensions (352 / 2) x (352 / 2) x 64; that is, it’s 176 x 176 x 64, or in PyTorch shape terms as shown below:
 
-![](./996b9ddb.png)
+![Jupyter output of print(learn.summary()) showing Conv2d with output shape [64, 176, 176] and 9,408 parameters](./996b9ddb.png)
 
 We then run the tensor through two more layers: `BatchNorm2d` and `ReLU`, which don’t change the shape, and then the pooling layer `MaxPool2d` , which does change the shape to 88 x 88 x 64. I found Jason Brownlee’s [A Gentle Introduction to Pooling Layers for Convolutional Neural Networks](https://machinelearningmastery.com/pooling-layers-for-convolutional-neural-networks/) very helpful in understanding how pooling layers work.
 
