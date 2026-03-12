@@ -153,25 +153,34 @@ code {
 	color: #5A59F3;
 	border-radius: 4px;
 	font-size: 0.9em;
+	white-space: nowrap;
 }
 
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
-	overflow-x: auto;
 }
 pre > code {
 	all: unset;
+	display: block;
 	font-family: monospace;
 	font-size: 0.9em;
+	line-height: 1.1;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	tab-size: 4;
+}
+pre > code > .line {
+	display: block;
 }
 
-/* Shiki dual-theme: apply light theme by default, dark theme in dark mode */
-pre.astro-code,
-pre.astro-code span {
-	color: var(--shiki-light) !important;
-	background-color: var(--shiki-light-bg) !important;
+/* Override Shiki's inline overflow-x: auto to allow wrapping */
+pre.astro-code {
+	overflow-x: visible !important;
 }
+
+/* Shiki dual-theme: light colors are applied inline by default;
+   switch to dark theme variables in dark mode */
 @media (prefers-color-scheme: dark) {
 	pre.astro-code,
 	pre.astro-code span {
