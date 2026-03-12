@@ -718,6 +718,68 @@ Large animated GIFs in post bodies exceeded sharp's default pixel limit and caus
 
 ---
 
-## Phase 16: DNS Cutover
+## Phase 16: Linting, Accessibility, and Code Quality
+
+### Alt text for all inline images (MD045)
+
+Every inline body image across all 24 posts now has descriptive alt text. Images were downloaded and visually inspected to write accurate descriptions. Medium CDN images required a browser User-Agent header for curl; some Hashnode CDN images were unavailable and described from surrounding context and feature image alt text.
+
+### Non-descriptive link text (MD059)
+
+Replaced all `[here]` links with descriptive text (e.g. `[Lesson 5 notes]`, `[Predicting a Waiter's Tips]`, `[my reading notes and questions (PDF)]`).
+
+### Spellcheck with cspell
+
+Configured `cspell.config.yaml` with a comprehensive word list for tech terms, proper nouns, and project-specific vocabulary. Initial run caught 10 real typos across 6 posts:
+
+- `embarassed` → `embarrassed`
+- `Fortuntately` → `Fortunately`
+- `tqhinks` → `thinks`
+- `turqoise` → `turquoise`
+- `nagnets` → `magnets`
+- `tipod` → `tripod`
+- `camra` → `camera`
+- `kayboard` → `keyboard`
+- `absolutel` → `absolutely`
+
+URL patterns and backtick-wrapped code are ignored. Strikethrough Unicode characters are also excluded.
+
+### markdownlint
+
+Configured `.markdownlint-cli2.yaml`. Accessibility rules (MD045, MD059) are enforced. Ghost import formatting artifacts (MD001, MD009, MD027, MD030) and content style rules (MD013, MD024, MD026, MD033, MD034, MD041) are disabled.
+
+### eslint
+
+Configured `eslint.config.mjs` with flat config: `@eslint/js` recommended, `typescript-eslint` recommended, and `eslint-plugin-astro` recommended. Fixed one unnecessary regex escape in `HeaderLink.astro` (`[^\/]+` → `[^/]+`).
+
+### Shiki dual-theme syntax highlighting
+
+Configured Shiki with `github-light` and `github-dark` themes to fix code comment contrast (the single-theme default produced `#6A737D` comments at 3.05:1, failing WCAG AA). Dual themes use CSS custom properties switching via `prefers-color-scheme`:
+
+- Light mode (`github-light`): comment color 4.82:1 ✓
+- Dark mode (`github-dark`): comment color 6.65:1 ✓
+
+**Files changed:** `astro.config.mjs`, `src/styles/global.css`
+
+### Pre-commit hooks with husky + lint-staged
+
+Installed husky v9 at the repo root (where `.git` lives) with a pre-commit hook that runs `cd frontend && npx lint-staged`. lint-staged runs:
+
+- `posts/**/*.md` → markdownlint-cli2 + cspell
+- `src/**/*.{astro,ts}` → eslint + cspell
+
+**Files added:** `package.json` (root), `.husky/pre-commit`, `.gitignore` (root node_modules)
+
+### linkinator
+
+Installed for post-build link checking. Not in pre-commit (too slow); intended for CI:
+
+```bash
+npm run lint:links  # runs linkinator on dist/
+```
+
+---
+
+## Phase 17: DNS Cutover
 
 *Pending*
