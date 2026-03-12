@@ -95,7 +95,9 @@ const recentPosts = publishedPosts.slice(0, 5);
 				transform: translateY(-2px);
 			}
 			.post-card a {
-				display: block;
+				display: flex;
+				flex-direction: column;
+				height: 100%;
 				color: inherit;
 				text-decoration: none;
 			}
@@ -107,6 +109,9 @@ const recentPosts = publishedPosts.slice(0, 5);
 			}
 			.post-card-body {
 				padding: 1.25rem;
+				flex: 1;
+				display: flex;
+				flex-direction: column;
 			}
 			.post-card-title {
 				font-size: 1.1rem;
@@ -119,6 +124,7 @@ const recentPosts = publishedPosts.slice(0, 5);
 				font-family: monospace;
 				font-size: 0.9rem;
 				color: var(--text-muted);
+				margin-top: auto;
 			}
 			.post-list {
 				list-style: none;
