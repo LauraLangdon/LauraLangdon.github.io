@@ -18,7 +18,7 @@ feature_image: ./ea5904cc.jpg
 feature_image_alt: "A hand holding a \"Hello!\" sticker with a smiley face, person blurred in the background"
 ---
 
-Fun fact: I've been planning to write this post for weeks, and when Twitter was purchased last week by the dude who tqhinks he's going to colonize Mars and began what appears to be a rapid death spiral, I thought "Oops, I guessed I missed the boat on writing that blog post!" But really, for the most part the technique I was going to write down is applicable to any social networking platform.
+Fun fact: I've been planning to write this post for weeks, and when Twitter was purchased last week by the dude who thinks he's going to colonize Mars and began what appears to be a rapid death spiral, I thought "Oops, I guessed I missed the boat on writing that blog post!" But really, for the most part the technique I was going to write down is applicable to any social networking platform.
 
 This post is intended for folks early in their journey into tech, who don't already know other people in tech.
 

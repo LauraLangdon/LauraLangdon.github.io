@@ -71,7 +71,7 @@ So. my advice to aspiring technical writers is:
 
 *   Pick a technical concept you want to learn, and blog as you learn it. Write the article that would have helped you last week, and next week write the article that would have helped you this week (I literally did this, totally works!).
 *   Post questions on forums, and _link to your question post_ in your blog for that week! This serves two purposes: you'll be networking on the forum, and showing that you know how to ask good questions and learn from the answers. That ability is super important!
-*   Get yourself on GitHub. It's truly okay that what you're putting on there is absolutel beginner content!
+*   Get yourself on GitHub. It's truly okay that what you're putting on there is absolutely beginner content!
 *   Join groups like [Write the Docs](https://www.writethedocs.org/slack/)
 *   Get comfortable being uncomfortable, because that feeling is your new shadow when you work in tech. There'll always be an avalanche of new and amazing stuff, and you'll never catch up and that's totally cool! [Fear tells us what we have to do](https://www.blog.lauralangdon.io/fear-tells-us-what-we-have-to-do-ec016aecdbf2).
 
