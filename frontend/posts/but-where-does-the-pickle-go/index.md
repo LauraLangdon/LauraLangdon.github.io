@@ -55,7 +55,13 @@ Then I do fine for a bit, until we’re getting ready to “linearize” our mod
 So I stared at that for several minutes, coming up with exactly no idea of how to go about this. I looked at how it would be called in the next cell:
 
 ```python
-class Mnist_Logistic(nn.Module):    def __init__(self):        super().__init__()        self.lin = nn.Linear(784, 10, bias=True)    def forward(self, xb): return self.lin(xb)
+class Mnist_Logistic(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.lin = nn.Linear(784, 10, bias=True)
+
+    def forward(self, xb):
+        return self.lin(xb)
 ```
 
 Okay, so we’re passing it the number of images (784), 10 (10 what?), and we’re setting bias=True, because we want to add a bias to `x@a`, hence `x@a + b.` I scroll down in the notes and remember Jeremy saying: “Our input is 784-dimensional and we need something that’s going to give us a probability of 10 numbers. After that happens we’ve got ten activations which we then want to add the bias to, so there we go.” So that’s where the 10 comes from.
