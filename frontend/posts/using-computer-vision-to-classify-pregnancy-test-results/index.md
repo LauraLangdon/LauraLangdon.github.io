@@ -15,27 +15,27 @@ feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_g7Rdzrwv
 feature_image_alt: "2 by 2 classification table"
 ---
 
-I’m a math adjunct and aspiring data scientist working through the “Practical Deep Learning for Coders” course by fast.ai (you can read about my experience with Lesson 1 [here](https://towardsdatascience.com/getting-started-with-fast-ai-350914ee65d2)), and for Lesson 2, we’re to gather a set of images from Google Images to create and train a deep learning model to classify the images.
+I’m a math adjunct and aspiring data scientist working through the “Practical Deep Learning for Coders” course by fast.ai (you can read about my experience with Lesson 1 in [Getting Started With fast.ai](https://towardsdatascience.com/getting-started-with-fast-ai-350914ee65d2)), and for Lesson 2, we’re to gather a set of images from Google Images to create and train a deep learning model to classify the images.
 
 I begin by trying to work through the Lesson 2 notebook without watching the lecture, because it seemed to be suggested by the [Lesson 1 wiki](https://course.fast.ai/videos/?lesson=1), but get absolutely nowhere. Some people did get it done before Lesson 2 was recorded! I guess it’s not a race, and not being the fastest isn’t a reason to quit. Once I watch the lecture, I have a much easier time figuring out how to work in the notebook, particularly In Jeremy’s “experimentalist” style.
 
 First, I need to decide what types of images to classify. Binary classification — where an image is either One Thing or a Different Thing, not Something Else Entirely, nor a combination of the two Things — sounds like a good option, but since I need to be able to assess how well the model is performing, the classifications it’s making need to be something I have domain expertise in. I have an M.S. in pure math, and consider doing something involving math, but don’t think of anything between digit recognition (done to death beautifully by [MNIST](http://yann.lecun.com/exdb/mnist/)), and something far more complex than I’m ready to implement. I also have three children, and those two areas are probably the two I could consider myself to have “expertise” in. So, something to do with parenting and binary classification… aha!
 
-![](https://cdn-images-1.medium.com/max/1600/1*cwEeCi3p8saCQF8Uhyfpfw.jpeg)
+![Illustration of two pregnancy tests: top shows one line (Not Pregnant), bottom shows two lines (Pregnant)](https://cdn-images-1.medium.com/max/1600/1*cwEeCi3p8saCQF8Uhyfpfw.jpeg)
 
 We think of pregnancy tests as being either positive or negative, but there are also two more ambiguous cases that look quite similar to one another: faint positives, and [evaporation lines](https://www.healthline.com/health/pregnancy/evaporation-line-pregnancy-test), which are negative. There exist many forums — such as [PeeOnAStick.com](https://www.peeonastickfreak.com)— full of people with extensive experience interpreting pregnancy tests. One might hope digital pregnancy tests would take this guesswork out of testing, but digital tests often read “Inconclusive” or “Negative” for early faint positives, and won’t read give an accurate result until a few days later in the pregnancy, when hormone levels have increased.
 
 Here’s an example of faint positive:
 
-![](https://cdn-images-1.medium.com/max/1600/1*ISJIoxTKPlc0JBq4O_RG4A.jpeg)
+![Close-up of a pregnancy test showing a faint positive result with one strong line and one very faint line](https://cdn-images-1.medium.com/max/1600/1*ISJIoxTKPlc0JBq4O_RG4A.jpeg)
 
 And here’s an evaporation line:
 
-![](https://cdn-images-1.medium.com/max/1600/1*EfiATV5KZHlcRj6gyTK0_w.jpeg)
+![Close-up of a pregnancy test showing an evaporation line](https://cdn-images-1.medium.com/max/1600/1*EfiATV5KZHlcRj6gyTK0_w.jpeg)
 
 The evaporation line is darker than the faint positive above, but this is a negative test! This is the tricky bit. The chart below gives some insight as to the differences between the two:
 
-![](https://cdn-images-1.medium.com/max/1600/1*FzPFPjHvIAeH0vkPkEUJPQ.jpeg)
+![Comparison table of faint positive line vs evaporation line characteristics including thickness, timing, and color](https://cdn-images-1.medium.com/max/1600/1*FzPFPjHvIAeH0vkPkEUJPQ.jpeg)
 
 Image credit: ([https://www.momjunction.com/articles/evaporation-line-test\_00475745/#gref](https://www.momjunction.com/articles/evaporation-line-test_00475745/#gref))
 
@@ -51,7 +51,7 @@ Viewing the data goes fine, though I can see there are some images that’ll be 
 
 So I train the model, with the following results:
 
-![](https://cdn-images-1.medium.com/max/1600/1*PfADO-_CXjy5AqZHExR0rg.jpeg)
+![Training results table showing train_loss 1.24, valid_loss 2.78, and error_rate 0.56 over 4 epochs](https://cdn-images-1.medium.com/max/1600/1*PfADO-_CXjy5AqZHExR0rg.jpeg)
 
 So I have a training loss of .9, a validation loss of 2.78, and an error rate of .56. Pretty terrible, but I’ll press on.
 
@@ -59,23 +59,23 @@ I go through the notebook cells dealing with the learning rate, but I’m not pl
 
 Here’s the “confusion matrix” for this first run:
 
-![](https://cdn-images-1.medium.com/max/1600/1*F6VSf5r9tFEI4oA_xeOg_w.jpeg)
+![Confusion matrix: 7 evap_lines correct, 12 misclassified as faint_positives; 2 faint_positives misclassified, 13 correct](https://cdn-images-1.medium.com/max/1600/1*F6VSf5r9tFEI4oA_xeOg_w.jpeg)
 
 This shows that of the tests the model predicted to be evaporation lines, 7 were correctly identified, and 2 were incorrectly identified as faint positives. Of the tests predicted to be faint positives, 13 were correctly identified, and 12 were incorrectly identified as evaporation lines. Since I know that a majority of the evaporation line images were mislabeled by the users who posted them, though, this is more or less what I expected to see. The model is likely more accurate than it thinks it is!
 
 Now I’ll clean the data. Here’s the first batch:
 
-![](https://cdn-images-1.medium.com/max/1600/1*upzf2EAwDMZtJ0OkWVM8aw.jpeg)
+![fast.ai ImageCleaner widget showing pregnancy test images with classification dropdowns and delete buttons](https://cdn-images-1.medium.com/max/1600/1*upzf2EAwDMZtJ0OkWVM8aw.jpeg)
 
 The first image has text covering the test, while the third image is too small and the test windows are too dark to determine a classification, I think, so I delete those. I can change the labels on the images as well, so I can switch the ones labeled as evaporation lines that should be labeled as faint positives. Then I recreate the databunch with just the cleaned data. I’m not particularly optimistic that this will increase the model’s accuracy to the very high rates achieved by the models shown in the lecture, because the tests display results in different configurations: some show a + when positive, while others show a single line if negative, two lines if positive. So if the model is just counting lines, it’s going to have a hard time. We’ll see.
 
 The ImageCleaner function creates a cleaned.csv file for the cleaned data set, and I create a new ImageBunch using that file, then train the model again.
 
-![](https://cdn-images-1.medium.com/max/1600/1*6gSHGGekAGik6lSvHWs_NQ.jpeg)
+![Training results after data cleaning showing improved train_loss 0.82, valid_loss 1.29, and error_rate 0.44](https://cdn-images-1.medium.com/max/1600/1*6gSHGGekAGik6lSvHWs_NQ.jpeg)
 
 My training set loss went down by 0.2, my validation set loss went down by 1.5, and my error rate went down by .12. Let’s look at the new confusion matrix:
 
-![](https://cdn-images-1.medium.com/max/1600/1*g7RdzrwvH5uqi-d7JLPCWg.jpeg)
+![Confusion matrix after data cleaning: 12 faint positives still misclassified as evaporation lines](https://cdn-images-1.medium.com/max/1600/1*g7RdzrwvH5uqi-d7JLPCWg.jpeg)
 
 Just like I thought, the model is still classifying 12 faint positives as evaporation lines, and the faint positive lines can be so faint I’m not at all surprised that it’s confused. Adding in the different styles of test result displays, the model has the deck stacked against it.
 
@@ -85,7 +85,7 @@ The script downloads the full URLs of the user’s avatar image next to each tes
 
 Even worse, I just realized the images from Countdown to Pregnancy have a serious flaw. Here’s an example. Can you spot the problem?
 
-![](https://cdn-images-1.medium.com/max/1600/1*Stm7933ZDAPklSqWzhsPuA.jpeg)
+![Pregnancy test strip from Countdown to Pregnancy website with an Evap tag in the upper right corner](https://cdn-images-1.medium.com/max/1600/1*Stm7933ZDAPklSqWzhsPuA.jpeg)
 
 I heard a podcast recently about a deep learning model that was trained to spot cancerous skin growths, and while it was astonishingly accurate, eventually the researchers realized that the model had worked out that all of the images it was given of cancerous growths had rulers in them, and the non-cancerous ones didn’t have rulers, so it was looking for rulers, not cancer. These photos of evaporation lines all have an “Evap” tag in the upper right corner! The images are great, but the tag is a big downer.
 
@@ -93,31 +93,31 @@ But it turns out that if I download the images, the tag disappears! I consider l
 
 I upload the images into the evap\_lines folder, and run my model again.
 
-![](https://cdn-images-1.medium.com/max/1600/1*FHWJ1CEN3heLpBG8-QktmQ.jpeg)
+![Training results showing train_loss 1.66, valid_loss 1.47, and error_rate 0.45 over 4 epochs](https://cdn-images-1.medium.com/max/1600/1*FHWJ1CEN3heLpBG8-QktmQ.jpeg)
 
 That’s still pretty bad. Here’s the Learning Rate Finder graph:
 
-![](https://cdn-images-1.medium.com/max/1600/1*bIV8yK2Smcg3_4dBvngDnw.jpeg)
+![Learning rate finder plot showing loss curve with minimum around 1e-3](https://cdn-images-1.medium.com/max/1600/1*bIV8yK2Smcg3_4dBvngDnw.jpeg)
 
 I try setting the learning rate to a range of 1e-5 to 1e-4:
 
 Run it again:
 
-![](https://cdn-images-1.medium.com/max/1600/1*cSqZpx_qW2jOv5k0tHUOtA.jpeg)
+![Training results after adjusting learning rate showing train_loss 0.49, valid_loss 1.93, and error_rate 0.34](https://cdn-images-1.medium.com/max/1600/1*cSqZpx_qW2jOv5k0tHUOtA.jpeg)
 
 That’s the lowest training set loss I’ve had, and the validation loss and error rate have improved, but not nearly to the standards we’re going for. Here’s the confusion matrix:
 
-![](https://cdn-images-1.medium.com/max/1600/1*Rs0QLZYd6teyHial4h0g7A.jpeg)
+![Confusion matrix: 8 evap_lines correct, 12 misclassified; 1 faint_positive misclassified, 17 correct](https://cdn-images-1.medium.com/max/1600/1*Rs0QLZYd6teyHial4h0g7A.jpeg)
 
 Once again, nearly all of the errors are faint positives classified as evaporation lines. Improving the quality of the evaporation line images helped, but I think I’m going to have restrict the model to classifying just one brand, rather than all brands, due to the inconsistencies in the way results are displayed, as described a bit above.
 
 I choose ClearBlue Easy, because it’s a popular test (lots of images!), and also because blue dye tests seem to be most prone to evaporation lines. I download about 100 images each of evaporation lines and faint positives (“faint” is a judgment call on my part), and run the model once more.
 
-![](https://cdn-images-1.medium.com/max/1600/1*UCSF9Yio5CYmrXB8yQ6L5g.jpeg)
+![Training results for ClearBlue Easy brand only showing error_rate around 0.38 over 4 epochs](https://cdn-images-1.medium.com/max/1600/1*UCSF9Yio5CYmrXB8yQ6L5g.jpeg)
 
 This is still not working well. I know my data is as good as it can get from user-identified images now, so I’m ready to try some hyperparameter tuning. I set my learning rate to a range between 1e-06 and 1e-04:
 
-![](https://cdn-images-1.medium.com/max/1600/1*wFQ07MAL3dJGPGYNbqrUcg.jpeg)
+![Training results after hyperparameter tuning showing slight improvement](https://cdn-images-1.medium.com/max/1600/1*wFQ07MAL3dJGPGYNbqrUcg.jpeg)
 
 A little better. Maybe run more epochs? Nope, I get essentially the same result.
 

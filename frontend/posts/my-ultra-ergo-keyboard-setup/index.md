@@ -15,7 +15,7 @@ feature_image_alt: "Half of a split keyboard, magnetically attached to a folding
 
 My Moonlander became a big sister this week! I've loved the Moonlander since the day I got it, and little sister Voyager was an instant-buy for me when ZSA announced it a couple of weeks ago.
 
-![](https://staging.lauralangdon.io/content/images/2023/09/IMG_3675.jpeg)
+![Top: ZSA Moonlander split keyboard with yellow and white honeybee-themed keycaps. Bottom: ZSA Voyager split keyboard in white with low-profile keys and pink accent switches visible.](https://staging.lauralangdon.io/content/images/2023/09/IMG_3675.jpeg)
 
 Top: Moonlander Bottom: Voyager
 
@@ -23,7 +23,7 @@ Like the Moonlander, the Voyager is gorgeously, impeccably built. I'm loving the
 
 I have a standing desk with a keyboard tray, and the tray has Velcro dots stuck to it to grab onto the wooden lap desk the keyboard itself is on (that'll make sense in a few paragraphs, promise! 😁).
 
-![White standing desk with white and grey office chair in front of it, green dresser to the left, and walnut nightstand to the right. On the desk is a monitor on a long dark wood stand along with a turqoise lamp and a leafy plant. Also on the desk are two laptops stood vertically, a few cute figurines, wooden trays for office items, and a gold headphone stand holding white headphones. The desk has a keyboard tray with a split keyboard on it, steeply tented, and a trackpad between the keyboard halves.](https://staging.lauralangdon.io/content/images/2023/09/1.jpeg)
+![White standing desk with white and grey office chair in front of it, green dresser to the left, and walnut nightstand to the right. On the desk is a monitor on a long dark wood stand along with a turquoise lamp and a leafy plant. Also on the desk are two laptops stood vertically, a few cute figurines, wooden trays for office items, and a gold headphone stand holding white headphones. The desk has a keyboard tray with a split keyboard on it, steeply tented, and a trackpad between the keyboard halves.](https://staging.lauralangdon.io/content/images/2023/09/1.jpeg)
 
 I like a steep, steep tent for my keebs, and for the Moonlander I added MagSafe stickers to the base so it could snap on to a Z-shaped adjustable camera mount with a MagSafe magnet attached. The Moonlander actually has a camera mount kit which I tried first, but I found I needed to be able to rotate the angle of the board depending on the position I was in. And since the entire base of the Voyager is magnetic, I have even more degrees of freedom with it! You can see below how the angle of the base of the Voyager relative to the lap desk supporting it is nearly 90 degrees, and that combined the angle of the left edge of the Voyager relative to the lap desk lets my wrist stay completely neutral. My forearm is supported by the arm of my chair, and my hand just floats alongside the keyboard.
 
@@ -49,11 +49,11 @@ Between the keyboard halves I have a Magic Trackpad attached with [Velcro dots](
 
 The black [Z-shaped camera mounts](https://www.amazon.com/gp/product/B07MHJ2TL6) attach to the lap desk with [bar magnets](https://www.amazon.com/gp/product/B08L3FVFFZ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1):
 
-![Black Z-shaped camera mount with two silver bar nagnets stuck to its base, next to a lap desk with corresponding bar bar nagnets for the mount to attach to.](https://staging.lauralangdon.io/content/images/2023/09/IMG_0004.jpeg)
+![Black Z-shaped camera mount with two silver bar magnets stuck to its base, next to a lap desk with corresponding bar bar magnets for the mount to attach to.](https://staging.lauralangdon.io/content/images/2023/09/IMG_0004.jpeg)
 
 On each camera mount I've attached a [MagSafe tripod mount](https://www.amazon.com/gp/product/B0BPLW4ZTZ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1):
 
-![Hand holding a MagSafe tripod mount. The center of the tipod mount has a hole for the screw on the Z-shaped mount to attach to.](https://staging.lauralangdon.io/content/images/2023/09/IMG_0005.jpeg)
+![Hand holding a MagSafe tripod mount. The center of the tripod mount has a hole for the screw on the Z-shaped mount to attach to.](https://staging.lauralangdon.io/content/images/2023/09/IMG_0005.jpeg)
 
 The magnetic attraction between the base of the Voyager and the tripod mount is _strong_. I can position the Voyager high up on the mount when I need extra height for a particular position:
 
@@ -61,7 +61,7 @@ The magnetic attraction between the base of the Voyager and the tripod mount is 
 
 And I can achieve any degree of rotation:
 
-![Half of a split keyboard on a Z-shaped camra mount. The back of the keyboard faces the camera, and the kayboard is steeply tented and rotated so that it's at about a -25 degree angle relative to a line parallel to the table.](https://staging.lauralangdon.io/content/images/2023/09/IMG_0014.jpeg)
+![Half of a split keyboard on a Z-shaped camera mount. The back of the keyboard faces the camera, and the keyboard is steeply tented and rotated so that it's at about a -25 degree angle relative to a line parallel to the table.](https://staging.lauralangdon.io/content/images/2023/09/IMG_0014.jpeg)
 
 All of these independent adjustments are available to me when I move to a new position or context:
 

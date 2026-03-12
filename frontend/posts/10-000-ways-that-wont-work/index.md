@@ -23,7 +23,7 @@ I’m a math adjunct working my way through [Lesson 3](https://course.fast.ai/vi
 
 This week, however, I wasn’t able to produce anything. I followed my usual fast.ai workflow: I watched the lecture once, then watched again while working through the notebooks, pausing as needed. I kept the invaluable [detailed version of the lecture notes](https://github.com/hiromis/notes/blob/master/Lesson3.md) handy as I went through the second (third, fourth…) time.
 
-![](https://cdn-images-1.medium.com/max/1600/1*FSer6FHg5nwVKicPL18TOQ.jpeg)
+![Overhead view of a wooden desk with a keyboard, open notebook, earbuds, and a coffee](https://cdn-images-1.medium.com/max/1600/1*FSer6FHg5nwVKicPL18TOQ.jpeg)
 
 Photo by [Lukas Blazek](https://unsplash.com/@goumbik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/studying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -45,13 +45,13 @@ At the end of the lecture, Jeremy said we should try to think of an interesting 
 
 The fastai library has a tool called the data\_block API, which does a lot of the heavy lifting involved in splitting your data into train and validation sets, along with their labels, and sets them up to load into your model. There are only ten lines of code involved, but I didn’t really understand what Step 0 was: I couldn’t figure out if how to choose a dataset for it, how to get that dataset ready to become a databunch, and generally, I just found it impenetrable. Over the next four days, I read the [data\_block API doc](https://docs.fast.ai/data_block.html), Wayde Gilliam’s [“Finding Data Block Nirvana (a journey through the fast ai data block API)](https://blog.usejournal.com/finding-data-block-nirvana-a-journey-through-the-fastai-data-block-api-c38210537fe4),” and dozens of forum posts, but I still just.didn’t.get it.
 
-![](https://cdn-images-1.medium.com/max/1600/1*L0UbDLtAuq7w2CfjqUH1xw.jpeg)
+![A person sitting at a desk with a laptop, biting a pencil in frustration](https://cdn-images-1.medium.com/max/1600/1*L0UbDLtAuq7w2CfjqUH1xw.jpeg)
 
 Photo by [JESHOOTS.COM](https://unsplash.com/@jeshoots?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/studying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Jeremy says we’ll be coming back to the data\_block API frequently, so I’m going take the advice of the image below (a slide from Lesson 1 of the course) and will swallow my pride and move on to Lesson 4 without feeling like I’ve even slightly mastered Lesson 3. Womp-womp.
 
-![](https://cdn-images-1.medium.com/max/1600/1*nmikQjBlmyRF0LaqDRHXLQ.png)
+![fast.ai Lesson 1 slide titled "If you're stuck, keep going!" listing four principles: Code first, The whole game, Concepts not details, Do lesson 2 even if you don't understand all of lesson 1](https://cdn-images-1.medium.com/max/1600/1*nmikQjBlmyRF0LaqDRHXLQ.png)
 
 Slide from Lesson 1 of the course, found on [https://hackernoon.com/how-not-to-do-fast-ai-or-any-ml-mooc-3d34a7e0ab8c](https://hackernoon.com/how-not-to-do-fast-ai-or-any-ml-mooc-3d34a7e0ab8c)
 

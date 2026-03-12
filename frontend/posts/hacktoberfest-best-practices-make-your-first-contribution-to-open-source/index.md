@@ -22,6 +22,6 @@ Twitch is the world’s leading video platform and community for gamers.
 
 ![Twitch logo](\./0dc6ed54\.png)Twitch
 
-![](https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/4ed43ea99f85856e0c89_tbdevs_49339826365_1695398416/thumb/thumb0-640x360.jpg)
+![Twitch stream thumbnail for Hacktoberfest Best Practices](https://static-cdn.jtvnw.net/cf_vods/d1m7jfoe9zdc1j/4ed43ea99f85856e0c89_tbdevs_49339826365_1695398416/thumb/thumb0-640x360.jpg)
 
 ](https://www.twitch.tv/videos/1932219952)

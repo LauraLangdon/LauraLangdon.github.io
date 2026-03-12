@@ -31,7 +31,7 @@ The last three weeks have thrown some curveballs at me, though (two great! One n
 
 I began with the friendly-sounding [Git for Ages 4 and Up](https://www.youtube.com/watch?v=1ffBJ4sVUb4). One might think such a video would be intended for total beginners, but a couple of minutes into the video the presenter says you’re actually supposed to already know all of this:
 
-![](https://cdn-images-1.medium.com/max/1600/1*SQj-XUVhDPV2PggqZ1Arbg.png)
+![Slide listing git commands: init, clone, add, commit, branch, merge, diff, log, status, checkout, push, pull](https://cdn-images-1.medium.com/max/1600/1*SQj-XUVhDPV2PggqZ1Arbg.png)
 
 [Git for Ages 4 and Up](https://www.youtube.com/watch?v=1ffBJ4sVUb4)
 
@@ -39,7 +39,7 @@ Ahem. So I went back to the list of suggested Git resources, and did [GitHub’s
 
 Approaching the day of the sprint, I almost considered backing out, because I was sure I didn’t have the background to be there. I had to keep reminding myself that my application had been completely honest about my background and progress so far with ML, and I’d been accepted, not even waitlisted, so I should probably accept the confidence of the organizers. I’m so glad I did, because while the day was a long series of me asking the wonderfully helpful TAs about seemingly every step of the process, I did submit a PR for a docstring documentation fix, and [it was merged](https://github.com/scikit-learn/scikit-learn/pull/15513)! An exciting first for me, and I’m deeply grateful to the WiMLDS team for making this event possible. I also met some fun and interesting people, including a Twitter friend.
 
-![](https://cdn-images-1.medium.com/max/1600/1*dTJc3ClF9IYxL3LvYSWngw.jpeg)
+![Participants working on laptops at the WiMLDS scikit-learn open source sprint](https://cdn-images-1.medium.com/max/1600/1*dTJc3ClF9IYxL3LvYSWngw.jpeg)
 
 Photo credit: [Katarina Slama](https://medium.com/wimlds-bay-area-blog/highlights-from-the-2019-sf-wimlds-scikit-learn-open-source-sprint-bed9075d69c3)
 
@@ -49,7 +49,7 @@ And I made it to the second round of the process! That consisted of solving a ti
 
 Then the next day, I was hit with a virus that then swept through my family, and lost an entire week to recovery. The fatigue and weakness left me channeling my inner sloth.
 
-![](https://cdn-images-1.medium.com/max/1600/1*bC3J14H5s4at1yorkBH38A.gif)
+![A baby sloth slowly falling asleep](https://cdn-images-1.medium.com/max/1600/1*bC3J14H5s4at1yorkBH38A.gif)
 
 [Giphy](https://giphy.com/gifs/sloths-mornin-fellas-rjKKYUukwOJR6)
 

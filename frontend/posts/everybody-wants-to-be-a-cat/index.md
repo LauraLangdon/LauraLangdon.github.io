@@ -15,7 +15,7 @@ feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_OrXdQxoS
 feature_image_alt: "Table of convolution values and Grumpy Cat in greyscale"
 ---
 
-I’m working through the [“Practical Deep Learning for Coders”](https://course.fast.ai/) course by Jeremy Howard and Rachel Thomas of fast.ai, and blogging about my experience. Since the incredibly generous fast.ai community has already made detailed notes for each lesson (see the ones for Lesson 6 [here](https://github.com/hiromis/notes/blob/master/Lesson6.md)), I’m just writing about the parts of the lecture and accompanying Jupyter notebooks that I needed stop and think through several times.
+I’m working through the [“Practical Deep Learning for Coders”](https://course.fast.ai/) course by Jeremy Howard and Rachel Thomas of fast.ai, and blogging about my experience. Since the incredibly generous fast.ai community has already made detailed notes for each lesson (see the [Lesson 6 notes](https://github.com/hiromis/notes/blob/master/Lesson6.md)), I’m just writing about the parts of the lecture and accompanying Jupyter notebooks that I needed stop and think through several times.
 
 The first topic I needed to review came up during the discussion of affine transformations with regard to data augmentation. What does “affine” mean again? Something to do with being linear. I consulted Google and found lots of explanations that were clear as mud, but [this one](https://math.stackexchange.com/questions/275310/what-is-the-difference-between-linear-and-affine-function) on Math Stack Exchange worked for me: a linear function just scales, but an affine function scales and \*shifts\*.
 
