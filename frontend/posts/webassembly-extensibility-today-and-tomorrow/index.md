@@ -10,7 +10,7 @@ tags:
   - "WebAssembly"
   - "#Import 2026-03-08 05:42"
 excerpt: "How Wasm is creating new possibilities in and out of the browser"
-feature_image: ./ff251353.jpg
+feature_image: "/images/posts/webassembly-extensibility-today-and-tomorrow/ff251353.jpg"
 feature_image_alt: "A worm's-eye view looking up a tall ornate ladder or structure with gold globe ornaments, with a skyscraper visible in the upper left corner against a pale sky"
 ---
 

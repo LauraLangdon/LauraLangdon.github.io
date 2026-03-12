@@ -11,7 +11,7 @@ tags:
   - "#post-card-rose"
   - "#Import 2026-03-08 05:42"
 excerpt: "My deep learning self-study for 10/21/19–11/10/19"
-feature_image: ./f289e6f1.jpg
+feature_image: "/images/posts/the-sprint-and-the-sloth/f289e6f1.jpg"
 feature_image_alt: "A three-toed sloth hanging from branches in a lush green forest"
 ---
 

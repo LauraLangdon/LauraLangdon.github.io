@@ -9,7 +9,7 @@ tags:
   - "Suborbital"
   - "WebAssembly"
   - "#Import 2026-03-08 05:42"
-feature_image: ./32a907c5.jpg
+feature_image: "/images/posts/writing-webassembly-code-by-hand/32a907c5.jpg"
 feature_image_alt: "Black and white close-up of clay-covered hands shaping a pot on a spinning pottery wheel"
 ---
 

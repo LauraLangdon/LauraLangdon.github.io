@@ -13,7 +13,7 @@ tags:
   - "#post-card-rose"
   - "#Import 2026-03-08 05:42"
 excerpt: "My favorite tech learning resources and tools"
-feature_image: ./b60bd313.jpg
+feature_image: "/images/posts/some-of-my-favorite-tech-resources/b60bd313.jpg"
 feature_image_alt: "A cozy desk setup with a laptop on a stand, mechanical keyboard, tablet, lamp, and decorative shelving with plants and a cactus"
 ---
 
