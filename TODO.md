@@ -8,8 +8,6 @@
 - Post type tags/cards (stream, talk, post, etc.) like Ghost Pro had
 - Dates on featured post cards should line up with each other regardless of title length
 - Copy button and syntax highlighting for code blocks
-- Use pinkish themes for code blocks (currently github-light/github-dark)
-- Light mode has no syntax highlighting (Shiki dual-theme CSS not applying)
 - Deploy pending changes (blog post centering, image width fix, new fonts, PT Mono for code)
 
 ## Content / publishing
@@ -23,7 +21,6 @@
 ## Infrastructure
 - Set up ActivityPub
 - Ghost webhook to trigger Astro rebuild on content change
-- Import `routes.yaml` / `redirects.yaml` to staging (low priority, for redirect preservation)
 - Automated backups: mysqldump + tar + Backblaze (deferred to production)
 
 ## Production readiness
