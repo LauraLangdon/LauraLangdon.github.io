@@ -8,12 +8,17 @@
 - Post type tags/cards (stream, talk, post, etc.) like Ghost Pro had
 - Dates on featured post cards should line up with each other regardless of title length
 - Copy button and syntax highlighting for code blocks
+- Use pinkish themes for code blocks (currently github-light/github-dark)
+- Light mode has no syntax highlighting (Shiki dual-theme CSS not applying)
 - Deploy pending changes (blog post centering, image width fix, new fonts, PT Mono for code)
 
 ## Content / publishing
 - Markdown images with complex alt text (e.g. alt text containing `[[brackets]]`) render as literal Markdown syntax — fix needed in `pull.mjs` or `publish.mjs`
 - Pull Ravelry projects into site feed
   - Set up Ravelry Pro account for API access: https://www.ravelry.com/businesses/new?plan_type=6
+
+## CI / quality
+- RSS feed validator (e.g. W3C Feed Validation Service)
 
 ## Infrastructure
 - Set up ActivityPub
