@@ -11,4 +11,12 @@ export default defineConfig({
 	image: {
 		service: sharpImageService({ limitInputPixels: false }),
 	},
+	markdown: {
+		shikiConfig: {
+			themes: {
+				light: 'github-light',
+				dark: 'github-dark',
+			},
+		},
+	},
 });

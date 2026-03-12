@@ -158,13 +158,26 @@ code {
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
-	background-color: var(--code-bg);
 	overflow-x: auto;
 }
 pre > code {
 	all: unset;
 	font-family: monospace;
 	font-size: 0.9em;
+}
+
+/* Shiki dual-theme: apply light theme by default, dark theme in dark mode */
+pre.astro-code,
+pre.astro-code span {
+	color: var(--shiki-light) !important;
+	background-color: var(--shiki-light-bg) !important;
+}
+@media (prefers-color-scheme: dark) {
+	pre.astro-code,
+	pre.astro-code span {
+		color: var(--shiki-dark) !important;
+		background-color: var(--shiki-dark-bg) !important;
+	}
 }
 
 blockquote {
