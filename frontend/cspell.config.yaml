@@ -63,6 +63,7 @@ words:
   - IndieWeb
   - POSSE
   # Ghost / infrastructure
+  - tryghost
   - Mailgun
   - DigitalOcean
   - droplet
@@ -185,7 +186,15 @@ words:
   - iTerm2
   - mentee
   - Obsidian
+  - CHAOSS
+  - CHAOSSCon
+  - CHAOSScast
+  - CURIOSS
+  - CSCCE
+  - FOSSY
+  - livestreamed
   - OSPO
+  - OSSNA
   - Pomodoro
   - spidey
   - timey
