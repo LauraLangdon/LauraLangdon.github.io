@@ -98,7 +98,7 @@ body {
 	padding: 0;
 	background-color: var(--bg);
 	color: var(--text);
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 1.7;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -117,11 +117,11 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 }
 
-h1 { font-size: 3.052em; }
-h2 { font-size: 2.441em; }
-h3 { font-size: 1.953em; }
-h4 { font-size: 1.563em; }
-h5 { font-size: 1.25em; }
+h1 { font-size: 3.052rem; }
+h2 { font-size: 2.441rem; }
+h3 { font-size: 1.953rem; }
+h4 { font-size: 1.563rem; }
+h5 { font-size: 1.25rem; }
 
 strong, b { font-weight: 700; }
 
@@ -152,7 +152,7 @@ code {
 	background-color: var(--code-bg);
 	color: #5A59F3;
 	border-radius: 4px;
-	font-size: 0.9em;
+	font-size: 0.9rem;
 	white-space: nowrap;
 }
 
@@ -164,7 +164,7 @@ pre > code {
 	all: unset;
 	display: block;
 	font-family: monospace;
-	font-size: 0.9em;
+	font-size: 0.9rem;
 	line-height: 1.1;
 	white-space: pre-wrap;
 	word-wrap: break-word;
@@ -194,7 +194,7 @@ blockquote {
 	padding: 0 0 0 1.25em;
 	margin: 0 0 1em 0;
 	color: var(--text-muted);
-	font-size: 1.1em;
+	font-size: 1.1rem;
 }
 
 hr {
@@ -204,7 +204,6 @@ hr {
 }
 
 @media (max-width: 720px) {
-	body { font-size: 18px; }
 	main { padding: 1em; }
 }
 
