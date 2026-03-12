@@ -10,6 +10,13 @@
 	--border: #dfcce5;
 	--code-bg: #f8f0fc;
 	--box-shadow: 0 2px 8px rgba(102, 0, 102, 0.08), 0 8px 24px rgba(102, 0, 102, 0.06);
+
+	--mono-hero: 2.8rem;
+	--mono-page-heading: 1.5rem;
+	--mono-section-heading: 1.15rem;
+	--mono-body: 1rem;
+	--mono-meta: 0.9rem;
+	--mono-small: 0.8rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -152,7 +159,7 @@ code {
 	background-color: var(--code-bg);
 	color: #5A59F3;
 	border-radius: 4px;
-	font-size: 0.9rem;
+	font-size: var(--mono-meta);
 	white-space: nowrap;
 }
 
@@ -164,7 +171,7 @@ pre > code {
 	all: unset;
 	display: block;
 	font-family: monospace;
-	font-size: 0.9rem;
+	font-size: var(--mono-meta);
 	line-height: 1.1;
 	white-space: pre-wrap;
 	word-wrap: break-word;

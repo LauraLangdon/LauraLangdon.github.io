@@ -1,7 +1,6 @@
 # Todo
 
 ## In progress
-- UI monospace font sizes — scattered across scoped component styles in each page/layout
 
 ## Frontend / styling
 - Email subscribe button
