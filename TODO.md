@@ -6,8 +6,6 @@
 ## Frontend / styling
 - Email subscribe button
 - Post type tags/cards (stream, talk, post, etc.) like Ghost Pro had
-- Dates on featured post cards should line up with each other regardless of title length
-- Copy button and syntax highlighting for code blocks
 - Deploy pending changes (blog post centering, image width fix, new fonts, PT Mono for code)
 
 ## Content / publishing

@@ -752,14 +752,34 @@ Configured `.markdownlint-cli2.yaml`. Accessibility rules (MD045, MD059) are enf
 
 Configured `eslint.config.mjs` with flat config: `@eslint/js` recommended, `typescript-eslint` recommended, and `eslint-plugin-astro` recommended. Fixed one unnecessary regex escape in `HeaderLink.astro` (`[^\/]+` → `[^/]+`).
 
-### Shiki dual-theme syntax highlighting
+### Custom Shiki themes
 
-Configured Shiki with `github-light` and `github-dark` themes to fix code comment contrast (the single-theme default produced `#6A737D` comments at 3.05:1, failing WCAG AA). Dual themes use CSS custom properties switching via `prefers-color-scheme`:
+Created custom `light-pinkish` and `dark-pinkish` Shiki themes based on Warp terminal color schemes. Dark theme uses original ANSI colors unchanged. Light theme colors were darkened to meet WCAG AA contrast (4.5:1) on white, searching for the brightest passing hue near each original color.
 
-- Light mode (`github-light`): comment color 4.82:1 ✓
-- Dark mode (`github-dark`): comment color 6.65:1 ✓
+Shiki dual-theme output puts light colors inline and dark colors in `--shiki-dark` CSS custom properties, switched via `prefers-color-scheme`. Fixed a CSS bug where a `var(--shiki-light)` rule was overriding Shiki's inline light colors with a nonexistent variable.
 
+**Files added:** `src/themes/dark-pinkish.json`, `src/themes/light-pinkish.json`
 **Files changed:** `astro.config.mjs`, `src/styles/global.css`
+
+### Code block UX
+
+- **Copy button:** Client-side script adds a "Copy" button (top-right) to every `pre.astro-code` block using the Clipboard API.
+- **Line wrapping:** Code blocks wrap instead of scrolling (`white-space: pre-wrap`, `overflow-x: visible`). Indent-aware wrapping preserves leading whitespace using dynamic `padding-left` / `text-indent` per line.
+- **Line height:** Tightened to 1.1 in code blocks (body default is 1.7).
+- **Inline code:** Added `white-space: nowrap` to prevent inline code snippets from splitting across lines.
+- **Collapsed code block fix:** One Ghost-exported code block in `but-where-does-the-pickle-go` had all lines collapsed onto a single line; restored proper newlines.
+
+**Files changed:** `src/styles/global.css`, `src/layouts/BlogPost.astro`
+
+### Feature image paths
+
+Post `feature_image` frontmatter used relative paths (`./filename.jpg`) that resolved correctly on individual post pages but broke on the homepage card grid (where the path resolves relative to `/`). Copied 9 feature images to `public/images/posts/<slug>/` and updated frontmatter to absolute paths.
+
+### Featured post card date alignment
+
+Dates on featured post cards now align at the bottom of each card regardless of title length, using flexbox with `margin-top: auto` on the date element.
+
+**Files changed:** `src/pages/index.astro`
 
 ### Pre-commit hooks with husky + lint-staged
 
