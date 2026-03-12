@@ -10,7 +10,20 @@
     "publish": "node scripts/publish.mjs",
     "publish-all": "node scripts/publish-all.mjs",
     "pull": "node scripts/pull.mjs",
-    "migrate-images": "node scripts/migrate-images.mjs"
+    "migrate-images": "node scripts/migrate-images.mjs",
+    "lint": "eslint src && markdownlint-cli2 && cspell --no-progress",
+    "lint:links": "linkinator dist --recurse --skip '^(?!http://localhost)'",
+    "check": "astro check"
+  },
+  "lint-staged": {
+    "posts/**/*.md": [
+      "markdownlint-cli2",
+      "cspell --no-progress"
+    ],
+    "src/**/*.{astro,ts}": [
+      "eslint",
+      "cspell --no-progress"
+    ]
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
@@ -22,9 +35,17 @@
     "simple-icons": "^16.11.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "cspell": "^9.6.0",
     "dotenv": "^17.3.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-astro": "^1.6.0",
     "gray-matter": "^4.0.3",
+    "linkinator": "^7.6.1",
+    "lint-staged": "^15.5.2",
+    "markdownlint-cli2": "^0.21.0",
     "marked": "^17.0.4",
-    "turndown": "^7.2.2"
+    "turndown": "^7.2.2",
+    "typescript-eslint": "^8.57.0"
   }
 }
