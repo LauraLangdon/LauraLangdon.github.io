@@ -10,7 +10,7 @@ tags:
   - "#post-card-rose"
   - "#Import 2026-03-08 05:42"
 excerpt: "How blogging your projects helps you learn and optimize your job search"
-feature_image: ./05235e11.jpg
+feature_image: "/images/posts/how-to-blog-your-portfolio-projects-and-courses/05235e11.jpg"
 feature_image_alt: "Person sitting cross-legged on a bed, typing on a laptop while holding a latte with leaf art"
 ---
 

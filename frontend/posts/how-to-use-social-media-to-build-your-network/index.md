@@ -14,7 +14,7 @@ tags:
   - "#post-card-rose"
   - "#Import 2026-03-08 05:42"
 excerpt: "Hot take: Twitter > LinkedIn"
-feature_image: ./ea5904cc.jpg
+feature_image: "/images/posts/how-to-use-social-media-to-build-your-network/ea5904cc.jpg"
 feature_image_alt: "A hand holding a \"Hello!\" sticker with a smiley face, person blurred in the background"
 ---
 
