@@ -86,6 +86,24 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageAlt } = As
 			.prose :global(pre) {
 				background-color: var(--code-bg);
 				border: 1px solid var(--border);
+				position: relative;
+			}
+			.prose :global(.copy-btn) {
+				position: absolute;
+				top: 8px;
+				right: 8px;
+				padding: 4px 10px;
+				font-family: monospace;
+				font-size: 0.75rem;
+				color: var(--text-muted);
+				background: var(--bg);
+				border: 1px solid var(--border);
+				border-radius: 4px;
+				cursor: pointer;
+			}
+			.prose :global(.copy-btn:hover) {
+				color: var(--accent);
+				border-color: var(--accent);
 			}
 			.prose :global(blockquote) {
 				border-left-color: var(--accent);
@@ -130,5 +148,28 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageAlt } = As
 			</article>
 		</main>
 		<Footer />
+		<script>
+			document.querySelectorAll('pre.astro-code').forEach((pre) => {
+				// Set indent-aware wrapping on each line
+				pre.querySelectorAll('.line').forEach((line) => {
+					const text = line.textContent ?? '';
+					const leading = text.match(/^(\s*)/)?.[1].length ?? 0;
+					const indent = leading + 2; // extra 2ch for wrap continuation
+					(line as HTMLElement).style.paddingLeft = `${indent}ch`;
+					(line as HTMLElement).style.textIndent = `-${indent}ch`;
+				});
+
+				const btn = document.createElement('button');
+				btn.className = 'copy-btn';
+				btn.textContent = 'Copy';
+				btn.addEventListener('click', async () => {
+					const code = pre.querySelector('code');
+					await navigator.clipboard.writeText(code?.textContent ?? '');
+					btn.textContent = 'Copied!';
+					setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+				});
+				pre.appendChild(btn);
+			});
+		</script>
 	</body>
 </html>

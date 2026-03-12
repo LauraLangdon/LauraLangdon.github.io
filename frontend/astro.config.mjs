@@ -3,6 +3,8 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, sharpImageService } from 'astro/config';
+import darkPinkish from './src/themes/dark-pinkish.json';
+import lightPinkish from './src/themes/light-pinkish.json';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,8 +16,8 @@ export default defineConfig({
 	markdown: {
 		shikiConfig: {
 			themes: {
-				light: 'github-light',
-				dark: 'github-dark',
+				light: lightPinkish,
+				dark: darkPinkish,
 			},
 		},
 	},
