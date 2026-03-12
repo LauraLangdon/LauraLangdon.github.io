@@ -23,7 +23,7 @@ Following the instructions in the Lesson 2 lecture, I search for “picasso pain
 
 On its first time out of the gate, my model beats the pigeons!
 
-![](https://cdn-images-1.medium.com/max/1600/1*NlxD8tSqltFO2OUiEVyoNg.jpeg)
+![A table of training results showing epoch, train_loss, valid_loss, error_rate, and time across 4 epochs](https://cdn-images-1.medium.com/max/1600/1*NlxD8tSqltFO2OUiEVyoNg.jpeg)
 
 My training set loss is 0.396 while my validation set loss is 0.086 and my error rate is 0.278. It’ll be hard to improve on that! My spidey sense is pinging, though, because my training set loss is higher than that of my validation set, and I think Jeremy said in the lecture that that’s a sign of overfitting. I search and find [this post](https://forums.fast.ai/t/determining-when-you-are-overfitting-underfitting-or-just-right/7732/5?u=go_go_gadget) on the fast.ai forum in which Jeremy says that as long as the error rate is low, a little overfitting is acceptable. Whew!
 
@@ -31,13 +31,13 @@ Now for some hyperparameter tuning, though the accuracy is so high that I’m no
 
 That works! Here’s the graph.
 
-![](https://cdn-images-1.medium.com/max/1600/1*yOrRmTQf-XiTEg5e4dFikQ.jpeg)
+![A line chart showing loss decreasing as learning rate increases, used to identify the optimal learning rate](https://cdn-images-1.medium.com/max/1600/1*yOrRmTQf-XiTEg5e4dFikQ.jpeg)
 
 Based on the graph, I set the learning rate to stay between 1e-6 to 1e-4:
 
-![](https://cdn-images-1.medium.com/max/1600/1*sqVyZu9uMN7w5w7VPV-X9Q.jpeg)
+![Training results after unfreezing: 2 epochs with very low error rates](https://cdn-images-1.medium.com/max/1600/1*sqVyZu9uMN7w5w7VPV-X9Q.jpeg)
 
-![](https://cdn-images-1.medium.com/max/1600/1*RrNjFZh4xC1fFv7zow5VFw.jpeg)
+![Confusion matrix showing the model correctly classified 19 Monet and 16 Picasso paintings, with only 1 misclassification](https://cdn-images-1.medium.com/max/1600/1*RrNjFZh4xC1fFv7zow5VFw.jpeg)
 
 I’ve brought down both my training set loss and my validation set loss considerably, but the error rate is essentially the same (which I expected). The model only made one mistake, classifying a Picasso as a Monet.
 
@@ -59,11 +59,11 @@ I take the advice of the Helpful Worm, and try ̶ w̶a̶l̶k̶i̶n̶g̶ ̶t̶h̶
 
 Yes! I run a Picasso image through the classifier, and the model classifies it correctly. So it is displaying as if it’s the bear classifier, while actually running my classifier.
 
-![](https://cdn-images-1.medium.com/max/1600/1*52qph7d6vwAYzEIsQyBgsQ.png)
+![Screenshot of the "Classify Bear Images" web app with a Picasso painting uploaded, showing the result "picasso"](https://cdn-images-1.medium.com/max/1600/1*52qph7d6vwAYzEIsQyBgsQ.png)
 
 I see that I need to edit some code for the user-facing text somewhere, but can’t figure out where to do that. The wonderfully helpful [mrfabulous1](https://forums.fast.ai/u/mrfabulous1) on the fast.ai forums comes through for me again and tells me that the code I need to edit is the index.html file in the “view” subdirectory of the “app” directory. It works!
 
-![](https://cdn-images-1.medium.com/max/1600/1*s1Lj3O7VHRWjB59o_fepSQ.png)
+![Screenshot of the "Is it Picasso or Monet?" web app with a Monet painting uploaded, showing the result "monet"](https://cdn-images-1.medium.com/max/1600/1*s1Lj3O7VHRWjB59o_fepSQ.png)
 
 So now I have an image classification model with 97% accuracy, and a web app deployed to play with it. On to Lesson 3!
 

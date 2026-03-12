@@ -43,7 +43,7 @@ I check out a batch of the data:
 
 `data.show_batch(rows=10)`
 
-![](https://cdn-images-1.medium.com/max/1600/1*e3LisARxj0MwvVGhNndBLA.png)
+![Table of training data showing sex, smoker, day, time, total_bill, size, and tip target columns with normalized values](https://cdn-images-1.medium.com/max/1600/1*e3LisARxj0MwvVGhNndBLA.png)
 
 The `total_bill` and `size` often have negative values? I don’t think the restaurant paid any patrons to eat there, so this must a result of the call to the `Normalize` preprocessing. I check [the docs](https://docs.fast.ai/tabular.data.html#TabularProcessor) and don’t find what `Normalize` actually does, so I return to the [detailed lecture notes](https://github.com/hiromis/notes/blob/master/Lesson4.md) and find this:
 
@@ -55,7 +55,7 @@ I declare my learner, telling the API that it’ll be a tabular learner (as oppo
 
 Then I run `learn.fit` , and get an error:
 
-![](https://cdn-images-1.medium.com/max/1600/1*8q14yGDm9qNwlXmPttq-jw.png)
+![Python traceback showing RuntimeError: Expected object of scalar type Long but got scalar type Float for argument #2 'other'](https://cdn-images-1.medium.com/max/1600/1*8q14yGDm9qNwlXmPttq-jw.png)
 
 It looks “argument #2” in the `accuracy` function is `targs`, but it’s not obvious to me how I need to go about fixing this. I Google the error, and find a [post on it](https://forums.fast.ai/t/error-pytorch-expected-object-of-scalar-type-long-but-got-scalar-type-float-for-argument-2-other/33778/3). So yes, `targs` is “argument #2”, and I need to make my own `accuracy` function. The `accuracy` function was called when I created a learner, so I create a new cell above that one, and define a new accuracy function, called `accuracy_long` , which is identical to the original `accuracy` function, except for the`.long()` addition on the fourth line:def accuracy\_1ong(input:Tensor, targs:Tensor)->Rank0Tensor:  
    n = targs.shape\[0\]  
@@ -65,7 +65,7 @@ It looks “argument #2” in the `accuracy` function is `targs`, but it’s not
 
 … and run both cells in order. It wouldn’t be any fun if we didn’t get another error, right?
 
-![](https://cdn-images-1.medium.com/max/1600/1*sgQRfCrfTBFJtE5XBoGBAw.png)
+![Python traceback showing NameError: name 'accuracy_long' is not defined](https://cdn-images-1.medium.com/max/1600/1*sgQRfCrfTBFJtE5XBoGBAw.png)
 
 And I’m like “I did too define it! See, just up there?”
 
@@ -73,7 +73,7 @@ _\*hours of Googling and thinking I can’t even define a function and should de
 
 I give the computer a long, cold stare, then carry on recreating my learner and running `learn.fit(1, 1e-2)` . And check out my accuracy rate! It‘s strongly related to what I’d like my accuracy rate to be, in that they are exact opposites. 🙄
 
-![](https://cdn-images-1.medium.com/max/1600/1*oUChJoXzjYGHF-jm9CplGg.png)
+![Training results table showing epoch 0 with train_loss 12.24, valid_loss 9.19, and accuracy_long 0.000000](https://cdn-images-1.medium.com/max/1600/1*oUChJoXzjYGHF-jm9CplGg.png)
 
 Since this dataset came to me pre-cleaned with a cherry on top, and was designed to predict exactly what I’m trying to use it to predict, it seems like my accuracy rate should be great, not precisely awful. So I wonder if I accidentally inverted some logic somewhere, and comb through the code. I don’t find anything, though.
 
@@ -83,7 +83,7 @@ Unlike the Lesson 2 notebook, the Lesson 4 notebook doesn’t start the learning
 
 I create and run five new cells: `learn.fit_one_cycle(4)` , `learn.save(‘stage-1’)` , `learn.unfreeze()` , `learn.lr_find()` , and `learn.recorder.plot()` . Here’s the learning rate chart:
 
-![](https://cdn-images-1.medium.com/max/1600/1*Pg9c_4j6ywlyIrJ29AiQGA.png)
+![Learning rate finder plot showing Loss vs Learning Rate, with loss plateauing around 8.7 then dropping steeply after 1e-2](https://cdn-images-1.medium.com/max/1600/1*Pg9c_4j6ywlyIrJ29AiQGA.png)
 
 Looking at the chart, it doesn’t look like changing the learning rate is going to help me.
 

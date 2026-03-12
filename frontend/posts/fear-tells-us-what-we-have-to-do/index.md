@@ -21,7 +21,7 @@ I have an M.S. in pure math, but I don’t have much knowledge of stats, so I’
 
 In the past few weeks, I’ve tended to focus on only one of those until I got stuck, and then jump ship to work on one of the others. For some that workflow could be productive, but I could feel myself using it to avoid the feelings of self-doubt that bubbled up when working on the hard things, and I ended up reminding myself of this quote:
 
-![](https://cdn-images-1.medium.com/max/1600/1*zFY8tFrTrOc4mF-B-qC-fw.jpeg)
+![A quote image over a sunset road: "Are you paralyzed with fear? That's a good sign. Fear is good. Like self-doubt, fear is an indicator. Fear tells us what we have to do." — Steven Pressfield](https://cdn-images-1.medium.com/max/1600/1*zFY8tFrTrOc4mF-B-qC-fw.jpeg)
 
 ~Steven Pressfield, The War of Art: Break Through the Blocks & Win Your Inner Creative Battles ([https://stevenpressfield.com/books/the-war-of-art/](https://stevenpressfield.com/books/the-war-of-art/))
 
@@ -36,7 +36,7 @@ Each week, I plan to do:
 
 When I really don’t want to work on something, I use the [Pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique): I only require myself to work on it for 25 minutes, then I can stop or take a break. The first 25 minutes nearly always gets me over the emotional resistance hump, and I have an easier time keeping going after that. This technique helped me get through homework during grad school, too!
 
-So last week, I did Lesson 4 of “Practical Deep Learning for Coders” by fast.ai, and you can read about my experience with that in detail [here](https://towardsdatascience.com/predicting-a-waiters-tips-1990342a0d02).  
+So last week, I did Lesson 4 of “Practical Deep Learning for Coders” by fast.ai, and you can read about my experience with that in detail in [Predicting a Waiter's Tips](https://towardsdatascience.com/predicting-a-waiters-tips-1990342a0d02).  
 I also worked through the “Exploring Bivariate Data” and “Study Design” units on the Khan Academy stats course, learning how to calculate and interpret least-squares regression lines, and about experimental vs. observational studies.
 
 In the “Python for Data Science and Machine Learning Bootcamp” course on Udemy, I completed Sections 5–7, reviewing the NumPy syntax I learned in the deeplearning.ai [“Deep Learning”](https://www.coursera.org/specializations/deep-learning) course on Coursera, and practicing querying data with Pandas. I’ve previously learned some SQL and hadn’t realized how much Pandas and SQL had in common. Then I started wondering when one is better to use than the other, and found this post very helpful:
@@ -45,9 +45,9 @@ In the “Python for Data Science and Machine Learning Bootcamp” course on Ude
 >   
 > _”SQL and Pandas” (_[_https://towardsdatascience.com/sql-and-pandas-268f634a4f5d_](https://towardsdatascience.com/sql-and-pandas-268f634a4f5d)_) by Kailey Smith_
 
-![](https://cdn-images-1.medium.com/max/1600/1*2A5ROBhoSqee1W4veJLJYw.gif)
+![GIF of a digital robotic hand touching a block](https://cdn-images-1.medium.com/max/1600/1*2A5ROBhoSqee1W4veJLJYw.gif)
 
-The paper I chose to read — [“Learning Gentle Object Manipulation with Curiosity-Driven Deep Reinforcement Learning”](https://arxiv.org/abs/1903.08542) — came from [DeepMind](https://deepmind.com/), and was written by Sandy H. Huang, Martina Zambelli, Jackie Kay, Murilo F. Martins, Yuval Tassa, Patrick M. Pilarski, and Raia Hadsell. You can check out the notes I made and the questions I had while reading it [here](https://github.com/g0g0gadget/Papers-Read/blob/master/Learning%20Gentle%20Object%20Manipulation%20With%20Curiosity-Driven%20%28notes%29...-merged.pdf)[.](https://github.com/g0g0gadget/Papers-Read/blob/master/Learning%20Gentle%20Object%20Manipulation%20With%20Curiosity-Driven%20%28notes%29...-merged.pdf%29.) The work revolved around teaching a robot to handle objects gently, using deep reinforcement learning.
+The paper I chose to read — [“Learning Gentle Object Manipulation with Curiosity-Driven Deep Reinforcement Learning”](https://arxiv.org/abs/1903.08542) — came from [DeepMind](https://deepmind.com/), and was written by Sandy H. Huang, Martina Zambelli, Jackie Kay, Murilo F. Martins, Yuval Tassa, Patrick M. Pilarski, and Raia Hadsell. You can check out [my reading notes and questions (PDF)](https://github.com/g0g0gadget/Papers-Read/blob/master/Learning%20Gentle%20Object%20Manipulation%20With%20Curiosity-Driven%20%28notes%29...-merged.pdf). The work revolved around teaching a robot to handle objects gently, using deep reinforcement learning.
 
 This was my first time reading a deep or machine learning paper, and it turned out to have been a fantastic choice. The overall idea is intuitive even for a layman, and even better, the [simulations and video](https://sites.google.com/view/gentlemanipulation) of the actual experiments make the methods and results simple to understand. But I still had many questions as I read, and learned a lot.
 

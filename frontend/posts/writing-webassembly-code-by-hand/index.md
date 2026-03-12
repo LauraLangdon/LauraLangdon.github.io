@@ -21,7 +21,7 @@ If you know anything about WebAssembly, you might have seen the title of this ar
 
 ![Suborbital logo](./719a1edd.png)Suborbital Launch PadLaura Langdon
 
-![](https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1654094410915%2FfXjBEBxXh.jpeg%3Fw%3D1200%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng)
+![Black and white close-up of clay-covered hands shaping a pot on a spinning pottery wheel](https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1654094410915%2FfXjBEBxXh.jpeg%3Fw%3D1200%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng)
 
 ](https://blog.suborbital.dev/writing-webassembly-code-by-hand)
 
