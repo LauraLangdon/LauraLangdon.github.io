@@ -831,6 +831,38 @@ Mailgun's flex plan charges per email sent (~$1/1,000 emails). At small subscrib
 
 ---
 
-## Phase 18: DNS Cutover
+## Phase 18: RSS Feed Fixes and Validation
+
+### Content collections migration
+
+`rss.xml.js` was still using the Ghost Content API (`getPosts` from `lib/ghost.ts`), even though Phase 15 moved all pages to local content collections. Updated to use `getCollection('blog')` with the same published/sorted filter used by the rest of the site.
+
+### atom:link self-reference
+
+Added `atom:link rel="self"` to the feed for interoperability — the W3C Feed Validation Service flagged this as a recommendation. Implemented via `@astrojs/rss` `xmlns` and `customData` options.
+
+### Local RSS validator
+
+Created `scripts/validate-rss.mjs` — a zero-dependency script that validates `dist/rss.xml` after build:
+
+- Checks RSS 2.0 version attribute
+- Verifies required channel elements (title, description, link)
+- Validates each item has title, link, guid, and parseable pubDate
+- Confirms all links are full URLs
+- Checks for atom:link self-reference
+
+```bash
+npm run lint:rss
+```
+
+Added to the GitHub Actions workflow (`.github/workflows/a11y.yml`) as a post-build step, before the accessibility audit.
+
+### Hero image optimization
+
+Replaced `<img>` with Astro's `<Image>` component in `BlogPost.astro` for automatic webp conversion and optimization. Added `staging.lauralangdon.io` to allowed image domains in `astro.config.mjs`.
+
+---
+
+## Phase 19: DNS Cutover
 
 *Pending*

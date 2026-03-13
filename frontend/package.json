@@ -13,6 +13,7 @@
     "migrate-images": "node scripts/migrate-images.mjs",
     "lint": "eslint src && markdownlint-cli2 && cspell --no-progress",
     "lint:links": "linkinator dist --recurse --skip '^(?!http://localhost)'",
+    "lint:rss": "node scripts/validate-rss.mjs",
     "check": "astro check",
     "a11y": "pa11y-ci"
   },
