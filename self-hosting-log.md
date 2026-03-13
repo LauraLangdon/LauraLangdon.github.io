@@ -800,6 +800,37 @@ npm run lint:links  # runs linkinator on dist/
 
 ---
 
-## Phase 17: DNS Cutover
+## Phase 17: Email Subscribe Widget
+
+### Approach
+
+Rather than paying for a third-party newsletter service (Buttondown $9/mo for RSS-to-email, Ghost Pro $15/mo), the subscribe feature uses Ghost's built-in Members API on the self-hosted instance. Ghost handles subscriber storage, double opt-in via magic link, unsubscribe, and sending newsletters when posts are published. Mailgun (already configured for transactional email) handles delivery.
+
+### Frontend implementation
+
+Created a floating subscribe widget that appears on every page:
+
+- **`src/components/SubscribeWidget.astro`** — fixed-position "Subscribe" pill button (bottom-right). Clicking expands a panel with two options:
+  - "in your favorite feed reader" + inline RSS button linking to `/rss.xml`
+  - "or by email" + email input + Subscribe button
+- Panel closes on Escape key or click-outside
+- Form POSTs to Ghost's `/members/api/send-magic-link/` with `{ email, emailType: 'subscribe' }`
+- Handles loading, success ("Check your inbox!"), error, and rate-limit (429) states
+- Styled to match the site's design system: gradient button, monospace headings, CSS custom properties for light/dark mode
+
+The widget is included via `Footer.astro` so it appears on all pages. A standalone `SubscribeForm.astro` component also exists for potential future use in other locations.
+
+### Remaining server-side steps
+
+1. **nginx:** Verify `/members/api/` is proxied to Ghost on port 2368. If not, add a `location /members/api/` block to the SSL config.
+2. **Ghost admin:** Enable "Allow free member signup" in Settings > Membership.
+
+### Cost
+
+Mailgun's flex plan charges per email sent (~$1/1,000 emails). At small subscriber counts, the marginal cost is negligible — e.g., 50 subscribers × 4 posts/month = 200 emails = $0.20/month.
+
+---
+
+## Phase 18: DNS Cutover
 
 *Pending*
