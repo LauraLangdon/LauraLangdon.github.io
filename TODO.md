@@ -13,7 +13,6 @@
   - Set up Ravelry Pro account for API access: https://www.ravelry.com/businesses/new?plan_type=6
 
 ## CI / quality
-- RSS feed validator (e.g. W3C Feed Validation Service)
 
 ## Infrastructure
 - Set up ActivityPub

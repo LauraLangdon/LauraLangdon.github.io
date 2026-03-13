@@ -28,6 +28,9 @@ jobs:
           PUBLIC_GHOST_URL: ${{ secrets.PUBLIC_GHOST_URL }}
           PUBLIC_GHOST_CONTENT_API_KEY: ${{ secrets.PUBLIC_GHOST_CONTENT_API_KEY }}
 
+      - name: Validate RSS feed
+        run: npm run lint:rss
+
       - name: Serve built site
         run: npx serve dist --listen 4321 &
 
