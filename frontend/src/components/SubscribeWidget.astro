@@ -1,0 +1,295 @@
+---
+import { siRss } from 'simple-icons';
+
+const ghostUrl = import.meta.env.PUBLIC_GHOST_URL;
+---
+
+<div class="subscribe-widget" id="subscribe-widget">
+	<button class="subscribe-widget-toggle" aria-label="Subscribe" aria-expanded="false" aria-controls="subscribe-widget-panel">
+		Subscribe
+	</button>
+	<div class="subscribe-widget-panel" id="subscribe-widget-panel" role="dialog" aria-label="Subscribe to new posts">
+		<button class="subscribe-widget-close" aria-label="Close subscribe panel">&times;</button>
+		<p class="widget-heading">Get new posts!</p>
+		<div class="widget-option">
+			<span class="widget-label">In your favorite feed reader:</span>
+			<a href="/rss.xml" class="widget-rss-btn">
+				<svg
+					role="img"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true"
+				>
+					<path d={siRss.path} />
+				</svg>
+				RSS
+			</a>
+		</div>
+		<div class="widget-option">
+			<span class="widget-label">Or by email:</span>
+			<form class="subscribe-form" data-ghost-url={ghostUrl}>
+				<input
+					type="email"
+					name="email"
+					placeholder="you@example.com"
+					required
+					autocomplete="email"
+					aria-label="Email address"
+				/>
+				<button type="submit">Subscribe</button>
+			</form>
+			<p class="subscribe-status" aria-live="polite"></p>
+		</div>
+	</div>
+</div>
+
+<style>
+	.subscribe-widget {
+		position: fixed;
+		bottom: 1.5rem;
+		right: 1.5rem;
+		z-index: 100;
+	}
+	.subscribe-widget-toggle {
+		padding: 0.7rem 1.4rem;
+		font-size: var(--mono-body);
+		font-weight: 700;
+		font-family: monospace;
+		color: #ffffff;
+		background: linear-gradient(90deg, var(--accent), var(--accent-2));
+		border: none;
+		border-radius: 24px;
+		cursor: pointer;
+		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+		transition: opacity 0.2s ease, transform 0.2s ease;
+	}
+	.subscribe-widget-toggle:hover {
+		opacity: 0.9;
+		transform: translateY(-1px);
+	}
+	.subscribe-widget-toggle[aria-expanded="true"] {
+		display: none;
+	}
+	.subscribe-widget-panel {
+		display: none;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 340px;
+		background: var(--bg);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 1.5rem;
+		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+	}
+	.subscribe-widget-panel.open {
+		display: block;
+	}
+	.subscribe-widget-close {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.75rem;
+		background: none;
+		border: none;
+		font-size: 1.5rem;
+		color: var(--text-muted);
+		cursor: pointer;
+		padding: 0.25rem;
+		line-height: 1;
+	}
+	.subscribe-widget-close:hover {
+		color: var(--accent);
+	}
+	.widget-heading {
+		font-family: monospace;
+		font-size: var(--mono-section-heading);
+		letter-spacing: 0.08em;
+		color: var(--text);
+		margin: 0 0 1.25rem 0;
+		font-weight: 700;
+	}
+	.widget-option {
+		margin-bottom: 1rem;
+	}
+	.widget-option:last-child {
+		margin-bottom: 0;
+	}
+	.widget-label {
+		color: var(--text);
+		font-size: 1rem;
+	}
+	.widget-rss-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.25rem 0.6rem;
+		font-family: monospace;
+		font-size: var(--mono-body);
+		font-weight: 700;
+		color: var(--text-muted);
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		text-decoration: none;
+		transition: color 0.2s ease, border-color 0.2s ease;
+	}
+	.widget-rss-btn:hover {
+		color: var(--accent);
+		border-color: var(--accent);
+		text-decoration: none;
+	}
+	.widget-rss-btn svg {
+		width: 16px;
+		height: 16px;
+		fill: currentColor;
+	}
+	.subscribe-form {
+		display: flex;
+		gap: 0.5rem;
+	}
+	.subscribe-form input {
+		flex: 1;
+		min-width: 0;
+		padding: 0.5rem 0.75rem;
+		font-size: 1rem;
+		font-family: inherit;
+		background: var(--bg-card);
+		color: var(--text);
+		border: 1px solid var(--border);
+		border-radius: 8px;
+	}
+	.subscribe-form input::placeholder {
+		color: var(--text-muted);
+		opacity: 0.6;
+	}
+	.subscribe-form input:focus {
+		outline: 2px solid var(--accent);
+		outline-offset: -1px;
+		border-color: transparent;
+	}
+	.subscribe-form button {
+		padding: 0.5rem 1rem;
+		font-size: var(--mono-body);
+		font-weight: 700;
+		font-family: monospace;
+		color: #ffffff;
+		background: linear-gradient(90deg, var(--accent), var(--accent-2));
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: opacity 0.2s ease;
+		white-space: nowrap;
+	}
+	.subscribe-form button:hover {
+		opacity: 0.9;
+	}
+	.subscribe-form button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+	.subscribe-status {
+		margin: 0.5rem 0 0 0;
+		font-size: var(--mono-meta);
+	}
+	.subscribe-status:empty {
+		display: none;
+	}
+	.subscribe-status.success {
+		color: var(--green);
+	}
+	.subscribe-status.error {
+		color: var(--accent);
+	}
+	@media (max-width: 720px) {
+		.subscribe-widget {
+			bottom: 1rem;
+			right: 1rem;
+		}
+		.subscribe-widget-panel {
+			width: calc(100vw - 2rem);
+			right: 0;
+		}
+	}
+</style>
+
+<script>
+	const widget = document.getElementById('subscribe-widget')!;
+	const toggle = widget.querySelector('.subscribe-widget-toggle') as HTMLButtonElement;
+	const panel = document.getElementById('subscribe-widget-panel')!;
+	const closeBtn = widget.querySelector('.subscribe-widget-close') as HTMLButtonElement;
+
+	function openPanel() {
+		panel.classList.add('open');
+		toggle.setAttribute('aria-expanded', 'true');
+		panel.querySelector('input')?.focus();
+	}
+
+	function closePanel() {
+		panel.classList.remove('open');
+		toggle.setAttribute('aria-expanded', 'false');
+	}
+
+	toggle.addEventListener('click', openPanel);
+	closeBtn.addEventListener('click', closePanel);
+
+	// Close on Escape
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && panel.classList.contains('open')) {
+			closePanel();
+			toggle.focus();
+		}
+	});
+
+	// Close when clicking outside
+	document.addEventListener('click', (e) => {
+		const target = e.target as HTMLElement;
+		if (panel.classList.contains('open') && !widget.contains(target)) {
+			closePanel();
+		}
+	});
+
+	// Handle form submission
+	const form = widget.querySelector('.subscribe-form') as HTMLFormElement;
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		const button = form.querySelector('button') as HTMLButtonElement;
+		const input = form.querySelector('input') as HTMLInputElement;
+		const status = widget.querySelector('.subscribe-status') as HTMLElement;
+		const email = input.value.trim();
+
+		button.disabled = true;
+		button.textContent = 'Subscribing\u2026';
+		status.className = 'subscribe-status';
+		status.textContent = '';
+
+		try {
+			const ghostUrl = form.dataset.ghostUrl;
+			const res = await fetch(`${ghostUrl}/members/api/send-magic-link/`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email, emailType: 'subscribe' }),
+			});
+
+			if (res.ok) {
+				form.style.display = 'none';
+				status.className = 'subscribe-status success';
+				status.textContent = 'Check your inbox! A confirmation link has been sent.';
+			} else if (res.status === 429) {
+				status.className = 'subscribe-status error';
+				status.textContent = 'Too many requests. Please try again in a few minutes.';
+				button.disabled = false;
+				button.textContent = 'Subscribe';
+			} else {
+				status.className = 'subscribe-status error';
+				status.textContent = 'Something went wrong. Please try again.';
+				button.disabled = false;
+				button.textContent = 'Subscribe';
+			}
+		} catch {
+			status.className = 'subscribe-status error';
+			status.textContent = 'Could not connect. Please check your connection and try again.';
+			button.disabled = false;
+			button.textContent = 'Subscribe';
+		}
+	});
+</script>

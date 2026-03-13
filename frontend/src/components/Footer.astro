@@ -1,4 +1,5 @@
 ---
+import SubscribeWidget from './SubscribeWidget.astro';
 import { siGithub, siMastodon, siBluesky, siRss } from 'simple-icons';
 
 const today = new Date();
@@ -33,6 +34,7 @@ const links = [
 		</nav>
 	</div>
 </footer>
+<SubscribeWidget />
 
 <style>
 	footer {

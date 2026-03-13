@@ -1,9 +1,9 @@
 # Todo
 
 ## In progress
+- Email subscribe: verify nginx proxies `/members/api/` to Ghost, enable free member signup in Ghost admin
 
 ## Frontend / styling
-- Email subscribe button
 - Post type tags/cards (stream, talk, post, etc.) like Ghost Pro had
 - Deploy pending changes (blog post centering, image width fix, new fonts, PT Mono for code)
 
