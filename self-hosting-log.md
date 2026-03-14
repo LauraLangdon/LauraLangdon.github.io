@@ -888,6 +888,42 @@ Replaced `<img>` with Astro's `<Image>` component in `BlogPost.astro` for automa
 
 ---
 
-## Phase 19: DNS Cutover
+## Phase 19: Automated Backups
+
+### Previous state
+
+Phase 7 deferred automated backups due to Ghost CLI ownership issues. DigitalOcean automatic droplet backups were used as a stopgap. Backblaze B2 bucket (`lauralangdon-ghost-backups`) and AWS CLI with a `backblaze` profile were already configured.
+
+### B2 endpoint fix
+
+AWS CLI v1 (installed on the server) does not support the `endpoint_url` config setting. All B2 commands must use the `--endpoint-url https://s3.us-west-004.backblazeb2.com` flag inline.
+
+### Backup script
+
+Created `/usr/local/bin/ghost-backup` which:
+
+1. Dumps MySQL (`ghost_staging` database) via `mysqldump`
+2. Tars Ghost's `content/` directory (excluding logs)
+3. Compresses both into a single `.tar.gz` archive
+4. Uploads to Backblaze B2 via AWS CLI
+5. Removes backups older than 30 days from B2
+
+Runs as root (bypasses the Ghost CLI ownership issues from Phase 7).
+
+### Cron schedule
+
+```
+0 3 * * * /usr/local/bin/ghost-backup >> /var/log/ghost-backup.log 2>&1
+```
+
+Daily at 3:00 AM UTC. Logs to `/var/log/ghost-backup.log`.
+
+### First run
+
+Test backup completed successfully: `ghost-backup-2026-03-14-004638.tar.gz` (97 MB) uploaded to B2.
+
+---
+
+## Phase 20: DNS Cutover
 
 *Pending*
