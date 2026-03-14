@@ -248,6 +248,24 @@ const ghostUrl = import.meta.env.PUBLIC_GHOST_URL;
 		}
 	});
 
+	// Keep widget above footer when scrolled to bottom
+	const footer = document.querySelector('footer');
+	if (footer) {
+		const offset = 24; // gap between widget and footer
+		function adjustPosition() {
+			const footerRect = footer!.getBoundingClientRect();
+			const viewportHeight = window.innerHeight;
+			if (footerRect.top < viewportHeight) {
+				widget.style.bottom = `${viewportHeight - footerRect.top + offset}px`;
+			} else {
+				widget.style.bottom = '';
+			}
+		}
+		window.addEventListener('scroll', adjustPosition, { passive: true });
+		window.addEventListener('resize', adjustPosition, { passive: true });
+		adjustPosition();
+	}
+
 	// Handle form submission
 	const form = widget.querySelector('.subscribe-form') as HTMLFormElement;
 	form.addEventListener('submit', async (e) => {
