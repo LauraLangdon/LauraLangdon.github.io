@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_TITLE } from '../../consts';
+import { tagColor, visibleTags } from '../../utils/tag-colors';
 
 const allPosts = await getCollection('blog');
 const posts = allPosts
@@ -50,6 +51,9 @@ const posts = allPosts
 				text-decoration: none;
 				color: inherit;
 			}
+			.post-content a.tag {
+				color: var(--tag-text);
+			}
 			.post-content a:hover .post-title {
 				color: var(--accent);
 			}
@@ -76,17 +80,17 @@ const posts = allPosts
 			.tag {
 				font-family: monospace;
 				font-size: var(--mono-small);
-				color: var(--text-muted);
-				background: var(--bg-card);
-				border: 1px solid var(--border);
+				color: var(--tag-text);
+				font-weight: 700;
+				background: color-mix(in srgb, var(--tag-color) 45%, white);
+				border: 1px solid var(--tag-color);
 				border-radius: 999px;
 				padding: 0.1rem 0.5rem;
 				text-decoration: none;
 				transition: color 0.15s ease, border-color 0.15s ease;
 			}
 			.tag:hover {
-				color: var(--accent);
-				border-color: var(--accent);
+				background: color-mix(in srgb, var(--tag-color) 60%, white);
 				text-decoration: none;
 			}
 			.post-excerpt {
@@ -133,12 +137,13 @@ const posts = allPosts
 								<FormattedDate date={post.data.date} />
 							</p>
 							{(() => {
-								const visibleTags = (post.data.tags ?? []).filter((t: string) => !t.startsWith('#'));
-								return visibleTags.length > 0 && (
+								const vt = visibleTags(post.data.tags);
+								return vt.length > 0 && (
 									<div class="post-tags">
-										{visibleTags.map((tag: string) => (
-											<a href={`/blog/tag/${tag.toLowerCase().replaceAll(' ', '-')}/`} class="tag">{tag}</a>
-										))}
+										{vt.map((tag: string) => {
+											const c = tagColor(tag);
+											return <a href={`/blog/tag/${tag.toLowerCase().replaceAll(' ', '-')}/`} class="tag" style={`--tag-color: ${c.color};`}>{tag}</a>;
+										})}
 									</div>
 								);
 							})()}

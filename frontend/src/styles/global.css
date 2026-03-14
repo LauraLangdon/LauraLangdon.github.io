@@ -9,6 +9,7 @@
 	--green: #00aa64;
 	--border: #dfcce5;
 	--code-bg: #f8f0fc;
+	--tag-text: #960096;
 	--box-shadow: 0 2px 8px rgba(102, 0, 102, 0.08), 0 8px 24px rgba(102, 0, 102, 0.06);
 
 	--mono-hero: 2.8rem;
@@ -31,6 +32,7 @@
 		--green: #00cc99;
 		--border: #2a0550;
 		--code-bg: #1a0235;
+		--tag-text: #120128;
 		--box-shadow: 0 2px 8px rgba(243, 131, 175, 0.12), 0 8px 24px rgba(201, 110, 247, 0.08);
 	}
 }
