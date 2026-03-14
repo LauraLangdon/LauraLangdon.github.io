@@ -13,9 +13,11 @@ type Props = {
 	updatedDate?: Date;
 	heroImage?: string;
 	heroImageAlt?: string;
+	tags?: string[];
 };
 
-const { title, description, pubDate, updatedDate, heroImage, heroImageAlt } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImageAlt, tags } = Astro.props;
+const visibleTags = (tags ?? []).filter((t) => !t.startsWith('#'));
 ---
 
 <html lang="en">
@@ -110,6 +112,28 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageAlt } = As
 				border-left-color: var(--accent);
 				color: var(--text-muted);
 			}
+			.post-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin-top: 0.75rem;
+			}
+			.tag {
+				font-family: monospace;
+				font-size: var(--mono-meta);
+				color: var(--text-muted);
+				background: var(--bg-card);
+				border: 1px solid var(--border);
+				border-radius: 999px;
+				padding: 0.15rem 0.6rem;
+				text-decoration: none;
+				transition: color 0.15s ease, border-color 0.15s ease;
+			}
+			.tag:hover {
+				color: var(--accent);
+				border-color: var(--accent);
+				text-decoration: none;
+			}
 			.back-link {
 				display: inline-block;
 				font-family: monospace;
@@ -142,6 +166,13 @@ const { title, description, pubDate, updatedDate, heroImage, heroImageAlt } = As
 						)}
 					</p>
 					<h1 class="post-title">{title}</h1>
+					{visibleTags.length > 0 && (
+						<div class="post-tags">
+							{visibleTags.map((tag) => (
+								<a href={`/blog/tag/${tag.toLowerCase().replaceAll(' ', '-')}/`} class="tag">{tag}</a>
+							))}
+						</div>
+					)}
 				</div>
 				<div class="prose">
 					<slot />

@@ -1,21 +1,40 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import { SITE_TITLE } from '../../consts';
+import BaseHead from '../../../components/BaseHead.astro';
+import Footer from '../../../components/Footer.astro';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import Header from '../../../components/Header.astro';
+import { SITE_TITLE } from '../../../consts';
 
-const allPosts = await getCollection('blog');
-const posts = allPosts
-	.filter((p) => p.data.status === 'published')
-	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+export async function getStaticPaths() {
+	const allPosts = await getCollection('blog');
+	const published = allPosts.filter((p) => p.data.status === 'published');
+
+	const tagSet = new Set<string>();
+	for (const post of published) {
+		for (const tag of post.data.tags ?? []) {
+			if (!tag.startsWith('#')) tagSet.add(tag);
+		}
+	}
+
+	return [...tagSet].map((tag) => ({
+		params: { tag: tag.toLowerCase().replaceAll(' ', '-') },
+		props: {
+			tag,
+			posts: published
+				.filter((p) => p.data.tags?.includes(tag))
+				.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+		},
+	}));
+}
+
+const { tag, posts } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Blog · ${SITE_TITLE}`} description="All posts" />
+		<BaseHead title={`${tag} · ${SITE_TITLE}`} description={`Posts tagged "${tag}"`} />
 		<style>
 			.page-heading {
 				font-family: monospace;
@@ -26,6 +45,17 @@ const posts = allPosts
 				margin: 0 0 2.5rem 0;
 				padding-bottom: 1rem;
 				border-bottom: 1px solid var(--border);
+			}
+			.back-link {
+				display: inline-block;
+				font-family: monospace;
+				font-size: var(--mono-body);
+				color: var(--text-muted);
+				text-decoration: none;
+				margin-bottom: 1.5rem;
+			}
+			.back-link:hover {
+				color: var(--accent);
 			}
 			.post-list {
 				list-style: none;
@@ -67,28 +97,6 @@ const posts = allPosts
 				color: var(--text-muted);
 				margin: 0 0 0.6rem 0;
 			}
-			.post-tags {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.4rem;
-				margin: 0 0 0.6rem 0;
-			}
-			.tag {
-				font-family: monospace;
-				font-size: var(--mono-small);
-				color: var(--text-muted);
-				background: var(--bg-card);
-				border: 1px solid var(--border);
-				border-radius: 999px;
-				padding: 0.1rem 0.5rem;
-				text-decoration: none;
-				transition: color 0.15s ease, border-color 0.15s ease;
-			}
-			.tag:hover {
-				color: var(--accent);
-				border-color: var(--accent);
-				text-decoration: none;
-			}
 			.post-excerpt {
 				font-size: 0.95rem;
 				color: var(--text-muted);
@@ -121,7 +129,8 @@ const posts = allPosts
 	<body>
 		<Header />
 		<main>
-			<p class="page-heading">All posts</p>
+			<a href="/blog" class="back-link">← All posts</a>
+			<p class="page-heading">{tag}</p>
 			<ul class="post-list">
 				{posts.map((post) => (
 					<li class:list={['post-item', { 'has-image': !!post.data.feature_image }]}>
@@ -132,16 +141,6 @@ const posts = allPosts
 							<p class="post-meta">
 								<FormattedDate date={post.data.date} />
 							</p>
-							{(() => {
-								const visibleTags = (post.data.tags ?? []).filter((t: string) => !t.startsWith('#'));
-								return visibleTags.length > 0 && (
-									<div class="post-tags">
-										{visibleTags.map((tag: string) => (
-											<a href={`/blog/tag/${tag.toLowerCase().replaceAll(' ', '-')}/`} class="tag">{tag}</a>
-										))}
-									</div>
-								);
-							})()}
 							{post.data.excerpt && (
 								<p class="post-excerpt">{post.data.excerpt}</p>
 							)}
