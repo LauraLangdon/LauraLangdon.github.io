@@ -820,10 +820,35 @@ Created a floating subscribe widget that appears on every page:
 
 The widget is included via `Footer.astro` so it appears on all pages. A standalone `SubscribeForm.astro` component also exists for potential future use in other locations.
 
-### Remaining server-side steps
+### Server-side setup
 
-1. **nginx:** Verify `/members/api/` is proxied to Ghost on port 2368. If not, add a `location /members/api/` block to the SSL config.
-2. **Ghost admin:** Enable "Allow free member signup" in Settings > Membership.
+**nginx:** Already proxied — the existing config groups `/members/` with `/ghost/` and `/content/` routes (line 37 of the SSL config), all forwarded to Ghost on port 2368. No changes needed.
+
+**Ghost admin:**
+- Members > Access: set "Who should be able to subscribe to your site" to "Anyone can sign up"
+- Newsletters > Email settings: configured Mailgun with domain `mg.lauralangdon.io` and API key
+
+**SMTP port issue:** DigitalOcean blocks outbound SMTP on ports 25, 465, and 587. Ghost's transactional email config was using port 465 and timing out. Fixed by switching to port 2525 (supported by Mailgun as an alternative) in `config.production.json`:
+
+```json
+"mail": {
+    "from": "Laura Langdon <noreply@mg.lauralangdon.io>",
+    "transport": "SMTP",
+    "options": {
+        "host": "smtp.mailgun.org",
+        "port": 2525,
+        "secure": false,
+        "auth": {
+            "user": "postmistress@mg.lauralangdon.io",
+            "pass": "<password>"
+        }
+    }
+}
+```
+
+The `"service": "Mailgun"` shorthand was removed because it overrides the explicit host/port settings. The `mail.from` address was also added to resolve Ghost's "Missing mail.from config" warning.
+
+SMTP credentials had to be reset in Mailgun dashboard (Sending > Domain settings > SMTP credentials) and updated in Ghost config.
 
 ### Cost
 
