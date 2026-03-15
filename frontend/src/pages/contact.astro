@@ -1,0 +1,125 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Contact · ${SITE_TITLE}`} description="Get in touch with Laura Langdon." />
+		<style>
+			.page-heading {
+				font-family: monospace;
+				font-size: var(--mono-page-heading);
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				color: var(--text-muted);
+				margin: 0 0 2.5rem 0;
+				padding-bottom: 1rem;
+				border-bottom: 1px solid var(--border);
+			}
+			.contact-form {
+				max-width: 480px;
+				display: flex;
+				flex-direction: column;
+				gap: 1.25rem;
+			}
+			.form-field {
+				display: flex;
+				flex-direction: column;
+				gap: 0.35rem;
+			}
+			.form-field label {
+				font-family: monospace;
+				font-size: var(--mono-meta);
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: var(--text-muted);
+				font-weight: 700;
+			}
+			.form-field input,
+			.form-field textarea {
+				padding: 0.6rem 0.75rem;
+				font-size: 1rem;
+				font-family: inherit;
+				background: var(--bg-card);
+				color: var(--text);
+				border: 1px solid var(--border);
+				border-radius: 8px;
+			}
+			.form-field input:focus,
+			.form-field textarea:focus {
+				outline: 2px solid var(--accent);
+				outline-offset: -1px;
+				border-color: transparent;
+			}
+			.form-field input::placeholder,
+			.form-field textarea::placeholder {
+				color: var(--text-muted);
+				opacity: 0.6;
+			}
+			.form-field textarea {
+				min-height: 160px;
+				resize: vertical;
+			}
+			.submit-btn {
+				align-self: flex-start;
+				padding: 0.6rem 1.5rem;
+				font-size: var(--mono-body);
+				font-weight: 700;
+				font-family: monospace;
+				color: #ffffff;
+				background: linear-gradient(90deg, var(--accent), var(--accent-2));
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+				transition: opacity 0.2s ease;
+			}
+			.submit-btn:hover {
+				opacity: 0.9;
+			}
+			.submit-btn:disabled {
+				opacity: 0.6;
+				cursor: not-allowed;
+			}
+			.form-status {
+				font-size: 1rem;
+				margin: 0;
+			}
+			.form-status:empty {
+				display: none;
+			}
+			.form-status.success {
+				color: var(--green, #00cc99);
+			}
+			.form-status.error {
+				color: var(--accent);
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p class="page-heading">Contact</p>
+			<form class="contact-form" action="https://formspree.io/f/xknkqeqn" method="POST">
+				<div class="form-field">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" required autocomplete="name" />
+				</div>
+				<div class="form-field">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required autocomplete="email" />
+				</div>
+				<div class="form-field">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" required></textarea>
+				</div>
+				<button type="submit" class="submit-btn">Send</button>
+				<p class="form-status" aria-live="polite"></p>
+			</form>
+		</main>
+		<Footer />
+	</body>
+</html>
