@@ -12,6 +12,7 @@ ignorePaths:
 ignoreRegExpList:
   - '/https?:\/\/\S+/g'
   - '/`[^`]+`/g'
+  - '/\bautoplay\b/g'
   - '/\w\u0336/g'
 words:
   # Tech / project-specific
@@ -105,6 +106,7 @@ words:
   - neurodiverse
   - intersectionality
   # People / orgs
+  - Elendu
   - Blazek
   - Brownlee
   - Edouard
