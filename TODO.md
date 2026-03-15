@@ -4,12 +4,14 @@
 
 ## Frontend / styling
 
-- Post type tags/cards (stream, talk, post, etc.) like Ghost Pro had
+- Center hero section on landing page and consider highlight color
+- Favicon and header icon
 
 ## Content / publishing
 
 - Pull Ravelry projects into site feed
   - Set up Ravelry Pro account for API access: https://www.ravelry.com/businesses/new?plan_type=6
+- Post comments via Disqus (shortname: lauralangdon-io)
 
 ## CI / quality
 
