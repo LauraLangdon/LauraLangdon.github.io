@@ -29,17 +29,11 @@ const { title, description, image = FallbackImage } = Astro.props;
 			document.documentElement.setAttribute('data-theme', saved);
 		}
 
-		// Resolve effective theme for favicon
-		function isDark() {
-			const theme = document.documentElement.getAttribute('data-theme');
-			if (theme === 'dark') return true;
-			if (theme === 'light') return false;
-			return window.matchMedia('(prefers-color-scheme: dark)').matches;
-		}
-
+		// Favicon follows system preference only (not the manual toggle)
 		function updateFavicon() {
 			const el = document.getElementById('favicon');
-			if (el) el.href = isDark() ? '/initials-light.png' : '/initials-dark.png';
+			if (el) el.href = window.matchMedia('(prefers-color-scheme: dark)').matches
+				? '/initials-light.png' : '/initials-dark.png';
 		}
 
 		updateFavicon();
@@ -60,7 +54,6 @@ const { title, description, image = FallbackImage } = Astro.props;
 			}
 			document.documentElement.setAttribute('data-theme', next);
 			localStorage.setItem('theme', next);
-			updateFavicon();
 		};
 	})();
 </script>
