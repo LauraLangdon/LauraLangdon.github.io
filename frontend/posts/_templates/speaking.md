@@ -11,16 +11,10 @@ feature_image: https://i.ytimg.com/vi/VIDEO_ID/hqdefault.jpg
 feature_image_alt: "Talk Title — Event Name"
 ---
 
-<!-- For talks with a formal abstract: -->
-
-**Abstract:**
+**Abstract** <!-- markdownlint-disable-line MD036 -->
 
 > Abstract text here.
 
 Presented at [Event Name](https://event-url) on Month Day, Year.
-
-<!-- For podcasts/streams without a formal abstract: -->
-<!-- Use a plain description instead of Abstract + blockquote. -->
-<!-- Add a link to the original source if available. -->
 
 <iframe width="100%" height="415" src="https://www.youtube.com/embed/VIDEO_ID" title="Talk Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

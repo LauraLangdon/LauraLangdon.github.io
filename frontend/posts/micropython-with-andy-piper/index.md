@@ -14,7 +14,9 @@ feature_image: https://i.ytimg.com/vi/G7_PKvbjQBI/hqdefault.jpg
 feature_image_alt: "MicroPython with Andy Piper"
 ---
 
-Join me in learning from Andy Piper about MicroPython, an implementation of Python designed to run on microcontrollers.
+**Description** <!-- markdownlint-disable-line MD036 -->
+
+> Join me in learning from Andy Piper about MicroPython, an implementation of Python designed to run on microcontrollers.
 
 - [Andy's site](https://andypiper.me)
 - [Andy's blog (with MicroPython content!)](https://dev.to/andypiper)

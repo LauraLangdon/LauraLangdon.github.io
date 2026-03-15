@@ -12,7 +12,9 @@ feature_image: https://i.ytimg.com/vi/yBCMLD7XyOc/hqdefault.jpg
 feature_image_alt: "CHAOSScast Episode 115: Trends from UN OSS Week and OSSNA"
 ---
 
-In this double-length CHAOSScast special episode, hosts Harmony Elendu and George Link along with panelists from the CHAOSS community, come together to reflect on their experiences at two major open source events: CHAOSScon North America (co-located with the Open Source Summit) and the United Nations Open Source Week in New York. The episode is packed with personal insights, highlighted key talks, software updates, themes from the events, memorable community interactions, and thoughtful conversations about the future of open source, digital sovereignty, and sustainability.
+**Description** <!-- markdownlint-disable-line MD036 -->
+
+> In this double-length CHAOSScast special episode, hosts Harmony Elendu and George Link along with panelists from the CHAOSS community, come together to reflect on their experiences at two major open source events: CHAOSScon North America (co-located with the Open Source Summit) and the United Nations Open Source Week in New York. The episode is packed with personal insights, highlighted key talks, software updates, themes from the events, memorable community interactions, and thoughtful conversations about the future of open source, digital sovereignty, and sustainability.
 
 Listen on the [CHAOSScast website](https://podcast.chaoss.community/115) or watch below.
 
