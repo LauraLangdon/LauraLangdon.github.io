@@ -7,6 +7,7 @@ date: 2022-10-31T00:00:00.000-07:00
 tags:
   - "Stream"
   - "Python"
+  - "Learning in Public"
 excerpt: "Chatting about learning Python with Teach Jenn Tech."
 feature_image: https://i.ytimg.com/vi/qAi-_u71zys/hqdefault.jpg
 feature_image_alt: "Teach Jenn Tech: Learning Python (Episode 11)"

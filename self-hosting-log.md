@@ -924,6 +924,44 @@ Test backup completed successfully: `ghost-backup-2026-03-14-004638.tar.gz` (97 
 
 ---
 
-## Phase 20: DNS Cutover
+## Phase 20: Favicon, Nav Bar, and Content Cleanup
+
+### Custom favicon
+
+Recovered custom "LL" initials monogram from git history (commit `1446b55`) and downloaded light/dark variants from the old GitHub Pages site. Replaced default Astro favicon with:
+
+- `initials-dark.png` — black initials for light mode and browser tab
+- `initials-light.png` — white initials for dark mode browser tab
+- JavaScript in `<head>` swaps favicon based on `prefers-color-scheme`
+
+### Nav bar redesign
+
+- Added initials monogram centered in nav bar (absolutely positioned at 50%)
+- Increased nav bar height to `7rem` to match Ghost site's proportions
+- Removed bottom border for cleaner look
+- Dark mode: CSS filter tints initials to match `--text-muted` pink (`#f8b9d2`)
+
+### Accessibility fixes
+
+- Darkened `--accent-2` from `#5A5FF3` to `#4F54E8` to meet WCAG 4.5:1 contrast ratio
+- Added `title` attributes to all YouTube iframe embeds
+- Reduced blog post section heading `margin-top` from `2em` to `1.25em`
+
+### Stream posts from YouTube channel
+
+Created 15 new stream posts from Laura's YouTube channel (Misc Mondays, Teach Jenn Python series, MicroPython, docs accessibility, etc.). Cleaned up broken Hacktoberfest and Misc Mondays posts that had mangled Ghost-era markup. Added a reusable post template at `posts/_templates/speaking.md`.
+
+### Remaining broken posts
+
+Three Suborbital blog cross-posts have dead links (`blog.suborbital.dev` no longer resolves):
+- Extensibility and VS Code
+- Writing WebAssembly Code by Hand
+- WebAssembly Extensibility: Today and Tomorrow
+
+These need content recovery (Wayback Machine) or removal.
+
+---
+
+## Phase 21: DNS Cutover
 
 *Pending*

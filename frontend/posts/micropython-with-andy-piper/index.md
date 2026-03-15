@@ -7,6 +7,8 @@ date: 2022-11-15T00:00:00.000-08:00
 tags:
   - "Stream"
   - "Python"
+  - "Learning in Public"
+  - "OSS"
 excerpt: "Learning from Andy Piper about MicroPython, an implementation of Python designed to run on microcontrollers."
 feature_image: https://i.ytimg.com/vi/G7_PKvbjQBI/hqdefault.jpg
 feature_image_alt: "MicroPython with Andy Piper"
