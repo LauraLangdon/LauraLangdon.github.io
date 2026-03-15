@@ -1,16 +1,16 @@
 ---
-import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
 <header>
 	<nav>
-		<a href="/" class="site-title">{SITE_TITLE}</a>
+		<div class="nav-links-left">
+			<HeaderLink href="/">Home</HeaderLink>
+		</div>
 		<a href="/" class="nav-icon">
 			<img src="/initials-dark.png" alt="" width="56" height="50" />
 		</a>
 		<div class="nav-links">
-			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 			<HeaderLink href="/contact">Contact</HeaderLink>
@@ -39,16 +39,10 @@ import HeaderLink from './HeaderLink.astro';
 		height: 7rem;
 		position: relative;
 	}
-	.site-title {
-		font-family: monospace;
-		font-size: var(--mono-body);
-		font-weight: 700;
-		color: var(--text);
-		text-decoration: none;
-		letter-spacing: 0.03em;
-	}
-	.site-title:hover {
-		color: var(--accent);
+	.nav-links-left {
+		display: flex;
+		gap: 0.25rem;
+		align-items: center;
 	}
 	.nav-icon {
 		position: absolute;
