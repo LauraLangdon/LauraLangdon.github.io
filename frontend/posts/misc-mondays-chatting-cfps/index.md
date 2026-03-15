@@ -1,5 +1,5 @@
 ---
-title: "Misc Mondays—Chatting CfPs"
+title: "Miscellaneous Mondays with Laura and Jenn"
 slug: misc-mondays-chatting-cfps
 status: published
 featured: false
@@ -7,8 +7,10 @@ date: 2023-05-23T14:35:02.000-07:00
 tags:
   - "Stream"
 excerpt: "Chatting CfPs with Teach Jenn Tech"
-feature_image: https://staging.lauralangdon.io/content/images/2023/05/mq1--1-.jpg
-feature_image_alt: "Stream thumbnail"
+feature_image: https://i.ytimg.com/vi/E06QTywMoQM/hqdefault.jpg
+feature_image_alt: "Miscellaneous Mondays with Laura and Jenn"
 ---
 
-Chatting CfPs with Teach Jenn Tech -- Watch live at https://www.twitch.tv/lauralangdon
+Chatting CfPs with Teach Jenn Tech.
+
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/E06QTywMoQM" title="Miscellaneous Mondays with Laura and Jenn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
