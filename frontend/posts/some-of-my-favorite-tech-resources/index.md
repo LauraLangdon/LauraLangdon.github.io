@@ -6,12 +6,8 @@ featured: false
 date: 2022-11-01T00:00:00.000-07:00
 tags:
   - "Blog"
-  - "Technical Writing"
-  - "IDEs"
-  - "Git"
-  - "Vim"
-  - "#post-card-rose"
-  - "#Import 2026-03-08 05:42"
+  - "Documentation"
+  - "Learning in Public"
 excerpt: "My favorite tech learning resources and tools"
 feature_image: "/images/posts/some-of-my-favorite-tech-resources/b60bd313.jpg"
 feature_image_alt: "A cozy desk setup with a laptop on a stand, mechanical keyboard, tablet, lamp, and decorative shelving with plants and a cactus"

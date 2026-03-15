@@ -6,7 +6,7 @@ featured: false
 date: 2023-08-26T14:05:42.000-07:00
 tags:
   - "Blog"
-  - "#Import 2026-03-08 05:42"
+  - "Learning in Public"
 feature_image: "/images/posts/the-neuroverse/7e1773ac.jpg"
 feature_image_alt: "A plasma ball with electric tendrils radiating outward in pink and purple"
 ---

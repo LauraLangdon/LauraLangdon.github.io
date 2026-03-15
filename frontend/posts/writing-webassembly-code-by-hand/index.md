@@ -6,9 +6,6 @@ featured: true
 date: 2022-06-01T08:39:00.000-07:00
 tags:
   - "Blog"
-  - "Suborbital"
-  - "WebAssembly"
-  - "#Import 2026-03-08 05:42"
 feature_image: "/images/posts/writing-webassembly-code-by-hand/32a907c5.jpg"
 feature_image_alt: "Black and white close-up of clay-covered hands shaping a pot on a spinning pottery wheel"
 ---

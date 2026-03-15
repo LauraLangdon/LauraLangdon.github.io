@@ -6,8 +6,6 @@ featured: false
 date: 2023-09-21T23:05:33.000-07:00
 tags:
   - "Blog"
-  - "#post-card-rose"
-  - "#Import 2026-03-08 05:42"
 excerpt: "How I set up my keyboard for unparalleled ergonomics *and* portability"
 feature_image: https://staging.lauralangdon.io/content/images/2023/09/3-1.jpeg
 feature_image_alt: "Half of a split keyboard, magnetically attached to a folding stand on a wooden board"

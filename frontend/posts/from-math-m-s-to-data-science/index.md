@@ -7,8 +7,6 @@ date: 2019-08-28T16:27:00.000-07:00
 tags:
   - "Blog"
   - "Learning in Public"
-  - "#post-card-rose"
-  - "#Import 2026-03-08 05:42"
 excerpt: "How I transitioned from being a math lecturer to data science"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/8_ZPlhoPy--1-.jpg
 feature_image_alt: "An illuminated sign reading 'Data has a better idea' in front of a cityscape"

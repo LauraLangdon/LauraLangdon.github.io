@@ -6,7 +6,6 @@ featured: false
 date: 2023-08-19T16:15:27.000-07:00
 tags:
   - "Blog"
-  - "#Import 2026-03-08 05:42"
 excerpt: "What if tech training could be like med school, but in a good way?"
 feature_image: "/images/posts/tech-rotations/0b0d6488.jpg"
 feature_image_alt: "Two people looking at code on a laptop screen in an open office, with coworkers in the background"
