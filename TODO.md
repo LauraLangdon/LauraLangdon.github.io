@@ -5,10 +5,11 @@
 ## Frontend / styling
 
 - Center hero section on landing page and consider highlight color
-- ~~Favicon and header icon~~
-- Reduce spacing between sections (too much space)
 - About page: link colors on cards look inconsistent when some cards are all links and one is all plain text
 - Add dark/light mode toggle
+- Consider centered layout for stream/speaking posts
+- Try styling Abstract/Description the same as "featured" on the landing page
+- Fix 3 broken Suborbital cross-posts (dead links)
 
 ## Content / publishing
 
