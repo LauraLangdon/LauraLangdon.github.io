@@ -18,4 +18,4 @@ feature_image_alt: "From Campus to Network: Creating the UC System-Wide OSPO Ini
 
 Presented at [FOSSY 2025](https://2025.fossy.us/schedule/presentation/344/index.html) on August 1, 2025.
 
-<iframe width="100%" height="415" src="https://www.youtube.com/embed/IUE5qunHRWA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/IUE5qunHRWA" title="From Campus to Network: Creating the UC System-Wide OSPO Initiative" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

@@ -18,4 +18,4 @@ feature_image_alt: "Real-Time Collaborative Sessions for New Contributors and Ma
 
 Presented at [PyBeach 2025](https://pretalx.com/pybeach2025/talk/GQRRG8/) on September 27, 2025.
 
-<iframe width="100%" height="415" src="https://www.youtube.com/embed/7N1vzfpsSuE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/7N1vzfpsSuE" title="Real-Time Collaborative Sessions for New Contributors and Maintainers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

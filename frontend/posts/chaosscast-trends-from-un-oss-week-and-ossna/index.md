@@ -16,4 +16,4 @@ In this double-length CHAOSScast special episode, hosts Harmony Elendu and Georg
 
 Listen on the [CHAOSScast website](https://podcast.chaoss.community/115) or watch below.
 
-<iframe width="100%" height="415" src="https://www.youtube.com/embed/yBCMLD7XyOc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="415" src="https://www.youtube.com/embed/yBCMLD7XyOc" title="CHAOSScast: Trends from UN OSS Week and OSSNA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
