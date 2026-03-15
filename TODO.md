@@ -5,9 +5,11 @@
 ## Frontend / styling
 
 - Center hero section on landing page and consider highlight color
-- About page: link colors on cards look inconsistent when some cards are all links and one is all plain text
+- ~~About page: link colors on cards look inconsistent when some cards are all links and one is all plain text~~
 - Add dark/light mode toggle
+- Remove "lauralangdon.io" site title from nav, move Home link to that spot
 - Consider centered layout for stream/speaking posts
+- Consider full-width panel/background color for hero sections (like Ghost site's lavender panel, ~#eceef8)
 - Try styling Abstract/Description the same as "featured" on the landing page
 - Fix 3 broken Suborbital cross-posts (dead links)
 
@@ -16,6 +18,7 @@
 - Pull Ravelry projects into site feed
   - Set up Ravelry Pro account for API access: https://www.ravelry.com/businesses/new?plan_type=6
 - Post comments via Disqus (shortname: lauralangdon-io)
+- Add Suborbital streams to posts (https://www.youtube.com/@SuborbitalDev/streams)
 
 ## CI / quality
 
