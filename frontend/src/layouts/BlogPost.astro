@@ -52,6 +52,13 @@ const visibleTags = getVisibleTags(tags);
 				font-family: monospace;
 				color: var(--text-muted);
 				margin: 0.75rem 0 0 0;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 1rem;
+			}
+			.post-meta-left {
+				flex-shrink: 0;
 			}
 			.post-author {
 				font-size: var(--mono-body);
@@ -145,19 +152,17 @@ const visibleTags = getVisibleTags(tags);
 			.post-tags {
 				display: flex;
 				flex-wrap: wrap;
-				justify-content: center;
-				gap: 0.5rem;
-				margin: 0 0 2.5rem 0;
+				gap: 0.35rem;
 			}
 			.tag {
 				font-family: monospace;
-				font-size: var(--mono-meta);
+				font-size: var(--mono-small);
 				color: var(--tag-text);
 				font-weight: 700;
 				background: color-mix(in srgb, var(--tag-color) 45%, white);
 				border: 1px solid var(--tag-color);
 				border-radius: 999px;
-				padding: 0.15rem 0.6rem;
+				padding: 0.1rem 0.5rem;
 				text-decoration: none;
 				transition: color 0.15s ease, border-color 0.15s ease;
 			}
@@ -193,24 +198,26 @@ const visibleTags = getVisibleTags(tags);
 					<div class="post-header">
 						<h1 class="post-title">{title}</h1>
 						<div class="post-meta">
-							<p class="post-author">Laura Langdon</p>
-							<p class="post-date">
-								<FormattedDate date={pubDate} />
-								{updatedDate && (
-									<span class="last-updated"> · Updated <FormattedDate date={updatedDate} /></span>
-								)}
-							</p>
+							<div class="post-meta-left">
+								<p class="post-author">Laura Langdon</p>
+								<p class="post-date">
+									<FormattedDate date={pubDate} />
+									{updatedDate && (
+										<span class="last-updated"> · Updated <FormattedDate date={updatedDate} /></span>
+									)}
+								</p>
+							</div>
+							{visibleTags.length > 0 && (
+								<div class="post-tags">
+									{visibleTags.map((tag) => {
+										const c = tagColor(tag);
+										return <a href={`/blog/tag/${tag.toLowerCase().replaceAll(' ', '-')}/`} class="tag" style={`--tag-color: ${c.color};`}>{tag}</a>;
+									})}
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
-				{visibleTags.length > 0 && (
-					<div class="post-tags">
-						{visibleTags.map((tag) => {
-							const c = tagColor(tag);
-							return <a href={`/blog/tag/${tag.toLowerCase().replaceAll(' ', '-')}/`} class="tag" style={`--tag-color: ${c.color};`}>{tag}</a>;
-						})}
-					</div>
-				)}
 				<div class="prose">
 					<slot />
 				</div>
