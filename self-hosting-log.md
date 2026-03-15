@@ -960,6 +960,35 @@ Three Suborbital blog cross-posts have dead links (`blog.suborbital.dev` no long
 
 These need content recovery (Wayback Machine) or removal.
 
+### Card styling for hero sections
+
+- Added `background: var(--bg-card)`, `padding: 2.5rem`, and `border-radius: 16px` to hero sections on landing page, about page, and blog post banners
+- Changed `--bg-card` from pink `#fff5f8` to lavender `#eceef8` (light) / cool purple `#1e1840` (dark)
+- Split out `--bg-featured-card` (`#fff5f8` light / `#2a0445` dark) so featured post cards keep the original pink
+- Favicon follows system dark/light preference only, not the manual toggle
+
+### Suborbital streams
+
+Created 8 new stream posts from the `@SuborbitalDev` YouTube channel:
+- "Building Our First Wasm App" Parts 1–5 (with Ramón)
+- "ELI5: What Is WebAssembly?" (with Oscar Spencer)
+- "Debugging Our First Wasm App" (with Ramón)
+- "Python @ Suborbital with Wasm Labs"
+
+Fixed 2 broken Suborbital cross-posts by replacing dead `blog.suborbital.dev` links with YouTube stream embeds:
+- "Extensibility and VS Code" (with Jay Miller)
+- "WebAssembly Extensibility: Today and Tomorrow" (with Flaki)
+
+Drafted "Writing WebAssembly Code by Hand" (no stream; Wayback Machine snapshot available for future recovery).
+
+### Favicon
+
+- Favicon now follows system dark/light preference only, not the manual toggle
+
+### About page link colors
+
+- Normalized card link colors: `var(--text-muted)` with underline, hover `var(--accent)`
+
 ---
 
 ## Phase 21: DNS Cutover

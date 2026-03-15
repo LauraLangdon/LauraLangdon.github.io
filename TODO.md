@@ -4,19 +4,16 @@
 
 ## Frontend / styling
 
-- Center hero section on landing page and consider highlight color
 - Consider centered layout for stream/speaking posts
-- Consider full-width panel/background color for hero sections (like Ghost site's lavender panel, ~#eceef8)
 - Try styling Abstract/Description the same as "featured" on the landing page
-- Fix 3 broken Suborbital cross-posts (dead links)
+- Recover "Writing WebAssembly Code by Hand" from Wayback Machine (draft, snapshot: https://web.archive.org/web/20250121234529/https://blog.suborbital.dev/writing-webassembly-code-by-hand)
 
 ## Content / publishing
 
 - Pull Ravelry projects into site feed
   - Set up Ravelry Pro account for API access: https://www.ravelry.com/businesses/new?plan_type=6
 - Post comments via Disqus (shortname: lauralangdon-io)
-- Add Suborbital streams to posts (https://www.youtube.com/@SuborbitalDev/streams)
-- Script to prompt for featured placement when creating new posts (after Suborbital streams are added)
+- Script to prompt for featured placement when creating new posts
 
 ## CI / quality
 
