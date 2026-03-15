@@ -2,7 +2,7 @@
 title: "My Ultra-Ergo Keyboard Setup"
 slug: my-ultra-ergo-keyboard-setup
 status: published
-featured: false
+featured: true
 date: 2023-09-21T23:05:33.000-07:00
 tags:
   - "Blog"

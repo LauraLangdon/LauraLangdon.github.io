@@ -2,7 +2,7 @@
 title: "From Campus to Network: Creating the UC System-Wide OSPO Initiative"
 slug: from-campus-to-network-creating-the-uc-system-wide-ospo-initiative
 status: published
-featured: false
+featured: true
 date: 2025-08-01T15:25:00.000-07:00
 tags:
   - "Speaking"

@@ -22,7 +22,14 @@ const allPosts = await getCollection('blog');
 const publishedPosts = allPosts
 	.filter((p) => p.data.status === 'published')
 	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-const featuredPosts = publishedPosts.filter((p) => p.data.featured);
+const featuredOrder = [
+	'real-time-collaborative-sessions-for-new-contributors-and-maintainers',
+	'my-ultra-ergo-keyboard-setup',
+	'from-campus-to-network-creating-the-uc-system-wide-ospo-initiative',
+];
+const featuredPosts = featuredOrder
+	.map((slug) => publishedPosts.find((p) => p.data.slug === slug))
+	.filter(Boolean);
 const recentPosts = publishedPosts.slice(0, 5);
 ---
 

@@ -2,7 +2,7 @@
 title: "k-Nearest Twitter Neighbors"
 slug: k-nearest-twitter-neighbors
 status: published
-featured: true
+featured: false
 date: 2021-08-10T15:21:00.000-07:00
 tags:
   - "Blog"

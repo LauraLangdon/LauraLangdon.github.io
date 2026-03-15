@@ -2,7 +2,7 @@
 title: "Real-Time Collaborative Sessions for New Contributors and Maintainers"
 slug: real-time-collaborative-sessions-for-new-contributors-and-maintainers
 status: published
-featured: false
+featured: true
 date: 2025-09-27T16:05:00.000-07:00
 tags:
   - "Speaking"

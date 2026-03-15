@@ -2,7 +2,7 @@
 title: "Writing WebAssembly Code by Hand"
 slug: writing-webassembly-code-by-hand
 status: published
-featured: true
+featured: false
 date: 2022-06-01T08:39:00.000-07:00
 tags:
   - "Blog"
