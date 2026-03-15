@@ -23,7 +23,7 @@ import { SITE_TITLE } from '../consts';
 			.intro {
 				display: flex;
 				gap: 3rem;
-				align-items: flex-start;
+				align-items: center;
 				margin-bottom: 3rem;
 				padding-bottom: 3rem;
 				border-bottom: 1px solid var(--border);
@@ -34,6 +34,7 @@ import { SITE_TITLE } from '../consts';
 				height: 140px;
 				border-radius: 50%;
 				border: 3px solid var(--accent);
+				background-color: #120128;
 				background-image: url('/profile.png');
 				background-size: cover;
 				background-position: center 20%;
@@ -134,6 +135,115 @@ import { SITE_TITLE } from '../consts';
 				margin-bottom: 0.35rem;
 				line-height: 1.5;
 			}
+			.page-heading-row {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				padding-bottom: 1rem;
+				border-bottom: 1px solid var(--border);
+				margin-bottom: 2.5rem;
+			}
+			.page-heading-row .page-heading {
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+			.download-btn {
+				font-family: monospace;
+				font-size: var(--mono-meta);
+				font-weight: 700;
+				color: var(--text-muted);
+				background: var(--bg-card);
+				border: 1px solid var(--border);
+				border-radius: 8px;
+				padding: 0.4rem 1rem;
+				cursor: pointer;
+				transition: color 0.2s ease, border-color 0.2s ease;
+				text-decoration: none;
+			}
+			.download-btn:hover {
+				color: var(--accent);
+				border-color: var(--accent);
+			}
+			.print-name {
+				display: none;
+			}
+			.print-email {
+				display: none;
+			}
+			.page-heading-actions {
+				display: flex;
+				gap: 0.5rem;
+			}
+			@page {
+				margin: 1.5cm;
+			}
+			@media print {
+				:global(header), :global(footer), .download-btn, .page-heading-row,
+				:global(.subscribe-widget) { display: none !important; }
+				.print-name {
+					display: block;
+					font-family: monospace;
+					font-size: 24px;
+					font-weight: 700;
+					margin: 0 0 0.25rem 0;
+					color: #660066;
+				}
+				.print-email {
+					display: block;
+					font-family: monospace;
+					font-size: 12px;
+					margin: 0 0 1rem 0;
+				}
+				.print-email a {
+					color: #660066;
+				}
+				main { padding: 0; }
+				body { font-size: 11px; color: #333; background: white; line-height: 1.4; }
+				a { color: #333; text-decoration: underline; }
+				.intro { gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; }
+				.intro-photo {
+					width: 100px;
+					height: 100px;
+					background-color: #120128 !important;
+					-webkit-print-color-adjust: exact;
+					print-color-adjust: exact;
+				}
+				.intro-bio { font-size: 11px; line-height: 1.4; }
+				.section { margin-bottom: 1.5rem; }
+				.section-heading { margin-bottom: 0.75rem; }
+				.job { margin-bottom: 1rem; }
+				.job-title { font-size: 11px; }
+				.job-meta { margin-bottom: 0.4rem; }
+				.job ul { margin: 0; }
+				.job ul li { margin-bottom: 0.15rem; font-size: 11px; line-height: 1.4; }
+				.job, .highlight-card, .education-item {
+					break-inside: avoid;
+				}
+				.section-heading, .section-heading + * {
+					break-before: auto;
+				}
+				.section {
+					break-inside: auto;
+					break-before: auto;
+				}
+				.highlight-card {
+					background: #f5f5f5 !important;
+					-webkit-print-color-adjust: exact;
+					print-color-adjust: exact;
+					border-color: #ddd !important;
+					padding: 0.75rem;
+				}
+				.highlight-card-title { color: #D60B99 !important; margin-bottom: 0.4rem; }
+				.highlight-card ul li { font-size: 11px; line-height: 1.4; margin-bottom: 0.15rem; }
+				.highlights-grid { gap: 0.75rem; }
+				.job-tag {
+					background: #f0f0f0 !important;
+					-webkit-print-color-adjust: exact;
+					print-color-adjust: exact;
+				}
+				.education-item { margin-bottom: 0.5rem; }
+			}
 			@media (max-width: 720px) {
 				.intro {
 					flex-direction: column;
@@ -145,7 +255,15 @@ import { SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<p class="page-heading">About</p>
+			<h1 class="print-name">Laura Langdon</h1>
+			<p class="print-email"><a href="mailto:laura@lauralangdon.io">laura@lauralangdon.io</a></p>
+			<div class="page-heading-row">
+				<p class="page-heading">About</p>
+				<div class="page-heading-actions">
+					<a href="/contact" class="download-btn">Email me</a>
+					<button class="download-btn" onclick="window.print()">Download PDF</button>
+				</div>
+			</div>
 
 			<div class="intro">
 				<div class="intro-photo" role="img" aria-label="Laura Langdon"></div>
@@ -223,17 +341,17 @@ import { SITE_TITLE } from '../consts';
 					<div class="highlight-card">
 						<p class="highlight-card-title">Documentation</p>
 						<ul>
-							<li>Repo docs templates</li>
-							<li>Guides for documentation templates</li>
-							<li>Reproducible patterns for OSPOs (with CURIOSS)</li>
+							<li><a href="https://github.com/UC-OSPO-Network/templates">Repo docs templates</a></li>
+							<li><a href="https://ucospo.net/oss-resources/#repo-templates">Guides for documentation templates</a></li>
+							<li><a href="https://github.com/search?q=repo%3ACURIOSSorg%2Fcurioss-patterns%20langdon&type=code">Reproducible patterns for OSPOs (with CURIOSS)</a></li>
 						</ul>
 					</div>
 					<div class="highlight-card">
 						<p class="highlight-card-title">Speaking</p>
 						<ul>
-							<li>From Campus to Network: Creating the UC System-Wide OSPO Initiative (FOSSY 2025)</li>
-							<li>Real-Time Collaborative Sessions for New Contributors and Maintainers (PyBeach 2025)</li>
-							<li>CHAOSScast: Trends from UN OSS Week and OSSNA</li>
+							<li><a href="https://youtu.be/IUE5qunHRWA">From Campus to Network: Creating the UC System-Wide OSPO Initiative (FOSSY 2025)</a></li>
+							<li><a href="https://youtu.be/7N1vzfpsSuE">Real-Time Collaborative Sessions for New Contributors and Maintainers (PyBeach 2025)</a></li>
+							<li><a href="https://www.youtube.com/watch?v=yBCMLD7XyOc">CHAOSScast: Trends from UN OSS Week and OSSNA</a></li>
 						</ul>
 					</div>
 					<div class="highlight-card">
