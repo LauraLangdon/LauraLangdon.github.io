@@ -12,7 +12,7 @@ feature_image: https://i.ytimg.com/vi/IUE5qunHRWA/hqdefault.jpg
 feature_image_alt: "From Campus to Network: Creating the UC System-Wide OSPO Initiative — FOSSY 2025"
 ---
 
-**Abstract:**
+**Abstract** <!-- markdownlint-disable-line MD036 -->
 
 > Laura Langdon from the UC OSPO Network will share lessons learned from the early stages of building a network of academic OSPOs across the UC system. Representing the team that supports the six campuses in the UC OSPO Network, she will discuss both benefits and challenges encountered while developing this first-of-its-kind system-wide network. She will explore how her experiences with the network's three core working groups—sustainability of open source development, discovery of open source work in research, and education in fostering open source skills—have shaped her understanding of successful OSPO networks. Laura will focus on building community connections and establishing pathways for collaboration between institutions. Drawing from her first-hand experience, Laura will provide practical insights for others looking to establish OSPO networks in their institutions.
 

@@ -12,7 +12,7 @@ feature_image: https://i.ytimg.com/vi/7N1vzfpsSuE/hqdefault.jpg
 feature_image_alt: "Real-Time Collaborative Sessions for New Contributors and Maintainers — PyBeach 2025"
 ---
 
-**Abstract:**
+**Abstract** <!-- markdownlint-disable-line MD036 -->
 
 > New contributors and maintainers new to accepting contributions face surprisingly similar challenges: anxiety about "getting it right", unclear expectations, and unwritten cultural norms. This talk presents a practical model for real-time collaborative sessions that address both groups' needs simultaneously, creating stronger, more welcoming open source communities from day one.
 

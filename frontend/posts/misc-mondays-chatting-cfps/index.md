@@ -11,6 +11,8 @@ feature_image: https://i.ytimg.com/vi/E06QTywMoQM/hqdefault.jpg
 feature_image_alt: "Miscellaneous Mondays with Laura and Jenn"
 ---
 
-Chatting CfPs with Teach Jenn Tech.
+**Description** <!-- markdownlint-disable-line MD036 -->
+
+> Chatting CfPs with Teach Jenn Tech.
 
 <iframe width="100%" height="415" src="https://www.youtube.com/embed/E06QTywMoQM" title="Miscellaneous Mondays with Laura and Jenn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

@@ -11,6 +11,8 @@ feature_image: https://i.ytimg.com/vi/OYmPm3ApNno/hqdefault.jpg
 feature_image_alt: "Misc Monday with Laura & Jenn"
 ---
 
-Chatting time changes (TL;DR: spring forward sucks), functional programming, and lots of bits and pieces with Teach Jenn Tech.
+**Description** <!-- markdownlint-disable-line MD036 -->
+
+> Chatting time changes (TL;DR: spring forward sucks), functional programming, and lots of bits and pieces with Teach Jenn Tech.
 
 <iframe width="100%" height="415" src="https://www.youtube.com/embed/OYmPm3ApNno" title="Misc Monday with Laura & Jenn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
