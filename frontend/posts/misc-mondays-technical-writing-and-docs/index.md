@@ -7,6 +7,7 @@ date: 2022-11-21T00:00:00.000-08:00
 tags:
   - "Stream"
   - "Documentation"
+  - "Learning in Public"
 excerpt: "Jenn and I talk technical writing in general and docs specifically."
 feature_image: https://i.ytimg.com/vi/PUcBizxvICs/hqdefault.jpg
 feature_image_alt: "Misc Mondays: Technical Writing and Docs"

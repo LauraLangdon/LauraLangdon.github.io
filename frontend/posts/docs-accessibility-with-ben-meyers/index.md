@@ -7,6 +7,7 @@ date: 2022-11-29T00:00:00.000-08:00
 tags:
   - "Stream"
   - "Documentation"
+  - "Learning in Public"
 excerpt: "Ben Meyers teaches me some nuances of accessibility in docs design."
 feature_image: https://i.ytimg.com/vi/uOHyenJ3oR4/hqdefault.jpg
 feature_image_alt: "Docs Accessibility with Ben Meyers"

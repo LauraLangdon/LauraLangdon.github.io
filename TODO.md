@@ -8,6 +8,7 @@
 - ~~Favicon and header icon~~
 - Reduce spacing between sections (too much space)
 - About page: link colors on cards look inconsistent when some cards are all links and one is all plain text
+- Add dark/light mode toggle
 
 ## Content / publishing
 

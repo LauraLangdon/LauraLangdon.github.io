@@ -7,6 +7,7 @@ date: 2022-10-10T00:00:00.000-07:00
 tags:
   - "Stream"
   - "Python"
+  - "Learning in Public"
 excerpt: "Chapter 2 of Automate the Boring Stuff with Python — Flow Control."
 feature_image: https://i.ytimg.com/vi/y9RChmXveTk/hqdefault.jpg
 feature_image_alt: "Chapter 2: Flow Control — Automate the Boring Stuff with Python"
