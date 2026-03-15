@@ -5,7 +5,8 @@
 ## Frontend / styling
 
 - Center hero section on landing page and consider highlight color
-- Favicon and header icon
+- ~~Favicon and header icon~~
+- Reduce spacing between sections (too much space)
 
 ## Content / publishing
 

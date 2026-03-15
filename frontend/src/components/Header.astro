@@ -6,6 +6,9 @@ import HeaderLink from './HeaderLink.astro';
 <header>
 	<nav>
 		<a href="/" class="site-title">{SITE_TITLE}</a>
+		<a href="/" class="nav-icon">
+			<img src="/initials-dark.png" alt="" width="56" height="50" />
+		</a>
 		<div class="nav-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -21,7 +24,6 @@ import HeaderLink from './HeaderLink.astro';
 		top: 0;
 		z-index: 10;
 		background-color: var(--bg);
-		border-bottom: 1px solid var(--border);
 		padding: 0 1.5em;
 	}
 	nav {
@@ -30,7 +32,8 @@ import HeaderLink from './HeaderLink.astro';
 		justify-content: space-between;
 		max-width: 960px;
 		margin: 0 auto;
-		height: 3.5rem;
+		height: 7rem;
+		position: relative;
 	}
 	.site-title {
 		font-family: monospace;
@@ -42,6 +45,21 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	.site-title:hover {
 		color: var(--accent);
+	}
+	.nav-icon {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		align-items: center;
+	}
+	.nav-icon img {
+		display: block;
+	}
+	@media (prefers-color-scheme: dark) {
+		.nav-icon img {
+			filter: invert(81%) sepia(30%) saturate(600%) hue-rotate(295deg) brightness(105%) contrast(95%);
+		}
 	}
 	.nav-links {
 		display: flex;
