@@ -6,12 +6,8 @@ featured: true
 date: 2021-08-10T15:21:00.000-07:00
 tags:
   - "Blog"
-  - "Machine Learning"
   - "Learning in Public"
   - "Python"
-  - "k-Nearest Neighbors"
-  - "#post-card-rose"
-  - "#Import 2026-03-08 05:42"
 excerpt: "An introduction to a (relatively) intuitive algorithm"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/knn-1.jpeg
 feature_image_alt: "Dots labelled 'a', 'b', or '?'"

@@ -5,11 +5,8 @@ status: published
 featured: false
 date: 2023-02-17T08:24:00.000-08:00
 tags:
-  - "Blog"
+  - "Stream"
   - "Python"
-  - "Suborbital"
-  - "#post-card-sky"
-  - "#Import 2026-03-08 05:42"
 excerpt: "A conversation with Jay Miller of Microsoft"
 feature_image: https://staging.lauralangdon.io/content/images/2023/06/3c622994-6efd-40f0-91ef-af1e3b980b60.avif-1.jpg
 feature_image_alt: "Stream thumbnail"

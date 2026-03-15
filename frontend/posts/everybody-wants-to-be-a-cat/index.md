@@ -6,10 +6,7 @@ featured: false
 date: 2019-11-27T15:36:00.000-08:00
 tags:
   - "Blog"
-  - "fast.ai"
-  - "Deep Learning"
-  - "#post-card-rose"
-  - "#Import 2026-03-08 05:42"
+  - "Learning in Public"
 excerpt: "Lesson 6 of “Practical Deep Learning for Coders” by fast.ai"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_OrXdQxoSNuQ5gbhWD-9VsA.png
 feature_image_alt: "Table of convolution values and Grumpy Cat in greyscale"

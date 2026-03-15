@@ -6,9 +6,7 @@ featured: false
 date: 2020-06-14T15:26:00.000-07:00
 tags:
   - "Blog"
-  - "Raspberry Pi"
-  - "#post-card-rose"
-  - "#Import 2026-03-08 05:42"
+  - "Learning in Public"
 excerpt: "Interacting with three OSs simultaneously, using one keyboard and mouse"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/image-1.png
 feature_image_alt: "Desk with an iMac, laptop, keyboard, and mouse"

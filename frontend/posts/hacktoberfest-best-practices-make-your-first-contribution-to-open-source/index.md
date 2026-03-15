@@ -6,11 +6,8 @@ featured: false
 date: 2023-09-22T16:28:00.000-07:00
 tags:
   - "Stream"
-  - "#post-card-seafoam"
   - "Learning in Public"
   - "OSS"
-  - "Hacktoberfest"
-  - "#Import 2026-03-08 05:42"
 feature_image_alt: "Twitch thumbnail"
 ---
 

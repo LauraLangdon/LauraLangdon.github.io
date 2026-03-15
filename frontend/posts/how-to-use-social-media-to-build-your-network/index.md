@@ -6,13 +6,7 @@ featured: false
 date: 2022-11-05T00:00:00.000-07:00
 tags:
   - "Blog"
-  - "Networking"
-  - "Twitter"
-  - "LinkedIn"
-  - "JobHunting"
-  - "Mastodon"
-  - "#post-card-rose"
-  - "#Import 2026-03-08 05:42"
+  - "Learning in Public"
 excerpt: "Hot take: Twitter > LinkedIn"
 feature_image: "/images/posts/how-to-use-social-media-to-build-your-network/ea5904cc.jpg"
 feature_image_alt: "A hand holding a \"Hello!\" sticker with a smiley face, person blurred in the background"

@@ -6,10 +6,7 @@ featured: false
 date: 2019-10-14T16:04:00.000-07:00
 tags:
   - "Blog"
-  - "fast.ai"
-  - "Deep Learning"
-  - "#post-card-rose"
-  - "#Import 2026-03-08 05:42"
+  - "Learning in Public"
 excerpt: "My deep learning self-study for 09/30/19–10/07/19"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_2A5ROBhoSqee1W4veJLJYw.jpg
 feature_image_alt: "GIF of a digital robotic hand touching a block"

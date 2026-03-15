@@ -7,9 +7,7 @@ date: 2022-03-28T14:28:00.000-07:00
 tags:
   - "Blog"
   - "Learning in Public"
-  - "Technical Writing"
-  - "#post-card-rose"
-  - "#Import 2026-03-08 05:42"
+  - "Documentation"
 excerpt: "Or \"On second thought, let's not become a data scientist\""
 feature_image: "/images/posts/how-i-became-a-technical-writer/a55024e3.jpg"
 feature_image_alt: "Close-up of a typewriter with paper loaded, typed text reading \"the best way is just to start!\""

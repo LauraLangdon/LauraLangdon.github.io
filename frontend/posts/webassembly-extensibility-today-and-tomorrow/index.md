@@ -6,9 +6,7 @@ featured: false
 date: 2022-04-29T08:44:00.000-07:00
 tags:
   - "Blog"
-  - "Suborbital"
-  - "WebAssembly"
-  - "#Import 2026-03-08 05:42"
+  - "Learning in Public"
 excerpt: "How Wasm is creating new possibilities in and out of the browser"
 feature_image: "/images/posts/webassembly-extensibility-today-and-tomorrow/ff251353.jpg"
 feature_image_alt: "A worm's-eye view looking up a tall ornate ladder or structure with gold globe ornaments, with a skyscraper visible in the upper left corner against a pale sky"

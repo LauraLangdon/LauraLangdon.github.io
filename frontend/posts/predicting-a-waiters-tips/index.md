@@ -6,10 +6,7 @@ featured: false
 date: 2019-10-06T16:15:00.000-07:00
 tags:
   - "Blog"
-  - "fast.ai"
-  - "Deep Learning"
-  - "#post-card-rose"
-  - "#Import 2026-03-08 05:42"
+  - "Learning in Public"
 excerpt: "Lesson 4 of “Practical Deep Learning for Coders” by fast.ai"
 feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_e3LisARxj0MwvVGhNndBLA.png
 feature_image_alt: "Table of values"
