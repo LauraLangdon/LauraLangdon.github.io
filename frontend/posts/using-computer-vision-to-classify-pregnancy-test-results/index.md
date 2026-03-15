@@ -2,7 +2,7 @@
 title: "Using AI to Classify Pregnancy Test Results"
 slug: using-computer-vision-to-classify-pregnancy-test-results
 status: published
-featured: true
+featured: false
 date: 2019-09-11T16:22:00.000-07:00
 tags:
   - "Blog"
