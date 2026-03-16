@@ -12,7 +12,7 @@ feature_image: https://i.ytimg.com/vi/fFf-HJ_-CIo/hqdefault.jpg
 feature_image_alt: "ELI5: What Is WebAssembly?"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Welcome to our new ELI5 (Explain Like I'm 5) series! In our first episode, our Director of Engineering Oscar Spencer will explain what WebAssembly is and why it's exciting.
 

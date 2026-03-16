@@ -12,7 +12,7 @@ feature_image: https://i.ytimg.com/vi/4H1W6R33XaQ/hqdefault.jpg
 feature_image_alt: "Debugging Our First Wasm App"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Join Laura and Ramón as we debug our first ever Wasm app!
 

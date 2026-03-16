@@ -12,7 +12,7 @@ feature_image: https://i.ytimg.com/vi/xtB4aT30hig/hqdefault.jpg
 feature_image_alt: "WebAssembly Extensibility: Today and Tomorrow"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Join Laura and Flaki as we explore WebAssembly Extensibility.
 

@@ -13,7 +13,7 @@ feature_image: https://i.ytimg.com/vi/dmncdL3Vxm8/hqdefault.jpg
 feature_image_alt: "Chapter 3: Functions of Automate the Boring Stuff with Python"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Hashing out Python functions with Teach Jenn Tech! Chapter 3 of Automate the Boring Stuff with Python.
 

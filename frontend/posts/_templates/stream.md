@@ -11,7 +11,7 @@ feature_image: https://i.ytimg.com/vi/VIDEO_ID/hqdefault.jpg
 feature_image_alt: "Stream Title"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Description text here.
 

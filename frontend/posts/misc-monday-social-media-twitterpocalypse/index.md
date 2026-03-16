@@ -11,7 +11,7 @@ feature_image: https://i.ytimg.com/vi/Rm_Wm3zGasc/hqdefault.jpg
 feature_image_alt: "Misc Monday with Laura and Jenn"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Chatting social media in the age of the Twitterpocolypse, gaming, brains.
 

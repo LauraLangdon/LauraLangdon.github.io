@@ -13,7 +13,7 @@ feature_image: https://i.ytimg.com/vi/vWU2RvW8W40/hqdefault.jpg
 feature_image_alt: "Hacktoberfest Best Practices: Make your first contribution to open source"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Join Rizel Scarlett and Adewale Abati, our Senior Dev Advocates, as they host a lively chat with Nick Taylor and Laura Langdon. What's on the agenda? A deep dive into the nuances of making your first open-source contributions and effectively joining the Hacktoberfest festivities. Alongside their personal experiences, they also spotlight some tools that have been game-changers in their open-source journeys.
 >

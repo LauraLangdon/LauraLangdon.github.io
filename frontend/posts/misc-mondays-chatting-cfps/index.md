@@ -11,7 +11,7 @@ feature_image: https://i.ytimg.com/vi/E06QTywMoQM/hqdefault.jpg
 feature_image_alt: "Miscellaneous Mondays with Laura and Jenn"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Chatting CfPs with Teach Jenn Tech.
 

@@ -12,7 +12,7 @@ feature_image: https://i.ytimg.com/vi/83X9eGX_MVY/hqdefault.jpg
 feature_image_alt: "Building Our First Wasm App, Part 1"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Join Laura and Ramón as we build our first ever Wasm app!
 

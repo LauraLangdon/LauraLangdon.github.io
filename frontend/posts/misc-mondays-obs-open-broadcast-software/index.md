@@ -12,7 +12,7 @@ feature_image: https://i.ytimg.com/vi/qKIhoAfX0ic/hqdefault.jpg
 feature_image_alt: "Misc. Mondays: OBS (Open Broadcast Software)"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > More chatting OBS with @TeachJennTech and @hola_soy_milk.
 

@@ -11,7 +11,7 @@ feature_image: https://i.ytimg.com/vi/ByrXQXHFj_Q/hqdefault.jpg
 feature_image_alt: "Miscellaneous Mondays: Branding"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Teach Jenn Tech and Laura's Loquacious Livestream talk branding.
 

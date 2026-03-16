@@ -13,7 +13,7 @@ feature_image: https://i.ytimg.com/vi/qAi-_u71zys/hqdefault.jpg
 feature_image_alt: "Teach Jenn Tech: Learning Python (Episode 11)"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Chatting about learning Python with Teach Jenn Tech.
 

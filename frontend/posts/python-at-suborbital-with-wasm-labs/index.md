@@ -12,7 +12,7 @@ feature_image: https://i.ytimg.com/vi/JzJxncmz1Y8/hqdefault.jpg
 feature_image_alt: "Python @ Suborbital with Wasm Labs"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Chatting with the Wasm Labs team at VMware about our collaboration to bring Python support to SE2 and the Wasm Labs team's WebAssembly Language Runtimes project.
 

@@ -11,7 +11,7 @@ feature_image: https://i.ytimg.com/vi/zDDBep19dYk/hqdefault.jpg
 feature_image_alt: "Extensibility and VS Code"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > We'll be joined by Jay Miller of Microsoft to chat about balancing freedom and security when designing extensible software.
 

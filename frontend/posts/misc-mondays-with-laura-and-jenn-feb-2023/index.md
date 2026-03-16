@@ -11,7 +11,7 @@ feature_image: https://i.ytimg.com/vi/lQt-tB-Kqjc/hqdefault.jpg
 feature_image_alt: "Misc. Mondays with Laura and Jenn"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Chatting thoughts and feels about Covid mitigation efforts at in-person events, handling frustration in coding, "WTH is an octothorpe?", and more.
 
