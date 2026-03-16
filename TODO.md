@@ -19,8 +19,8 @@
   - Mastodon replies: fetch replies to Hachyderm posts (@LauraLangdon@hachyderm.io) via Mastodon API. Avoids creating a second Fediverse identity for the site; domain-independent so unaffected by .io → .com migration
   - giscus (GitHub Discussions): for readers without Fediverse accounts
   - Both streams rendered together in a single `<Comments />` component
-- Next/previous post links at the end of posts
-- Script to prompt for featured placement when creating new posts
+- ~~Next/previous post links at the end of posts~~ ✓
+- ~~Script to prompt for featured placement when creating new posts~~ ✓
 
 ## CI / quality
 
