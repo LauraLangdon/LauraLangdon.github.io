@@ -1,0 +1,378 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About · ${SITE_TITLE}`} description="Community manager, developer advocate, mathematician, and open source enthusiast." />
+		<style>
+			.page-heading {
+				font-family: monospace;
+				font-size: var(--mono-page-heading);
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin: 0 0 2.5rem 0;
+				padding-bottom: 1rem;
+				border-bottom: 1px solid var(--border);
+			}
+			.intro {
+				display: flex;
+				gap: 3rem;
+				align-items: center;
+				margin-bottom: 3rem;
+				padding: 2.5rem;
+				background: var(--bg-card);
+				border-radius: 16px;
+			}
+			.intro-photo {
+				flex-shrink: 0;
+				width: 140px;
+				height: 140px;
+				border-radius: 50%;
+				border: 3px solid var(--accent);
+				background-color: #120128;
+				background-image: url('/profile.png');
+				background-size: cover;
+				background-position: center 20%;
+			}
+			.intro-bio {
+				font-size: 1.05rem;
+				line-height: 1.75;
+				color: var(--text);
+				margin: 0;
+			}
+			.section {
+				margin-bottom: 3rem;
+			}
+			.section-heading {
+				font-family: monospace;
+				font-size: var(--mono-section-heading);
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin: 0 0 1.75rem 0;
+			}
+			.job {
+				margin-bottom: 2.25rem;
+			}
+			.job-title {
+				font-size: 1rem;
+				font-weight: 700;
+				margin: 0 0 0.2rem 0;
+				color: var(--text);
+			}
+			.job-meta {
+				font-family: monospace;
+				font-size: var(--mono-meta);
+				color: var(--text-muted);
+				margin: 0 0 0.75rem 0;
+			}
+			.job-tag {
+				display: inline-block;
+				font-family: monospace;
+				font-size: var(--mono-small);
+				padding: 0.1em 0.5em;
+				border-radius: 4px;
+				background: var(--bg-card);
+				border: 1px solid var(--border);
+				color: var(--accent-2);
+				margin-left: 0.5rem;
+				vertical-align: middle;
+			}
+			.job ul {
+				margin: 0;
+				padding: 0 0 0 1.25rem;
+			}
+			.job ul li {
+				margin-bottom: 0.4rem;
+				font-size: 1rem;
+				line-height: 1.6;
+				color: var(--text);
+			}
+			.education-item {
+				margin-bottom: 1rem;
+			}
+			.education-school {
+				font-weight: 700;
+				color: var(--text);
+				margin: 0 0 0.25rem 0;
+			}
+			.education-degree {
+				font-size: 1rem;
+				color: var(--text);
+				margin: 0;
+			}
+			.highlights-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+				gap: 1.5rem;
+			}
+			.highlight-card {
+				background: var(--bg-card);
+				border: 1px solid var(--border);
+				border-radius: 10px;
+				padding: 1.25rem;
+			}
+			.highlight-card-title {
+				font-family: monospace;
+				font-size: var(--mono-meta);
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: #D60B99;
+				margin: 0 0 0.75rem 0;
+			}
+			.highlight-card ul {
+				margin: 0;
+				padding: 0 0 0 1rem;
+			}
+			.highlight-card ul li {
+				font-size: 1rem;
+				color: var(--text-muted);
+				margin-bottom: 0.35rem;
+				line-height: 1.5;
+			}
+			.highlight-card a {
+				color: var(--text);
+				text-decoration: underline;
+			}
+			.highlight-card a:hover {
+				color: var(--accent);
+			}
+			.page-heading-row {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				padding-bottom: 1rem;
+				border-bottom: 1px solid var(--border);
+				margin-bottom: 2.5rem;
+			}
+			.page-heading-row .page-heading {
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+			.download-btn {
+				font-family: monospace;
+				font-size: var(--mono-meta);
+				font-weight: 700;
+				color: var(--text-muted);
+				background: var(--bg-card);
+				border: 1px solid var(--border);
+				border-radius: 8px;
+				padding: 0.4rem 1rem;
+				cursor: pointer;
+				transition: color 0.2s ease, border-color 0.2s ease;
+				text-decoration: none;
+			}
+			.download-btn:hover {
+				color: var(--accent);
+				border-color: var(--accent);
+			}
+			.print-name {
+				display: none;
+			}
+			.print-email {
+				display: none;
+			}
+			.page-heading-actions {
+				display: flex;
+				gap: 0.5rem;
+			}
+			@page {
+				margin: 1.5cm;
+			}
+			@media print {
+				:global(header), :global(footer), .download-btn, .page-heading-row,
+				:global(.subscribe-widget) { display: none !important; }
+				.print-name {
+					display: block;
+					font-family: monospace;
+					font-size: 24px;
+					font-weight: 700;
+					margin: 0 0 0.25rem 0;
+					color: #660066;
+				}
+				.print-email {
+					display: block;
+					font-family: monospace;
+					font-size: 12px;
+					margin: 0 0 1rem 0;
+				}
+				.print-email a {
+					color: #660066;
+				}
+				main { padding: 0; }
+				body { font-size: 11px; color: #333; background: white; line-height: 1.4; }
+				a { color: #333; text-decoration: underline; }
+				.intro { gap: 1.5rem; margin-bottom: 1.5rem; padding: 0; background: none; border-radius: 0; }
+				.intro-photo {
+					width: 100px;
+					height: 100px;
+					background-color: #120128 !important;
+					-webkit-print-color-adjust: exact;
+					print-color-adjust: exact;
+				}
+				.intro-bio { font-size: 11px; line-height: 1.4; }
+				.section { margin-bottom: 1.5rem; }
+				.section-heading { margin-bottom: 0.75rem; }
+				.job { margin-bottom: 1rem; }
+				.job-title { font-size: 11px; }
+				.job-meta { margin-bottom: 0.4rem; }
+				.job ul { margin: 0; }
+				.job ul li { margin-bottom: 0.15rem; font-size: 11px; line-height: 1.4; }
+				.job, .highlight-card, .education-item {
+					break-inside: avoid;
+				}
+				.section-heading, .section-heading + * {
+					break-before: auto;
+				}
+				.section {
+					break-inside: auto;
+					break-before: auto;
+				}
+				.highlight-card {
+					background: #f5f5f5 !important;
+					-webkit-print-color-adjust: exact;
+					print-color-adjust: exact;
+					border-color: #ddd !important;
+					padding: 0.75rem;
+				}
+				.highlight-card-title { color: #D60B99 !important; margin-bottom: 0.4rem; }
+				.highlight-card ul li { font-size: 11px; line-height: 1.4; margin-bottom: 0.15rem; }
+				.highlights-grid { gap: 0.75rem; }
+				.job-tag {
+					background: #f0f0f0 !important;
+					-webkit-print-color-adjust: exact;
+					print-color-adjust: exact;
+				}
+				.education-item { margin-bottom: 0.5rem; }
+			}
+			@media (max-width: 720px) {
+				.intro {
+					flex-direction: column;
+					gap: 1.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1 class="print-name">Laura Langdon</h1>
+			<p class="print-email"><a href="mailto:laura@lauralangdon.io">laura@lauralangdon.io</a></p>
+			<div class="page-heading-row">
+				<p class="page-heading">About</p>
+				<div class="page-heading-actions">
+					<a href="/contact" class="download-btn">Email me</a>
+					<button class="download-btn" onclick="window.print()">Download PDF</button>
+				</div>
+			</div>
+
+			<div class="intro">
+				<div class="intro-photo" role="img" aria-label="Laura Langdon"></div>
+				<p class="intro-bio">
+					Hello! I'm Laura, and I'm passionate about community, diversity and
+					inclusion across all axes, and open source as a force for public good. I find
+					camaraderie with folks who value social responsibility in tech and are
+					enormous nerds.
+				</p>
+			</div>
+
+			<div class="section">
+				<p class="section-heading">Experience</p>
+
+				<div class="job">
+					<p class="job-title">Community Manager · UC Open Source Program Office (OSPO) Network</p>
+					<p class="job-meta">October 2024 — present</p>
+					<ul>
+						<li>Build and nurture open source communities across six UC campuses while helping establish five campus OSPOs from the ground up</li>
+						<li>Create documentation templates and educational resources used network-wide, including README.md, CONTRIBUTING.md, and project scaffolding guides</li>
+						<li>Plan and execute events attracting 520+ attendees, including on-campus meetups, virtual gatherings, and the UC Open conference</li>
+						<li>Establish cross-institutional partnerships with CURIOSS, CHAOSS, and CSCCE</li>
+						<li>Serve on OSPO Leadership Group, coordinating network strategy across six campuses</li>
+						<li>Represent the network at FOSSY, Linux Foundation Open Source Summit, CHAOSScon, and UN Open Source Week</li>
+					</ul>
+				</div>
+
+				<div class="job">
+					<p class="job-title">
+						Docs Lead · Distribute Aid
+						<span class="job-tag">volunteer</span>
+					</p>
+					<p class="job-meta">November 2023 — present</p>
+					<ul>
+						<li>Establish API documentation, organization, version control, and best practices</li>
+						<li>Lead and mentor a globally-distributed team of new open source contributors</li>
+						<li>Work with engineering to ensure docs stay current with new releases</li>
+					</ul>
+				</div>
+
+				<div class="job">
+					<p class="job-title">Developer Advocate · Suborbital Software Systems</p>
+					<p class="job-meta">February 2022 — July 2023</p>
+					<ul>
+						<li>Owned all aspects of documentation: user journey mapping, tutorials, accessibility audits, and user feedback implementation</li>
+						<li>Wrote demo code in Python and Go; livestreamed new product feature demos</li>
+						<li>Wrote deep-dive blog posts about product concepts and features</li>
+						<li>Identified UX friction points and collaborated with engineering to resolve them</li>
+					</ul>
+				</div>
+
+				<div class="job">
+					<p class="job-title">Mathematics Lecturer · CSU East Bay</p>
+					<p class="job-meta">January 2019 — December 2021 · Head TA 2015–2018</p>
+					<ul>
+						<li>Prepared lectures, created primary and supplemental materials, and graded student work</li>
+						<li>Provided pedagogical support to newer instructors</li>
+						<li>Participated in committee for curriculum design</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="section">
+				<p class="section-heading">Education</p>
+				<div class="education-item">
+					<p class="education-school">California State University, East Bay</p>
+					<p class="education-degree">M.S. Mathematics · 2018</p>
+					<p class="education-degree">B.S. Mathematics · 2014</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<p class="section-heading">Portfolio highlights</p>
+				<div class="highlights-grid">
+					<div class="highlight-card">
+						<p class="highlight-card-title">Documentation</p>
+						<ul>
+							<li><a href="https://github.com/UC-OSPO-Network/templates">Repo docs templates</a></li>
+							<li><a href="https://ucospo.net/oss-resources/#repo-templates">Guides for documentation templates</a></li>
+							<li><a href="https://github.com/search?q=repo%3ACURIOSSorg%2Fcurioss-patterns%20langdon&type=code">Reproducible patterns for OSPOs (with CURIOSS)</a></li>
+						</ul>
+					</div>
+					<div class="highlight-card">
+						<p class="highlight-card-title">Speaking</p>
+						<ul>
+							<li><a href="https://youtu.be/IUE5qunHRWA">From Campus to Network: Creating the UC System-Wide OSPO Initiative (FOSSY 2025)</a></li>
+							<li><a href="https://youtu.be/7N1vzfpsSuE">Real-Time Collaborative Sessions for New Contributors and Maintainers (PyBeach 2025)</a></li>
+							<li><a href="https://www.youtube.com/watch?v=yBCMLD7XyOc">CHAOSScast: Trends from UN OSS Week and OSSNA</a></li>
+						</ul>
+					</div>
+					<div class="highlight-card">
+						<p class="highlight-card-title">Conference Organizing</p>
+						<ul>
+							<li>Logistics Chair for PyBay (largest Python conference after PyCon US!)</li>
+							<li>Speaker selection committee &amp; captions editor for PyLadies 2025</li>
+							<li>Speaker selection committee for CHAOSSCon EU 2026</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

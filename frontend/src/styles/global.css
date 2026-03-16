@@ -1,0 +1,252 @@
+:root {
+	--bg: #ffffff;
+	--bg-card: #eceef8;
+	--text: #660066;
+	--text-muted: #960096;
+	--accent: #DA0B99;
+	--accent-2: #4F54E8;
+	--cyan: #00a5b3;
+	--green: #00aa64;
+	--border: #dfcce5;
+	--code-bg: #f8f0fc;
+	--tag-text: #960096;
+	--bg-featured-card: #fff5f8;
+	--box-shadow: 0 2px 8px rgba(102, 0, 102, 0.08), 0 8px 24px rgba(102, 0, 102, 0.06);
+
+	--mono-hero: 2.8rem;
+	--mono-page-heading: 1.5rem;
+	--mono-section-heading: 1.15rem;
+	--mono-body: 1rem;
+	--mono-meta: 0.9rem;
+	--mono-small: 0.8rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		--bg: #120128;
+		--bg-card: #1e1840;
+		--text: #dfafe9;
+		--text-muted: #f8b9d2;
+		--accent: #f383af;
+		--accent-2: #c96ef7;
+		--cyan: #01c7e0;
+		--green: #00cc99;
+		--border: #2a0550;
+		--code-bg: #1a0235;
+		--tag-text: #120128;
+		--bg-featured-card: #2a0445;
+		--box-shadow: 0 2px 8px rgba(243, 131, 175, 0.12), 0 8px 24px rgba(201, 110, 247, 0.08);
+	}
+}
+:root[data-theme="dark"] {
+	--bg: #120128;
+	--bg-card: #1e1840;
+	--text: #dfafe9;
+	--text-muted: #f8b9d2;
+	--accent: #f383af;
+	--accent-2: #c96ef7;
+	--cyan: #01c7e0;
+	--green: #00cc99;
+	--border: #2a0550;
+	--code-bg: #1a0235;
+	--tag-text: #120128;
+	--bg-featured-card: #2a0445;
+	--box-shadow: 0 2px 8px rgba(243, 131, 175, 0.12), 0 8px 24px rgba(201, 110, 247, 0.08);
+}
+
+@font-face {
+	font-family: "Atkinson";
+	src: url("/fonts/atkinson-regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Atkinson";
+	src: url("/fonts/atkinson-bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Nunito Sans";
+	src: url("/fonts/nunito-sans-latin-400-normal.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Nunito Sans";
+	src: url("/fonts/nunito-sans-latin-700-normal.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Raleway";
+	src: url("/fonts/raleway-latin-400-normal.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Raleway";
+	src: url("/fonts/raleway-latin-700-normal.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("/fonts/montserrat-latin-400-normal.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("/fonts/montserrat-latin-700-normal.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "PT Mono";
+	src: url("/fonts/pt-mono-latin-400-normal.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	font-family: "Atkinson", sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: var(--bg);
+	color: var(--text);
+	font-size: 18px;
+	line-height: 1.7;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+main {
+	width: 960px;
+	max-width: calc(100% - 2em);
+	margin: auto;
+	padding: 3em 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 0.5rem 0;
+	color: var(--text);
+	line-height: 1.2;
+}
+
+h1 { font-size: 3.052rem; }
+h2 { font-size: 2.441rem; }
+h3 { font-size: 1.953rem; }
+h4 { font-size: 1.563rem; }
+h5 { font-size: 1.25rem; }
+
+strong, b { font-weight: 700; }
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+p { margin-bottom: 1em; }
+.prose p { margin-bottom: 2em; }
+
+textarea { width: 100%; font-size: 16px; }
+input { font-size: 16px; }
+table { width: 100%; }
+
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+code {
+	font-family: "PT Mono", monospace;
+	padding: 2px 6px;
+	background-color: var(--code-bg);
+	color: #5A59F3;
+	border-radius: 4px;
+	font-size: var(--mono-meta);
+	white-space: nowrap;
+}
+
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+pre > code {
+	all: unset;
+	display: block;
+	font-family: monospace;
+	font-size: var(--mono-meta);
+	line-height: 1.1;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	tab-size: 4;
+}
+pre > code > .line {
+	display: block;
+}
+
+/* Override Shiki's inline overflow-x: auto to allow wrapping */
+pre.astro-code {
+	overflow-x: visible !important;
+}
+
+/* Shiki dual-theme: light colors are applied inline by default;
+   switch to dark theme variables in dark mode */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) pre.astro-code,
+	:root:not([data-theme="light"]) pre.astro-code span {
+		color: var(--shiki-dark) !important;
+		background-color: var(--shiki-dark-bg) !important;
+	}
+}
+[data-theme="dark"] pre.astro-code,
+[data-theme="dark"] pre.astro-code span {
+	color: var(--shiki-dark) !important;
+	background-color: var(--shiki-dark-bg) !important;
+}
+
+blockquote {
+	border-left: 3px solid var(--accent);
+	padding: 0 0 0 1.25em;
+	margin: 0 0 1em 0;
+	color: var(--text-muted);
+	font-size: 1.1rem;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid var(--border);
+	margin: 2em 0;
+}
+
+@media (max-width: 720px) {
+	main { padding: 1em; }
+}
+
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}

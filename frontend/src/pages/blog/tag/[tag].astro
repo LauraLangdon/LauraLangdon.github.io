@@ -1,0 +1,159 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import Footer from '../../../components/Footer.astro';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import Header from '../../../components/Header.astro';
+import { SITE_TITLE } from '../../../consts';
+
+export async function getStaticPaths() {
+	const allPosts = await getCollection('blog');
+	const published = allPosts.filter((p) => p.data.status === 'published');
+
+	const tagSet = new Set<string>();
+	for (const post of published) {
+		for (const tag of post.data.tags ?? []) {
+			if (!tag.startsWith('#')) tagSet.add(tag);
+		}
+	}
+
+	return [...tagSet].map((tag) => ({
+		params: { tag: tag.toLowerCase().replaceAll(' ', '-') },
+		props: {
+			tag,
+			posts: published
+				.filter((p) => p.data.tags?.includes(tag))
+				.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+		},
+	}));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${tag} · ${SITE_TITLE}`} description={`Posts tagged "${tag}"`} />
+		<style>
+			.page-heading {
+				font-family: monospace;
+				font-size: var(--mono-page-heading);
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin: 0 0 2.5rem 0;
+				padding-bottom: 1rem;
+				border-bottom: 1px solid var(--border);
+			}
+			.back-link {
+				display: inline-block;
+				font-family: monospace;
+				font-size: var(--mono-body);
+				color: var(--accent);
+				text-decoration: none;
+				margin-bottom: 1.5rem;
+			}
+			.back-link:hover {
+				color: var(--accent-2);
+			}
+			.post-list {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.post-item {
+				display: grid;
+				grid-template-columns: 1fr auto;
+				gap: 1rem 2rem;
+				align-items: start;
+				padding: 1.75rem 0;
+				border-bottom: 1px solid var(--border);
+			}
+			.post-item:last-child {
+				border-bottom: none;
+			}
+			.post-item.has-image {
+				grid-template-columns: 1fr 160px;
+			}
+			.post-content a {
+				text-decoration: none;
+				color: inherit;
+			}
+			.post-content a:hover .post-title {
+				color: var(--accent);
+			}
+			.post-title {
+				font-size: 1.2rem;
+				font-weight: 700;
+				line-height: 1.3;
+				margin: 0 0 0.4rem 0;
+				color: var(--text);
+				transition: color 0.15s ease;
+			}
+			.post-meta {
+				font-family: monospace;
+				font-size: var(--mono-meta);
+				color: var(--text-muted);
+				margin: 0 0 0.6rem 0;
+			}
+			.post-excerpt {
+				font-size: 0.95rem;
+				color: var(--text-muted);
+				margin: 0;
+				line-height: 1.6;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+			.post-image {
+				width: 160px;
+				height: 100px;
+				object-fit: cover;
+				border-radius: 8px;
+				display: block;
+			}
+			@media (max-width: 720px) {
+				.post-item.has-image {
+					grid-template-columns: 1fr;
+				}
+				.post-image {
+					width: 100%;
+					height: 180px;
+					order: -1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<a href="/blog" class="back-link">← All posts</a>
+			<p class="page-heading">{tag}</p>
+			<ul class="post-list">
+				{posts.map((post) => (
+					<li class:list={['post-item', { 'has-image': !!post.data.feature_image }]}>
+						<div class="post-content">
+							<a href={`/blog/${post.data.slug}/`}>
+								<h2 class="post-title">{post.data.title}</h2>
+							</a>
+							<p class="post-meta">
+								<FormattedDate date={post.data.date} />
+							</p>
+							{post.data.excerpt && (
+								<p class="post-excerpt">{post.data.excerpt}</p>
+							)}
+						</div>
+						{post.data.feature_image && (
+							<a href={`/blog/${post.data.slug}/`}>
+								<img class="post-image" src={post.data.feature_image} alt={post.data.feature_image_alt ?? ''} />
+							</a>
+						)}
+					</li>
+				))}
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>

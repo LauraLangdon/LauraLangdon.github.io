@@ -1,0 +1,179 @@
+---
+import { siRss } from 'simple-icons';
+
+const ghostUrl = import.meta.env.PUBLIC_GHOST_URL;
+---
+
+<section class="subscribe-section" id="subscribe">
+	<p class="subscribe-heading">// Subscribe</p>
+	<p class="subscribe-description">Get new posts by email or in your favorite feed reader.</p>
+	<form class="subscribe-form" data-ghost-url={ghostUrl}>
+		<input
+			type="email"
+			name="email"
+			placeholder="you@example.com"
+			required
+			autocomplete="email"
+			aria-label="Email address"
+		/>
+		<button type="submit">Subscribe</button>
+	</form>
+	<p class="subscribe-status" aria-live="polite"></p>
+	<p class="subscribe-rss">
+		<a href="/rss.xml" class="rss-link">
+			<svg
+				role="img"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				aria-hidden="true"
+			>
+				<path d={siRss.path} />
+			</svg>
+			RSS feed
+		</a>
+	</p>
+</section>
+
+<style>
+	.subscribe-section {
+		padding: 2rem 0;
+	}
+	.subscribe-heading {
+		font-family: monospace;
+		font-size: var(--mono-section-heading);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--accent);
+		margin: 0 0 0.5rem 0;
+	}
+	.subscribe-description {
+		color: var(--text);
+		margin: 0 0 1rem 0;
+	}
+	.subscribe-form {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+	.subscribe-form input {
+		flex: 1;
+		min-width: 200px;
+		padding: 0.6rem 1rem;
+		font-size: 1rem;
+		font-family: inherit;
+		background: var(--bg-card);
+		color: var(--text);
+		border: 1px solid var(--border);
+		border-radius: 8px;
+	}
+	.subscribe-form input::placeholder {
+		color: var(--text-muted);
+		opacity: 0.6;
+	}
+	.subscribe-form input:focus {
+		outline: 2px solid var(--accent);
+		outline-offset: -1px;
+		border-color: transparent;
+	}
+	.subscribe-form button {
+		padding: 0.6rem 1.5rem;
+		font-size: var(--mono-body);
+		font-weight: 700;
+		font-family: monospace;
+		color: #ffffff;
+		background: linear-gradient(90deg, var(--accent), var(--accent-2));
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: opacity 0.2s ease;
+	}
+	.subscribe-form button:hover {
+		opacity: 0.9;
+	}
+	.subscribe-form button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+	.subscribe-status {
+		margin: 0.75rem 0 0 0;
+		font-size: var(--mono-meta);
+	}
+	.subscribe-status:empty {
+		display: none;
+	}
+	.subscribe-status.success {
+		color: var(--green);
+	}
+	.subscribe-status.error {
+		color: var(--accent);
+	}
+	.subscribe-rss {
+		margin: 1rem 0 0 0;
+	}
+	.rss-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-family: monospace;
+		font-size: var(--mono-body);
+		color: var(--text-muted);
+		text-decoration: none;
+	}
+	.rss-link:hover {
+		color: var(--accent);
+		text-decoration: none;
+	}
+	.rss-link svg {
+		width: 16px;
+		height: 16px;
+		fill: currentColor;
+	}
+</style>
+
+<script>
+	document.querySelectorAll('.subscribe-form').forEach((form) => {
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			const formEl = e.currentTarget as HTMLFormElement;
+			const button = formEl.querySelector('button') as HTMLButtonElement;
+			const input = formEl.querySelector('input') as HTMLInputElement;
+			const status = formEl.parentElement?.querySelector('.subscribe-status') as HTMLElement;
+			const email = input.value.trim();
+
+			button.disabled = true;
+			button.textContent = 'Subscribing\u2026';
+			status.className = 'subscribe-status';
+			status.textContent = '';
+
+			try {
+				const ghostUrl = formEl.dataset.ghostUrl;
+				const res = await fetch(`${ghostUrl}/members/api/send-magic-link/`, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ email, emailType: 'subscribe' }),
+				});
+
+				if (res.ok) {
+					formEl.style.display = 'none';
+					status.className = 'subscribe-status success';
+					status.textContent = 'Check your inbox! A confirmation link has been sent.';
+				} else if (res.status === 429) {
+					status.className = 'subscribe-status error';
+					status.textContent = 'Too many requests. Please try again in a few minutes.';
+					button.disabled = false;
+					button.textContent = 'Subscribe';
+				} else {
+					status.className = 'subscribe-status error';
+					status.textContent = 'Something went wrong. Please try again.';
+					button.disabled = false;
+					button.textContent = 'Subscribe';
+				}
+			} catch {
+				status.className = 'subscribe-status error';
+				status.textContent = 'Could not connect. Please check your connection and try again.';
+				button.disabled = false;
+				button.textContent = 'Subscribe';
+			}
+		});
+	});
+</script>

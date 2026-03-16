@@ -1,0 +1,93 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
+import type { ImageMetadata } from 'astro';
+import FallbackImage from '../assets/blog-placeholder-1.jpg';
+import { SITE_TITLE } from '../consts';
+
+interface Props {
+	title: string;
+	description: string;
+	image?: ImageMetadata;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description, image = FallbackImage } = Astro.props;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/png" href="/initials-dark.png" id="favicon" />
+<script is:inline>
+	(function() {
+		// Theme: restore saved preference or follow system
+		const saved = localStorage.getItem('theme');
+		if (saved) {
+			document.documentElement.setAttribute('data-theme', saved);
+		}
+
+		// Favicon follows system preference only (not the manual toggle)
+		function updateFavicon() {
+			const el = document.getElementById('favicon');
+			if (el) el.href = window.matchMedia('(prefers-color-scheme: dark)').matches
+				? '/initials-light.png' : '/initials-dark.png';
+		}
+
+		updateFavicon();
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+
+		// Toggle handler — called from the header button
+		window.__toggleTheme = function() {
+			const current = document.documentElement.getAttribute('data-theme');
+			const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			let next;
+			if (!current) {
+				// No override set — switch away from system default
+				next = systemDark ? 'light' : 'dark';
+			} else if (current === 'dark') {
+				next = 'light';
+			} else {
+				next = 'dark';
+			}
+			document.documentElement.setAttribute('data-theme', next);
+			localStorage.setItem('theme', next);
+		};
+	})();
+</script>
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={SITE_TITLE}
+	href={new URL('rss.xml', Astro.site)}
+/>
+<meta name="generator" content={Astro.generator} />
+
+<!-- Font preloads -->
+<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
+<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image.src, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image.src, Astro.url)} />

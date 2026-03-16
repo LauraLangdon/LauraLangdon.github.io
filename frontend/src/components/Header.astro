@@ -1,0 +1,115 @@
+---
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+	<nav>
+		<div class="nav-links-left">
+			<HeaderLink href="/" class="home-text">Home</HeaderLink>
+		</div>
+		<a href="/" class="nav-icon">
+			<img src="/initials-dark.png" alt="Home" width="56" height="50" />
+		</a>
+		<div class="nav-links">
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/contact">Contact</HeaderLink>
+			<button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode" onclick="window.__toggleTheme()">
+				<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+				<svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+			</button>
+		</div>
+	</nav>
+</header>
+
+<style>
+	header {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background-color: var(--bg);
+		padding: 0 1.5em;
+		overflow: visible;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 960px;
+		margin: 0 auto;
+		height: 7rem;
+		position: relative;
+	}
+	.nav-links-left {
+		display: flex;
+		gap: 0.25rem;
+		align-items: center;
+	}
+	.nav-icon {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		align-items: center;
+	}
+	.nav-icon img {
+		display: block;
+	}
+	@media (max-width: 600px) {
+		nav {
+			height: auto;
+			padding: 0.5rem 0 0.75rem;
+		}
+		.nav-links-left {
+			display: none;
+		}
+		.nav-icon {
+			position: static;
+			transform: none;
+			margin: 0 0.5rem 0 0.5rem;
+			flex-shrink: 0;
+		}
+		.nav-icon img {
+			width: 38px;
+			height: auto;
+			padding: 4px;
+		}
+		.nav-links {
+			margin-left: auto;
+		}
+	}
+	@media (prefers-color-scheme: dark) {
+		:global(:root:not([data-theme="light"])) .nav-icon img {
+			filter: invert(81%) sepia(30%) saturate(600%) hue-rotate(295deg) brightness(105%) contrast(95%);
+		}
+	}
+	:global([data-theme="dark"]) .nav-icon img {
+		filter: invert(81%) sepia(30%) saturate(600%) hue-rotate(295deg) brightness(105%) contrast(95%);
+	}
+	.nav-links {
+		display: flex;
+		gap: 0.25rem;
+		align-items: center;
+	}
+	.theme-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		padding: 0.4em;
+		border-radius: 6px;
+		cursor: pointer;
+		color: var(--accent);
+		transition: color 0.15s ease;
+	}
+	.icon-moon { display: none; }
+	@media (prefers-color-scheme: dark) {
+		:global(:root:not([data-theme="light"])) .icon-sun { display: none; }
+		:global(:root:not([data-theme="light"])) .icon-moon { display: block; }
+	}
+	:global([data-theme="dark"]) .icon-sun { display: none; }
+	:global([data-theme="dark"]) .icon-moon { display: block; }
+	:global([data-theme="light"]) .icon-sun { display: block; }
+	:global([data-theme="light"]) .icon-moon { display: none; }
+</style>

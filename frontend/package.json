@@ -1,0 +1,58 @@
+{
+  "name": "frontend",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "publish": "node scripts/publish.mjs",
+    "publish-all": "node scripts/publish-all.mjs",
+    "pull": "node scripts/pull.mjs",
+    "migrate-images": "node scripts/migrate-images.mjs",
+    "featured": "node scripts/featured.mjs",
+    "lint": "eslint src && markdownlint-cli2 && cspell --no-progress",
+    "lint:links": "linkinator dist --recurse --skip '^(?!http://localhost)'",
+    "lint:rss": "node scripts/validate-rss.mjs",
+    "lint:trackers": "! grep -rE '[?&](utm_|si=|feature=|fbclid=|gclid=|mc_cid=|mc_eid=)' posts/ src/",
+    "check": "astro check",
+    "a11y": "pa11y-ci"
+  },
+  "lint-staged": {
+    "posts/**/*.md": [
+      "markdownlint-cli2",
+      "cspell --no-progress",
+      "bash -c 'for f in \"$@\"; do grep -E \"[?&](utm_|si=|feature=|fbclid=|gclid=|mc_cid=|mc_eid=)\" \"$f\" && echo \"Tracker params found in $f\" && exit 1; done; true' --"
+    ],
+    "src/**/*.{astro,ts}": [
+      "eslint",
+      "cspell --no-progress",
+      "bash -c 'for f in \"$@\"; do grep -E \"[?&](utm_|si=|feature=|fbclid=|gclid=|mc_cid=|mc_eid=)\" \"$f\" && echo \"Tracker params found in $f\" && exit 1; done; true' --"
+    ]
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "@tryghost/content-api": "^1.12.5",
+    "astro": "^5.17.1",
+    "sharp": "^0.34.3",
+    "simple-icons": "^16.11.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "cspell": "^9.6.0",
+    "dotenv": "^17.3.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-astro": "^1.6.0",
+    "gray-matter": "^4.0.3",
+    "linkinator": "^7.6.1",
+    "lint-staged": "^15.5.2",
+    "markdownlint-cli2": "^0.21.0",
+    "marked": "^17.0.4",
+    "pa11y-ci": "^4.1.0",
+    "turndown": "^7.2.2",
+    "typescript-eslint": "^8.57.0"
+  }
+}
