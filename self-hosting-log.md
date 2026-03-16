@@ -1113,6 +1113,10 @@ Remaining post-cutover tasks:
 - Added `lint:trackers` npm script to check for tracker params
 - Added tracker grep to lint-staged so it runs on every commit
 
+### Content features
+- Added next/previous post navigation links at the bottom of each post (← Older / Newer →), with post titles on desktop, labels only on mobile
+- Created interactive `npm run featured` script for managing featured posts on the landing page (add, replace, remove, reorder)
+
 ### Other
 - Added `robots.txt` blocking AI training crawlers (GPTBot, ClaudeBot, CCBot, Google-Extended, etc.)
 - Domain migration to `lauralangdon.com` in progress (Cloudflare nameservers set, waiting on propagation)
