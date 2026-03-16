@@ -993,4 +993,93 @@ Drafted "Writing WebAssembly Code by Hand" (no stream; Wayback Machine snapshot 
 
 ## Phase 21: DNS Cutover
 
-*Pending*
+Goal: Point `lauralangdon.io` from Ghost Pro to the DigitalOcean droplet (`143.198.144.150`) where the Astro frontend is served. Ghost Pro stays live at `laura-langdon.ghost.io` as a fallback until `lauralangdon.com` is fully set up.
+
+### Step 1: Update Astro's site URL
+
+Change `site` in `astro.config.mjs` from `https://staging.lauralangdon.io` to `https://lauralangdon.io`. This affects RSS feeds, share links, sitemaps, canonical URLs, and OG tags. Rebuild after changing.
+
+### Step 2: Update Ghost's blog URL
+
+On the server:
+
+```bash
+cd /var/www/ghost
+ghost config url https://lauralangdon.io
+ghost restart
+```
+
+Updates Ghost's internal config so its API, admin panel, and ActivityPub use the correct domain.
+
+### Step 3: Get an SSL certificate for the new domain
+
+On the server (must happen **after** DNS is pointed in Step 5):
+
+```bash
+sudo certbot certonly --nginx -d lauralangdon.io
+```
+
+Requests a Let's Encrypt certificate for `lauralangdon.io`. Will fail if DNS hasn't propagated yet.
+
+### Step 4: Update nginx to serve the new domain
+
+Edit the nginx SSL config (likely `/etc/nginx/sites-enabled/staging.lauralangdon.io-ssl.conf`):
+
+- Change `server_name staging.lauralangdon.io;` → `server_name lauralangdon.io staging.lauralangdon.io;`
+- Update SSL certificate paths to point to the new cert from Step 3
+
+Then reload:
+
+```bash
+sudo nginx -t          # check for typos
+sudo systemctl reload nginx
+```
+
+### Step 5: Change the DNS record in Cloudflare
+
+1. Log into [Cloudflare dashboard](https://dash.cloudflare.com)
+2. Select `lauralangdon.io`
+3. Go to **DNS** → **Records**
+4. Find the A record for `lauralangdon.io` (root domain, not `staging`)
+5. Change the IP address to `143.198.144.150`
+6. Make sure the proxy is **off** (grey cloud / "DNS only") — Cloudflare must not interfere with the server's own SSL cert
+7. Save
+
+DNS propagation usually takes a few minutes to an hour.
+
+### Step 6: Get the SSL cert (now that DNS is pointed)
+
+Return to Step 3 and run the certbot command. It will work now because `lauralangdon.io` resolves to the server.
+
+### Step 7: Deploy the updated Astro build
+
+After rebuilding with the new site URL:
+
+```bash
+rsync -avz --delete dist/ root@143.198.144.150:/var/www/astro/
+```
+
+### Step 8: Test everything
+
+- `https://lauralangdon.io` — should show the Astro site
+- `https://lauralangdon.io/ghost/` — should show Ghost admin
+- RSS feed, share links, sitemap should all use `lauralangdon.io`
+- `https://staging.lauralangdon.io` should still work as a fallback
+
+### Order
+
+- Steps 1–2 can happen anytime
+- Step 5 (DNS) must happen before Step 6 (SSL cert)
+- Step 7 (deploy) should happen after Step 1
+- Step 4 (nginx) should happen after Step 6 (needs the cert paths)
+
+### After cutover: domain migration to lauralangdon.com
+
+Separate phase. Will involve:
+- Pointing `lauralangdon.com` (registered at GoDaddy) at the same server
+- Setting up SSL for `lauralangdon.com`
+- Updating Ghost/Astro/nginx configs again
+- Setting up redirects from `lauralangdon.io` → `lauralangdon.com`
+- Disqus URL migration (if comments are set up by then)
+- Updating Mailgun sending domain from `mg.lauralangdon.io` to `mg.lauralangdon.com`
+- Cancelling Ghost Pro once everything is confirmed working
