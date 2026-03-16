@@ -8,11 +8,11 @@ import lightPinkish from './src/themes/light-pinkish.json';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://staging.lauralangdon.io',
+	site: 'https://lauralangdon.io',
 	integrations: [mdx(), sitemap()],
 	image: {
 		service: sharpImageService({ limitInputPixels: false }),
-		domains: ['staging.lauralangdon.io'],
+		domains: ['lauralangdon.io', 'staging.lauralangdon.io'],
 	},
 	markdown: {
 		shikiConfig: {
