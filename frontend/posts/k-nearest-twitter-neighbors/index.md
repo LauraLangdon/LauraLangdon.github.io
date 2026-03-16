@@ -9,7 +9,7 @@ tags:
   - "Learning in Public"
   - "Python"
 excerpt: "An introduction to a (relatively) intuitive algorithm"
-feature_image: https://staging.lauralangdon.io/content/images/2023/05/knn-1.jpeg
+feature_image: https://lauralangdon.io/content/images/2023/05/knn-1.jpeg
 feature_image_alt: "Dots labelled 'a', 'b', or '?'"
 ---
 
@@ -37,9 +37,9 @@ Notice, though, what k-NN is \*not\*: we didn’t give our dot the label of its 
 
 Something else to know about what k-NN is not is that k-NN is not a good choice of algorithm for a problem that lives in a higher-dimensional space (spoiler: this is going to end up being the punchline of this post!). Since k-NN assumes that data points “near” each other are likely to be similar, and since in a high-dimensional space the data can be spread really far apart, that notion of “nearness” becomes meaningless (for a longer explanation of this, check out this [video](https://youtu.be/DyxQUHz4jWg)!). Consider the islands of Australia and New Zealand: they’re each other’s closest neighbors, but they’re still thousands of kilometers apart, so they have very different climates, terrain, and ecosystems.
 
-![Red sand dunes with wind-rippled patterns in the Australian outback, sparse scrubland on the horizon](https://staging.lauralangdon.io/content/images/2023/05/6i9a4y6Gb.jpeg)
+![Red sand dunes with wind-rippled patterns in the Australian outback, sparse scrubland on the horizon](https://lauralangdon.io/content/images/2023/05/6i9a4y6Gb.jpeg)
 
-![Misty green mountainous forest with fog rolling through the treetops](https://staging.lauralangdon.io/content/images/2023/05/ie7j-sxk9.jpeg)
+![Misty green mountainous forest with fog rolling through the treetops](https://lauralangdon.io/content/images/2023/05/ie7j-sxk9.jpeg)
 
 Left: photo of an Australian desert by [Greg Spearritt](https://unsplash.com/@mcoot20?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/australian-desert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText). Right: photo of a New Zealand forest by [Tobias Tullius](https://unsplash.com/@tobiastu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/new-zealand-forest?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
 

@@ -8,7 +8,7 @@ tags:
   - "Blog"
   - "Learning in Public"
 excerpt: "My first attempt at Lesson 2 of “Practical Deep Learning for Coders” by fast.ai"
-feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_g7RdzrwvH5uqi-d7JLPCWg.jpg
+feature_image: https://lauralangdon.io/content/images/2023/05/1_g7RdzrwvH5uqi-d7JLPCWg.jpg
 feature_image_alt: "2 by 2 classification table"
 ---
 

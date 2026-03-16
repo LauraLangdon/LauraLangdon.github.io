@@ -8,7 +8,7 @@ tags:
   - "Blog"
   - "Learning in Public"
 excerpt: "My deep learning self-study for 09/30/19–10/07/19"
-feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_2A5ROBhoSqee1W4veJLJYw.jpg
+feature_image: https://lauralangdon.io/content/images/2023/05/1_2A5ROBhoSqee1W4veJLJYw.jpg
 feature_image_alt: "GIF of a digital robotic hand touching a block"
 ---
 

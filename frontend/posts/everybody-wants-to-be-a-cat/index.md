@@ -8,7 +8,7 @@ tags:
   - "Blog"
   - "Learning in Public"
 excerpt: "Lesson 6 of “Practical Deep Learning for Coders” by fast.ai"
-feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_OrXdQxoSNuQ5gbhWD-9VsA.png
+feature_image: https://lauralangdon.io/content/images/2023/05/1_OrXdQxoSNuQ5gbhWD-9VsA.png
 feature_image_alt: "Table of convolution values and Grumpy Cat in greyscale"
 ---
 

@@ -8,7 +8,7 @@ tags:
   - "Blog"
   - "Learning in Public"
 excerpt: "Lesson 3 of “Practical Deep Learning for Coders” by fast.ai"
-feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_L0UbDLtAuq7w2CfjqUH1xw.jpg
+feature_image: https://lauralangdon.io/content/images/2023/05/1_L0UbDLtAuq7w2CfjqUH1xw.jpg
 feature_image_alt: "Woman looking at a laptop and biting a pencil in frustration"
 ---
 
