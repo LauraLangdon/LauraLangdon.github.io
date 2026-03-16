@@ -8,6 +8,8 @@ import { SITE_TITLE } from '../consts';
 import ShareLinks from '../components/ShareLinks.astro';
 import { tagColor, visibleTags as getVisibleTags } from '../utils/tag-colors';
 
+type PostLink = { title: string; slug: string } | null;
+
 type Props = {
 	title: string;
 	slug: string;
@@ -17,9 +19,11 @@ type Props = {
 	heroImage?: string;
 	heroImageAlt?: string;
 	tags?: string[];
+	prevPost?: PostLink;
+	nextPost?: PostLink;
 };
 
-const { title, slug, description, pubDate, updatedDate, heroImage, heroImageAlt, tags } = Astro.props;
+const { title, slug, description, pubDate, updatedDate, heroImage, heroImageAlt, tags, prevPost, nextPost } = Astro.props;
 const visibleTags = getVisibleTags(tags);
 ---
 
@@ -198,6 +202,51 @@ const visibleTags = getVisibleTags(tags);
 			.back-link:hover {
 				color: var(--accent-2);
 			}
+			.post-nav-wrapper {
+				margin-top: 3rem;
+				padding-top: 2rem;
+				padding-bottom: 4rem;
+				border-top: 1px solid var(--border);
+			}
+			.post-nav {
+				display: flex;
+				justify-content: space-between;
+				gap: 2rem;
+				max-width: 680px;
+				margin: 0 auto;
+			}
+			.post-nav-link {
+				display: flex;
+				flex-direction: column;
+				gap: 0.25rem;
+				text-decoration: none;
+				max-width: 45%;
+			}
+			.post-nav-prev {
+				align-items: flex-start;
+			}
+			.post-nav-next {
+				align-items: flex-end;
+				margin-left: auto;
+			}
+			.post-nav-label {
+				font-family: monospace;
+				font-size: var(--mono-meta);
+				color: var(--accent);
+			}
+			.post-nav-title {
+				font-size: 1rem;
+				color: var(--text);
+				line-height: 1.4;
+			}
+			.post-nav-link:hover .post-nav-title {
+				color: var(--accent);
+			}
+			@media (max-width: 600px) {
+				.post-nav-title {
+					display: none;
+				}
+			}
 		</style>
 	</head>
 
@@ -240,6 +289,24 @@ const visibleTags = getVisibleTags(tags);
 				<div class="prose">
 					<slot />
 				</div>
+				{(prevPost || nextPost) && (
+					<div class="post-nav-wrapper">
+						<nav class="post-nav">
+							{prevPost ? (
+								<a href={`/blog/${prevPost.slug}/`} class="post-nav-link post-nav-prev">
+									<span class="post-nav-label">← Older</span>
+									<span class="post-nav-title">{prevPost.title}</span>
+								</a>
+							) : <div />}
+							{nextPost ? (
+								<a href={`/blog/${nextPost.slug}/`} class="post-nav-link post-nav-next">
+									<span class="post-nav-label">Newer →</span>
+									<span class="post-nav-title">{nextPost.title}</span>
+								</a>
+							) : <div />}
+						</nav>
+					</div>
+				)}
 				</article>
 		</main>
 		<Footer />
