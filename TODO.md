@@ -5,7 +5,7 @@
 ## Frontend / styling
 
 - ~~Initials logo overlaps nav links on mobile~~ ✓ hidden on ≤600px
-- Featured/Recent section headings on landing page: pink in light mode but purple-ish in dark mode — should match the toggle color (bright pink in both modes)
+- ~~Featured/Recent section headings on landing page: pink in light mode but purple-ish in dark mode~~ ✓
 - Custom JS tooltips (native title tooltips blocked by some browsers/extensions)
 - Consider centered layout for stream/speaking posts
 - Try styling Abstract/Description the same as "featured" on the landing page
