@@ -1073,6 +1073,23 @@ rsync -avz --delete dist/ root@143.198.144.150:/var/www/astro/
 - Step 7 (deploy) should happen after Step 1
 - Step 4 (nginx) should happen after Step 6 (needs the cert paths)
 
+### Completion — 2026-03-15
+
+All steps completed successfully:
+- Step 1: Astro site URL updated to `https://lauralangdon.io` (committed earlier)
+- Step 2: Ghost config URL updated via `ghost config url`, service restarted via systemctl
+- Step 5: Cloudflare A record for `lauralangdon.io` pointed to `143.198.144.150` (DNS only, no proxy)
+- Step 6: Let's Encrypt cert obtained via certbot (covers both `lauralangdon.io` and `staging.lauralangdon.io`)
+- Step 4: nginx `server_name` updated to include `lauralangdon.io`, SSL cert paths switched to Let's Encrypt
+- Step 7: Astro build deployed via rsync
+- Step 8: All endpoints verified (site, Ghost admin, RSS, staging fallback)
+
+Note: certbot had to be installed via snap. Initial cert only covered `lauralangdon.io`; expanded to include `staging.lauralangdon.io` because the nginx SSL config serves both domains with one cert. The old acme.sh staging cert is no longer used.
+
+Remaining post-cutover tasks:
+- Update post image URLs from `staging.lauralangdon.io` to `lauralangdon.io`
+- Remove `staging.lauralangdon.io` from `astro.config.mjs` image domains
+
 ### After cutover: domain migration to lauralangdon.com
 
 Separate phase. Will involve:

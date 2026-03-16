@@ -30,5 +30,7 @@
 
 ## Production readiness
 
-- DNS cutover (lauralangdon.io → staging server)
+- ~~DNS cutover (lauralangdon.io → staging server)~~ ✓ completed 2026-03-15
+- Update post image URLs from staging.lauralangdon.io to lauralangdon.io
+- Remove staging.lauralangdon.io from astro.config.mjs image domains
 - Domain migration (lauralangdon.io → lauralangdon.com)
