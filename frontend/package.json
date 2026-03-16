@@ -11,6 +11,7 @@
     "publish-all": "node scripts/publish-all.mjs",
     "pull": "node scripts/pull.mjs",
     "migrate-images": "node scripts/migrate-images.mjs",
+    "featured": "node scripts/featured.mjs",
     "lint": "eslint src && markdownlint-cli2 && cspell --no-progress",
     "lint:links": "linkinator dist --recurse --skip '^(?!http://localhost)'",
     "lint:rss": "node scripts/validate-rss.mjs",
