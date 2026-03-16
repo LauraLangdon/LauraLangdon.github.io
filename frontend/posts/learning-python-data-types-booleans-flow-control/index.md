@@ -13,7 +13,7 @@ feature_image: https://i.ytimg.com/vi/85ZxjZFIKBg/hqdefault.jpg
 feature_image_alt: "Learning Python Series with Teach Jenn Tech & Laura Langdon"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Chatting about data types, boolean operators, and flow control in Python with @jennjunod.
 

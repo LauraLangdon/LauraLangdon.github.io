@@ -12,7 +12,7 @@ feature_image: https://i.ytimg.com/vi/bxlOzoDFOrE/hqdefault.jpg
 feature_image_alt: "Misc. Mondays: Learning OBS"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Learning OBS from @hola_soy_milk.
 

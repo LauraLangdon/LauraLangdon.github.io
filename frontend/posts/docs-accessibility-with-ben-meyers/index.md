@@ -13,7 +13,7 @@ feature_image: https://i.ytimg.com/vi/uOHyenJ3oR4/hqdefault.jpg
 feature_image_alt: "Docs Accessibility with Ben Meyers"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Ben Meyers teaches me some nuances of accessibility in docs design.
 

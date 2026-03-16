@@ -11,7 +11,7 @@ feature_image: https://i.ytimg.com/vi/oW1MRNSugtQ/hqdefault.jpg
 feature_image_alt: "Misc Mondays with Laura and Jenn"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Chatting lighting, OBS, streaming setups, education.
 

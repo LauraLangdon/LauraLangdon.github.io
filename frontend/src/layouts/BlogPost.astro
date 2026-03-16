@@ -113,6 +113,14 @@ const visibleTags = getVisibleTags(tags);
 				margin-top: 1.25em;
 				color: var(--text);
 			}
+			.prose :global(h2:first-child) {
+				font-family: monospace;
+				font-size: var(--mono-section-heading);
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin-top: 0;
+			}
 			.prose :global(a) {
 				color: var(--accent-2);
 			}
@@ -179,12 +187,12 @@ const visibleTags = getVisibleTags(tags);
 				display: inline-block;
 				font-family: monospace;
 				font-size: var(--mono-body);
-				color: var(--text-muted);
+				color: var(--accent);
 				text-decoration: none;
 				margin-bottom: 2.5rem;
 			}
 			.back-link:hover {
-				color: var(--accent);
+				color: var(--accent-2);
 			}
 		</style>
 	</head>

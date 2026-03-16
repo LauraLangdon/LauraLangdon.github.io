@@ -12,7 +12,7 @@ feature_image: https://i.ytimg.com/vi/PZA2VczoQyo/hqdefault.jpg
 feature_image_alt: "Misc Mondays: Configuring a .zshrc"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Jenn and Laura configure a .zshrc file.
 

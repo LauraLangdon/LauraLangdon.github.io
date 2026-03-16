@@ -11,7 +11,7 @@ feature_image: https://i.ytimg.com/vi/VIDEO_ID/hqdefault.jpg
 feature_image_alt: "Talk Title — Event Name"
 ---
 
-**Abstract** <!-- markdownlint-disable-line MD036 -->
+## Abstract
 
 > Abstract text here.
 

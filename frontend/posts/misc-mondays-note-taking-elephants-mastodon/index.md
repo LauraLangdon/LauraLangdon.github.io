@@ -11,7 +11,7 @@ feature_image: https://i.ytimg.com/vi/V8tdrpxPW6c/hqdefault.jpg
 feature_image_alt: "Miscellaneous Mondays: Note-Taking, Elephants, and Mastodon"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Teach Jenn Tech and Laura's Loquacious Livestream chat about note-taking, elephants, and Mastodon.
 

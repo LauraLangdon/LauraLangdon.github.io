@@ -13,7 +13,7 @@ feature_image: https://i.ytimg.com/vi/PUcBizxvICs/hqdefault.jpg
 feature_image_alt: "Misc Mondays: Technical Writing and Docs"
 ---
 
-**Description** <!-- markdownlint-disable-line MD036 -->
+## Description
 
 > Jenn and I talk technical writing in general and docs specifically.
 
