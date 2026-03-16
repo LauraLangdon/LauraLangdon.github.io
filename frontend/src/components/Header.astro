@@ -5,10 +5,10 @@ import HeaderLink from './HeaderLink.astro';
 <header>
 	<nav>
 		<div class="nav-links-left">
-			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/" class="home-text">Home</HeaderLink>
 		</div>
 		<a href="/" class="nav-icon">
-			<img src="/initials-dark.png" alt="" width="56" height="50" />
+			<img src="/initials-dark.png" alt="Home" width="56" height="50" />
 		</a>
 		<div class="nav-links">
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -29,6 +29,7 @@ import HeaderLink from './HeaderLink.astro';
 		z-index: 10;
 		background-color: var(--bg);
 		padding: 0 1.5em;
+		overflow: visible;
 	}
 	nav {
 		display: flex;
@@ -54,6 +55,29 @@ import HeaderLink from './HeaderLink.astro';
 	.nav-icon img {
 		display: block;
 	}
+	@media (max-width: 600px) {
+		nav {
+			height: auto;
+			padding: 0.5rem 0 0.75rem;
+		}
+		.nav-links-left {
+			display: none;
+		}
+		.nav-icon {
+			position: static;
+			transform: none;
+			margin: 0 0.5rem 0 0.5rem;
+			flex-shrink: 0;
+		}
+		.nav-icon img {
+			width: 38px;
+			height: auto;
+			padding: 4px;
+		}
+		.nav-links {
+			margin-left: auto;
+		}
+	}
 	@media (prefers-color-scheme: dark) {
 		:global(:root:not([data-theme="light"])) .nav-icon img {
 			filter: invert(81%) sepia(30%) saturate(600%) hue-rotate(295deg) brightness(105%) contrast(95%);
@@ -76,11 +100,8 @@ import HeaderLink from './HeaderLink.astro';
 		padding: 0.4em;
 		border-radius: 6px;
 		cursor: pointer;
-		color: var(--text-muted);
-		transition: color 0.15s ease;
-	}
-	.theme-toggle:hover {
 		color: var(--accent);
+		transition: color 0.15s ease;
 	}
 	.icon-moon { display: none; }
 	@media (prefers-color-scheme: dark) {
