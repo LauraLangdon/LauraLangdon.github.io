@@ -8,7 +8,7 @@ tags:
   - "Blog"
   - "Learning in Public"
 excerpt: "Lesson 5 of “Practical Deep Learning for Coders” by fast.ai"
-feature_image: https://staging.lauralangdon.io/content/images/2023/05/1_pukvitVHuEDRLTcUtmch3g--1-.png
+feature_image: https://lauralangdon.io/content/images/2023/05/1_pukvitVHuEDRLTcUtmch3g--1-.png
 feature_image_alt: "Spreadsheet with prediction values"
 ---
 

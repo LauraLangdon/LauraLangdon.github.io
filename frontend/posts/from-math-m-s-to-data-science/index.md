@@ -8,7 +8,7 @@ tags:
   - "Blog"
   - "Learning in Public"
 excerpt: "How I transitioned from being a math lecturer to data science"
-feature_image: https://staging.lauralangdon.io/content/images/2023/05/8_ZPlhoPy--1-.jpg
+feature_image: https://lauralangdon.io/content/images/2023/05/8_ZPlhoPy--1-.jpg
 feature_image_alt: "An illuminated sign reading 'Data has a better idea' in front of a cityscape"
 ---
 

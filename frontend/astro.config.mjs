@@ -12,7 +12,7 @@ export default defineConfig({
 	integrations: [mdx(), sitemap()],
 	image: {
 		service: sharpImageService({ limitInputPixels: false }),
-		domains: ['lauralangdon.io', 'staging.lauralangdon.io'],
+		domains: ['lauralangdon.io'],
 	},
 	markdown: {
 		shikiConfig: {

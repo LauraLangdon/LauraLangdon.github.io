@@ -13,7 +13,7 @@ feature_image_alt: "A plasma ball with electric tendrils radiating outward in pi
 
 A few months ago, [I saw the word "neurodiverse" and misread it as "neuroverse"](https://hachyderm.io/@LauraLangdon/109711363031125042), which struck me as an incredibly lovely way to consider what we usually pose as a juxtaposition between the "neurotypical" and "neurodivergent":
 
-![Screenshot of a post: " Just now I misread "Neurodiverse" as "Neuroverse", and I loved intensely the idea of using #Neuroverse as a fully inclusive way to describe the whole multi-dimensional space of our brains and their mysterious ways. So I'm keeping it! The neuroverse. ❤️ ❤️](https://staging.lauralangdon.io/content/images/2023/08/Pasted-image-20230730132107-1.png)
+![Screenshot of a post: " Just now I misread "Neurodiverse" as "Neuroverse", and I loved intensely the idea of using #Neuroverse as a fully inclusive way to describe the whole multi-dimensional space of our brains and their mysterious ways. So I'm keeping it! The neuroverse. ❤️ ❤️](https://lauralangdon.io/content/images/2023/08/Pasted-image-20230730132107-1.png)
 
 That juxtapositional framing is harmful, though, and—as I'll argue here—fundamentally invalid.
 

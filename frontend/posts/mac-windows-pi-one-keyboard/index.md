@@ -8,7 +8,7 @@ tags:
   - "Blog"
   - "Learning in Public"
 excerpt: "Interacting with three OSs simultaneously, using one keyboard and mouse"
-feature_image: https://staging.lauralangdon.io/content/images/2023/05/image-1.png
+feature_image: https://lauralangdon.io/content/images/2023/05/image-1.png
 feature_image_alt: "Desk with an iMac, laptop, keyboard, and mouse"
 ---
 
@@ -42,7 +42,7 @@ So I use [Synergy](https://symless.com/synergy), which allows me to use one keyb
 
 Here they are all together:
 
-![Photo of Mac, laptop, and Pi, with keyboard and mouse](https://staging.lauralangdon.io/content/images/2023/05/image.png)
+![Photo of Mac, laptop, and Pi, with keyboard and mouse](https://lauralangdon.io/content/images/2023/05/image.png)
 
 Can you spot the Pi? Look closer:
 
