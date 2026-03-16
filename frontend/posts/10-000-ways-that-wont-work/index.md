@@ -22,7 +22,7 @@ This week, however, I wasn’t able to produce anything. I followed my usual fas
 
 ![Overhead view of a wooden desk with a keyboard, open notebook, earbuds, and a coffee](https://cdn-images-1.medium.com/max/1600/1*FSer6FHg5nwVKicPL18TOQ.jpeg)
 
-Photo by [Lukas Blazek](https://unsplash.com/@goumbik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/studying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Photo by [Lukas Blazek](https://unsplash.com/@goumbik) on [Unsplash](https://unsplash.com/s/photos/studying)
 
 So this week, I opened the first notebook used in the lecture, which was a multi-label classifier using Kaggle’s [“Planet: Understanding the Amazon from Space”](https://www.kaggle.com/c/planet-understanding-the-amazon-from-space) dataset. I planned to run the notebook with that dataset, as in the lecture, then get another dataset and make sure I could still make it work.
 
@@ -44,7 +44,7 @@ The fastai library has a tool called the data\_block API, which does a lot of th
 
 ![A person sitting at a desk with a laptop, biting a pencil in frustration](https://cdn-images-1.medium.com/max/1600/1*L0UbDLtAuq7w2CfjqUH1xw.jpeg)
 
-Photo by [JESHOOTS.COM](https://unsplash.com/@jeshoots?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/studying?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Photo by [JESHOOTS.COM](https://unsplash.com/@jeshoots) on [Unsplash](https://unsplash.com/s/photos/studying)
 
 Jeremy says we’ll be coming back to the data\_block API frequently, so I’m going take the advice of the image below (a slide from Lesson 1 of the course) and will swallow my pride and move on to Lesson 4 without feeling like I’ve even slightly mastered Lesson 3. Womp-womp.
 
