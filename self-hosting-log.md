@@ -1087,8 +1087,35 @@ All steps completed successfully:
 Note: certbot had to be installed via snap. Initial cert only covered `lauralangdon.io`; expanded to include `staging.lauralangdon.io` because the nginx SSL config serves both domains with one cert. The old acme.sh staging cert is no longer used.
 
 Remaining post-cutover tasks:
-- Update post image URLs from `staging.lauralangdon.io` to `lauralangdon.io`
-- Remove `staging.lauralangdon.io` from `astro.config.mjs` image domains
+- ~~Update post image URLs from `staging.lauralangdon.io` to `lauralangdon.io`~~ ✓
+- ~~Remove `staging.lauralangdon.io` from `astro.config.mjs` image domains~~ ✓
+
+## Phase 22: Styling and quality polish — 2026-03-15
+
+### Mobile nav
+- Initials logo was overlapping nav links on mobile
+- On ≤600px: initials become the home link (far left), "Home" text hidden, everything else right-aligned
+- Scaled initials to 38px with 4px padding to prevent flourish clipping
+
+### Color consistency
+- All page/section headings changed from `var(--text-muted)` to `var(--accent)` site-wide
+- Affected: landing page (Featured, Recent, hero tagline), about page (About, Experience, Education, Portfolio highlights), contact, blog index, tag pages, subscribe heading
+- Theme toggle changed to always use `var(--accent)` instead of `var(--text-muted)`
+
+### Blog post layout
+- Abstract/Description converted from bold text (`**Description**`) to proper `h2` headings, styled as monospace uppercase accent
+- Prose content centered on post pages
+- Post meta rearranged: author and date on one line with `//` separator, tags left-aligned below
+- Back links ("← All posts") changed to accent color
+
+### Tracker link audit
+- Stripped `utm_*`, `feature=`, and other tracking parameters from 5 posts
+- Added `lint:trackers` npm script to check for tracker params
+- Added tracker grep to lint-staged so it runs on every commit
+
+### Other
+- Added `robots.txt` blocking AI training crawlers (GPTBot, ClaudeBot, CCBot, Google-Extended, etc.)
+- Domain migration to `lauralangdon.com` in progress (Cloudflare nameservers set, waiting on propagation)
 
 ### After cutover: domain migration to lauralangdon.com
 
