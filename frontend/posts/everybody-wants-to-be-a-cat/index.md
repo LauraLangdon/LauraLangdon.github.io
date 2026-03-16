@@ -38,7 +38,7 @@ This moment was one of those for me: we’re running a tensor through a series o
 
 ![Screen recording of Jeremy Howard drawing a tensor diagram during a fast.ai lecture](./d58ac81b.gif)
 
-[https://www.youtube.com/watch?v=U7c-nYXrKD4&feature=youtu.be&t=5630](https://www.youtube.com/watch?v=U7c-nYXrKD4&feature=youtu.be&t=5630)
+[https://www.youtube.com/watch?v=U7c-nYXrKD4&t=5630](https://www.youtube.com/watch?v=U7c-nYXrKD4&t=5630)
 
 512 feels sort of normal, being a power of 2, but why do we stop at 11 in particular for the other two dimensions?
 

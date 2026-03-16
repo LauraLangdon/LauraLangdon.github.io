@@ -14,17 +14,20 @@
     "lint": "eslint src && markdownlint-cli2 && cspell --no-progress",
     "lint:links": "linkinator dist --recurse --skip '^(?!http://localhost)'",
     "lint:rss": "node scripts/validate-rss.mjs",
+    "lint:trackers": "! grep -rE '[?&](utm_|si=|feature=|fbclid=|gclid=|mc_cid=|mc_eid=)' posts/ src/",
     "check": "astro check",
     "a11y": "pa11y-ci"
   },
   "lint-staged": {
     "posts/**/*.md": [
       "markdownlint-cli2",
-      "cspell --no-progress"
+      "cspell --no-progress",
+      "bash -c 'for f in \"$@\"; do grep -E \"[?&](utm_|si=|feature=|fbclid=|gclid=|mc_cid=|mc_eid=)\" \"$f\" && echo \"Tracker params found in $f\" && exit 1; done; true' --"
     ],
     "src/**/*.{astro,ts}": [
       "eslint",
-      "cspell --no-progress"
+      "cspell --no-progress",
+      "bash -c 'for f in \"$@\"; do grep -E \"[?&](utm_|si=|feature=|fbclid=|gclid=|mc_cid=|mc_eid=)\" \"$f\" && echo \"Tracker params found in $f\" && exit 1; done; true' --"
     ]
   },
   "dependencies": {

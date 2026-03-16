@@ -7,8 +7,8 @@
 - ~~Initials logo overlaps nav links on mobile~~ ✓ hidden on ≤600px
 - ~~Featured/Recent section headings on landing page: pink in light mode but purple-ish in dark mode~~ ✓
 - Custom JS tooltips (native title tooltips blocked by some browsers/extensions)
-- Consider centered layout for stream/speaking posts
-- Try styling Abstract/Description the same as "featured" on the landing page
+- ~~Center prose content on post pages~~ ✓
+- ~~Style Abstract/Description as monospace uppercase accent headings~~ ✓
 - Recover "Writing WebAssembly Code by Hand" from Wayback Machine (draft, snapshot: https://web.archive.org/web/20250121234529/https://blog.suborbital.dev/writing-webassembly-code-by-hand)
 
 ## Content / publishing
@@ -24,7 +24,7 @@
 
 ## CI / quality
 
-- Audit entire site for tracker links; add CI check to catch any in future
+- ~~Audit entire site for tracker links; add CI check to catch any in future~~ ✓
 
 ## Infrastructure
 

@@ -21,7 +21,7 @@ If you’re not already familiar with k-NN, it’s a nice ML algorithm to make y
 
 ![Map of the US showing how states voted in the 2020 election.](./c4e24c9c.jpeg)
 
-Photo by [Clay Banks](https://unsplash.com/@claybanks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/political-map?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Photo by [Clay Banks](https://unsplash.com/@claybanks) on [Unsplash](https://unsplash.com/s/photos/political-map)
 
 k-NN works very similarly. Given a set of labeled data and an unlabeled data point x , we’ll look at some number k of x's neighbors, and assign to x the most common label among those k neighbors. Let’s get a visual: in the image below, we have an unlabeled dot and 15 neighbors of its neighbors. Of those 15 neighbors, 9 have a magenta “A” label and 6 have a blue “B” label.
 
@@ -41,7 +41,7 @@ Something else to know about what k-NN is not is that k-NN is not a good choice 
 
 ![Misty green mountainous forest with fog rolling through the treetops](https://lauralangdon.io/content/images/2023/05/ie7j-sxk9.jpeg)
 
-Left: photo of an Australian desert by [Greg Spearritt](https://unsplash.com/@mcoot20?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/australian-desert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText). Right: photo of a New Zealand forest by [Tobias Tullius](https://unsplash.com/@tobiastu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/new-zealand-forest?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
+Left: photo of an Australian desert by [Greg Spearritt](https://unsplash.com/@mcoot20) on [Unsplash](https://unsplash.com/s/photos/australian-desert). Right: photo of a New Zealand forest by [Tobias Tullius](https://unsplash.com/@tobiastu) on [Unsplash](https://unsplash.com/s/photos/new-zealand-forest).
 
 ## The code
 

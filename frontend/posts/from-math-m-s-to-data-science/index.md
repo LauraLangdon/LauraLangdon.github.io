@@ -22,7 +22,7 @@ It then took an enormous leap of faith for me to heed the advice of Harris and m
 
 ![Overhead view of a MacBook with code on the screen, a glass of coffee, and a smartphone showing an Instagram profile](\./21296046\.jpeg)
 
-Photo by [Fabian Grohs](https://unsplash.com/photos/PuxTq4DwUHE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/coding?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Photo by [Fabian Grohs](https://unsplash.com/photos/PuxTq4DwUHE) on [Unsplash](https://unsplash.com/search/photos/coding)
 
 So instead of moving further in Python with an advanced Python course, I’ve just completed Andrew Ng’s [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) on Coursera, and am starting fast.ai’s [Practical Deep Learning for Coders](https://course.fast.ai/) (both of which use Python). Co-founded by Rachel Thomas and Jeremy Howard, fast.ai embodies the top-down approach to learning, and has shown an impressive aptitude for teaching their students highly applicable skills by centering doing, rather than theorizing. I’ve also been learning SQL using Mode Analytics [SQL Tutorial](https://mode.com/resources/sql-tutorial/), playing with more Python libraries in Jose Portilla’s [Python for Data Science Bootcamp](https://www.udemy.com/python-for-data-science-and-machine-learning-bootcamp/), and brushing up on my stats with [Khan Academy](https://www.khanacademy.org/math/ap-statistics). In keeping with the philosophy of learning by doing, I hope to be ready for an entry-level position in data science within a year, possibly applying to become a Sharpest Minds mentee during my job hunt.
 

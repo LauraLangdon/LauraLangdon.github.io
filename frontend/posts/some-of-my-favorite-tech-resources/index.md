@@ -44,7 +44,7 @@ I'm still learning the nuances of Git, and these have been super helpful:
 
 I mostly use [VS Code](https://code.visualstudio.com/) these days. I have lots of plugins installed, but the ones that apply to all purposes are:
 
-*   [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow&utm_campaign=Craft%2BLink%2BList&utm_medium=web&utm_source=Craft_Link_List_116) makes it easier to see which level of indentation a line of code belongs to
+*   [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow) makes it easier to see which level of indentation a line of code belongs to
 *   [Rainbow Brackets](https://marketplace.visualstudio.com/items?itemName=2gua.rainbow-brackets) does the same for brackets
 *   [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) is made by GitKraken and brings a lot of GitKraken's features right into VS Code
 *   My current fav theme is [Omni Owl Minimal Italics](https://marketplace.visualstudio.com/items?itemName=guilhermerodz.omni-owl)
