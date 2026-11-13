@@ -4,7 +4,10 @@ Add ideas here anytime. They don't have to be good or fully formed — just capt
 
 ## Seed ideas
 
-- Building this site: migrating from Ghost Pro to self-hosted Astro + Ghost
+- Building this site: migrating from Ghost Pro to self-hosted Astro + Ghost (project-update)
+- Adding ActivityPub to the site (project-update)
+- Pulling Ravelry projects into the site feed (project-update)
+- Becoming nvimcible: learning and setting up Neovim (has Mastodon post screenshot to embed)
 - The UC OSPO Network: what it is and why it matters
 - Conference organizing from the inside (PyBay logistics, speaker selection)
 - Why I care about tracker-free links
@@ -13,6 +16,10 @@ Add ideas here anytime. They don't have to be good or fully formed — just capt
 - My documentation philosophy (Diataxis, templates, contributor onboarding)
 - Mechanical keyboards and ergonomics journey
 - Open source as public good — the university angle
+
+## Drafts started
+
+- TIL: Semantic linefeeds — `posts/til-semantic-linefeeds/index.md`
 
 ## Formats that work well
 
