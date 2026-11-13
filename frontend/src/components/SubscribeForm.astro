@@ -131,6 +131,8 @@ const ghostUrl = import.meta.env.PUBLIC_GHOST_URL;
 </style>
 
 <script>
+	import { requestSignup } from '../lib/subscribe';
+
 	document.querySelectorAll('.subscribe-form').forEach((form) => {
 		form.addEventListener('submit', async (e) => {
 			e.preventDefault();
@@ -146,12 +148,7 @@ const ghostUrl = import.meta.env.PUBLIC_GHOST_URL;
 			status.textContent = '';
 
 			try {
-				const ghostUrl = formEl.dataset.ghostUrl;
-				const res = await fetch(`${ghostUrl}/members/api/send-magic-link/`, {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({ email, emailType: 'subscribe' }),
-				});
+				const res = await requestSignup(formEl.dataset.ghostUrl!, email);
 
 				if (res.ok) {
 					formEl.style.display = 'none';

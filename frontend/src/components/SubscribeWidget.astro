@@ -213,7 +213,9 @@ const ghostUrl = import.meta.env.PUBLIC_GHOST_URL;
 </style>
 
 <script>
-	const widget = document.getElementById('subscribe-widget')!;
+	import { requestSignup } from '../lib/subscribe';
+
+	const widget =document.getElementById('subscribe-widget')!;
 	const toggle = widget.querySelector('.subscribe-widget-toggle') as HTMLButtonElement;
 	const panel = document.getElementById('subscribe-widget-panel')!;
 	const closeBtn = widget.querySelector('.subscribe-widget-close') as HTMLButtonElement;
@@ -281,12 +283,7 @@ const ghostUrl = import.meta.env.PUBLIC_GHOST_URL;
 		status.textContent = '';
 
 		try {
-			const ghostUrl = form.dataset.ghostUrl;
-			const res = await fetch(`${ghostUrl}/members/api/send-magic-link/`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ email, emailType: 'subscribe' }),
-			});
+			const res = await requestSignup(form.dataset.ghostUrl!, email);
 
 			if (res.ok) {
 				form.style.display = 'none';
