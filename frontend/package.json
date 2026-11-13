@@ -32,11 +32,11 @@
     ]
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/mdx": "^8.1.6",
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "@tryghost/content-api": "^1.12.5",
-    "astro": "^5.17.1",
+    "astro": "^7.4.12",
     "sharp": "^0.34.3",
     "simple-icons": "^16.11.0"
   },
