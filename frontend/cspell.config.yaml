@@ -38,6 +38,8 @@ words:
   - iloc
   - Infosec
   - linkinator
+  - linefeeds
+  - retrospections
   - markdownlint
   - cspell
   - overfitting
@@ -222,4 +224,6 @@ words:
   - Twitterpocolypse
   - Ramón
   - Flaki
+  - Nvimcible
   - Georg
+  - Ravelry
