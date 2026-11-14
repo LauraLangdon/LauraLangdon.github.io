@@ -1131,3 +1131,69 @@ Separate phase. Will involve:
 - Disqus URL migration (if comments are set up by then)
 - Updating Mailgun sending domain from `mg.lauralangdon.io` to `mg.lauralangdon.com`
 - Cancelling Ghost Pro once everything is confirmed working
+
+## Phase 23: Bot signups, automatic deploys, and Ghost 6.77 (2026-11-13)
+
+### The problem
+
+Bots were sending email addresses straight to Ghost's signup endpoint (`/members/api/send-magic-link/`), skipping the subscribe widget. They used real work addresses at unrelated companies, and those companies' mail scanners opened the confirmation link, which confirmed the signup. By 11/12 the self-hosted Ghost had 80 members, all from this. Ghost 6.53.0 (PR #29319) fixed this by rejecting signups that don't carry a one-time integrity token. The server was on 6.21.
+
+### Automatic deploys (PR #5)
+
+- Merged `astro-frontend` into `main` (PR #1) and switched GitHub Pages' source to "GitHub Actions", so Pages no longer publishes the repo
+- `.github/workflows/deploy.yml` builds `frontend/` on every push to `main` and copies `dist/` to `/var/www/astro/` with rsync, as a non-root `deploy` user with its own SSH key (`DEPLOY_SSH_KEY` secret) and a pinned host key
+- The workflow refuses to deploy if the `PUBLIC_GHOST_URL` secret is missing, because the build succeeds without it but the subscribe form silently breaks
+
+### Integrity token in the widget (PR #7)
+
+`frontend/src/lib/subscribe.ts` fetches a token from `/members/api/integrity-token/` and sends it as `integrityToken` with each signup. Ghost 6.21 ignored it, so this shipped before the upgrade.
+
+### Server updates
+
+```bash
+apt update && apt upgrade -y
+reboot
+```
+
+### Ghost upgrade, 6.21 → 6.77
+
+Memory check first: `free -h` showed only 181 MB available, too little for an upgrade on 1 GB (MySQL has been killed for running out before). Temporarily resized the droplet in DigitalOcean to the $12 plan (2 GB), with "keep the storage size fixed" ticked so it could shrink back afterward. DigitalOcean's daily backups served as the rollback, instead of a snapshot.
+
+```bash
+su - ghost-user
+cd /var/www/ghost
+sudo npm install -g ghost-cli@latest
+ghost check-update
+ghost update
+```
+
+Two leftovers from the March setup stopped the update:
+
+1. **"Systemd process manager has not been set up or is corrupted."** Ghost-CLI checks that `content/` is owned by the `ghost` system user, and it was owned by `ghost-user`. Ghost's suggested fix (`ghost setup linux-user systemd`) wasn't needed.
+
+   ```bash
+   sudo chown -R ghost:ghost /var/www/ghost/content
+   ```
+
+2. **"EACCES: permission denied, open '/var/www/ghost/config.production.json'"** on restart. The config file was owned by root (probably from editing the Mailgun port as root in March). At this point Ghost was stopped and the site returned 502. Ghost-CLI requires mode 664 (640 fails its file permissions check).
+
+   ```bash
+   sudo chown ghost-user:ghost-user /var/www/ghost/config.production.json
+   sudo chmod 664 /var/www/ghost/config.production.json
+   ghost start
+   ```
+
+Afterward, resized the droplet back to $6.
+
+**Next time:** both are fixed now, so `ghost update` should run cleanly. Still check `free -h` first.
+
+### Checks after the upgrade
+
+- The site and `/ghost` load, and the site API reports 6.77
+- A signup with no token, or a made-up one, gets 400 "The request could not be understood."
+- A signup through the widget works and the confirmation email arrives. The first try failed because the browser had a cached page from before PR #7; a hard refresh (Cmd+Shift+R) fixed it.
+
+### Cleanup
+
+- Deleted all 80 members (none could be confirmed as real)
+- Cloudflare rate limiting on the signup endpoint is on hold: if new strangers appear in Members by mid-December, set it up then
