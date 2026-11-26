@@ -1,0 +1,91 @@
+---
+title: "Laura Langdon"
+subtitle: "Building open source communities and developer ecosystems"
+format:
+  html:
+    css: cv.css
+    toc: false
+    format-links: [pdf]
+  pdf:
+    pdf-engine: weasyprint
+    css: cv.css
+---
+
+::: {.contact-block}
+SF Bay Area · [Email](mailto:laura@lauralangdon.io) · [GitHub](https://github.com/LauraLangdon) · [lauralangdon.io](https://lauralangdon.io) · [LinkedIn](https://www.linkedin.com/in/lauralangdon)
+:::
+
+## Experience
+
+### Community Program Manager
+***UC OSPO Network*** [October 2024–present · Remote (UC system-wide)]{.cvdate}
+
+- Community manager for the [UC Open Source Program Office Network](https://ucospo.net) and one of its two full-time staff
+- Helped build six of the seven campus OSPOs, including planning and hosting each one's first in-person community meetup, finding local projects and maintainers, and setting up mailing lists
+- Designed the onboarding pathway for new campuses: welcome packet, public guide to standing up an OSPO, and working-group integration
+- Co-chair the group that oversees the network's seven working groups
+- Project manager for [UC Open](https://ucospo.net/events/uc-open-2027/) 2025, 2026, and 2027, the network's annual in-person conference (~100 attendees, 50+ speakers): run the speaker pipeline from CFP to day-of, and wrote it up as a reusable playbook
+- Co-organized three in-person Reboot the Earth hackathons, co-hosted with the United Nations
+- Represent the network at conferences, including FOSDEM, PyCon, Open Source Summit North America, UN Open Source Week, FOSSY, and the Software Heritage symposium
+- Built a monthly virtual meetup with a core of regulars at every session (20–30 people from UC, universities worldwide, industry, and civic tech); also run twice-weekly office hours and a weekly events digest
+- Co-taught cross-campus workshops on Git/GitHub and contributing to open source with CURIOSS partners
+- Created [repository templates](https://github.com/UC-OSPO-Network/templates) (README, CONTRIBUTING, CODE_OF_CONDUCT, LICENSE) for UC projects, later adopted as a CURIOSS pattern
+- Migrated [ucospo.net](https://ucospo.net) to MyST/Jupyter Book; maintain its CI/CD (GitHub Actions, WCAG 2 AA audits, unit tests)
+- Helped launch public community calls for the [Open Repository Browser (ORB)](https://github.com/UC-OSPO-Network/repofinder), an open source discovery toolkit
+- Advise open source projects on growing their communities, including NSF POSE-funded projects
+- Use agentic AI coding tools (Claude Code) daily for site, CI, and automation work; wrote ucospo.net's AI contribution guide
+
+### Logistics Chair
+***[PyBay](https://pybay.org)*** [2024–present (volunteer) · San Francisco, CA]{.cvdate}
+
+- Logistics for PyBay 2024–2026 (300–400 attendees): venue, catering, vendors, speakers, CFP review, and day-of operations
+- Redesigned speaker intake to collect everything at submission, eliminating weeks of follow-up
+
+### Docs Lead
+***[Distribute Aid](https://distributeaid.org)*** [November 2023–present (volunteer) · Remote, globally distributed]{.cvdate}
+
+- Set up API documentation and version-controlled docs from scratch for an open source humanitarian aid platform
+- Mentored contributors across continents on technical writing, five via Open Source Explorers
+
+### Developer Advocate
+***Suborbital Software Systems*** [February 2022–July 2023]{.cvdate}
+
+- Owned the developer docs: user journeys, tutorials, API docs, and accuracy and accessibility audits
+- Livestreamed product features on Twitch and YouTube with guests from Microsoft and Wasm Labs
+- Wrote deep-dive technical posts (including a five-part WebAssembly series) and Python and Go demos
+- Found points of friction in the developer experience and worked with engineering to remove them
+- Was the technical point of contact for developers building on the platform, in the community Discord and beyond
+- Ran social media (Twitter, LinkedIn, YouTube) and wrote the monthly newsletter
+- Built relationships with companies working on related tools, toward co-marketing and integrations
+
+### Mathematics Lecturer
+***CSU East Bay*** [January 2019–December 2021 · Head TA 2015–2018]{.cvdate}
+
+- Instructor of record for 15 sections across 7 courses; Course Coordinator for College Algebra
+- As Head TA, supervised graduate teaching assistants and wrote program-wide exams
+
+## Open source community work
+
+- [CHAOSS](https://chaoss.community): three working groups, including the Code of Conduct committee; CHAOSScon EU 2026 speaker selection
+- [CURIOSS](https://curioss.org): Sharable OSPO working group; contributor to [14 CURIOSS patterns](https://github.com/CURIOSSorg/curioss-patterns) (shared practices for academic OSPOs)
+- Speaker selection and caption editing for PyLadies 2025
+
+## Speaking
+
+- [From Campus to Network: Creating the UC System-Wide OSPO Initiative](https://youtu.be/IUE5qunHRWA) (FOSSY 2025)
+- [Real-Time Collaborative Sessions for New Contributors and Maintainers](https://youtu.be/7N1vzfpsSuE) (PyBeach 2025)
+- [CHAOSScast: Trends from UN OSS Week and OSSNA](https://www.youtube.com/watch?v=yBCMLD7XyOc) (July 2025)
+- Managing Open Source Across UC, birds-of-a-feather session (UC Tech 2026)
+
+## Technical skills
+
+Python, Git/GitHub, GitHub Actions (CI/CD), Astro, MyST/Jupyter Book, Markdown, HTML/CSS, accessibility auditing (WCAG), Linux server administration (nginx), agentic AI coding tools, Slack administration
+
+## Community skills
+
+11+ years teaching across technical levels, from self-taught developers and first-generation college students to Jupyter maintainers; event production (conferences, hackathons, meetups); speaker management; facilitation; code of conduct response; technical writing
+
+## Education
+
+- M.S. Mathematics, California State University, East Bay (2018)
+- B.S. Mathematics, California State University, East Bay (2014)

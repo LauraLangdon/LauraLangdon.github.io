@@ -3,6 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE } from '../consts';
+// Rendered from cv/cv.qmd by `npm run cv`; edit the .qmd, not this file.
+import cvHtml from '../generated/cv.html?raw';
 ---
 
 <!doctype html>
@@ -106,6 +108,51 @@ import { SITE_TITLE } from '../consts';
 				font-size: 1rem;
 				color: var(--text);
 				margin: 0;
+			}
+			/* The CV block comes from cv/cv.qmd, so its elements are styled here. */
+			.cv :global(h2) {
+				font-family: monospace;
+				font-size: var(--mono-section-heading);
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin: 3rem 0 1.75rem 0;
+			}
+			.cv :global(h2:first-of-type) {
+				margin-top: 0;
+			}
+			.cv :global(h3) {
+				font-size: 1rem;
+				font-weight: 700;
+				margin: 2.25rem 0 0.2rem 0;
+				color: var(--text);
+			}
+			.cv :global(h3 + p) {
+				margin: 0 0 0.75rem 0;
+				color: var(--text);
+			}
+			.cv :global(.cvdate) {
+				display: block;
+				font-family: monospace;
+				font-size: var(--mono-meta);
+				color: var(--text-muted);
+			}
+			.cv :global(ul) {
+				margin: 0;
+				padding: 0 0 0 1.25rem;
+			}
+			.cv :global(li) {
+				margin-bottom: 0.4rem;
+				font-size: 1rem;
+				line-height: 1.6;
+				color: var(--text);
+			}
+			.cv :global(.contact-block) {
+				display: none;
+			}
+			/* Links sit inside bullet text, so color alone can't mark them (axe link-in-text-block) */
+			.cv :global(li a) {
+				text-decoration: underline;
 			}
 			.highlights-grid {
 				display: grid;
@@ -269,7 +316,7 @@ import { SITE_TITLE } from '../consts';
 				<p class="page-heading">About</p>
 				<div class="page-heading-actions">
 					<a href="/contact" class="download-btn">Email me</a>
-					<button class="download-btn" onclick="window.print()">Download PDF</button>
+					<a href="/laura-langdon-cv.pdf" class="download-btn">Download PDF</a>
 				</div>
 			</div>
 
@@ -283,64 +330,8 @@ import { SITE_TITLE } from '../consts';
 				</p>
 			</div>
 
-			<div class="section">
-				<p class="section-heading">Experience</p>
-
-				<div class="job">
-					<p class="job-title">Community Manager · UC Open Source Program Office (OSPO) Network</p>
-					<p class="job-meta">October 2024 — present</p>
-					<ul>
-						<li>Build and nurture open source communities across six UC campuses while helping establish five campus OSPOs from the ground up</li>
-						<li>Create documentation templates and educational resources used network-wide, including README.md, CONTRIBUTING.md, and project scaffolding guides</li>
-						<li>Plan and execute events attracting 520+ attendees, including on-campus meetups, virtual gatherings, and the UC Open conference</li>
-						<li>Establish cross-institutional partnerships with CURIOSS, CHAOSS, and CSCCE</li>
-						<li>Serve on OSPO Leadership Group, coordinating network strategy across six campuses</li>
-						<li>Represent the network at FOSSY, Linux Foundation Open Source Summit, CHAOSScon, and UN Open Source Week</li>
-					</ul>
-				</div>
-
-				<div class="job">
-					<p class="job-title">
-						Docs Lead · Distribute Aid
-						<span class="job-tag">volunteer</span>
-					</p>
-					<p class="job-meta">November 2023 — present</p>
-					<ul>
-						<li>Establish API documentation, organization, version control, and best practices</li>
-						<li>Lead and mentor a globally-distributed team of new open source contributors</li>
-						<li>Work with engineering to ensure docs stay current with new releases</li>
-					</ul>
-				</div>
-
-				<div class="job">
-					<p class="job-title">Developer Advocate · Suborbital Software Systems</p>
-					<p class="job-meta">February 2022 — July 2023</p>
-					<ul>
-						<li>Owned all aspects of documentation: user journey mapping, tutorials, accessibility audits, and user feedback implementation</li>
-						<li>Wrote demo code in Python and Go; livestreamed new product feature demos</li>
-						<li>Wrote deep-dive blog posts about product concepts and features</li>
-						<li>Identified UX friction points and collaborated with engineering to resolve them</li>
-					</ul>
-				</div>
-
-				<div class="job">
-					<p class="job-title">Mathematics Lecturer · CSU East Bay</p>
-					<p class="job-meta">January 2019 — December 2021 · Head TA 2015–2018</p>
-					<ul>
-						<li>Prepared lectures, created primary and supplemental materials, and graded student work</li>
-						<li>Provided pedagogical support to newer instructors</li>
-						<li>Participated in committee for curriculum design</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="section">
-				<p class="section-heading">Education</p>
-				<div class="education-item">
-					<p class="education-school">California State University, East Bay</p>
-					<p class="education-degree">M.S. Mathematics · 2018</p>
-					<p class="education-degree">B.S. Mathematics · 2014</p>
-				</div>
+			<div class="section cv">
+				<Fragment set:html={cvHtml} />
 			</div>
 
 			<div class="section">
