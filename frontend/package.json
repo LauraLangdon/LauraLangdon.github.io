@@ -8,6 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "publish": "node scripts/publish.mjs",
+    "cv": "node scripts/cv.mjs",
+    "cv:preview": "node scripts/cv.mjs --preview",
     "publish-all": "node scripts/publish-all.mjs",
     "pull": "node scripts/pull.mjs",
     "migrate-images": "node scripts/migrate-images.mjs",

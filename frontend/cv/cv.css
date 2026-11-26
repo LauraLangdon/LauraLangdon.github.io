@@ -1,0 +1,159 @@
+/* Styles for the standalone CV (PDF and preview page). The About page styles
+   its embedded copy separately, in src/pages/about.astro.
+
+   Screening-software rules this file keeps (see the PR description):
+   - one column, in reading order: no floats, tables, or absolute positioning,
+     so text extracts as name, headline, contact, then each job in turn
+   - everything a parser needs is real text in the body; the photo is a
+     background image, so parsers skip it and no text lives inside it
+   - nothing in @page margin boxes (some parsers drop headers and footers)
+   - standard section names; color is decoration only, never meaning */
+
+/* Nunito Sans for PDF body text: Atkinson's slashed zero reads code-like
+   in dates off the site (Laura, 11/25). The About page keeps Atkinson. */
+@font-face {
+	font-family: "Nunito Sans";
+	src: url("../public/fonts/nunito-sans-latin-400-normal.woff2") format("woff2");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Nunito Sans";
+	src: url("../public/fonts/nunito-sans-latin-700-normal.woff2") format("woff2");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "PT Mono";
+	src: url("../public/fonts/pt-mono-latin-400-normal.woff2") format("woff2");
+	font-weight: 400;
+}
+
+:root {
+	--ink: #2b1a2b; /* body text: near-black with a hint of the site's purple */
+	--plum: #660066; /* site --text: name, job titles */
+	--muted: #6b4f6b; /* dates and places */
+	--pink: #da0b99; /* site --accent: headings and rules */
+	--photo-bg: #120128; /* site's dark background behind the photo */
+}
+
+body {
+	font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+	color: var(--ink);
+	line-height: 1.4;
+	max-width: 46rem;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+a {
+	color: var(--plum);
+}
+
+/* Name, headline, and photo */
+#title-block-header {
+	min-height: 6.5rem;
+	margin-bottom: 0.5rem;
+}
+/* The photo: an empty, text-free box, so it can float without changing
+   the order text extracts in. Circle with a pink ring, as on the site. */
+#title-block-header::before {
+	content: "";
+	float: right;
+	width: 6.2rem;
+	height: 6.2rem;
+	margin-left: 1.5rem;
+	border-radius: 50%;
+	border: 3px solid var(--pink);
+	background: var(--photo-bg) url("photo.png") center 20% / cover no-repeat;
+}
+.title {
+	color: var(--plum);
+	font-size: 2.1rem;
+	margin: 0 0 0.25rem 0;
+}
+.subtitle {
+	color: var(--pink);
+	font-family: "PT Mono", monospace;
+	font-size: 0.95rem;
+	margin: 0;
+}
+
+/* One-line summary under the contact line */
+.contact-block + p {
+	margin: 0.6em 0 0 0;
+}
+
+.contact-block {
+	font-family: "PT Mono", monospace;
+	font-size: 0.85rem;
+	color: var(--muted);
+	padding-bottom: 0.6rem;
+	border-bottom: 2px solid var(--pink);
+	margin-bottom: 0.5rem;
+}
+/* Links in the contact line match its grey, so the line reads as one block */
+.contact-block a {
+	color: inherit;
+}
+
+/* Section headings */
+h2 {
+	font-family: "PT Mono", monospace;
+	font-weight: 400;
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--pink);
+	border-bottom: 1px solid #e8c6dd;
+	padding-bottom: 0.15em;
+	margin: 1.3em 0 0.5em 0;
+}
+
+/* Each job: title, then organization and dates on one line */
+h3 {
+	color: var(--plum);
+	font-size: 1rem;
+	margin: 1.1em 0 0 0;
+}
+h3 + p {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	margin: 0.3em 0 0.35em 0;
+}
+.cvdate {
+	font-style: italic;
+	color: var(--muted);
+	text-align: right;
+}
+
+ul {
+	margin: 0.2em 0 0 0;
+	padding-left: 1.1rem;
+}
+li {
+	margin-bottom: 0.15em;
+}
+li::marker {
+	color: var(--pink);
+}
+
+/* PDF */
+@page {
+	size: letter;
+	margin: 0.55in 0.65in;
+}
+@media print {
+	body {
+		font-size: 9.5pt;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+	}
+	h2,
+	h3 {
+		break-after: avoid;
+	}
+	li {
+		break-inside: avoid;
+	}
+}
